@@ -25,19 +25,27 @@ class Liga extends CI_Controller {
 
     public function raspored()
     {
+        $data['title'] = 'Raspored';
         $data['match_pairs'] = $this->DBModel->get_match_pairs();
+        
+        $this->load->view('header', $data);
         $this->load->view('pairs', $data);
+        $this->load->view('footer', $data);
     }
-    
+
     public function rezultati()
     {
+        $data['title'] = 'Rezultati';
         $data['notplaying'] = $this->DBModel->get_not_playing();
         $data['results5'] = $this->DBModel->get_results('results5');
         $data['results6'] = $this->DBModel->get_results('results6');
         $data['results7'] = $this->DBModel->get_results('results7');
         $data['results8'] = $this->DBModel->get_results('results8');
         $data['results9'] = $this->DBModel->get_results('results9');
+        
+        $this->load->view('header', $data);
         $this->load->view('results', $data);
+        $this->load->view('footer', $data);
     }
 
 }
