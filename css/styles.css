@@ -14,6 +14,19 @@
     --wallpaper: ;
 }
 
+body {
+    background-image: var(--wallpaper);
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: var(--gridTemplateColumns);
+    justify-items: center;
+    margin-bottom: 40px;
+}
+
 .fpLogo {
     padding: 5px;
 }
@@ -71,6 +84,119 @@ a:link, a:visited {
 
 .logosLi:hover p {
     color: var(--yellow);
+}
+
+.table {
+    margin-left: 10px; 
+}
+
+.table table {
+    background-color: rgba(255, 255, 255, 0.4);
+    border-collapse: collapse;
+}
+
+.table th, .table td {
+    text-align: center;
+    border-bottom: 1px solid gray;
+}
+
+.table th {
+    font-size: var(--fontSize15);
+}
+
+.table td {
+    font-size: var(--fontSize20);
+    padding: 3px 10px
+}
+
+.table th:nth-child(2), .table td:nth-of-type(2), .table td:nth-of-type(3) {
+    text-align: left;
+    padding-left: 5px;
+}
+
+.table tr:nth-of-type(1) {
+    background-color: var(--orange);
+}
+
+.table tr:nth-of-type(n+2):nth-of-type(-n+5) td:nth-of-type(1) {
+    background-color: var(--yellow);
+}
+
+.table td:nth-of-type(10), .table td:nth-of-type(2) {
+    font-weight: bold;
+}
+
+.results table {
+    font-size: var(--fontSize20);
+    margin-bottom: 20px; 
+    border-collapse: collapse;
+    background-color:  rgba(255, 255, 255, 0.4);
+}
+
+.results tr td {
+    border-bottom: 1px solid black;
+    padding: 3px 5px;
+}
+
+.results td:first-of-type {
+    text-align: right;
+    padding-right: 10px;
+}
+
+.results td:last-of-type {
+    text-align: left;
+    padding-left: 10px;
+}
+
+.results td:nth-of-type(n+2):nth-of-type(-n+4) {
+    background-color: var(--yellow);
+    font-weight: bold;
+    padding: 0 3px;
+}
+
+.results p {
+    text-align: left;
+}
+
+.results p.results {
+    text-decoration: underline;
+    font-size:  var(--fontSize25);
+}
+
+.fixture {
+
+}
+
+.nextGame {
+
+}
+
+.nextGameH {
+    text-align: right;
+    font-size: 30px;
+    color: var(--yellow);
+    padding-right: 10px;
+}
+
+.nextGameA {
+    text-align: left;
+    font-size: 30px;
+    color: var(--yellow);
+    padding-left: 10px;
+}
+
+.nextGameImg {
+    text-align: center;
+}
+
+.nextGameImg img {
+    height: 30px;
+}
+
+.nextGameTime {
+    font-size: 14px;
+    color: var(--orange);
+    padding: 0 20px
 }
 
 .footer {

@@ -1,9 +1,38 @@
-<div>
-    <table>
+<div class="fixture">
+    <table class="nextGame">
         <?php
-        foreach ($results5 as $r)
-        {
+        echo "<p>$next_mday. kolo ($next_game_date->game_date)</p>";
+        foreach ($next_fixture as $nf){
             echo <<<EOT
+            <tr>
+            <td class='nextGameH'>$nf->home</td>
+            <td class='nextGameImg'><img src='/images/logos/$nf->home_team.png' alt='grb'></td>
+            <td class='nextGameTime'>$nf->game_time</td>
+            <td class='nextGameImg'><img src='/images/logos/$nf->away_team.png' alt='grb'></td>
+            <td class='nextGameA'>$nf->away</td>
+            </tr>
+            EOT;
+        }
+        ?>
+        <?php
+        foreach ($not_playing as $np){
+            echo <<<EOT
+            <tr>
+            <td colspan='2'>$np->team pauzira</td>           
+            </tr>
+            EOT;
+        }
+        ?>
+    </table>
+</div>
+<div class="content">
+    <div class="results">
+        <p><?php echo $last_mday ?>. kolo</p>
+        <table>
+            <?php
+            foreach ($results5 as $r)
+            {
+                echo <<<EOT
             <tr>
             <td>$r->home_team</td>
             <td>$r->goals_home</td>
@@ -12,30 +41,30 @@
             <td>$r->away_team</td>
             </tr>
             EOT;
-        }
-        ?>
-    </table>
-</div>
-<div>
-    <p>tabela 2005 g.</p>
-    <table>
-        <tr>
-            <th>poz</th>
-            <th>Ekipa</th>
-            <th>UT</th>
-            <th>P</th>
-            <th>N</th>
-            <th>I</th>
-            <th>Gz</th>
-            <th>Gp</th>
-            <th>GR</th>
-            <th>Bod</th>
-        </tr>
-        <?php
-        $i = 1;
-        foreach ($table5 as $row)
-        {
-            echo <<<EOT
+            }
+            ?>
+        </table>
+    </div>
+    <div class="table">
+        <p>tabela</p>
+        <table>
+            <tr>
+                <th>poz</th>
+                <th>2005 g.</th>
+                <th>UT</th>
+                <th>P</th>
+                <th>N</th>
+                <th>I</th>
+                <th>Gz</th>
+                <th>Gp</th>
+                <th>GR</th>
+                <th>Bod</th>
+            </tr>
+            <?php
+            $i = 1;
+            foreach ($table5 as $row)
+            {
+                echo <<<EOT
              <tr>
              <td>$i</td>
              <td>$row->team</td>
@@ -49,17 +78,18 @@
              <td>$row->points</td>
              </tr>
             EOT;
-            $i++;
-        }
-        ?>
-    </table>
-</div>
-<div>
-    <table>
-        <?php
-        foreach ($results6 as $r)
-        {
-            echo <<<EOT
+                $i++;
+            }
+            ?>
+        </table>
+    </div>
+    <div class="results">
+        <p><?php echo $last_mday ?>. kolo</p>
+        <table>
+            <?php
+            foreach ($results6 as $r)
+            {
+                echo <<<EOT
             <tr>
             <td>$r->home_team</td>
             <td>$r->goals_home</td>
@@ -68,30 +98,30 @@
             <td>$r->away_team</td>
             </tr>
             EOT;
-        }
-        ?>
-    </table>
-</div>
-<div>
-    <p>tabela 2006 g.</p>
-    <table>
-        <tr>
-            <th>poz</th>
-            <th>Ekipa</th>
-            <th>UT</th>
-            <th>P</th>
-            <th>N</th>
-            <th>I</th>
-            <th>Gz</th>
-            <th>Gp</th>
-            <th>GR</th>
-            <th>Bod</th>
-        </tr>
-        <?php
-        $i = 1;
-        foreach ($table6 as $row)
-        {
-            echo <<<EOT
+            }
+            ?>
+        </table>
+    </div>
+    <div class="table">
+        <p>tabela</p>
+        <table>
+            <tr>
+                <th>poz</th>
+                <th>2006 g.</th>
+                <th>UT</th>
+                <th>P</th>
+                <th>N</th>
+                <th>I</th>
+                <th>Gz</th>
+                <th>Gp</th>
+                <th>GR</th>
+                <th>Bod</th>
+            </tr>
+            <?php
+            $i = 1;
+            foreach ($table6 as $row)
+            {
+                echo <<<EOT
              <tr>
              <td>$i</td>
              <td>$row->team</td>
@@ -105,17 +135,18 @@
              <td>$row->points</td>
              </tr>
             EOT;
-            $i++;
-        }
-        ?>
-    </table>
-</div>
-<div>
-    <table>
-        <?php
-        foreach ($results7 as $r)
-        {
-            echo <<<EOT
+                $i++;
+            }
+            ?>
+        </table>
+    </div>
+    <div class="results">
+        <p><?php echo $last_mday ?>. kolo</p>
+        <table>
+            <?php
+            foreach ($results7 as $r)
+            {
+                echo <<<EOT
             <tr>
             <td>$r->home_team</td>
             <td>$r->goals_home</td>
@@ -124,30 +155,30 @@
             <td>$r->away_team</td>
             </tr>
             EOT;
-        }
-        ?>
-    </table>
-</div>
-<div>
-    <p>tabela 2007 g.</p>
-    <table>
-        <tr>
-            <th>poz</th>
-            <th>Ekipa</th>
-            <th>UT</th>
-            <th>P</th>
-            <th>N</th>
-            <th>I</th>
-            <th>Gz</th>
-            <th>Gp</th>
-            <th>GR</th>
-            <th>Bod</th>
-        </tr>
-        <?php
-        $i = 1;
-        foreach ($table7 as $row)
-        {
-            echo <<<EOT
+            }
+            ?>
+        </table>
+    </div>
+    <div class="table">
+        <p>tabela</p>
+        <table>
+            <tr>
+                <th>poz</th>
+                <th>2007 g.</th>
+                <th>UT</th>
+                <th>P</th>
+                <th>N</th>
+                <th>I</th>
+                <th>Gz</th>
+                <th>Gp</th>
+                <th>GR</th>
+                <th>Bod</th>
+            </tr>
+            <?php
+            $i = 1;
+            foreach ($table7 as $row)
+            {
+                echo <<<EOT
              <tr>
              <td>$i</td>
              <td>$row->team</td>
@@ -161,17 +192,18 @@
              <td>$row->points</td>
              </tr>
             EOT;
-            $i++;
-        }
-        ?>
-    </table>
-</div>
-<div>
-    <table>
-        <?php
-        foreach ($results8 as $r)
-        {
-            echo <<<EOT
+                $i++;
+            }
+            ?>
+        </table>
+    </div>
+    <div class="results">
+        <p><?php echo $last_mday ?>. kolo</p>
+        <table>
+            <?php
+            foreach ($results8 as $r)
+            {
+                echo <<<EOT
             <tr>
             <td>$r->home_team</td>
             <td>$r->goals_home</td>
@@ -180,30 +212,30 @@
             <td>$r->away_team</td>
             </tr>
             EOT;
-        }
-        ?>
-    </table>
-</div>
-<div>
-    <p>tabela 2008 g.</p>
-    <table>
-        <tr>
-            <th>poz</th>
-            <th>Ekipa</th>
-            <th>UT</th>
-            <th>P</th>
-            <th>N</th>
-            <th>I</th>
-            <th>Gz</th>
-            <th>Gp</th>
-            <th>GR</th>
-            <th>Bod</th>
-        </tr>
-        <?php
-        $i = 1;
-        foreach ($table8 as $row)
-        {
-            echo <<<EOT
+            }
+            ?>
+        </table>
+    </div>
+    <div class="table">
+        <p>tabela</p>
+        <table>
+            <tr>
+                <th>poz</th>
+                <th>2008 g.</th>
+                <th>UT</th>
+                <th>P</th>
+                <th>N</th>
+                <th>I</th>
+                <th>Gz</th>
+                <th>Gp</th>
+                <th>GR</th>
+                <th>Bod</th>
+            </tr>
+            <?php
+            $i = 1;
+            foreach ($table8 as $row)
+            {
+                echo <<<EOT
              <tr>
              <td>$i</td>
              <td>$row->team</td>
@@ -217,17 +249,18 @@
              <td>$row->points</td>
              </tr>
             EOT;
-            $i++;
-        }
-        ?>
-    </table>
-</div>
-<div>
-    <table>
-        <?php
-        foreach ($results9 as $r)
-        {
-            echo <<<EOT
+                $i++;
+            }
+            ?>
+        </table>
+    </div>
+    <div class="results">
+        <p><?php echo $last_mday ?>. kolo</p>
+        <table>
+            <?php
+            foreach ($results9 as $r)
+            {
+                echo <<<EOT
             <tr>
             <td>$r->home_team</td>
             <td>$r->goals_home</td>
@@ -236,30 +269,30 @@
             <td>$r->away_team</td>
             </tr>
             EOT;
-        }
-        ?>
-    </table>
-</div>
-<div>
-    <p>tabela 2009 g.</p>
-    <table>
-        <tr>
-            <th>poz</th>
-            <th>Ekipa</th>
-            <th>UT</th>
-            <th>P</th>
-            <th>N</th>
-            <th>I</th>
-            <th>Gz</th>
-            <th>Gp</th>
-            <th>GR</th>
-            <th>Bod</th>
-        </tr>
-        <?php
-        $i = 1;
-        foreach ($table9 as $row)
-        {
-            echo <<<EOT
+            }
+            ?>
+        </table>
+    </div>
+    <div class="table">
+        <p>tabela</p>
+        <table>
+            <tr>
+                <th>poz</th>
+                <th>2009 g.</th>
+                <th>UT</th>
+                <th>P</th>
+                <th>N</th>
+                <th>I</th>
+                <th>Gz</th>
+                <th>Gp</th>
+                <th>GR</th>
+                <th>Bod</th>
+            </tr>
+            <?php
+            $i = 1;
+            foreach ($table9 as $row)
+            {
+                echo <<<EOT
              <tr>
              <td>$i</td>
              <td>$row->team</td>
@@ -273,8 +306,9 @@
              <td>$row->points</td>
              </tr>
             EOT;
-            $i++;
-        }
-        ?>
-    </table>
+                $i++;
+            }
+            ?>
+        </table>
+    </div>
 </div>
