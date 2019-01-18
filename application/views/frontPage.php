@@ -1,4 +1,22 @@
 <div>
+    <table>
+        <?php
+        foreach ($results5 as $r)
+        {
+            echo <<<EOT
+            <tr>
+            <td>$r->home_team</td>
+            <td>$r->goals_home</td>
+            <td> - </td>
+            <td>$r->goals_away</td>
+            <td>$r->away_team</td>
+            </tr>
+            EOT;
+        }
+        ?>
+    </table>
+</div>
+<div>
     <p>tabela 2005 g.</p>
     <table>
         <tr>
@@ -35,7 +53,26 @@
         }
         ?>
     </table>
-    <div>
+</div>
+<div>
+    <table>
+        <?php
+        foreach ($results6 as $r)
+        {
+            echo <<<EOT
+            <tr>
+            <td>$r->home_team</td>
+            <td>$r->goals_home</td>
+            <td> - </td>
+            <td>$r->goals_away</td>
+            <td>$r->away_team</td>
+            </tr>
+            EOT;
+        }
+        ?>
+    </table>
+</div>
+<div>
     <p>tabela 2006 g.</p>
     <table>
         <tr>
@@ -72,7 +109,26 @@
         }
         ?>
     </table>
-    <div>
+</div>
+<div>
+    <table>
+        <?php
+        foreach ($results7 as $r)
+        {
+            echo <<<EOT
+            <tr>
+            <td>$r->home_team</td>
+            <td>$r->goals_home</td>
+            <td> - </td>
+            <td>$r->goals_away</td>
+            <td>$r->away_team</td>
+            </tr>
+            EOT;
+        }
+        ?>
+    </table>
+</div>
+<div>
     <p>tabela 2007 g.</p>
     <table>
         <tr>
@@ -109,7 +165,26 @@
         }
         ?>
     </table>
-    <div>
+</div>
+<div>
+    <table>
+        <?php
+        foreach ($results8 as $r)
+        {
+            echo <<<EOT
+            <tr>
+            <td>$r->home_team</td>
+            <td>$r->goals_home</td>
+            <td> - </td>
+            <td>$r->goals_away</td>
+            <td>$r->away_team</td>
+            </tr>
+            EOT;
+        }
+        ?>
+    </table>
+</div>
+<div>
     <p>tabela 2008 g.</p>
     <table>
         <tr>
@@ -146,7 +221,26 @@
         }
         ?>
     </table>
-    <div>
+</div>
+<div>
+    <table>
+        <?php
+        foreach ($results9 as $r)
+        {
+            echo <<<EOT
+            <tr>
+            <td>$r->home_team</td>
+            <td>$r->goals_home</td>
+            <td> - </td>
+            <td>$r->goals_away</td>
+            <td>$r->away_team</td>
+            </tr>
+            EOT;
+        }
+        ?>
+    </table>
+</div>
+<div>
     <p>tabela 2009 g.</p>
     <table>
         <tr>

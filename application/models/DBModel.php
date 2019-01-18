@@ -2,6 +2,13 @@
 
 class DBModel extends CI_Model {
 
+    public function get_teams()
+    {
+        $sql = 'SELECT * FROM teams WHERE NOT id = 10';
+        $query = $this->db->query($sql);
+        return $query->result();
+    }
+
     public function get_table($table, $id = 11)
     {
         $sql = <<<EOT
@@ -37,6 +44,16 @@ class DBModel extends CI_Model {
     public function get_results($results)
     {
         $sql = "SELECT * FROM $results";
+        $query = $this->db->query($sql);
+        return $query->result();
+    }
+
+    public function get_last_results($results)
+    {
+        $sql_last = "SELECT DISTINCT m_day FROM $results";
+        $query_num = $this->db->query($sql_last);
+        $mday_num = sizeof($query_num->result());
+        $sql = "SELECT * FROM $results WHERE m_day = $mday_num";
         $query = $this->db->query($sql);
         return $query->result();
     }
