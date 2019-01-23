@@ -51,20 +51,14 @@ EOT;
 
     public function getLastResults($results)
     {
-        $sql_last = "SELECT DISTINCT m_day FROM $results";
-        $query_num = $this->db->query($sql_last);
-        $mday_num = sizeof($query_num->result());
-
-        ///
-        $s = "SELECT MAX(m_day) FROM $results";
+        $s = "SELECT MAX(m_day) AS mDay FROM $results";
         $q = $this->db->query($s);
         $max = $q->row();
-        $max_mday = $max;
-        ///
+        $max_mday = $max->mDay;
 
-        $sql = "SELECT * FROM $results WHERE m_day = $mday_num";
+        $sql = "SELECT * FROM $results WHERE m_day = $max_mday";
         $query = $this->db->query($sql);
-        $data['lastMday'] = $mday_num;
+        $data['lastMday'] = $max_mday;
         $data['results'] = $query->result();
         return $data;
     }
