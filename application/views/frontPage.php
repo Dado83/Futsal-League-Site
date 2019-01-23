@@ -1,8 +1,8 @@
-<div class="fixture">
+<div id="fixture">
     <table class="nextGame">
         <?php
-        echo "<p>$next_mday. kolo ($next_game_date->game_date)</p>";
-        foreach ($next_fixture as $nf){
+        echo "<p>$nextMday. kolo ($nextGameDate->game_date)</p>";
+        foreach ($nextFixture as $nf) {
             echo <<<EOT
             <tr>
             <td class='nextGameH'>$nf->home</td>
@@ -11,27 +11,26 @@
             <td class='nextGameImg'><img src='/images/logos/$nf->away_team.png' alt='grb'></td>
             <td class='nextGameA'>$nf->away</td>
             </tr>
-            EOT;
+EOT;
         }
         ?>
         <?php
-        foreach ($not_playing as $np){
+        foreach ($notPlaying as $np) {
             echo <<<EOT
             <tr>
             <td colspan='2'>$np->team pauzira</td>           
             </tr>
-            EOT;
+EOT;
         }
         ?>
     </table>
 </div>
 <div class="content">
     <div class="results">
-        <p><?php echo $last_mday ?>. kolo</p>
+        <p><?php echo $lastMday ?>. kolo</p>
         <table>
             <?php
-            foreach ($results5 as $r)
-            {
+            foreach ($results5 as $r) {
                 echo <<<EOT
             <tr>
             <td>$r->home_team</td>
@@ -40,7 +39,7 @@
             <td>$r->goals_away</td>
             <td>$r->away_team</td>
             </tr>
-            EOT;
+EOT;
             }
             ?>
         </table>
@@ -62,8 +61,7 @@
             </tr>
             <?php
             $i = 1;
-            foreach ($table5 as $row)
-            {
+            foreach ($table5 as $row) {
                 echo <<<EOT
              <tr>
              <td>$i</td>
@@ -77,18 +75,17 @@
              <td>$row->g_diff</td>
              <td>$row->points</td>
              </tr>
-            EOT;
+EOT;
                 $i++;
             }
             ?>
         </table>
     </div>
     <div class="results">
-        <p><?php echo $last_mday ?>. kolo</p>
+        <p><?php echo $lastMday ?>. kolo</p>
         <table>
             <?php
-            foreach ($results6 as $r)
-            {
+            foreach ($results6 as $r) {
                 echo <<<EOT
             <tr>
             <td>$r->home_team</td>
@@ -97,7 +94,7 @@
             <td>$r->goals_away</td>
             <td>$r->away_team</td>
             </tr>
-            EOT;
+EOT;
             }
             ?>
         </table>
@@ -119,8 +116,7 @@
             </tr>
             <?php
             $i = 1;
-            foreach ($table6 as $row)
-            {
+            foreach ($table6 as $row) {
                 echo <<<EOT
              <tr>
              <td>$i</td>
@@ -134,18 +130,17 @@
              <td>$row->g_diff</td>
              <td>$row->points</td>
              </tr>
-            EOT;
+EOT;
                 $i++;
             }
             ?>
         </table>
     </div>
     <div class="results">
-        <p><?php echo $last_mday ?>. kolo</p>
+        <p><?php echo $lastMday ?>. kolo</p>
         <table>
             <?php
-            foreach ($results7 as $r)
-            {
+            foreach ($results7 as $r) {
                 echo <<<EOT
             <tr>
             <td>$r->home_team</td>
@@ -154,7 +149,7 @@
             <td>$r->goals_away</td>
             <td>$r->away_team</td>
             </tr>
-            EOT;
+EOT;
             }
             ?>
         </table>
@@ -176,8 +171,7 @@
             </tr>
             <?php
             $i = 1;
-            foreach ($table7 as $row)
-            {
+            foreach ($table7 as $row) {
                 echo <<<EOT
              <tr>
              <td>$i</td>
@@ -191,18 +185,17 @@
              <td>$row->g_diff</td>
              <td>$row->points</td>
              </tr>
-            EOT;
+EOT;
                 $i++;
             }
             ?>
         </table>
     </div>
     <div class="results">
-        <p><?php echo $last_mday ?>. kolo</p>
+        <p><?php echo $lastMday ?>. kolo</p>
         <table>
             <?php
-            foreach ($results8 as $r)
-            {
+            foreach ($results8 as $r) {
                 echo <<<EOT
             <tr>
             <td>$r->home_team</td>
@@ -211,7 +204,7 @@
             <td>$r->goals_away</td>
             <td>$r->away_team</td>
             </tr>
-            EOT;
+EOT;
             }
             ?>
         </table>
@@ -233,8 +226,7 @@
             </tr>
             <?php
             $i = 1;
-            foreach ($table8 as $row)
-            {
+            foreach ($table8 as $row) {
                 echo <<<EOT
              <tr>
              <td>$i</td>
@@ -248,18 +240,17 @@
              <td>$row->g_diff</td>
              <td>$row->points</td>
              </tr>
-            EOT;
+EOT;
                 $i++;
             }
             ?>
         </table>
     </div>
     <div class="results">
-        <p><?php echo $last_mday ?>. kolo</p>
+        <p><?php echo $lastMday ?>. kolo</p>
         <table>
             <?php
-            foreach ($results9 as $r)
-            {
+            foreach ($results9 as $r) {
                 echo <<<EOT
             <tr>
             <td>$r->home_team</td>
@@ -268,7 +259,7 @@
             <td>$r->goals_away</td>
             <td>$r->away_team</td>
             </tr>
-            EOT;
+EOT;
             }
             ?>
         </table>
@@ -290,8 +281,7 @@
             </tr>
             <?php
             $i = 1;
-            foreach ($table9 as $row)
-            {
+            foreach ($table9 as $row) {
                 echo <<<EOT
              <tr>
              <td>$i</td>
@@ -305,7 +295,7 @@
              <td>$row->g_diff</td>
              <td>$row->points</td>
              </tr>
-            EOT;
+EOT;
                 $i++;
             }
             ?>

@@ -6,36 +6,26 @@
         <meta name="description" content="Fair Play LBŠ website">
         <meta name="keywords" content="Fair Play, Liga Budućih Šampiona, LBŠ, Liga">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/styles.css">
-        <link rel="shortcut icon" href="<?php base_url() ?>/images/favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="/css/styles.css">
+        <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
-        <script src="js/scripts.js" defer></script>
+        <script src="/js/scripts.js" defer></script>
     </head>
     <body>
         <div class="fpLogo">
-            <a href="<?php base_url() ?>"><img id="logo" src="/images/grb.png"/></a>
+            <a href="/"><img id="logo" src="/images/grb.png"/></a>
             <span class="title1">Fair Play</span><span class="title2">Liga Budućih Šampiona</span>
+            <span class="links"><a href="/liga/rezultati">Rezultati</a>, <a href="/liga/raspored">Raspored</a></span>
         </div>
         <ul class="logos">
-            <li class="logosLi" th:each="tim: ${teamLogos}">
-                <a th:class="${tim?.teamName}" th:href="@{/team(index = ${tim?.id})}">
-                    <img th:class="${tim?.teamName}" th:src="@{'logos/' + ${tim?.id} + '.png'}"/>
-                    <p th:text="${tim?.teamName}"></p>
-                </a>       
-            </li>
-        </ul>
-
-        <ul class="logos">
-            <?php           
-            foreach ($teams as $t)
-            {
+            <?php
+            foreach ($teams as $t) {
                 echo <<<EOT
                 <li class='logosLi'>
                 <img src='/images/logos/$t->id.png'>
                 <p>$t->team_name</p>
                 </li>
-                EOT;
+EOT;
             }
             ?>
         </ul>
-

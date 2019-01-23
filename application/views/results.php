@@ -6,8 +6,7 @@
     <td colspan="2">rezultat</td>
 </tr>
 <?php
-foreach ($results5 as $row)
-{
+foreach ($results5 as $row) {
     echo <<<EOT
         <tr>
         <td>$row->m_day</td>
@@ -16,7 +15,7 @@ foreach ($results5 as $row)
         <td>$row->goals_home</td>
         <td>$row->goals_away</td>
         </tr>
-        EOT;
+EOT;
 }
 ?>
 </table>
@@ -29,8 +28,7 @@ foreach ($results5 as $row)
         <td colspan="2">rezultat</td>
     </tr>
     <?php
-    foreach ($results6 as $row)
-    {
+    foreach ($results6 as $row) {
         echo <<<EOT
         <tr>
         <td>$row->m_day</td>
@@ -39,7 +37,7 @@ foreach ($results5 as $row)
         <td>$row->goals_home</td>
         <td>$row->goals_away</td>
         </tr>
-        EOT;
+EOT;
     }
     ?>
 </table>
@@ -52,8 +50,7 @@ foreach ($results5 as $row)
         <td colspan="2">rezultat</td>
     </tr>
     <?php
-    foreach ($results7 as $row)
-    {
+    foreach ($results7 as $row) {
         echo <<<EOT
         <tr>
         <td>$row->m_day</td>
@@ -62,7 +59,7 @@ foreach ($results5 as $row)
         <td>$row->goals_home</td>
         <td>$row->goals_away</td>
         </tr>
-        EOT;
+EOT;
     }
     ?>
 </table>
@@ -75,8 +72,7 @@ foreach ($results5 as $row)
         <td colspan="2">rezultat</td>
     </tr>
     <?php
-    foreach ($results8 as $row)
-    {
+    foreach ($results8 as $row) {
         echo <<<EOT
         <tr>
         <td>$row->m_day</td>
@@ -85,7 +81,7 @@ foreach ($results5 as $row)
         <td>$row->goals_home</td>
         <td>$row->goals_away</td>
         </tr>
-        EOT;
+EOT;
     }
     ?>
 </table>
@@ -98,8 +94,7 @@ foreach ($results5 as $row)
         <td colspan="2">rezultat</td>
     </tr>
     <?php
-    foreach ($results9 as $row)
-    {
+    foreach ($results9 as $row) {
         echo <<<EOT
         <tr>
         <td>$row->m_day</td>
@@ -108,7 +103,7 @@ foreach ($results5 as $row)
         <td>$row->goals_home</td>
         <td>$row->goals_away</td>
         </tr>
-        EOT;
+EOT;
     }
     ?>
 </table>

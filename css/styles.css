@@ -52,6 +52,34 @@ body {
     text-shadow: -1px 0 var(--black), 0 1px var(--black), 1px 0 var(--black), 0 -1px var(--black);
 }
 
+.button {
+    border: 1px solid black;
+    padding: 0 2px;
+    background: buttonface;
+    display: block;
+    text-align: center;
+}
+
+.button:hover {
+    color: black;
+    box-shadow: 0 0;
+    background: buttonhighlight
+}
+
+.links {
+    float: right;
+}
+
+.links a:visited, .links a:link {
+    color: black;
+    text-decoration: none;
+    font-size: var(--fontSize15);
+}
+
+.links a:hover {
+    color: var(--yellow);
+}
+
 .logos {
     display: flex;
     text-align: center; 
@@ -66,7 +94,12 @@ body {
 }
 
 a:link, a:visited {
-    color: white;
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--yellow);
 }
 
 .logos li {
@@ -163,8 +196,8 @@ a:link, a:visited {
     font-size:  var(--fontSize25);
 }
 
-.fixture {
-
+#fixture {
+    width: 600px;
 }
 
 .nextGame {
