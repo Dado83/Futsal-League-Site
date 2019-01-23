@@ -113,11 +113,18 @@ class Liga extends CI_Controller
         $home5 = $this->input->post('home5');
         $away5 = $this->input->post('away5');
 
-        $this->DBModel->insertGame('results5', 'table5', $m_day, $home, $home_id, $away, $away_id, $home5, $away5);
-        $this->DBModel->insertGame('results6', 'table6', $m_day, $home, $home_id, $away, $away_id, $home6, $away6);
-        $this->DBModel->insertGame('results7', 'table7', $m_day, $home, $home_id, $away, $away_id, $home7, $away7);
-        $this->DBModel->insertGame('results8', 'table8', $m_day, $home, $home_id, $away, $away_id, $home8, $away8);
-        $this->DBModel->insertGame('results9', 'table9', $m_day, $home, $home_id, $away, $away_id, $home9, $away9);
+        if ($home_id == 7 OR $away_id == 7) {
+            $this->DBModel->insertGame('results5', 'table5', $m_day, $home, $home_id, $away, $away_id, $home5, $away5);
+            $this->DBModel->insertGame('results6', 'table6', $m_day, $home, $home_id, $away, $away_id, $home6, $away6);
+            $this->DBModel->insertGame('results7', 'table7', $m_day, $home, $home_id, $away, $away_id, $home7, $away7);
+            $this->DBModel->insertGame('results8', 'table8', $m_day, $home, $home_id, $away, $away_id, $home8, $away8);
+        } else {
+            $this->DBModel->insertGame('results5', 'table5', $m_day, $home, $home_id, $away, $away_id, $home5, $away5);
+            $this->DBModel->insertGame('results6', 'table6', $m_day, $home, $home_id, $away, $away_id, $home6, $away6);
+            $this->DBModel->insertGame('results7', 'table7', $m_day, $home, $home_id, $away, $away_id, $home7, $away7);
+            $this->DBModel->insertGame('results8', 'table8', $m_day, $home, $home_id, $away, $away_id, $home8, $away8);
+            $this->DBModel->insertGame('results9', 'table9', $m_day, $home, $home_id, $away, $away_id, $home9, $away9);
+        }
 
         $this->load->view('header', $data);
         $this->load->view('dbSuccess', $data);
