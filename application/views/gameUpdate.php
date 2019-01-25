@@ -1,12 +1,12 @@
 <div>
-    <form action="/liga/ispravka_kola" method="POST">
+    <form action="/liga/ispravkaKola" method="POST">
         <fieldset>
             <legend>Unos rezultata <?php echo $game->m_day ?>. kola</legend>
             <table>
                 <tr>
                     <th>
                         godiste
-                        <input type="hidden" name="mday" value="<?php echo $game->m_day ?>"
+                        <input type="hidden" name="mday" value="<?php echo $game->m_day ?>">
                     </th>
                     <th>
                         domacin

@@ -68,13 +68,24 @@ class Liga extends CI_Controller
         $data['title'] = 'Admin';
         $data['teams'] = $this->DBModel->getTeams();
         $data['results'] = $this->DBModel->getResults('results7');
-        $data['lastMday'] = $this->DBModel->getLastResults('results5')['lastMday'];
+        $data['matchPairs'] = $this->DBModel->getMatchPairsNotPlayed();
 
         $this->load->view('header', $data);
         $this->load->view('admin', $data);
     }
 
-    public function form($id)
+    public function formIn($id)
+    {
+        $this->load->helper('form');
+        $data['title'] = 'Unos kola';
+        $data['teams'] = $this->DBModel->getTeams();
+        $data['game'] = $this->DBModel->getGameByID($id);
+
+        $this->load->view('header', $data);
+        $this->load->view('gameInput', $data);
+    }
+
+    public function formUp($id)
     {
         $this->load->helper('form');
         $data['title'] = 'Unos kola';
@@ -83,11 +94,7 @@ class Liga extends CI_Controller
         $data['lastMday'] = $this->DBModel->getLastResults('results5')['lastMday'];
 
         $this->load->view('header', $data);
-        if ($data['lastMday'] >= $data['game']->m_day) {
-            $this->load->view('gameUpdate', $data);
-        } else {
-            $this->load->view('gameInput', $data);
-        }
+        $this->load->view('gameUpdate', $data);
     }
 
     public function unosKola()
@@ -95,12 +102,13 @@ class Liga extends CI_Controller
         $data['title'] = 'Admin';
         $data['teams'] = $this->DBModel->getTeams();
 
-        $m_day = $this->input->post('mday');
+        $id = $this->input->post('id');
+        $mDay = $this->input->post('mday');
 
         $home = $this->input->post('home');
         $away = $this->input->post('away');
-        $home_id = $this->input->post('homeID');
-        $away_id = $this->input->post('awayID');
+        $homeID = $this->input->post('homeID');
+        $awayID = $this->input->post('awayID');
 
         $home9 = $this->input->post('home9');
         $away9 = $this->input->post('away9');
@@ -113,44 +121,68 @@ class Liga extends CI_Controller
         $home5 = $this->input->post('home5');
         $away5 = $this->input->post('away5');
 
-        if ($home_id == 7 OR $away_id == 7) {
-            $this->DBModel->insertGame('results5', 'table5', $m_day, $home, $home_id, $away, $away_id, $home5, $away5);
-            $this->DBModel->insertGame('results6', 'table6', $m_day, $home, $home_id, $away, $away_id, $home6, $away6);
-            $this->DBModel->insertGame('results7', 'table7', $m_day, $home, $home_id, $away, $away_id, $home7, $away7);
-            $this->DBModel->insertGame('results8', 'table8', $m_day, $home, $home_id, $away, $away_id, $home8, $away8);
+        if ($homeID == 7 OR $awayID == 7) {
+            $this->DBModel->insertGame('results5', 'table5', $mDay, $home, $homeID, $away, $awayID, $home5, $away5);
+            $this->DBModel->insertGame('results6', 'table6', $mDay, $home, $homeID, $away, $awayID, $home6, $away6);
+            $this->DBModel->insertGame('results7', 'table7', $mDay, $home, $homeID, $away, $awayID, $home7, $away7);
+            $this->DBModel->insertGame('results8', 'table8', $mDay, $home, $homeID, $away, $awayID, $home8, $away8);
         } else {
-            $this->DBModel->insertGame('results5', 'table5', $m_day, $home, $home_id, $away, $away_id, $home5, $away5);
-            $this->DBModel->insertGame('results6', 'table6', $m_day, $home, $home_id, $away, $away_id, $home6, $away6);
-            $this->DBModel->insertGame('results7', 'table7', $m_day, $home, $home_id, $away, $away_id, $home7, $away7);
-            $this->DBModel->insertGame('results8', 'table8', $m_day, $home, $home_id, $away, $away_id, $home8, $away8);
-            $this->DBModel->insertGame('results9', 'table9', $m_day, $home, $home_id, $away, $away_id, $home9, $away9);
+            $this->DBModel->insertGame('results5', 'table5', $mDay, $home, $homeID, $away, $awayID, $home5, $away5);
+            $this->DBModel->insertGame('results6', 'table6', $mDay, $home, $homeID, $away, $awayID, $home6, $away6);
+            $this->DBModel->insertGame('results7', 'table7', $mDay, $home, $homeID, $away, $awayID, $home7, $away7);
+            $this->DBModel->insertGame('results8', 'table8', $mDay, $home, $homeID, $away, $awayID, $home8, $away8);
+            $this->DBModel->insertGame('results9', 'table9', $mDay, $home, $homeID, $away, $awayID, $home9, $away9);
         }
+        $this->DBModel->setPlayed($id, TRUE);
 
-        $this->load->view('header', $data);
-        $this->load->view('dbSuccess', $data);
+        $data['results'] = $this->DBModel->getResults('results7');
+        $data['matchPairs'] = $this->DBModel->getMatchPairsNotPlayed();
+
+        redirect('/liga/admin', 'refresh');
     }
 
     public function ispravkaKola()
     {
-        $data['title'] = 'Admin';
-        $data['teams'] = $this->DBModel->getTeams();
-        $data['matchPairs'] = $this->DBModel->getMatchPairs();
-        $data['lastMday'] = $this->DBModel->getLastResults('results5')['lastMday'];
-
-        $this->load->view('header', $data);
-        $this->load->view('admin', $data);
+//        $data['title'] = 'Admin';
+//        $data['teams'] = $this->DBModel->getTeams();
+//        $data['matchPairs'] = $this->DBModel->getMatchPairsNotPlayed();
+//        $data['results'] = $this->DBModel->getResults('results7');
+//
+//        $this->load->view('header', $data);
+//        $this->load->view('admin', $data);
     }
 
     public function brisanjeKola($id)
     {
         $data['title'] = 'Admin';
         $data['teams'] = $this->DBModel->getTeams();
+        $data['matchPairs'] = $this->DBModel->getMatchPairsNotPlayed();
+        $data['results'] = $this->DBModel->getResults('results7');
+
+        $game = $this->DBModel->getGameFromResults($id);
+        $game9 = $this->DBModel->getGame9($game->home_teamid, $game->away_teamid);
+
+        $matchPair = $this->DBModel->getMatchPair($game->home_teamid, $game->away_teamid);
+
+        $this->DBModel->setPlayed($matchPair->id, 'FALSE');
 
         $this->DBModel->deleteGame('results5', 'table5', $id);
         $this->DBModel->deleteGame('results6', 'table6', $id);
         $this->DBModel->deleteGame('results7', 'table7', $id);
         $this->DBModel->deleteGame('results8', 'table8', $id);
-        $this->DBModel->deleteGame('results9', 'table9', $id);
+        if ($game9 > 0) {
+            $this->DBModel->deleteGame('results9', 'table9', $game9->id);
+        } else {
+            
+        }
+
+        redirect('/liga/admin', 'refresh');
+    }
+
+    public function test()
+    {
+
+        $this->load->view('test');
     }
 
 }

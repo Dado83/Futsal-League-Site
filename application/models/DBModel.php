@@ -36,7 +36,21 @@ EOT;
         FROM matchpairs
         JOIN teams AS home ON matchpairs.home_team = home.id
         JOIN teams AS away ON matchpairs.away_team = away.id
-        WHERE NOT matchpairs.home_team = 10 XOR matchpairs.away_team = 10
+        WHERE NOT (matchpairs.home_team = 10 XOR matchpairs.away_team = 10)
+EOT;
+        $query = $this->db->query($sql);
+        return $query->result();
+    }
+
+    public function getMatchPairsNotPlayed()
+    {
+        $sql = <<<EOT
+        SELECT matchpairs.id, matchpairs.m_day, matchpairs.home_team, matchpairs.away_team, matchpairs.game_date,
+        home.team_name AS home_team, away.team_name AS away_team
+        FROM matchpairs
+        JOIN teams AS home ON matchpairs.home_team = home.id
+        JOIN teams AS away ON matchpairs.away_team = away.id
+        WHERE matchpairs.is_played = FALSE AND NOT (matchpairs.home_team = 10 XOR matchpairs.away_team = 10)
 EOT;
         $query = $this->db->query($sql);
         return $query->result();
@@ -55,7 +69,9 @@ EOT;
         $q = $this->db->query($s);
         $max = $q->row();
         $max_mday = $max->mDay;
-
+        if ($max_mday == NULL) {
+            $max_mday = 0;
+        }
         $sql = "SELECT * FROM $results WHERE m_day = $max_mday";
         $query = $this->db->query($sql);
         $data['lastMday'] = $max_mday;
@@ -84,13 +100,34 @@ EOT;
     public function getGameByID($id)
     {
         $sql = <<<EOT
-        SELECT matchpairs.m_day, matchpairs.home_team, matchpairs.away_team, matchpairs.game_date,
+        SELECT matchpairs.id, matchpairs.m_day, matchpairs.home_team, matchpairs.away_team, matchpairs.game_date,
         home.team_name AS home, away.team_name AS away, home.game_time, home.venue
         FROM matchpairs
         JOIN teams AS home ON matchpairs.home_team = home.id
         JOIN teams AS away ON matchpairs.away_team = away.id
         WHERE matchpairs.id = $id
 EOT;
+        $query = $this->db->query($sql);
+        return $query->row();
+    }
+
+    public function getGameFromResults($id)
+    {
+        $sql = "SELECT * FROM results7 WHERE id = $id";
+        $query = $this->db->query($sql);
+        return $query->row();
+    }
+
+    public function getGame9($home_id, $away_id)
+    {
+        $sql = "SELECT * FROM results9 WHERE home_teamid = $home_id AND away_teamid = $away_id";
+        $query = $this->db->query($sql);
+        return $query->row();
+    }
+
+    public function getMatchPair($home, $away)
+    {
+        $sql = "SELECT * FROM matchpairs WHERE home_team = $home AND away_team = $away";
         $query = $this->db->query($sql);
         return $query->row();
     }
@@ -113,6 +150,14 @@ EOT;
             $query = $this->db->query($sql);
             return $query->result();
         }
+    }
+
+    public function setPlayed($id, $isPlayed)
+    {
+        $sqlPlayed = <<<EOT
+        UPDATE matchpairs SET is_played = $isPlayed WHERE id = $id
+EOT;
+        $this->db->query($sqlPlayed);
     }
 
     public function insertGame($results, $table, $mday, $home, $home_id, $away, $away_id, $goals_h, $goals_a)
@@ -211,9 +256,7 @@ EOT;
             $this->drawDel($table, $game['home_id'], $game['away_id'], $game['goals_h'], $game['goals_a']);
         }
 
-        $sql_del = <<<EOT
-        DELETE FROM $results WHERE id = $id
-EOT;
+        $sql_del = "DELETE FROM $results WHERE id = $id";
         $this->db->query($sql_del);
     }
 

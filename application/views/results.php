@@ -1,12 +1,12 @@
 <table>      
-    <p>2005 godiste</p>
+    <p>2009 godiste</p>
     <td>kolo</td>
     <td>domacin</td>
     <td>gost</td>
     <td colspan="2">rezultat</td>
 </tr>
 <?php
-foreach ($results5 as $row) {
+foreach ($results9 as $row) {
     echo <<<EOT
         <tr>
         <td>$row->m_day</td>
@@ -20,7 +20,7 @@ EOT;
 ?>
 </table>
 <table>      
-    <p>2006 godiste</p>
+    <p>2008 godiste</p>
     <tr>
         <td>kolo</td>
         <td>domacin</td>
@@ -28,7 +28,7 @@ EOT;
         <td colspan="2">rezultat</td>
     </tr>
     <?php
-    foreach ($results6 as $row) {
+    foreach ($results8 as $row) {
         echo <<<EOT
         <tr>
         <td>$row->m_day</td>
@@ -64,7 +64,7 @@ EOT;
     ?>
 </table>
 <table>     
-    <p>2008 godiste</p>
+    <p>2006 godiste</p>
     <tr>
         <td>kolo</td>
         <td>domacin</td>
@@ -72,7 +72,7 @@ EOT;
         <td colspan="2">rezultat</td>
     </tr>
     <?php
-    foreach ($results8 as $row) {
+    foreach ($results6 as $row) {
         echo <<<EOT
         <tr>
         <td>$row->m_day</td>
@@ -86,7 +86,7 @@ EOT;
     ?>
 </table>
 <table>      
-    <p>2009 godiste</p>
+    <p>2005 godiste</p>
     <tr>
         <td>kolo</td>
         <td>domacin</td>
@@ -94,7 +94,7 @@ EOT;
         <td colspan="2">rezultat</td>
     </tr>
     <?php
-    foreach ($results9 as $row) {
+    foreach ($results5 as $row) {
         echo <<<EOT
         <tr>
         <td>$row->m_day</td>

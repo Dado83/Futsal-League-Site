@@ -1,12 +1,13 @@
 <div>
-    <form action="/liga/unos_kola" method="POST">
+    <form action="/liga/unosKola" method="POST">
         <fieldset>
             <legend>Unos rezultata <?php echo $game->m_day ?>. kola</legend>
             <table>
                 <tr>
                     <th>
                         godiste
-                        <input type="hidden" name="mday" value="<?php echo $game->m_day ?>"
+                        <input type="hidden" name="mday" value="<?php echo $game->m_day ?>">
+                        <input type="hidden" name="id" value="<?php echo $game->id ?>"
                     </th>
                     <th>
                         domacin
@@ -35,10 +36,10 @@
                         2009
                     </td>
                     <td>
-                        <input type="number" name="home9">
+                        <input type="number" name="home9" value="0">
                     </td>
                     <td>
-                        <input type="number" name="away9">
+                        <input type="number" name="away9" value="0">
                     </td>
                 </tr>
                 <tr>
@@ -46,10 +47,10 @@
                         2008
                     </td>
                     <td>
-                        <input type="number" name="home8">
+                        <input type="number" name="home8" value="0">
                     </td>
                     <td>
-                        <input type="number" name="away8">
+                        <input type="number" name="away8" value="0">
                     </td>
                 </tr>
                 <tr>
@@ -57,10 +58,10 @@
                         2007
                     </td>
                     <td>
-                        <input type="number" name="home7">
+                        <input type="number" name="home7" value="0">
                     </td>
                     <td>
-                        <input type="number" name="away7">
+                        <input type="number" name="away7" value="0">
                     </td>
                 </tr>
                 <tr>
@@ -68,10 +69,10 @@
                         2006
                     </td>
                     <td>
-                        <input type="number" name="home6">
+                        <input type="number" name="home6" value="0">
                     </td>
                     <td>
-                        <input type="number" name="away6">
+                        <input type="number" name="away6" value="0">
                     </td>
                 </tr>
                 <tr>
@@ -79,10 +80,10 @@
                         2005
                     </td>
                     <td>
-                        <input type="number" name="home5">
+                        <input type="number" name="home5" value="0">
                     </td>
                     <td>
-                        <input type="number" name="away5">
+                        <input type="number" name="away5" value="0">
                     </td>
                 </tr>
             </table>                   
