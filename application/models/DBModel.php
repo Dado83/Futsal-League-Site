@@ -10,20 +10,47 @@ class DBModel extends CI_Model
         return $query->result();
     }
 
-    public function getTable($table, $id = 11)
+    public function getTable($table, $isShortName = FALSE, $id = 11)
     {
-        $sql = <<<EOT
-        SELECT CONCAT(teams.team_name, ' ', teams.team_city) AS team,
-        $table.games_played,
-        $table.games_won,
-        $table.games_drew,
-        $table.games_lost,
-        $table.goals_scored,
-        $table.goals_conceded,
-        $table.goals_scored - $table.goals_conceded AS g_diff,
-        $table.points FROM $table JOIN teams ON $table.id = teams.id WHERE NOT teams.id IN (10, $id)
-        ORDER BY $table.points DESC, g_diff DESC, $table.goals_scored DESC
+        if ($isShortName) {
+            $sql = <<<EOT
+            SELECT $table.id, teams.team_name AS team,
+            $table.games_played,
+            $table.games_won,
+            $table.games_drew,
+            $table.games_lost,
+            CONCAT ($table.goals_scored, ':', $table.goals_conceded) AS goals,
+            $table.goals_scored - $table.goals_conceded AS g_diff,
+            $table.points FROM $table JOIN teams ON $table.id = teams.id WHERE NOT teams.id IN (10, $id)
+            ORDER BY $table.points DESC, g_diff DESC, $table.goals_scored DESC
 EOT;
+        } else {
+            $sql = <<<EOT
+            SELECT CONCAT(teams.team_name, ' ', teams.team_city) AS team,
+            $table.games_played,
+            $table.games_won,
+            $table.games_drew,
+            $table.games_lost,
+            CONCAT ($table.goals_scored, ':', $table.goals_conceded) AS goals,
+            $table.goals_scored - $table.goals_conceded AS g_diff,
+            $table.points FROM $table JOIN teams ON $table.id = teams.id WHERE NOT teams.id IN (10, $id)
+            ORDER BY $table.points DESC, g_diff DESC, $table.goals_scored DESC
+EOT;
+        }
+        $query = $this->db->query($sql);
+        return $query->result();
+    }
+
+    public function getTeamByID($id)
+    {
+        $sql = "SELECT * FROM teams WHERE id = $id";
+        $query = $this->db->query($sql);
+        return $query->row();
+    }
+    
+    public function getResultsByID($results, $id)
+    {
+        $sql = "SELECT * FROM $results WHERE home_teamid = $id OR away_teamid = $id ORDER BY m_day";
         $query = $this->db->query($sql);
         return $query->result();
     }
@@ -58,7 +85,7 @@ EOT;
 
     public function getResults($results)
     {
-        $sql = "SELECT * FROM $results";
+        $sql = "SELECT * FROM $results ORDER BY m_day";
         $query = $this->db->query($sql);
         return $query->result();
     }

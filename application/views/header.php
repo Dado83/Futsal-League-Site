@@ -15,15 +15,17 @@
         <div class="fpLogo">
             <a href="/"><img id="logo" src="/images/grb.png"/></a>
             <span class="title1">Fair Play</span><span class="title2">Liga Budućih Šampiona</span>
-            <span class="links"><a href="/liga/rezultati">Rezultati</a>, <a href="/liga/raspored">Raspored</a></span>
+            <span class="links"><a href="/liga/rezultati">Rezultati</a> <a href="/liga/raspored">Raspored</a></span>
         </div>
         <ul class="logos">
             <?php
             foreach ($teams as $t) {
                 echo <<<EOT
                 <li class='logosLi'>
+                <a href='/liga/ekipa/$t->id'>
                 <img src='/images/logos/$t->id.png'>
                 <p>$t->team_name</p>
+                </a>
                 </li>
 EOT;
             }

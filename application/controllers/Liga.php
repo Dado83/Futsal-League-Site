@@ -14,11 +14,11 @@ class Liga extends CI_Controller
     {
         $data['title'] = 'Fair Play LBŠ';
         $data['teams'] = $this->DBModel->getTeams();
-        $data['table5'] = $this->DBModel->getTable('table5');
-        $data['table6'] = $this->DBModel->getTable('table6');
-        $data['table7'] = $this->DBModel->getTable('table7');
-        $data['table8'] = $this->DBModel->getTable('table8');
-        $data['table9'] = $this->DBModel->getTable('table9', 7);
+        $data['table5'] = $this->DBModel->getTable('table5', TRUE);
+        $data['table6'] = $this->DBModel->getTable('table6', TRUE);
+        $data['table7'] = $this->DBModel->getTable('table7', TRUE);
+        $data['table8'] = $this->DBModel->getTable('table8', TRUE);
+        $data['table9'] = $this->DBModel->getTable('table9', TRUE, 7);
         $data['results5'] = $this->DBModel->getLastResults('results5')['results'];
         $data['results6'] = $this->DBModel->getLastResults('results6')['results'];
         $data['results7'] = $this->DBModel->getLastResults('results7')['results'];
@@ -177,6 +177,21 @@ class Liga extends CI_Controller
         }
 
         redirect('/liga/admin', 'refresh');
+    }
+
+    public function ekipa($id)
+    {
+        $data['teams'] = $this->DBModel->getTeams();
+        $data['team'] = $this->DBModel->getTeamByID($id);
+        $data['results9'] = $this->DBModel->getResultsByID('results9', $id);
+        $data['results8'] = $this->DBModel->getResultsByID('results8', $id);
+        $data['results7'] = $this->DBModel->getResultsByID('results7', $id);
+        $data['results6'] = $this->DBModel->getResultsByID('results6', $id);
+        $data['results5'] = $this->DBModel->getResultsByID('results5', $id);
+        $data['title'] = $data['team']->team_name;
+
+        $this->load->view('header', $data);
+        $this->load->view('team', $data);
     }
 
     public function test()
