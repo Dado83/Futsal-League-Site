@@ -1,5 +1,5 @@
 <img class="teamLogo" src="/images/logos_big/<?php echo $team->id ?>.png" alt="team logo"/>
-<table>   
+<table class="teamInfo">   
     <tr>
         <td>Ekipa</td>
         <td><?php echo $team->team_name ?></td>
@@ -21,7 +21,7 @@
         <td><?php echo $team->kit_color ?></td>
     </tr>
 </table>
-<table>
+<table class="teamResults">
     <?php
     if ($results9 == NULL) {
         echo "<i><p>ne takmici se u 2009. godistu</p></i>";
@@ -50,7 +50,7 @@ EOT;
     }
     ?>
 </table>
-<table>
+<table class="teamResults">
     <p>2008. godiste</p>
     <tr>
         <th>kolo</th>
@@ -72,7 +72,7 @@ EOT;
     }
     ?>
 </table>
-<table>
+<table class="teamResults">
     <p>2007. godiste</p>
     <tr>
         <th>kolo</th>
@@ -94,7 +94,7 @@ EOT;
     }
     ?>
 </table>
-<table>
+<table class="teamResults">
     <p>2006. godiste</p>
     <tr>
         <th>kolo</th>
@@ -116,7 +116,7 @@ EOT;
     }
     ?>
 </table>
-<table>
+<table class="teamResults">
     <p>2005. godiste</p>
     <tr>
         <th>kolo</th>

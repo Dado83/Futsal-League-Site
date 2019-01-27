@@ -193,6 +193,29 @@ class Liga extends CI_Controller
         $this->load->view('header', $data);
         $this->load->view('team', $data);
     }
+    
+    public function bilten()
+    {
+        $data['title'] = 'Bilten';
+        $data['teams'] = $this->DBModel->getTeams();
+        $data['table5'] = $this->DBModel->getTable('table5');
+        $data['table6'] = $this->DBModel->getTable('table6');
+        $data['table7'] = $this->DBModel->getTable('table7');
+        $data['table8'] = $this->DBModel->getTable('table8');
+        $data['table9'] = $this->DBModel->getTable('table9', FALSE, 7);
+        $data['results5'] = $this->DBModel->getLastResults('results5')['results'];
+        $data['results6'] = $this->DBModel->getLastResults('results6')['results'];
+        $data['results7'] = $this->DBModel->getLastResults('results7')['results'];
+        $data['results8'] = $this->DBModel->getLastResults('results8')['results'];
+        $data['results9'] = $this->DBModel->getLastResults('results9')['results'];
+        $data['lastMday'] = $this->DBModel->getLastResults('results5')['lastMday'];
+        $data['nextFixture'] = $this->DBModel->getNextFixture();
+        $data['nextMday'] = $data['lastMday'] + 1;
+        $data['notPlaying'] = $this->DBModel->getNotPlaying($data['lastMday'] + 1);
+        $data['nextGameDate'] = $this->DBModel->getNextGameDate($data['nextMday']);
+        
+        $this->load->view('newsletter', $data);
+    }
 
     public function test()
     {

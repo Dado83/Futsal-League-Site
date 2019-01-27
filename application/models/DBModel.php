@@ -175,7 +175,7 @@ EOT;
         } else {
             $sql = "SELECT * FROM notplaying WHERE m_day = $mday";
             $query = $this->db->query($sql);
-            return $query->result();
+            return $query->row();
         }
     }
 

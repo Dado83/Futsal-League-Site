@@ -17,7 +17,7 @@
             </tr >
 EOT;
         }
-        ?>
+        ?>       
         <?php
         foreach ($notPlaying as $np) {
             echo <<<EOT
@@ -29,6 +29,7 @@ EOT;
         ?>
     </table>
 </div>
+<hr>
 <div class="content">
     <div class="results">
         <p><?php echo $lastMday ?>. kolo (2009. godište)</p>
