@@ -1,13 +1,17 @@
-<table>      
-    <p>2009 godiste</p>
-    <td>kolo</td>
-    <td>domacin</td>
-    <td>gost</td>
-    <td colspan="2">rezultat</td>
-</tr>
-<?php
-foreach ($results9 as $row) {
-    echo <<<EOT
+<div class="resutsPage">
+    <table>      
+        <tr>
+            <td colspan="3">2009. godište</td>
+        </tr>
+        <tr>
+            <td>kolo</td>
+            <td>domaćin</td>
+            <td>gost</td>
+            <td colspan="2">rezultat</td>
+        </tr>
+        <?php
+        foreach ($results9 as $row) {
+            echo <<<EOT
         <tr>
         <td>$row->m_day</td>
         <td>$row->home_team</td>
@@ -16,20 +20,22 @@ foreach ($results9 as $row) {
         <td>$row->goals_away</td>
         </tr>
 EOT;
-}
-?>
-</table>
-<table>      
-    <p>2008 godiste</p>
-    <tr>
-        <td>kolo</td>
-        <td>domacin</td>
-        <td>gost</td>
-        <td colspan="2">rezultat</td>
-    </tr>
-    <?php
-    foreach ($results8 as $row) {
-        echo <<<EOT
+        }
+        ?>
+    </table>
+    <table>      
+        <tr>
+            <td colspan="3">2008. godište</td>
+        </tr>
+        <tr>
+            <td>kolo</td>
+            <td>domaćin</td>
+            <td>gost</td>
+            <td colspan="2">rezultat</td>
+        </tr>
+        <?php
+        foreach ($results8 as $row) {
+            echo <<<EOT
         <tr>
         <td>$row->m_day</td>
         <td>$row->home_team</td>
@@ -38,20 +44,22 @@ EOT;
         <td>$row->goals_away</td>
         </tr>
 EOT;
-    }
-    ?>
-</table>
-<table>
-    <p>2007 godiste</p>     
-    <tr>
-        <td>kolo</td>
-        <td>domacin</td>
-        <td>gost</td>
-        <td colspan="2">rezultat</td>
-    </tr>
-    <?php
-    foreach ($results7 as $row) {
-        echo <<<EOT
+        }
+        ?>
+    </table>
+    <table>
+        <tr>
+            <td colspan="3">2007. godište</td>
+        </tr>
+        <tr>
+            <td>kolo</td>
+            <td>domaćin</td>
+            <td>gost</td>
+            <td colspan="2">rezultat</td>
+        </tr>
+        <?php
+        foreach ($results7 as $row) {
+            echo <<<EOT
         <tr>
         <td>$row->m_day</td>
         <td>$row->home_team</td>
@@ -60,20 +68,22 @@ EOT;
         <td>$row->goals_away</td>
         </tr>
 EOT;
-    }
-    ?>
-</table>
-<table>     
-    <p>2006 godiste</p>
-    <tr>
-        <td>kolo</td>
-        <td>domacin</td>
-        <td>gost</td>
-        <td colspan="2">rezultat</td>
-    </tr>
-    <?php
-    foreach ($results6 as $row) {
-        echo <<<EOT
+        }
+        ?>
+    </table>
+    <table>     
+        <tr>
+            <td colspan="3">2006. godište</td>
+        </tr>
+        <tr>
+            <td>kolo</td>
+            <td>domaćin</td>
+            <td>gost</td>
+            <td colspan="2">rezultat</td>
+        </tr>
+        <?php
+        foreach ($results6 as $row) {
+            echo <<<EOT
         <tr>
         <td>$row->m_day</td>
         <td>$row->home_team</td>
@@ -82,20 +92,22 @@ EOT;
         <td>$row->goals_away</td>
         </tr>
 EOT;
-    }
-    ?>
-</table>
-<table>      
-    <p>2005 godiste</p>
-    <tr>
-        <td>kolo</td>
-        <td>domacin</td>
-        <td>gost</td>
-        <td colspan="2">rezultat</td>
-    </tr>
-    <?php
-    foreach ($results5 as $row) {
-        echo <<<EOT
+        }
+        ?>
+    </table>
+    <table>      
+        <tr>
+            <td colspan="3">2005. godište</td>
+        </tr>
+        <tr>
+            <td>kolo</td>
+            <td>domaćin</td>
+            <td>gost</td>
+            <td colspan="2">rezultat</td>
+        </tr>
+        <?php
+        foreach ($results5 as $row) {
+            echo <<<EOT
         <tr>
         <td>$row->m_day</td>
         <td>$row->home_team</td>
@@ -104,6 +116,7 @@ EOT;
         <td>$row->goals_away</td>
         </tr>
 EOT;
-    }
-    ?>
-</table>
+        }
+        ?>
+    </table>
+</div>

@@ -28,6 +28,7 @@ class Liga extends CI_Controller
         $data['nextFixture'] = $this->DBModel->getNextFixture();
         $data['nextMday'] = $data['lastMday'] + 1;
         $data['notPlaying'] = $this->DBModel->getNotPlaying($data['lastMday'] + 1);
+        $data['notPlayingLastMday'] = $this->DBModel->getNotPlaying($data['lastMday']);
         $data['nextGameDate'] = $this->DBModel->getNextGameDate($data['nextMday']);
 
         $this->load->view('header', $data);
@@ -212,6 +213,7 @@ class Liga extends CI_Controller
         $data['nextFixture'] = $this->DBModel->getNextFixture();
         $data['nextMday'] = $data['lastMday'] + 1;
         $data['notPlaying'] = $this->DBModel->getNotPlaying($data['lastMday'] + 1);
+        $data['notPlayingLastMday'] = $this->DBModel->getNotPlaying($data['lastMday']);
         $data['nextGameDate'] = $this->DBModel->getNextGameDate($data['nextMday']);
         
         $this->load->view('newsletter', $data);

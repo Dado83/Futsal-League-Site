@@ -1,7 +1,7 @@
 <img class="teamLogo" src="/images/logos_big/<?php echo $team->id ?>.png" alt="team logo"/>
 <table class="teamInfo">   
     <tr>
-        <td>Ekipa</td>
+        <td>Ime</td>
         <td><?php echo $team->team_name ?></td>
     </tr>
     <tr>
@@ -27,10 +27,10 @@
         echo "<i><p>ne takmici se u 2009. godistu</p></i>";
     } else {
         echo <<<EOT
-        <p>2009. godiste</p>
+        <p style='font-weight:bold; font-style:italic;'>2009. godište</p>
         <tr>
         <th>kolo</th>
-        <th>domacin</th>
+        <th>domaćin</th>
         <th>gost</th>
         <th colspan="2">rezultat</th>
         </tr>
@@ -51,10 +51,10 @@ EOT;
     ?>
 </table>
 <table class="teamResults">
-    <p>2008. godiste</p>
+    <p style='font-weight:bold; font-style:italic;'>2008. godište</p>
     <tr>
         <th>kolo</th>
-        <th>domacin</th>
+        <th>domaćin</th>
         <th>gost</th>
         <th colspan="2">rezultat</th>
     </tr>
@@ -73,10 +73,10 @@ EOT;
     ?>
 </table>
 <table class="teamResults">
-    <p>2007. godiste</p>
+    <p style='font-weight:bold; font-style:italic;'>2007. godište</p>
     <tr>
         <th>kolo</th>
-        <th>domacin</th>
+        <th>domaćin</th>
         <th>gost</th>
         <th colspan="2">rezultat</th>
     </tr>
@@ -95,10 +95,10 @@ EOT;
     ?>
 </table>
 <table class="teamResults">
-    <p>2006. godiste</p>
+    <p style='font-weight:bold; font-style:italic;'>2006. godište</p>
     <tr>
         <th>kolo</th>
-        <th>domacin</th>
+        <th>domaćin</th>
         <th>gost</th>
         <th colspan="2">rezultat</th>
     </tr>
@@ -117,10 +117,10 @@ EOT;
     ?>
 </table>
 <table class="teamResults">
-    <p>2005. godiste</p>
+    <p style='font-weight:bold; font-style:italic;'>2005. godište</p>
     <tr>
         <th>kolo</th>
-        <th>domacin</th>
+        <th>domaćin</th>
         <th>gost</th>
         <th colspan="2">rezultat</th>
     </tr>

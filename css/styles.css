@@ -15,6 +15,7 @@
 
 body {
     min-width: 450px;
+    background-image: linear-gradient(to bottom right, var(--color2), var(--color4), var(--color3));
 }
 
 .content {
@@ -118,7 +119,8 @@ a:link, a:visited {
 }
 
 a:hover {
-    color: var(--color2);
+    font-weight: bold;
+    color: black;
 }
 
 .logos li {
@@ -135,14 +137,16 @@ a:hover {
 }
 
 .logosLi:hover p {
-    color: var(--color2);
+    color: black;
+    text-shadow: 0 6px 5px black;
 }
 
 .table {
     margin-left: 10px; 
-    margin-bottom: 15px;
-    min-width: 430px;
+    margin-bottom: 100px;
     box-shadow: 0 5px 10px;
+    position: relative;
+    top: 55px;
 }
 
 .table p {
@@ -160,8 +164,9 @@ a:hover {
 }
 
 .table table {
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: whitesmoke;
     border-collapse: collapse;
+    min-width: 500px;
 }
 
 .table th, .table td {
@@ -191,16 +196,17 @@ a:hover {
     background-color: var(--color2);
 }
 
-.table td:nth-of-type(10) {
+.table td:nth-of-type(9) {
     font-weight: bold;
 }
 
 .results table {
-    font-size: var(--fontSize20);
+    font-size: var(--fontSize25);
     margin-bottom: 20px; 
     border-collapse: collapse;
-    background-color:  rgba(255, 255, 255, 0.4);
+    background-color: whitesmoke;
     box-shadow: 0 5px 10px;
+    min-width: 450px;
 }
 
 .results tr td {
@@ -209,13 +215,11 @@ a:hover {
 }
 
 .results td:first-of-type {
-    text-align: right;
-    padding-right: 10px;
+    text-align: left;
 }
 
 .results td:last-of-type {
-    text-align: left;
-    padding-left: 10px;
+    text-align: right;
 }
 
 .results td:nth-of-type(n+2):nth-of-type(-n+4) {
@@ -225,7 +229,7 @@ a:hover {
 }
 
 .results p {
-    text-align: left;
+    text-align: right;
     font-weight: bold;
     font-size: var(--fontSize20);
 }
@@ -233,6 +237,24 @@ a:hover {
 .results p.results {
     text-decoration: underline;
     font-size:  var(--fontSize25);
+}
+
+.results td:first-of-type img {
+    width: 18px;
+    height: 18px;
+    position: relative;
+    bottom: -3px;
+    float: left;
+    padding-right: 5px;
+}
+
+.results td:last-of-type img {
+    width: 18px;
+    height: 18px;
+    position: relative;
+    bottom: -3px;
+    float: right;
+    padding-left: 5px;
 }
 
 #fixture {
@@ -251,7 +273,8 @@ a:hover {
     text-align: right;
     font-size: var(--fontSize25);
     color: var(--color1);
-    padding-right: 10px;
+    padding-right: 10px; 
+    text-shadow: 0 5px 10px black;
 }
 
 .nextGameA {
@@ -259,6 +282,7 @@ a:hover {
     font-size: var(--fontSize25);
     color: var(--color1);
     padding-left: 10px;
+    text-shadow: 0 5px 10px black;
 }
 
 .nextGameImg {
@@ -270,9 +294,10 @@ a:hover {
 }
 
 .nextGameTime {
-    font-size: var(--fontSize15);
-    color: var(--color4);
-    padding: 0 20px
+    font-size: var(--fontSize20);
+    color: var(--color1);
+    padding: 0 20px;
+    text-shadow: 0 5px 10px black;
 }
 
 .notPlaying {
@@ -284,6 +309,8 @@ a:hover {
 
 .nextMday {
     text-align: center;
+    text-decoration: underline;
+    font-weight: bold;
 }
 
 .footer {
@@ -298,7 +325,7 @@ a:hover {
 }
 
 .teamInfo {
-    background: var(--color2);
+
 }
 
 .teamInfo td { 
@@ -314,12 +341,13 @@ a:hover {
 }
 
 .teamResults {
-    background: var(--color4);
     padding: 0 5px;
+    border-collapse: collapse;
 }
 
 .teamResults td {
     padding: 1px 5px;
+    border-bottom: 1px solid black;
 }
 
 .teamResults td:nth-child(n+4):nth-child(-n+5) {
@@ -332,8 +360,19 @@ a:hover {
 }
 
 .resultsNL td {
-    padding-right: 15px;
     font-size: 18px;
+}
+
+.resultsNL td:nth-of-type(2) {
+    font-size: 18px;
+    font-weight: bold;
+    padding-left: 14px;
+}
+
+.resultsNL td:nth-of-type(4) {
+    font-size: 18px;
+    font-weight: bold;
+    padding-right: 14px;
 }
 
 .tableNL {
@@ -381,15 +420,38 @@ a:hover {
 }
 
 .nextGameNL td {
-    padding: 2px 5px;
+    padding: 2px 8px;
     font-size: 18px;
 }
+
+.resutsPage {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-items: center;
+}
+
+.resutsPage td:nth-child(n+4):nth-child(-n+5) {
+    text-align: center;
+    font-weight: bold;
+} 
+
+.resutsPage table {
+    padding-bottom: 40px;
+}
+
+.pairs td {
+    padding-right: 5px;
+} 
 
 
 @media screen and (max-width: 800px) {
     :root {
         --gridTemplateColumns: auto;
         --clubLogoWidth: 200px;
+    }
+    
+    .resutsPage {
+        font-size: 14px
     }
 }
 
@@ -405,8 +467,12 @@ a:hover {
         --clubLogoWidth: 100px;
     }
 
-    .table {
-        min-width: 365px;
+    .table table {
+        min-width: 400px;
+    }
+
+    .results table {
+        min-width: 400px;
     }
 
     .logos img {
@@ -423,8 +489,27 @@ a:hover {
         font-size: 8px;
     }
 
-    body {
+    .results td:first-of-type img {
+        width: 18px;
+        height: 18px;
+        position: relative;
+        top: 0;
+        float: left;
+        padding-right: 5px;
+    }
 
+    .results td:last-of-type img {
+        width: 18px;
+        height: 18px;
+        position: relative;
+        top: 0;
+        float: right;
+        padding-left: 5px;
+    }
+    
+    .resutsPage {
+        font-size: 12px;
+        min-width: 500px
     }
 
 }

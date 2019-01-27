@@ -19,13 +19,11 @@ EOT;
         }
         ?>       
         <?php
-        foreach ($notPlaying as $np) {
-            echo <<<EOT
+        echo <<<EOT
             <tr>
-            <td class="notPlaying" colspan='5'>$np->team pauzira</td>           
+            <td class="notPlaying" colspan='5'>$notPlaying->team pauzira</td>           
             </tr>
 EOT;
-        }
         ?>
     </table>
 </div>
@@ -38,11 +36,11 @@ EOT;
             foreach ($results9 as $r) {
                 echo <<<EOT
             <tr>
-            <td>$r->home_team</td>
+            <td><img src='/images/logos/$r->home_teamid.png' alt='grb'>$r->home_team</td>
             <td>$r->goals_home</td>
             <td> - </td>
             <td>$r->goals_away</td>
-            <td>$r->away_team</td>
+            <td>$r->away_team<img src='/images/logos/$r->away_teamid.png' alt='grb'></td>
             </tr>
 EOT;
             }
@@ -50,7 +48,6 @@ EOT;
         </table>
     </div>
     <div class="table">
-        <p>Tabela</p>
         <table>
             <tr>
                 <th>#</th>
@@ -91,11 +88,11 @@ EOT;
             foreach ($results8 as $r) {
                 echo <<<EOT
             <tr>
-            <td>$r->home_team</td>
+            <td><img src='/images/logos/$r->home_teamid.png' alt='grb'>$r->home_team</td>
             <td>$r->goals_home</td>
             <td> - </td>
             <td>$r->goals_away</td>
-            <td>$r->away_team</td>
+            <td>$r->away_team<img src='/images/logos/$r->away_teamid.png' alt='grb'></td>
             </tr>
 EOT;
             }
@@ -103,7 +100,6 @@ EOT;
         </table>
     </div>
     <div class="table">
-        <p>Tabela</p>
         <table>
             <tr>
                 <th>#</th>
@@ -144,11 +140,11 @@ EOT;
             foreach ($results7 as $r) {
                 echo <<<EOT
             <tr>
-            <td>$r->home_team</td>
+            <td><img src='/images/logos/$r->home_teamid.png' alt='grb'>$r->home_team</td>
             <td>$r->goals_home</td>
             <td> - </td>
             <td>$r->goals_away</td>
-            <td>$r->away_team</td>
+            <td>$r->away_team<img src='/images/logos/$r->away_teamid.png' alt='grb'></td>
             </tr>
 EOT;
             }
@@ -156,7 +152,6 @@ EOT;
         </table>
     </div>
     <div class="table">
-        <p>Tabela</p>
         <table>
             <tr>
                 <th>#</th>
@@ -197,11 +192,11 @@ EOT;
             foreach ($results6 as $r) {
                 echo <<<EOT
             <tr>
-            <td>$r->home_team</td>
+            <td><img src='/images/logos/$r->home_teamid.png' alt='grb'>$r->home_team</td>
             <td>$r->goals_home</td>
             <td> - </td>
             <td>$r->goals_away</td>
-            <td>$r->away_team</td>
+            <td>$r->away_team<img src='/images/logos/$r->away_teamid.png' alt='grb'></td>
             </tr>
 EOT;
             }
@@ -209,7 +204,6 @@ EOT;
         </table>
     </div>
     <div class="table">
-        <p>Tabela</p>
         <table>
             <tr>
                 <th>#</th>
@@ -250,11 +244,11 @@ EOT;
             foreach ($results5 as $r) {
                 echo <<<EOT
             <tr>
-            <td>$r->home_team</td>
+            <td><img src='/images/logos/$r->home_teamid.png' alt='grb'>$r->home_team</td>
             <td>$r->goals_home</td>
             <td> - </td>
             <td>$r->goals_away</td>
-            <td>$r->away_team</td>
+            <td>$r->away_team<img src='/images/logos/$r->away_teamid.png' alt='grb'></td>
             </tr>
 EOT;
             }
@@ -262,7 +256,6 @@ EOT;
         </table>
     </div>
     <div class="table">
-        <p>Tabela</p>
         <table>
             <tr>
                 <th>#</th>

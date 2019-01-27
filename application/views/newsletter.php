@@ -14,7 +14,7 @@
 <p>2. Raspored utakmica <?php echo $nextMday ?>. kola</p>
 <br/>
 <p>ad 1)</p>  
-<p style="font-size:18px;"><?php echo $notPlaying->team ?> pauzira</p>      
+<p style="font-size:18px;"><?php echo $notPlayingLastMday->team ?> pauzira</p>      
 <div class="resultsNL">
     <p>2009. godište</p>
     <table>

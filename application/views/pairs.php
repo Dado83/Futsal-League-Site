@@ -1,8 +1,8 @@
-<table>
+<table class="pairs">
     <p>Raspored:</p>
     <tr>
         <th>kolo</th>
-        <th>domacin</th>
+        <th>domaćin</th>
         <th>gost</th>
         <th>termin</th>            
     </tr>
@@ -19,7 +19,7 @@ EOT;
     }
     ?>
 </table>
-<table>
+<table class="pairs">
     <p>Slobodne ekipe:</p>
     <tr>
         <th>kolo</th>
@@ -36,4 +36,4 @@ EOT;
     }
     ?>
 </table>
-<p>Ekipa NK Natron se ne takmici u 2009. godistu</p>
+<p>NK Natron ne nastupa u 2009. godištu</p>
