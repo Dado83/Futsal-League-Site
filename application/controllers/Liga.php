@@ -86,18 +86,6 @@ class Liga extends CI_Controller
         $this->load->view('gameInput', $data);
     }
 
-    public function formUp($id)
-    {
-        $this->load->helper('form');
-        $data['title'] = 'Unos kola';
-        $data['teams'] = $this->DBModel->getTeams();
-        $data['game'] = $this->DBModel->getGameByID($id);
-        $data['lastMday'] = $this->DBModel->getLastResults('results5')['lastMday'];
-
-        $this->load->view('header', $data);
-        $this->load->view('gameUpdate', $data);
-    }
-
     public function unosKola()
     {
         $data['title'] = 'Admin';
@@ -142,17 +130,6 @@ class Liga extends CI_Controller
         redirect('/liga/admin', 'refresh');
     }
 
-    public function ispravkaKola()
-    {
-//        $data['title'] = 'Admin';
-//        $data['teams'] = $this->DBModel->getTeams();
-//        $data['matchPairs'] = $this->DBModel->getMatchPairsNotPlayed();
-//        $data['results'] = $this->DBModel->getResults('results7');
-//
-//        $this->load->view('header', $data);
-//        $this->load->view('admin', $data);
-    }
-
     public function brisanjeKola($id)
     {
         $data['title'] = 'Admin';
@@ -194,7 +171,7 @@ class Liga extends CI_Controller
         $this->load->view('header', $data);
         $this->load->view('team', $data);
     }
-    
+
     public function bilten()
     {
         $data['title'] = 'Bilten';
@@ -215,7 +192,7 @@ class Liga extends CI_Controller
         $data['notPlaying'] = $this->DBModel->getNotPlaying($data['lastMday'] + 1);
         $data['notPlayingLastMday'] = $this->DBModel->getNotPlaying($data['lastMday']);
         $data['nextGameDate'] = $this->DBModel->getNextGameDate($data['nextMday']);
-        
+
         $this->load->view('newsletter', $data);
     }
 

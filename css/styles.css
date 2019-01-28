@@ -119,7 +119,6 @@ a:link, a:visited {
 }
 
 a:hover {
-    font-weight: bold;
     color: black;
 }
 
@@ -216,10 +215,12 @@ a:hover {
 
 .results td:first-of-type {
     text-align: left;
+    width: 50%;
 }
 
 .results td:last-of-type {
     text-align: right;
+    width: 50%;
 }
 
 .results td:nth-of-type(n+2):nth-of-type(-n+4) {
@@ -232,11 +233,6 @@ a:hover {
     text-align: right;
     font-weight: bold;
     font-size: var(--fontSize20);
-}
-
-.results p.results {
-    text-decoration: underline;
-    font-size:  var(--fontSize25);
 }
 
 .results td:first-of-type img {
@@ -272,17 +268,17 @@ a:hover {
 .nextGameH {
     text-align: right;
     font-size: var(--fontSize25);
-    color: var(--color1);
+    color: var(--color2);
     padding-right: 10px; 
-    text-shadow: 0 5px 10px black;
+    text-shadow: 1px 0 var(--color1), 0 1px var(--color1), -1px 0 var(--color1), 0 -1px var(--color1);
 }
 
 .nextGameA {
     text-align: left;
     font-size: var(--fontSize25);
-    color: var(--color1);
+    color: var(--color2);
     padding-left: 10px;
-    text-shadow: 0 5px 10px black;
+    text-shadow: 1px 0 var(--color1), 0 1px var(--color1), -1px 0 var(--color1), 0 -1px var(--color1);
 }
 
 .nextGameImg {
@@ -297,7 +293,6 @@ a:hover {
     font-size: var(--fontSize20);
     color: var(--color1);
     padding: 0 20px;
-    text-shadow: 0 5px 10px black;
 }
 
 .notPlaying {
@@ -309,7 +304,6 @@ a:hover {
 
 .nextMday {
     text-align: center;
-    text-decoration: underline;
     font-weight: bold;
 }
 

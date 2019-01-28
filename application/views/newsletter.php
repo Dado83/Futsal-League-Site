@@ -3,6 +3,7 @@
     <style>
         body {
             margin: 80px 0 100px 30px;
+            background: white;
         }
     </style>
 </head>
