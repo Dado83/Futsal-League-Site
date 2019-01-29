@@ -2,7 +2,7 @@
     <table class="nextGame">
         <?php
         echo "
-            <tr>
+            <tr>            
             <td class='nextMday' colspan='5'>$nextMday. kolo ($nextGameDate->game_date)</td>
             </tr>
             ";
@@ -21,7 +21,10 @@ EOT;
         <?php
         echo <<<EOT
             <tr>
-            <td class="notPlaying" colspan='5'>$notPlaying->team pauzira</td>           
+            <td class="notPlaying" colspan='3'>$notPlaying->team pauzira</td>
+            <td colspan='2'>
+            <span class='links'><a href='/liga/rezultati'>Rezultati</a> <a href='/liga/raspored'>Raspored</a></span>
+            </td>
             </tr>
 EOT;
         ?>

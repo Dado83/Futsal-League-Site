@@ -80,7 +80,6 @@ body {
 
 .links {
     float: right;
-    padding: 0 25px;
 }
 
 .links a {
@@ -437,15 +436,54 @@ a:hover {
     padding-right: 5px;
 } 
 
+.form {
+    font-size: var(--fontSize25);
+}
+
+.form td:first-of-type {
+    font-weight: bold;
+    text-shadow: 1px 1px white;
+}
+
+.form input[type='submit'] {
+    color: blue;
+    float: right;
+}
+
+.login {
+    float: right;
+    padding: 0 20px 0 0;
+}
+
+.login input[type='text'] {
+    font-size: var(--fontSize15);
+    background: var(--color2);
+}
+
+.login input[type='submit'] {
+    background: var(--color4);
+    color: white;
+    border-color: #E67E22;
+    padding: 2px 4px;
+}
+
+.login input[type='submit']:hover {
+    background-color: #d36c0c;
+}
+
 
 @media screen and (max-width: 800px) {
     :root {
         --gridTemplateColumns: auto;
         --clubLogoWidth: 200px;
     }
-    
+
     .resutsPage {
         font-size: 14px
+    }
+
+    .login {
+        display: none;
     }
 }
 
@@ -500,7 +538,7 @@ a:hover {
         float: right;
         padding-left: 5px;
     }
-    
+
     .resutsPage {
         font-size: 12px;
         min-width: 500px

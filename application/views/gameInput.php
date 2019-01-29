@@ -1,4 +1,4 @@
-<div>
+<div class="form">
     <form action="/liga/unosKola" method="POST">
         <fieldset>
             <legend>Unos rezultata <?php echo $game->m_day ?>. kola</legend>
@@ -36,10 +36,10 @@
                         2009
                     </td>
                     <td>
-                        <input type="number" name="home9" value="0">
+                        <input type="number" name="home9" value="0" min="0" max="50">
                     </td>
                     <td>
-                        <input type="number" name="away9" value="0">
+                        <input type="number" name="away9" value="0" min="0" max="50">
                     </td>
                 </tr>
                 <tr>
@@ -47,10 +47,10 @@
                         2008
                     </td>
                     <td>
-                        <input type="number" name="home8" value="0">
+                        <input type="number" name="home8" value="0" min="0" max="50">
                     </td>
                     <td>
-                        <input type="number" name="away8" value="0">
+                        <input type="number" name="away8" value="0" min="0" max="50">
                     </td>
                 </tr>
                 <tr>
@@ -58,10 +58,10 @@
                         2007
                     </td>
                     <td>
-                        <input type="number" name="home7" value="0">
+                        <input type="number" name="home7" value="0" min="0" max="50">
                     </td>
                     <td>
-                        <input type="number" name="away7" value="0">
+                        <input type="number" name="away7" value="0" min="0" max="50">
                     </td>
                 </tr>
                 <tr>
@@ -69,10 +69,10 @@
                         2006
                     </td>
                     <td>
-                        <input type="number" name="home6" value="0">
+                        <input type="number" name="home6" value="0" min="0" max="50">
                     </td>
                     <td>
-                        <input type="number" name="away6" value="0">
+                        <input type="number" name="away6" value="0" min="0" max="50">
                     </td>
                 </tr>
                 <tr>
@@ -80,14 +80,19 @@
                         2005
                     </td>
                     <td>
-                        <input type="number" name="home5" value="0">
+                        <input type="number" name="home5" value="0" min="0" max="50">
                     </td>
                     <td>
-                        <input type="number" name="away5" value="0">
+                        <input type="number" name="away5" value="0" min="0" max="50">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <input type="submit" value="Snimi u bazu">
                     </td>
                 </tr>
             </table>                   
-            <input type="submit" value="Snimi u bazu">
+
         </fieldset>
     </form>
 </div>

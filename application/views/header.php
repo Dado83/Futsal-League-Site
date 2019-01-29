@@ -15,7 +15,11 @@
         <div class="fpLogo">
             <a href="/"><img id="logo" src="/images/grb.png"/></a>
             <span class="title1">Fair Play</span><span class="title2">Liga Budućih Šampiona</span>
-            <span class="links"><a href="/liga/rezultati">Rezultati</a> <a href="/liga/raspored">Raspored</a></span>
+            <form class="login">
+                <input type="text" name="user" size="10" maxlength="20">
+                <input type="text" name="pass" size="10" maxlength="20">
+                <input type="submit" value="Log In">
+            </form>
         </div>
         <ul class="logos">
             <?php
