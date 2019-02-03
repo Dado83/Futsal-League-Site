@@ -8,6 +8,11 @@ class Liga extends CI_Controller
         parent::__construct();
 
         $this->load->model('DBModel');
+        if (!$this->session->ip OR ! get_cookie('time')) {
+            setcookie('time', 'expiry', time() + 600);
+            $this->setSession();
+            $this->DBModel->setVisitor();
+        }
     }
 
     public function index()
@@ -64,15 +69,37 @@ class Liga extends CI_Controller
         $this->load->view('footer', $data);
     }
 
+    public function login()
+    {
+        $user = $this->input->post('user');
+        $pass = $this->input->post('pass');
+        if ($user == 'dado' && $pass == 'liga') {
+            $this->setSession('admin');
+            $this->DBModel->setVisitor('admin');
+            redirect('/', 'refresh');
+        } else {
+            $this->load->view('error');
+        }
+    }
+
+    public function logout()
+    {
+        $this->session->set_userdata('role', '');
+        redirect('/', 'refresh');
+    }
+
     public function admin()
     {
-        $data['title'] = 'Admin';
-        $data['teams'] = $this->DBModel->getTeams();
-        $data['results'] = $this->DBModel->getResults('results7');
-        $data['matchPairs'] = $this->DBModel->getMatchPairsNotPlayed();
-
-        $this->load->view('header', $data);
-        $this->load->view('admin', $data);
+        if ($this->session->role == 'admin') {
+            $data['title'] = 'Admin';
+            $data['teams'] = $this->DBModel->getTeams();
+            $data['results'] = $this->DBModel->getResults('results7');
+            $data['matchPairs'] = $this->DBModel->getMatchPairsNotPlayed();
+            $this->load->view('header', $data);
+            $this->load->view('admin', $data);
+        } else {
+            $this->load->view('error');
+        }
     }
 
     public function formIn($id)
@@ -194,6 +221,33 @@ class Liga extends CI_Controller
         $data['nextGameDate'] = $this->DBModel->getNextGameDate($data['nextMday']);
 
         $this->load->view('newsletter', $data);
+    }
+
+    private function setSession($role = '')
+    {
+        $sessionData = array(
+            'ip' => $this->input->ip_address(),
+            'mobile' => $this->agent->mobile(),
+            'robot' => $this->agent->robot(),
+            'platform' => $this->agent->platform(),
+            'browser' => $this->agent->browser(),
+            'version' => $this->agent->version(),
+            'userAgent' => $this->agent->agent_string()
+        );
+
+        $sessionStartTime = time();
+        $sessionData['startTime'] = $sessionStartTime;
+
+        $cookie = get_cookie('visited');
+        if ($cookie) {
+            $sessionData['newVisitor'] = 0;
+        } else {
+            setcookie('visited', '1');
+            $sessionData['newVisitor'] = 1;
+        }
+
+        $sessionData['role'] = $role;
+        $this->session->set_userdata($sessionData);
     }
 
     public function test()

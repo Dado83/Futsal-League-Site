@@ -12,5 +12,9 @@
         – 3. poluvrijeme svih utakmica, da bi djeca koja su manje igrala u regularnom toku dobila šansu da pokažu svoje umijeće,<br>
         – djevojčice i dječaci u istim timovima, afirmacija ideje da se sport ne dijeli na muški i ženski.</p>
 </div>
+<div style="margin:auto;display:table;">
+    Autor: Dado Lukić<br>
+    &copy; 2014-<?php echo date("Y"); ?>
+</div>
 </body>
 </html>

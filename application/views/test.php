@@ -1,14 +1,11 @@
 <?php
-echo "testing<br><br>";
 
-//$game = $this->DBModel->getGameFromResults(31);
-//$game9 = $this->DBModel->getGame9($game->home_teamid, $game->away_teamid);
-//
-//var_dump($game);
-//echo "<br>";
-//
-//echo $game9->home_team;
-//echo '<br>';
-//echo $game9->away_team;
+echo '<br>';
+echo '<br>';
 
-$this->DBModel->setPlayed(2, 'FALSE');
+foreach ($this->session->userdata() as $a) {
+    echo "<br>$a";
+}
+
+//$this->session->sess_destroy();
+var_dump(get_cookie('time'));

@@ -1,11 +1,11 @@
 <div id="fixture">
     <table class="nextGame">
         <?php
-        echo "
-            <tr>            
-            <td class='nextMday' colspan='5'>$nextMday. kolo ($nextGameDate->game_date)</td>
-            </tr>
-            ";
+        echo <<<EOT
+        <tr>            
+        <td class='nextMday' colspan='5'>$nextMday. kolo ($nextGameDate->game_date)</td>
+        </tr>
+EOT;
         foreach ($nextFixture as $nf) {
             echo <<<EOT
             <tr>

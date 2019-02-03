@@ -47,7 +47,7 @@ EOT;
         $query = $this->db->query($sql);
         return $query->row();
     }
-    
+
     public function getResultsByID($results, $id)
     {
         $sql = "SELECT * FROM $results WHERE home_teamid = $id OR away_teamid = $id ORDER BY m_day";
@@ -261,11 +261,6 @@ EOT;
         $this->db->query($sql_a2);
     }
 
-    public function updateGame()
-    {
-        
-    }
-
     public function deleteGame($results, $table, $id)
     {
         $sql_get = "SELECT * FROM $results WHERE id = $id";
@@ -342,6 +337,42 @@ EOT;
         WHERE id = $away_id
 EOT;
         $this->db->query($sql_a2);
+    }
+
+    public function setVisitor($role = 'NULL')
+    {
+        $ip = $this->session->ip;
+        $mobile = $this->session->mobile;
+        $robot = $this->session->robot;
+        $platform = $this->session->platform;
+        $browser = $this->session->browser;
+        $version = $this->session->version;
+        $userAgent = $this->session->userAgent;
+        $newVisitor = $this->session->newVisitor;
+        $startTime = $this->session->startTime;
+
+        $this->checkIfNULL($ip);
+        $this->checkIfNULL($mobile);
+        $this->checkIfNULL($robot);
+        $this->checkIfNULL($platform);
+        $this->checkIfNULL($browser);
+        $this->checkIfNULL($version);
+        $this->checkIfNULL($userAgent);
+        $this->checkIfNULL($newVisitor);
+        $this->checkIfNULL($startTime);
+
+        $sql = <<<EOT
+        INSERT INTO visitors (ip, mobile, robot, platform, browser, version, user_agent, new_visitor, role, time) 
+        VALUES ('$ip', '$mobile', '$robot', '$platform', '$browser', '$version', '$userAgent', $newVisitor, '$role', $startTime)
+EOT;
+        $this->db->query($sql);
+    }
+
+    private function checkIfNULL(&$value)
+    {
+        if ($value === '') {
+            $value = 'NULL';
+        }
     }
 
 }

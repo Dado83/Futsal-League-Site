@@ -1,3 +1,15 @@
+<div class="info">
+    <p>Admin info:</p>
+    <?php
+    echo '<br>Browser: ' . $this->agent->browser();
+    echo '<br>Version: ' . $this->agent->version();
+    echo '<br>Mobile?: ' . $this->agent->mobile();
+    echo '<br>Robot?: ' . $this->agent->robot();
+    echo '<br>Platform: ' . $this->agent->platform();
+    echo '<br>User agent: ' . $this->agent->agent_string();
+    echo '<br>IP: ' . $this->input->ip_address();
+    ?>
+</div>
 <table>
     <p>Odigrane utakmice:</p>
     <tr>
