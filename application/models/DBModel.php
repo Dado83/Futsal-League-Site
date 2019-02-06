@@ -375,4 +375,11 @@ EOT;
         }
     }
 
+    public function getUser($user)
+    {
+        $sql = "SELECT * FROM users WHERE user = '$user'";
+        $query = $this->db->query($sql);
+        return $query->row();
+    }
+
 }

@@ -7,5 +7,9 @@ foreach ($this->session->userdata() as $a) {
     echo "<br>$a";
 }
 
-//$this->session->sess_destroy();
-var_dump(get_cookie('time'));
+
+
+$query = $this->DBModel->getUser('admin');
+
+echo ($query != NULL) ? $query->password : 'sdf';
+

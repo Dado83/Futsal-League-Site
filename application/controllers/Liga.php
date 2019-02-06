@@ -73,12 +73,14 @@ class Liga extends CI_Controller
     {
         $user = $this->input->post('user');
         $pass = $this->input->post('pass');
-        if ($user == 'dado' && $pass == 'liga') {
+        $query = $this->DBModel->getUser($user);
+        $password = ($query != NULL) ? $query->password : '';
+        if (!password_verify($pass, $password)) {
+            $this->load->view('error');
+        } else {
             $this->setSession('admin');
             $this->DBModel->setVisitor('admin');
             redirect('/', 'refresh');
-        } else {
-            $this->load->view('error');
         }
     }
 
