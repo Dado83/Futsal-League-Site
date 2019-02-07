@@ -76,7 +76,9 @@ class Liga extends CI_Controller
         $query = $this->DBModel->getUser($user);
         $password = ($query != NULL) ? $query->password : '';
         if (!password_verify($pass, $password)) {
-            $this->load->view('error');
+            $this->session->set_flashdata('loginError', 'invalid authentication');
+            redirect('/', 'refresh');
+            //$this->load->view('error');
         } else {
             $this->setSession('admin');
             $this->DBModel->setVisitor('admin');

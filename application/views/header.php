@@ -25,11 +25,12 @@
 EOT;
             } else {
                 echo <<<EOT
-                <form class="login" action="/liga/login" method="POST">
-                <input type="text" name="user" placeholder="username" size="10" maxlength="20">
-                <input type="password" name="pass" placeholder="password" size="10" maxlength="20">
-                <input type="submit" value="Login">
-                </form>
+                <form class = "login" action = "/liga/login" method = "POST">
+                <span style='color:white'>{$this->session->loginError}</span>
+                <input type = "text" name = "user" placeholder = "username" size = "10" maxlength = "20">
+                <input type = "password" name = "pass" placeholder = "password" size = "10" maxlength = "20">
+                <input type = "submit" value = "Login">
+                </form >
 EOT;
             }
             ?>

@@ -3,13 +3,7 @@
 echo '<br>';
 echo '<br>';
 
-foreach ($this->session->userdata() as $a) {
-    echo "<br>$a";
-}
-
-
-
-$query = $this->DBModel->getUser('admin');
-
-echo ($query != NULL) ? $query->password : 'sdf';
+echo <<<E
+<p style='font-weight:bold'>{$this->session->userdata['platform']}</p>
+E;
 
