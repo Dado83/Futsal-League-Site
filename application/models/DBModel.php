@@ -22,7 +22,7 @@ class DBModel extends CI_Model
             CONCAT ($table.goals_scored, ':', $table.goals_conceded) AS goals,
             $table.goals_scored - $table.goals_conceded AS g_diff,
             $table.points FROM $table JOIN teams ON $table.id = teams.id WHERE NOT teams.id IN (10, $id)
-            ORDER BY $table.points DESC, g_diff DESC, $table.goals_scored DESC
+            ORDER BY $table.points DESC, g_diff DESC, $table.goals_scored DESC, team
 EOT;
         } else {
             $sql = <<<EOT
@@ -34,7 +34,7 @@ EOT;
             CONCAT ($table.goals_scored, ':', $table.goals_conceded) AS goals,
             $table.goals_scored - $table.goals_conceded AS g_diff,
             $table.points FROM $table JOIN teams ON $table.id = teams.id WHERE NOT teams.id IN (10, $id)
-            ORDER BY $table.points DESC, g_diff DESC, $table.goals_scored DESC
+            ORDER BY $table.points DESC, g_diff DESC, $table.goals_scored DESC, team
 EOT;
         }
         $query = $this->db->query($sql);
@@ -378,6 +378,12 @@ EOT;
     public function getUser($user)
     {
         $sql = "SELECT * FROM users WHERE user = '$user'";
+        $query = $this->db->query($sql);
+        return $query->row();
+    }
+    
+    public function getMaxMday(){
+        $sql = "SELECT MAX(m_day) as mDay FROM matchpairs";
         $query = $this->db->query($sql);
         return $query->row();
     }

@@ -1,13 +1,16 @@
 <div id="fixture">
     <table class="nextGame">
         <?php
-        echo <<<EOT
+        if ($isLeagueOver) {
+            echo '<h2>Liga je završena. Završnica je na programu 2/3. marta 2019. godine.</h2>';
+        } else {
+            echo <<<EOT
         <tr>            
         <td class='nextMday' colspan='5'>$nextMday. kolo ($nextGameDate->game_date)</td>
         </tr>
 EOT;
-        foreach ($nextFixture as $nf) {
-            echo <<<EOT
+            foreach ($nextFixture as $nf) {
+                echo <<<EOT
             <tr>
             <td class = 'nextGameH'>$nf->home</td>
             <td class = 'nextGameImg'><img src = '/images/logos/$nf->home_team.png' alt = 'grb'></td>
@@ -16,10 +19,8 @@ EOT;
             <td class = 'nextGameA'>$nf->away</td>
             </tr >
 EOT;
-        }
-        ?>       
-        <?php
-        echo <<<EOT
+            }
+            echo <<<EOT
             <tr>
             <td class="notPlaying" colspan='3'>$notPlaying->team pauzira</td>
             <td colspan='2'>
@@ -27,6 +28,7 @@ EOT;
             </td>
             </tr>
 EOT;
+        }
         ?>
     </table>
 </div>

@@ -12,7 +12,13 @@
 <h3>Bilten br. <?php echo $lastMday ?></h3>
 <br/>
 <p>1. Registracija utakmica <?php echo $lastMday ?>. kola</p>
-<p>2. Raspored utakmica <?php echo $nextMday ?>. kola</p>
+<?php
+if ($isLeagueOver) {
+    
+} else {
+    echo "<p>2. Raspored utakmica $nextMday. kola</p>";
+}
+?>
 <br/>
 <p>ad 1)</p>  
 <p style="font-size:18px;"><?php echo $notPlayingLastMday->team ?> pauzira</p>      
@@ -278,13 +284,16 @@ EOT;
 </div>
 <table class="nextGameNL">
     <?php
-    echo "
+    if ($isLeagueOver) {
+        
+    } else {
+        echo "
         <tr>
         <td colspan='5' style='font-weight:bold;'>$nextMday. kolo ($nextGameDate->game_date)</td>
         </tr>
         ";
-    foreach ($nextFixture as $nf) {
-        echo <<<EOT
+        foreach ($nextFixture as $nf) {
+            echo <<<EOT
             <tr>
             <td>$nf->home</td>
             <td> - </td>
@@ -293,13 +302,12 @@ EOT;
             <td>$nf->game_time</td>
             </tr>
 EOT;
-    }
-    ?>       
-    <?php
-    echo "
+        }
+        echo "
         <tr>
         <td colspan='5' style='font-style:italic;'>$notPlaying->team pauzira</td>           
         </tr>
         ";
+    }
     ?>
 </table>

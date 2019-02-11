@@ -35,6 +35,8 @@ class Liga extends CI_Controller
         $data['notPlaying'] = $this->DBModel->getNotPlaying($data['lastMday'] + 1);
         $data['notPlayingLastMday'] = $this->DBModel->getNotPlaying($data['lastMday']);
         $data['nextGameDate'] = $this->DBModel->getNextGameDate($data['nextMday']);
+        $maxMday = $this->DBModel->getMaxMday();
+        $data['isLeagueOver'] = $data['lastMday'] == $maxMday->mDay;
 
         $this->load->view('header', $data);
         $this->load->view('frontPage', $data);
@@ -223,6 +225,8 @@ class Liga extends CI_Controller
         $data['notPlaying'] = $this->DBModel->getNotPlaying($data['lastMday'] + 1);
         $data['notPlayingLastMday'] = $this->DBModel->getNotPlaying($data['lastMday']);
         $data['nextGameDate'] = $this->DBModel->getNextGameDate($data['nextMday']);
+        $maxMday = $this->DBModel->getMaxMday();
+        $data['isLeagueOver'] = $data['lastMday'] == $maxMday->mDay;
 
         $this->load->view('newsletter', $data);
     }
