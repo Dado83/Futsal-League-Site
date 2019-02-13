@@ -381,9 +381,55 @@ EOT;
         $query = $this->db->query($sql);
         return $query->row();
     }
-    
-    public function getMaxMday(){
+
+    public function getMaxMday()
+    {
         $sql = "SELECT MAX(m_day) as mDay FROM matchpairs";
+        $query = $this->db->query($sql);
+        return $query->row();
+    }
+
+    public function getCombinedTable($id)
+    {
+        $sql = <<<EOT
+        SELECT id, CONCAT(team_name,' ', team_city) AS team,
+        (SELECT games_played FROM table5 WHERE id=$id)
+        + (SELECT games_played FROM table6 WHERE id=$id)
+        + (SELECT games_played FROM table7 WHERE id=$id)
+        + (SELECT games_played FROM table8 WHERE id=$id)
+        + (SELECT games_played FROM table9 WHERE id=$id) AS gamesAll,
+        (SELECT games_won FROM table5 WHERE id=$id)
+        + (SELECT games_won FROM table6 WHERE id=$id)
+        + (SELECT games_won FROM table7 WHERE id=$id)
+        + (SELECT games_won FROM table8 WHERE id=$id)
+        + (SELECT games_won FROM table9 WHERE id=$id) AS gamesWon,
+        (SELECT games_drew FROM table5 WHERE id=$id)
+        + (SELECT games_drew FROM table6 WHERE id=$id)
+        + (SELECT games_drew FROM table7 WHERE id=$id)
+        + (SELECT games_drew FROM table8 WHERE id=$id)
+        + (SELECT games_drew FROM table9 WHERE id=$id) AS gamesDrew,
+        (SELECT games_lost FROM table5 WHERE id=$id)
+        + (SELECT games_lost FROM table6 WHERE id=$id)
+        + (SELECT games_lost FROM table7 WHERE id=$id)
+        + (SELECT games_lost FROM table8 WHERE id=$id)
+        + (SELECT games_lost FROM table9 WHERE id=$id) AS gamesLost,
+        (SELECT goals_scored FROM table5 WHERE id=$id)
+        + (SELECT goals_scored FROM table6 WHERE id=$id)
+        + (SELECT goals_scored FROM table7 WHERE id=$id)
+        + (SELECT goals_scored FROM table8 WHERE id=$id)
+        + (SELECT goals_scored FROM table9 WHERE id=$id) AS goalsFor,
+        (SELECT goals_conceded FROM table5 WHERE id=$id)
+        + (SELECT goals_conceded FROM table6 WHERE id=$id)
+        + (SELECT goals_conceded FROM table7 WHERE id=$id)
+        + (SELECT goals_conceded FROM table8 WHERE id=$id)
+        + (SELECT goals_conceded FROM table9 WHERE id=$id) AS goalsAgg,
+        (SELECT points FROM table5 WHERE id=$id)
+        + (SELECT points FROM table6 WHERE id=$id)
+        + (SELECT points FROM table7 WHERE id=$id)
+        + (SELECT points FROM table8 WHERE id=$id)
+        + (SELECT points FROM table9 WHERE id=$id) AS pointsAll
+        FROM teams WHERE id=$id
+EOT;
         $query = $this->db->query($sql);
         return $query->row();
     }

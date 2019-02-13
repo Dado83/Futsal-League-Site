@@ -139,7 +139,7 @@ a:hover {
     text-shadow: 0 6px 5px black;
 }
 
-.table {
+.table, .tableAll {
     margin-left: 10px; 
     margin-bottom: 100px;
     box-shadow: 0 5px 10px;
@@ -153,7 +153,7 @@ a:hover {
     font-size: var(--fontSize15);
 }
 
-.table img {
+.table img, .tableAll img {
     height: 18px;
     width: 18px;
     padding: 0 5px 0 0;
@@ -161,22 +161,22 @@ a:hover {
     bottom: -3px;
 }
 
-.table table {
+.table table, .tableAll table {
     background-color: whitesmoke;
     border-collapse: collapse;
     min-width: 500px;
 }
 
-.table th, .table td {
+.table th, .table td, .tableAll th, .tableAll td {
     text-align: center;
     border-bottom: 1px solid gray;
 }
 
-.table th {
+.table th, .tableAll th {
     font-size: var(--fontSize15);
 }
 
-.table td {
+.table td, .tableAll td {
     font-size: var(--fontSize20);
     padding: 3px 10px
 }
@@ -186,11 +186,24 @@ a:hover {
     padding-left: 5px;
 }
 
+.tableAll th:nth-child(2), .tableAll td:nth-of-type(2), .tableAll td:nth-of-type(3) {
+    text-align: left;
+    padding-left: 5px;
+}
+
 .table tr:nth-of-type(1) {
     background-color: var(--color4);
 }
 
+.tableAll tr:nth-of-type(1) {
+    background-color: var(--color4);
+}
+
 .table tr:nth-of-type(n+2):nth-of-type(-n+5) td:nth-of-type(1) {
+    background-color: var(--color2);
+}
+
+.tableAll tr:nth-of-type(n+2) td:nth-of-type(1) {
     background-color: var(--color2);
 }
 

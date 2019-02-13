@@ -231,6 +231,39 @@ class Liga extends CI_Controller
         $this->load->view('newsletter', $data);
     }
 
+    public function finals()
+    {
+        $data['title'] = 'LBŠ završnica';
+        $data['teams'] = $this->DBModel->getTeams();
+
+        $t1 = $this->DBModel->getCombinedTable(1);
+        $t2 = $this->DBModel->getCombinedTable(2);
+        $t3 = $this->DBModel->getCombinedTable(3);
+        $t4 = $this->DBModel->getCombinedTable(4);
+        $t5 = $this->DBModel->getCombinedTable(5);
+        $t6 = $this->DBModel->getCombinedTable(6);
+        $t7 = $this->DBModel->getCombinedTable(7);
+        $t8 = $this->DBModel->getCombinedTable(8);
+        $t9 = $this->DBModel->getCombinedTable(9);
+
+        $total = array($t1, $t2, $t3, $t4, $t5, $t6, $t7, $t8, $t9);
+
+        function sortByPoints($a, $b)
+        {
+            if ($a->pointsAll == $b->pointsAll) {
+                return 0;
+            }
+            return ($a->pointsAll > $b->pointsAll) ? -1 : 1;
+        }
+
+        usort($total, 'sortByPoints');
+        $data['combinedTable'] = $total;
+
+        $this->load->view('header', $data);
+        $this->load->view('finalFour', $data);
+        $this->load->view('footer', $data);
+    }
+
     private function setSession($role = '')
     {
         $sessionData = array(
