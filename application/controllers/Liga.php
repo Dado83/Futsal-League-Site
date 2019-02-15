@@ -258,90 +258,32 @@ class Liga extends CI_Controller
 
         usort($total, 'sortByPoints');
         $data['combinedTable'] = $total;
-        
+
         $data['t5p1'] = $this->DBModel->getTeamByTablePos('table5', 1);
         $data['t5p2'] = $this->DBModel->getTeamByTablePos('table5', 2);
         $data['t5p3'] = $this->DBModel->getTeamByTablePos('table5', 3);
         $data['t5p4'] = $this->DBModel->getTeamByTablePos('table5', 4);
-        
+
         $data['t6p1'] = $this->DBModel->getTeamByTablePos('table6', 1);
         $data['t6p2'] = $this->DBModel->getTeamByTablePos('table6', 2);
         $data['t6p3'] = $this->DBModel->getTeamByTablePos('table6', 3);
         $data['t6p4'] = $this->DBModel->getTeamByTablePos('table6', 4);
-        
+
         $data['t7p1'] = $this->DBModel->getTeamByTablePos('table7', 1);
         $data['t7p2'] = $this->DBModel->getTeamByTablePos('table7', 2);
         $data['t7p3'] = $this->DBModel->getTeamByTablePos('table7', 3);
         $data['t7p4'] = $this->DBModel->getTeamByTablePos('table7', 4);
-        
+
         $data['t8p1'] = $this->DBModel->getTeamByTablePos('table8', 1);
         $data['t8p2'] = $this->DBModel->getTeamByTablePos('table8', 2);
         $data['t8p3'] = $this->DBModel->getTeamByTablePos('table8', 3);
         $data['t8p4'] = $this->DBModel->getTeamByTablePos('table8', 4);
-        
+
         $data['t9p1'] = $this->DBModel->getTeamByTablePos('table9', 1);
         $data['t9p2'] = $this->DBModel->getTeamByTablePos('table9', 2);
         $data['t9p3'] = $this->DBModel->getTeamByTablePos('table9', 3);
         $data['t9p4'] = $this->DBModel->getTeamByTablePos('table9', 4);
-        
-        $this->load->view('header', $data);
-        $this->load->view('finalFour', $data);
-        $this->load->view('footer', $data);
-    }
-    
-    public function biltenFinals()
-    {
-        $data['title'] = 'LBŠ završnica';
-        $data['teams'] = $this->DBModel->getTeams();
 
-        $t1 = $this->DBModel->getCombinedTable(1);
-        $t2 = $this->DBModel->getCombinedTable(2);
-        $t3 = $this->DBModel->getCombinedTable(3);
-        $t4 = $this->DBModel->getCombinedTable(4);
-        $t5 = $this->DBModel->getCombinedTable(5);
-        $t6 = $this->DBModel->getCombinedTable(6);
-        $t7 = $this->DBModel->getCombinedTable(7);
-        $t8 = $this->DBModel->getCombinedTable(8);
-        $t9 = $this->DBModel->getCombinedTable(9);
-
-        $total = array($t1, $t2, $t3, $t4, $t5, $t6, $t7, $t8, $t9);
-
-        function sortByPoints($a, $b)
-        {
-            if ($a->pointsAll == $b->pointsAll) {
-                return 0;
-            }
-            return ($a->pointsAll > $b->pointsAll) ? -1 : 1;
-        }
-
-        usort($total, 'sortByPoints');
-        $data['combinedTable'] = $total;
-        
-        $data['t5p1'] = $this->DBModel->getTeamByTablePos('table5', 1);
-        $data['t5p2'] = $this->DBModel->getTeamByTablePos('table5', 2);
-        $data['t5p3'] = $this->DBModel->getTeamByTablePos('table5', 3);
-        $data['t5p4'] = $this->DBModel->getTeamByTablePos('table5', 4);
-        
-        $data['t6p1'] = $this->DBModel->getTeamByTablePos('table6', 1);
-        $data['t6p2'] = $this->DBModel->getTeamByTablePos('table6', 2);
-        $data['t6p3'] = $this->DBModel->getTeamByTablePos('table6', 3);
-        $data['t6p4'] = $this->DBModel->getTeamByTablePos('table6', 4);
-        
-        $data['t7p1'] = $this->DBModel->getTeamByTablePos('table7', 1);
-        $data['t7p2'] = $this->DBModel->getTeamByTablePos('table7', 2);
-        $data['t7p3'] = $this->DBModel->getTeamByTablePos('table7', 3);
-        $data['t7p4'] = $this->DBModel->getTeamByTablePos('table7', 4);
-        
-        $data['t8p1'] = $this->DBModel->getTeamByTablePos('table8', 1);
-        $data['t8p2'] = $this->DBModel->getTeamByTablePos('table8', 2);
-        $data['t8p3'] = $this->DBModel->getTeamByTablePos('table8', 3);
-        $data['t8p4'] = $this->DBModel->getTeamByTablePos('table8', 4);
-        
-        $data['t9p1'] = $this->DBModel->getTeamByTablePos('table9', 1);
-        $data['t9p2'] = $this->DBModel->getTeamByTablePos('table9', 2);
-        $data['t9p3'] = $this->DBModel->getTeamByTablePos('table9', 3);
-        $data['t9p4'] = $this->DBModel->getTeamByTablePos('table9', 4);
-        
         $this->load->view('header', $data);
         $this->load->view('finalFour', $data);
         $this->load->view('footer', $data);
