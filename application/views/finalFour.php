@@ -1,3 +1,4 @@
+<img class="finalFourLogo" src="/images/grb.png">
 <div class="finalFour">
     <h1>Završni turnir</h1>
     <p>Subota, 2. mart 2019. g. - Žepče (2005, 2007, 2009)</p>

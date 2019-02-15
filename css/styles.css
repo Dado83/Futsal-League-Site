@@ -265,6 +265,16 @@ a:hover {
     padding-left: 5px;
 }
 
+.finalFourLogo {
+    float: right;
+    width: 19%;
+    margin-right: 20%
+}
+
+.semis {
+    display: inline-block;
+}
+
 .semis table {
     font-size: var(--fontSize30);
     margin-bottom: 20px; 
@@ -320,14 +330,14 @@ a:hover {
 }
 
 .finalFour h1 {
-    text-align: center;
+    text-align: left;
     color: var(--color2);
     text-shadow: -1px 0 var(--color1), 0 1px var(--color1), 1px 0 var(--color1), 0 -1px var(--color1);
 }
 
 .finalFour p, .finalFour h2, .finalFour h3 {
     font-size: var(--fontSize25);
-    text-align: center;
+    text-align: left;
     color: black;
     text-shadow: 0 0 5px var(--color2);
 }
