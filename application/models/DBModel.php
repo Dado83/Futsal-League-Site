@@ -41,6 +41,27 @@ EOT;
         return $query->result();
     }
 
+    public function getTeamByTablePos($table, $pos)
+    {
+        $pos--;
+        $sql = <<<EOT
+            SELECT teams.team_name AS team,
+            $table.id,
+            $table.games_played,
+            $table.games_won,
+            $table.games_drew,
+            $table.games_lost,
+            CONCAT ($table.goals_scored, ':', $table.goals_conceded) AS goals,
+            $table.goals_scored - $table.goals_conceded AS g_diff,
+            $table.points FROM $table JOIN teams ON $table.id = teams.id WHERE NOT teams.id=10
+            ORDER BY $table.points DESC, g_diff DESC, $table.goals_scored DESC, team
+            LIMIT 1 OFFSET $pos
+EOT;
+
+        $query = $this->db->query($sql);
+        return $query->row();
+    }
+
     public function getTeamByID($id)
     {
         $sql = "SELECT * FROM teams WHERE id = $id";

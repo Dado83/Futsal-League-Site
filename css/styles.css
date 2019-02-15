@@ -265,6 +265,73 @@ a:hover {
     padding-left: 5px;
 }
 
+.semis table {
+    font-size: var(--fontSize30);
+    margin-bottom: 20px; 
+    border-collapse: collapse;
+    background-color: whitesmoke;
+    box-shadow: 0 5px 10px;
+    min-width: 500px;
+    border: 1px solid var(--color1);
+    width: 50%;
+    margin: auto;
+}
+
+.semis tr td {
+    border-bottom: 1px solid black;
+    padding: 3px 5px;
+}
+
+.semis td:first-of-type {
+    text-align: left;
+    width: 50%;
+}
+
+.semis td:last-of-type {
+    text-align: right;
+    width: 50%;
+}
+
+.semis td:nth-of-type(n+2):nth-of-type(-n+2) {
+    font-weight: bold;
+    padding: 0 3px;
+}
+
+.semis td:first-of-type img {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    bottom: -4px;
+    float: left;
+    padding-right: 5px;
+}
+
+.semis td:last-of-type img {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    bottom: -4px;
+    float: right;
+    padding-left: 5px;
+}
+
+.finalFour {
+    margin-bottom: 90px;
+}
+
+.finalFour h1 {
+    text-align: center;
+    color: var(--color2);
+    text-shadow: -1px 0 var(--color1), 0 1px var(--color1), 1px 0 var(--color1), 0 -1px var(--color1);
+}
+
+.finalFour p, .finalFour h2, .finalFour h3 {
+    font-size: var(--fontSize25);
+    text-align: center;
+    color: black;
+    text-shadow: 0 0 5px var(--color2);
+}
+
 #fixture {
     text-align: center;
 }
@@ -518,6 +585,21 @@ a:hover {
     .login {
         display: none;
     }
+
+    .semis table {
+        font-size: var(--fontSize25);
+        min-width: 450px;
+    }
+
+    .semis td:first-of-type img {       
+        position: relative;
+        bottom: 1px;
+    }
+
+    .semis td:last-of-type img {      
+        position: relative;
+        bottom: 1px;      
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -575,6 +657,21 @@ a:hover {
     .resutsPage {
         font-size: 12px;
         min-width: 500px
+    }
+
+    .semis table {
+        min-width: 400px;
+        font-size: var(--fontSize30);
+    }
+
+    .semis td:first-of-type img {       
+        position: relative;
+        bottom: 0;
+    }
+
+    .semis td:last-of-type img {      
+        position: relative;
+        bottom: 0;      
     }
 
 }

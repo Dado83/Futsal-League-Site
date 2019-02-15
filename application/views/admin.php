@@ -7,8 +7,10 @@
     echo '<br>Robot?: ' . $this->agent->robot();
     echo '<br>Platform: ' . $this->agent->platform();
     echo '<br>User agent: ' . $this->agent->agent_string();
-    echo '<br>IP: ' . $this->input->ip_address();
+    echo '<br>IP: ' . $this->input->ip_address() . '<br>';
     ?>
+    <p><a href="/liga/bilten">Bilten</a></p>
+    <p><a href="/liga/biltenFinals">Završnica</a></p>
 </div>
 <table>
     <p>Odigrane utakmice:</p>
