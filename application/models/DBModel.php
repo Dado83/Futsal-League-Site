@@ -455,4 +455,44 @@ EOT;
         return $query->row();
     }
 
+    public function getVisitors($type)
+    {
+        if ($type == 'all') {
+            $sql = <<<EOT
+            SELECT COUNT(*) AS vis FROM visitors WHERE robot='NULL'
+EOT;
+        } elseif ($type == 'allUnique') {
+            $sql = <<<EOT
+            SELECT COUNT(DISTINCT ip) AS vis FROM visitors WHERE robot='NULL'
+EOT;
+        } elseif ($type == 'mobile') {
+            $sql = <<<EOT
+            SELECT COUNT(*) AS vis FROM visitors WHERE robot='NULL' AND NOT mobile='NULL'
+EOT;
+        } elseif ($type == 'mobileUnique') {
+            $sql = <<<EOT
+            SELECT COUNT(DISTINCT ip) AS vis FROM visitors WHERE robot='NULL' AND NOT mobile='NULL'
+EOT;
+        } elseif ($type == 'desktop') {
+            $sql = <<<EOT
+            SELECT COUNT(*) AS vis FROM visitors WHERE robot='NULL' AND mobile='NULL'
+EOT;
+        } elseif ($type == 'desktopUnique') {
+            $sql = <<<EOT
+            SELECT COUNT(DISTINCT ip) AS vis FROM visitors WHERE robot='NULL' AND mobile='NULL'
+EOT;
+        } elseif ($type == 'robot') {
+            $sql = <<<EOT
+            SELECT COUNT(*) AS vis FROM visitors WHERE NOT robot='NULL'
+EOT;
+        } elseif ($type == 'robotUnique') {
+            $sql = <<<EOT
+            SELECT COUNT(DISTINCT ip) AS vis FROM visitors WHERE NOT robot='NULL'
+EOT;
+        }
+
+        $query = $this->db->query($sql);
+        return $query->row();
+    }
+
 }

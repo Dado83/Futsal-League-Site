@@ -1,14 +1,16 @@
 <div class="info">
     <p>Admin info:</p>
-    <?php
-    echo '<br>Browser: ' . $this->agent->browser();
-    echo '<br>Version: ' . $this->agent->version();
-    echo '<br>Mobile?: ' . $this->agent->mobile();
-    echo '<br>Robot?: ' . $this->agent->robot();
-    echo '<br>Platform: ' . $this->agent->platform();
-    echo '<br>User agent: ' . $this->agent->agent_string();
-    echo '<br>IP: ' . $this->input->ip_address() . '<br>';
-    ?>
+    <table>
+        <?php
+        echo '<tr><td>Ukupno posjeta</td><td style="text-align:right">' . $visAll->vis . '</td></tr>';
+        echo '<tr><td>Jedinstvene posjete</td><td style="text-align:right">' . $visUni->vis . '</td></tr>';
+        echo '<tr><td>Sa računara</td><td style="text-align:right">' . $visDesk->vis . '</td></tr>';
+        echo '<tr><td>Sa računara (jed.)</td><td style="text-align:right">' . $visDeskUni->vis . '</td></tr>';
+        echo '<tr><td>Sa telefona</td><td style="text-align:right">' . $visMob->vis . '</td></tr>';
+        echo '<tr><td>Sa telefona (jed.)</td><td style="text-align:right">' . $visMobUni->vis . '</td></tr>';
+        echo '<tr><td>Robot</td><td style="text-align:right">' . $visRob->vis . '</td></tr>';
+        ?>
+    </table>
     <p><a href="/liga/bilten">Bilten</a></p>
 </div>
 <table>

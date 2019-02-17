@@ -1,3 +1,3 @@
 <?php
-$t = $this->DBModel->getTeamByTablePos('table5', 1);
+$t = $this->DBModel->getVisitors('robot');
 var_dump($t);
