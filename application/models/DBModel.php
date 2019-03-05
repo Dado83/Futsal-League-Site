@@ -7,7 +7,7 @@ class DBModel extends CI_Model
     {
         $sql = 'SELECT * FROM teams WHERE NOT id = 10';
         $query = $this->db->query($sql);
-        return $query->result();
+        return ($query) ? $query->result() : array();
     }
 
     public function getTable($table, $isShortName = FALSE, $id = 11)
@@ -38,7 +38,7 @@ EOT;
 EOT;
         }
         $query = $this->db->query($sql);
-        return $query->result();
+        return ($query) ? $query->result() : array();
     }
 
     public function getTeamByTablePos($table, $pos)
@@ -59,21 +59,21 @@ EOT;
 EOT;
 
         $query = $this->db->query($sql);
-        return $query->row();
+        return ($query) ? $query->row() : array();
     }
 
     public function getTeamByID($id)
     {
         $sql = "SELECT * FROM teams WHERE id = $id";
         $query = $this->db->query($sql);
-        return $query->row();
+        return ($query) ? $query->row() : array();
     }
 
     public function getResultsByID($results, $id)
     {
         $sql = "SELECT * FROM $results WHERE home_teamid = $id OR away_teamid = $id ORDER BY m_day";
         $query = $this->db->query($sql);
-        return $query->result();
+        return ($query) ? $query->result() : array();
     }
 
     public function getMatchPairs()
@@ -87,7 +87,7 @@ EOT;
         WHERE NOT (matchpairs.home_team = 10 XOR matchpairs.away_team = 10)
 EOT;
         $query = $this->db->query($sql);
-        return $query->result();
+        return ($query) ? $query->result() : array();      
     }
 
     public function getMatchPairsNotPlayed()
@@ -101,14 +101,14 @@ EOT;
         WHERE matchpairs.is_played = FALSE AND NOT (matchpairs.home_team = 10 XOR matchpairs.away_team = 10)
 EOT;
         $query = $this->db->query($sql);
-        return $query->result();
+        return ($query) ? $query->result() : array();
     }
 
     public function getResults($results)
     {
         $sql = "SELECT * FROM $results ORDER BY m_day";
         $query = $this->db->query($sql);
-        return $query->result();
+        return ($query) ? $query->result() : array();
     }
 
     public function getLastResults($results)
@@ -123,7 +123,7 @@ EOT;
         $sql = "SELECT * FROM $results WHERE m_day = $max_mday";
         $query = $this->db->query($sql);
         $data['lastMday'] = $max_mday;
-        $data['results'] = $query->result();
+        $data['results'] = ($query) ? $query->result() : array();
         return $data;
     }
 
@@ -142,7 +142,7 @@ EOT;
         WHERE matchpairs.m_day = $next_game AND NOT (matchpairs.home_team = 10 XOR matchpairs.away_team = 10)
 EOT;
         $query = $this->db->query($sql);
-        return $query->result();
+        return ($query) ? $query->result() : array();
     }
 
     public function getGameByID($id)
@@ -156,35 +156,35 @@ EOT;
         WHERE matchpairs.id = $id
 EOT;
         $query = $this->db->query($sql);
-        return $query->row();
+        return ($query) ? $query->row() : array();
     }
 
     public function getGameFromResults($id)
     {
         $sql = "SELECT * FROM results7 WHERE id = $id";
         $query = $this->db->query($sql);
-        return $query->row();
+        return ($query) ? $query->row() : array();
     }
 
     public function getGame9($home_id, $away_id)
     {
         $sql = "SELECT * FROM results9 WHERE home_teamid = $home_id AND away_teamid = $away_id";
         $query = $this->db->query($sql);
-        return $query->row();
+        return ($query) ? $query->row() : array();
     }
 
     public function getMatchPair($home, $away)
     {
         $sql = "SELECT * FROM matchpairs WHERE home_team = $home AND away_team = $away";
         $query = $this->db->query($sql);
-        return $query->row();
+        return ($query) ? $query->row() : array();
     }
 
     public function getNextGameDate($mday)
     {
         $sql = "SELECT * FROM matchpairs WHERE m_day = $mday";
         $query = $this->db->query($sql);
-        return $query->row();
+        return ($query) ? $query->row() : array();
     }
 
     public function getNotPlaying($mday = 0)
@@ -192,11 +192,11 @@ EOT;
         if ($mday == 0) {
             $sql = "SELECT * FROM notplaying";
             $query = $this->db->query($sql);
-            return $query->result();
+            return ($query) ? $query->result() : array();
         } else {
             $sql = "SELECT * FROM notplaying WHERE m_day = $mday";
             $query = $this->db->query($sql);
-            return $query->row();
+            return ($query) ? $query->row() : array();
         }
     }
 
@@ -452,7 +452,7 @@ EOT;
         FROM teams WHERE id=$id
 EOT;
         $query = $this->db->query($sql);
-        return $query->row();
+        return ($query) ? $query->row() : array();
     }
 
     public function getVisitors($type)
@@ -492,7 +492,7 @@ EOT;
         }
 
         $query = $this->db->query($sql);
-        return $query->row();
+        return ($query) ? $query->row() : array();
     }
 
 }

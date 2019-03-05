@@ -2,7 +2,7 @@
     <table class="nextGame">
         <?php
         if ($isLeagueOver) {
-            echo '<h2><a href="/liga/finals">Liga je završena. Završnica je na programu 2/3. marta 2019. godine.</a></h2>';
+            echo '<h2><a href="/liga/finalsResults">Završni turnir (Žepče, Teslić)</a></h2>';
         } else {
             echo <<<EOT
         <tr>            

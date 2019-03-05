@@ -6,7 +6,7 @@ class Liga extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-
+        $this->load->database();
         $this->load->model('DBModel');
         if (!$this->session->ip OR ! get_cookie('time')) {
             setcookie('time', 'expiry', time() + 600);
@@ -80,7 +80,6 @@ class Liga extends CI_Controller
         if (!password_verify($pass, $password)) {
             $this->session->set_flashdata('loginError', 'invalid authentication');
             redirect('/', 'refresh');
-            //$this->load->view('error');
         } else {
             $this->setSession('admin');
             $this->DBModel->setVisitor('admin');
@@ -109,7 +108,7 @@ class Liga extends CI_Controller
             $data['visMobUni'] = $this->DBModel->getVisitors('mobileUnique');
             $data['visRob'] = $this->DBModel->getVisitors('robot');
             $data['visRobUni'] = $this->DBModel->getVisitors('robotUnique');
-            
+
             $this->load->view('header', $data);
             $this->load->view('admin', $data);
         } else {
@@ -297,6 +296,41 @@ class Liga extends CI_Controller
         $this->load->view('finalFour', $data);
         $this->load->view('footer', $data);
     }
+    
+    public function finalsResults()
+    {
+        $data['title'] = 'LBŠ završnica';
+        $data['teams'] = $this->DBModel->getTeams();
+
+        $data['t5p1'] = $this->DBModel->getTeamByTablePos('table5', 1);
+        $data['t5p2'] = $this->DBModel->getTeamByTablePos('table5', 2);
+        $data['t5p3'] = $this->DBModel->getTeamByTablePos('table5', 3);
+        $data['t5p4'] = $this->DBModel->getTeamByTablePos('table5', 4);
+
+        $data['t6p1'] = $this->DBModel->getTeamByTablePos('table6', 1);
+        $data['t6p2'] = $this->DBModel->getTeamByTablePos('table6', 2);
+        $data['t6p3'] = $this->DBModel->getTeamByTablePos('table6', 3);
+        $data['t6p4'] = $this->DBModel->getTeamByTablePos('table6', 4);
+
+        $data['t7p1'] = $this->DBModel->getTeamByTablePos('table7', 1);
+        $data['t7p2'] = $this->DBModel->getTeamByTablePos('table7', 2);
+        $data['t7p3'] = $this->DBModel->getTeamByTablePos('table7', 3);
+        $data['t7p4'] = $this->DBModel->getTeamByTablePos('table7', 4);
+
+        $data['t8p1'] = $this->DBModel->getTeamByTablePos('table8', 1);
+        $data['t8p2'] = $this->DBModel->getTeamByTablePos('table8', 2);
+        $data['t8p3'] = $this->DBModel->getTeamByTablePos('table8', 3);
+        $data['t8p4'] = $this->DBModel->getTeamByTablePos('table8', 4);
+
+        $data['t9p1'] = $this->DBModel->getTeamByTablePos('table9', 1);
+        $data['t9p2'] = $this->DBModel->getTeamByTablePos('table9', 2);
+        $data['t9p3'] = $this->DBModel->getTeamByTablePos('table9', 3);
+        $data['t9p4'] = $this->DBModel->getTeamByTablePos('table9', 4);
+
+        $this->load->view('header', $data);
+        $this->load->view('finalFourResults', $data);
+        $this->load->view('footer', $data);
+    }
 
     private function setSession($role = '')
     {
@@ -327,8 +361,8 @@ class Liga extends CI_Controller
 
     public function test()
     {
-
-        $this->load->view('test');
+        //$data['teams'] = $this->DBModel->getTeams();
+        $this->load->view('test', $data);
     }
 
 }
