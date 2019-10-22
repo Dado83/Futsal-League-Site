@@ -8,7 +8,7 @@ class Liga extends CI_Controller
         parent::__construct();
         $this->load->database();
         $this->load->model('DBModel');
-        if (!$this->session->ip OR ! get_cookie('time')) {
+        if (!$this->session->ip or !get_cookie('time')) {
             setcookie('time', 'expiry', time() + 600);
             $this->setSession();
             $this->DBModel->setVisitor();
@@ -151,7 +151,7 @@ class Liga extends CI_Controller
         $home5 = $this->input->post('home5');
         $away5 = $this->input->post('away5');
 
-        if ($homeID == 7 OR $awayID == 7) {
+        if ($homeID == 7 or $awayID == 7) {
             $this->DBModel->insertGame('results5', 'table5', $mDay, $home, $homeID, $away, $awayID, $home5, $away5);
             $this->DBModel->insertGame('results6', 'table6', $mDay, $home, $homeID, $away, $awayID, $home6, $away6);
             $this->DBModel->insertGame('results7', 'table7', $mDay, $home, $homeID, $away, $awayID, $home7, $away7);
@@ -191,9 +191,7 @@ class Liga extends CI_Controller
         $this->DBModel->deleteGame('results8', 'table8', $id);
         if ($game9 > 0) {
             $this->DBModel->deleteGame('results9', 'table9', $game9->id);
-        } else {
-            
-        }
+        } else { }
 
         redirect('/liga/admin', 'refresh');
     }
@@ -296,7 +294,7 @@ class Liga extends CI_Controller
         $this->load->view('finalFour', $data);
         $this->load->view('footer', $data);
     }
-    
+
     public function finalsResults()
     {
         $data['title'] = 'LBŠ završnica';
@@ -364,5 +362,4 @@ class Liga extends CI_Controller
         //$data['teams'] = $this->DBModel->getTeams();
         $this->load->view('test', $data);
     }
-
 }

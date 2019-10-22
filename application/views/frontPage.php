@@ -2,7 +2,7 @@
     <table class="nextGame">
         <?php
         if ($isLeagueOver) {
-            echo '<h2><a href="/liga/finalsResults">Završni turnir (Žepče, Teslić)</a></h2>';
+            echo '<h2><a href="/liga/finalsResults">Liga</a></h2>';
         } else {
             echo <<<EOT
         <tr>            
@@ -62,7 +62,7 @@ EOT;
                 <th>N</th>
                 <th>I</th>
                 <th>GOL</th>
-                <th>+/-</th>               
+                <th>+/-</th>
                 <th>BOD</th>
             </tr>
             <?php
