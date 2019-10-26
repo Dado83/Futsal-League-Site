@@ -35,6 +35,58 @@ EOT;
 <hr>
 <div class="content">
     <div class="results">
+        <p><?php echo $lastMday ?>. kolo (2010. godište)</p>
+        <table>
+            <?php
+            foreach ($results10 as $r) {
+                echo <<<EOT
+            <tr>
+            <td><img src='/images/logos/$r->home_teamid.png' alt='grb'>$r->home_team</td>
+            <td>$r->goals_home</td>
+            <td> - </td>
+            <td>$r->goals_away</td>
+            <td>$r->away_team<img src='/images/logos/$r->away_teamid.png' alt='grb'></td>
+            </tr>
+EOT;
+            }
+            ?>
+        </table>
+    </div>
+    <div class="table">
+        <table>
+            <tr>
+                <th>#</th>
+                <th>2010. godište</th>
+                <th>O</th>
+                <th>P</th>
+                <th>N</th>
+                <th>I</th>
+                <th>GOL</th>
+                <th>+/-</th>
+                <th>BOD</th>
+            </tr>
+            <?php
+            $i = 1;
+            foreach ($table10 as $row) {
+                echo <<<EOT
+             <tr>
+             <td>$i</td>
+             <td><img src='/images/logos/$row->id.png' alt='grb'>$row->team</td>
+             <td>$row->games_played</td>
+             <td>$row->games_won</td>
+             <td>$row->games_drew</td>
+             <td>$row->games_lost</td>
+             <td>$row->goals</td>     
+             <td>$row->g_diff</td>
+             <td>$row->points</td>
+             </tr>
+EOT;
+                $i++;
+            }
+            ?>
+        </table>
+    </div>
+    <div class="results">
         <p><?php echo $lastMday ?>. kolo (2009. godište)</p>
         <table>
             <?php
@@ -76,7 +128,7 @@ EOT;
              <td>$row->games_won</td>
              <td>$row->games_drew</td>
              <td>$row->games_lost</td>
-             <td>$row->goals</td>     
+             <td>$row->goals</td>   
              <td>$row->g_diff</td>
              <td>$row->points</td>
              </tr>
@@ -128,7 +180,7 @@ EOT;
              <td>$row->games_won</td>
              <td>$row->games_drew</td>
              <td>$row->games_lost</td>
-             <td>$row->goals</td>   
+             <td>$row->goals</td>     
              <td>$row->g_diff</td>
              <td>$row->points</td>
              </tr>
@@ -180,7 +232,7 @@ EOT;
              <td>$row->games_won</td>
              <td>$row->games_drew</td>
              <td>$row->games_lost</td>
-             <td>$row->goals</td>     
+             <td>$row->goals</td>   
              <td>$row->g_diff</td>
              <td>$row->points</td>
              </tr>
@@ -224,58 +276,6 @@ EOT;
             <?php
             $i = 1;
             foreach ($table6 as $row) {
-                echo <<<EOT
-             <tr>
-             <td>$i</td>
-             <td><img src='/images/logos/$row->id.png' alt='grb'>$row->team</td>
-             <td>$row->games_played</td>
-             <td>$row->games_won</td>
-             <td>$row->games_drew</td>
-             <td>$row->games_lost</td>
-             <td>$row->goals</td>   
-             <td>$row->g_diff</td>
-             <td>$row->points</td>
-             </tr>
-EOT;
-                $i++;
-            }
-            ?>
-        </table>
-    </div>
-    <div class="results">
-        <p><?php echo $lastMday ?>. kolo (2005. godište)</p>
-        <table>
-            <?php
-            foreach ($results5 as $r) {
-                echo <<<EOT
-            <tr>
-            <td><img src='/images/logos/$r->home_teamid.png' alt='grb'>$r->home_team</td>
-            <td>$r->goals_home</td>
-            <td> - </td>
-            <td>$r->goals_away</td>
-            <td>$r->away_team<img src='/images/logos/$r->away_teamid.png' alt='grb'></td>
-            </tr>
-EOT;
-            }
-            ?>
-        </table>
-    </div>
-    <div class="table">
-        <table>
-            <tr>
-                <th>#</th>
-                <th>2005. godište</th>
-                <th>O</th>
-                <th>P</th>
-                <th>N</th>
-                <th>I</th>
-                <th>GOL</th>
-                <th>+/-</th>
-                <th>BOD</th>
-            </tr>
-            <?php
-            $i = 1;
-            foreach ($table5 as $row) {
                 echo <<<EOT
              <tr>
              <td>$i</td>

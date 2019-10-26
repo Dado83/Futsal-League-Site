@@ -19,17 +19,17 @@ class Liga extends CI_Controller
     {
         $data['title'] = 'Fair Play LBŠ';
         $data['teams'] = $this->DBModel->getTeams();
-        $data['table5'] = $this->DBModel->getTable('table5', TRUE);
         $data['table6'] = $this->DBModel->getTable('table6', TRUE);
         $data['table7'] = $this->DBModel->getTable('table7', TRUE);
         $data['table8'] = $this->DBModel->getTable('table8', TRUE);
-        $data['table9'] = $this->DBModel->getTable('table9', TRUE, 7);
-        $data['results5'] = $this->DBModel->getLastResults('results5')['results'];
+        $data['table9'] = $this->DBModel->getTable('table9', TRUE);
+        $data['table10'] = $this->DBModel->getTable('table10', TRUE, 7);
         $data['results6'] = $this->DBModel->getLastResults('results6')['results'];
         $data['results7'] = $this->DBModel->getLastResults('results7')['results'];
         $data['results8'] = $this->DBModel->getLastResults('results8')['results'];
         $data['results9'] = $this->DBModel->getLastResults('results9')['results'];
-        $data['lastMday'] = $this->DBModel->getLastResults('results5')['lastMday'];
+        $data['results10'] = $this->DBModel->getLastResults('results10')['results'];
+        $data['lastMday'] = $this->DBModel->getLastResults('results6')['lastMday'];
         $data['nextFixture'] = $this->DBModel->getNextFixture();
         $data['nextMday'] = $data['lastMday'] + 1;
         $data['notPlaying'] = $this->DBModel->getNotPlaying($data['lastMday'] + 1);
@@ -60,11 +60,11 @@ class Liga extends CI_Controller
         $data['title'] = 'Rezultati';
         $data['teams'] = $this->DBModel->getTeams();
         $data['notplaying'] = $this->DBModel->getNotPlaying();
-        $data['results5'] = $this->DBModel->getResults('results5');
         $data['results6'] = $this->DBModel->getResults('results6');
         $data['results7'] = $this->DBModel->getResults('results7');
         $data['results8'] = $this->DBModel->getResults('results8');
         $data['results9'] = $this->DBModel->getResults('results9');
+        $data['results10'] = $this->DBModel->getResults('results10');
 
         $this->load->view('header', $data);
         $this->load->view('results', $data);
@@ -140,28 +140,28 @@ class Liga extends CI_Controller
         $homeID = $this->input->post('homeID');
         $awayID = $this->input->post('awayID');
 
-        $home9 = $this->input->post('home9');
-        $away9 = $this->input->post('away9');
-        $home8 = $this->input->post('home8');
-        $away8 = $this->input->post('away8');
-        $home7 = $this->input->post('home7');
-        $away7 = $this->input->post('away7');
-        $home6 = $this->input->post('home6');
-        $away6 = $this->input->post('away6');
-        $home5 = $this->input->post('home5');
-        $away5 = $this->input->post('away5');
+        $home9 = $this->input->post('home10');
+        $away9 = $this->input->post('away10');
+        $home8 = $this->input->post('home9');
+        $away8 = $this->input->post('away9');
+        $home7 = $this->input->post('home8');
+        $away7 = $this->input->post('away8');
+        $home6 = $this->input->post('home7');
+        $away6 = $this->input->post('away7');
+        $home5 = $this->input->post('home6');
+        $away5 = $this->input->post('away6');
 
         if ($homeID == 7 or $awayID == 7) {
-            $this->DBModel->insertGame('results5', 'table5', $mDay, $home, $homeID, $away, $awayID, $home5, $away5);
-            $this->DBModel->insertGame('results6', 'table6', $mDay, $home, $homeID, $away, $awayID, $home6, $away6);
-            $this->DBModel->insertGame('results7', 'table7', $mDay, $home, $homeID, $away, $awayID, $home7, $away7);
-            $this->DBModel->insertGame('results8', 'table8', $mDay, $home, $homeID, $away, $awayID, $home8, $away8);
+            $this->DBModel->insertGame('results6', 'table6', $mDay, $home, $homeID, $away, $awayID, $home5, $away5);
+            $this->DBModel->insertGame('results7', 'table7', $mDay, $home, $homeID, $away, $awayID, $home6, $away6);
+            $this->DBModel->insertGame('results8', 'table8', $mDay, $home, $homeID, $away, $awayID, $home7, $away7);
+            $this->DBModel->insertGame('results9', 'table9', $mDay, $home, $homeID, $away, $awayID, $home8, $away8);
         } else {
-            $this->DBModel->insertGame('results5', 'table5', $mDay, $home, $homeID, $away, $awayID, $home5, $away5);
-            $this->DBModel->insertGame('results6', 'table6', $mDay, $home, $homeID, $away, $awayID, $home6, $away6);
-            $this->DBModel->insertGame('results7', 'table7', $mDay, $home, $homeID, $away, $awayID, $home7, $away7);
-            $this->DBModel->insertGame('results8', 'table8', $mDay, $home, $homeID, $away, $awayID, $home8, $away8);
-            $this->DBModel->insertGame('results9', 'table9', $mDay, $home, $homeID, $away, $awayID, $home9, $away9);
+            $this->DBModel->insertGame('results6', 'table6', $mDay, $home, $homeID, $away, $awayID, $home5, $away5);
+            $this->DBModel->insertGame('results7', 'table7', $mDay, $home, $homeID, $away, $awayID, $home6, $away6);
+            $this->DBModel->insertGame('results8', 'table8', $mDay, $home, $homeID, $away, $awayID, $home7, $away7);
+            $this->DBModel->insertGame('results9', 'table9', $mDay, $home, $homeID, $away, $awayID, $home8, $away8);
+            $this->DBModel->insertGame('results10', 'table10', $mDay, $home, $homeID, $away, $awayID, $home9, $away9);
         }
         $this->DBModel->setPlayed($id, TRUE);
 
@@ -179,18 +179,18 @@ class Liga extends CI_Controller
         $data['results'] = $this->DBModel->getResults('results7');
 
         $game = $this->DBModel->getGameFromResults($id);
-        $game9 = $this->DBModel->getGame9($game->home_teamid, $game->away_teamid);
+        $game10 = $this->DBModel->getGame10($game->home_teamid, $game->away_teamid);
 
         $matchPair = $this->DBModel->getMatchPair($game->home_teamid, $game->away_teamid);
 
         $this->DBModel->setPlayed($matchPair->id, 'FALSE');
 
-        $this->DBModel->deleteGame('results5', 'table5', $id);
         $this->DBModel->deleteGame('results6', 'table6', $id);
         $this->DBModel->deleteGame('results7', 'table7', $id);
         $this->DBModel->deleteGame('results8', 'table8', $id);
-        if ($game9 > 0) {
-            $this->DBModel->deleteGame('results9', 'table9', $game9->id);
+        $this->DBModel->deleteGame('results9', 'table9', $id);
+        if ($game10 > 0) {
+            $this->DBModel->deleteGame('results10', 'table10', $game10->id);
         } else { }
 
         redirect('/liga/admin', 'refresh');
@@ -200,11 +200,11 @@ class Liga extends CI_Controller
     {
         $data['teams'] = $this->DBModel->getTeams();
         $data['team'] = $this->DBModel->getTeamByID($id);
+        $data['results10'] = $this->DBModel->getResultsByID('results10', $id);
         $data['results9'] = $this->DBModel->getResultsByID('results9', $id);
         $data['results8'] = $this->DBModel->getResultsByID('results8', $id);
         $data['results7'] = $this->DBModel->getResultsByID('results7', $id);
         $data['results6'] = $this->DBModel->getResultsByID('results6', $id);
-        $data['results5'] = $this->DBModel->getResultsByID('results5', $id);
         $data['title'] = $data['team']->team_name;
 
         $this->load->view('header', $data);
@@ -215,17 +215,17 @@ class Liga extends CI_Controller
     {
         $data['title'] = 'Bilten';
         $data['teams'] = $this->DBModel->getTeams();
-        $data['table5'] = $this->DBModel->getTable('table5');
         $data['table6'] = $this->DBModel->getTable('table6');
         $data['table7'] = $this->DBModel->getTable('table7');
         $data['table8'] = $this->DBModel->getTable('table8');
-        $data['table9'] = $this->DBModel->getTable('table9', FALSE, 7);
-        $data['results5'] = $this->DBModel->getLastResults('results5')['results'];
+        $data['table9'] = $this->DBModel->getTable('table9');
+        $data['table10'] = $this->DBModel->getTable('table10', FALSE, 7);
         $data['results6'] = $this->DBModel->getLastResults('results6')['results'];
         $data['results7'] = $this->DBModel->getLastResults('results7')['results'];
         $data['results8'] = $this->DBModel->getLastResults('results8')['results'];
         $data['results9'] = $this->DBModel->getLastResults('results9')['results'];
-        $data['lastMday'] = $this->DBModel->getLastResults('results5')['lastMday'];
+        $data['results10'] = $this->DBModel->getLastResults('results10')['results'];
+        $data['lastMday'] = $this->DBModel->getLastResults('results6')['lastMday'];
         $data['nextFixture'] = $this->DBModel->getNextFixture();
         $data['nextMday'] = $data['lastMday'] + 1;
         $data['notPlaying'] = $this->DBModel->getNotPlaying($data['lastMday'] + 1);
@@ -265,11 +265,6 @@ class Liga extends CI_Controller
         usort($total, 'sortByPoints');
         $data['combinedTable'] = $total;
 
-        $data['t5p1'] = $this->DBModel->getTeamByTablePos('table5', 1);
-        $data['t5p2'] = $this->DBModel->getTeamByTablePos('table5', 2);
-        $data['t5p3'] = $this->DBModel->getTeamByTablePos('table5', 3);
-        $data['t5p4'] = $this->DBModel->getTeamByTablePos('table5', 4);
-
         $data['t6p1'] = $this->DBModel->getTeamByTablePos('table6', 1);
         $data['t6p2'] = $this->DBModel->getTeamByTablePos('table6', 2);
         $data['t6p3'] = $this->DBModel->getTeamByTablePos('table6', 3);
@@ -289,6 +284,11 @@ class Liga extends CI_Controller
         $data['t9p2'] = $this->DBModel->getTeamByTablePos('table9', 2);
         $data['t9p3'] = $this->DBModel->getTeamByTablePos('table9', 3);
         $data['t9p4'] = $this->DBModel->getTeamByTablePos('table9', 4);
+
+        $data['t10p1'] = $this->DBModel->getTeamByTablePos('table10', 1);
+        $data['t10p2'] = $this->DBModel->getTeamByTablePos('table10', 2);
+        $data['t10p3'] = $this->DBModel->getTeamByTablePos('table10', 3);
+        $data['t10p4'] = $this->DBModel->getTeamByTablePos('table10', 4);
 
         $this->load->view('header', $data);
         $this->load->view('finalFour', $data);
@@ -300,11 +300,6 @@ class Liga extends CI_Controller
         $data['title'] = 'LBŠ završnica';
         $data['teams'] = $this->DBModel->getTeams();
 
-        $data['t5p1'] = $this->DBModel->getTeamByTablePos('table5', 1);
-        $data['t5p2'] = $this->DBModel->getTeamByTablePos('table5', 2);
-        $data['t5p3'] = $this->DBModel->getTeamByTablePos('table5', 3);
-        $data['t5p4'] = $this->DBModel->getTeamByTablePos('table5', 4);
-
         $data['t6p1'] = $this->DBModel->getTeamByTablePos('table6', 1);
         $data['t6p2'] = $this->DBModel->getTeamByTablePos('table6', 2);
         $data['t6p3'] = $this->DBModel->getTeamByTablePos('table6', 3);
@@ -324,6 +319,11 @@ class Liga extends CI_Controller
         $data['t9p2'] = $this->DBModel->getTeamByTablePos('table9', 2);
         $data['t9p3'] = $this->DBModel->getTeamByTablePos('table9', 3);
         $data['t9p4'] = $this->DBModel->getTeamByTablePos('table9', 4);
+
+        $data['t10p1'] = $this->DBModel->getTeamByTablePos('table10', 1);
+        $data['t10p2'] = $this->DBModel->getTeamByTablePos('table10', 2);
+        $data['t10p3'] = $this->DBModel->getTeamByTablePos('table10', 3);
+        $data['t10p4'] = $this->DBModel->getTeamByTablePos('table10', 4);
 
         $this->load->view('header', $data);
         $this->load->view('finalFourResults', $data);

@@ -10,18 +10,68 @@
 <h1>FAIR PLAY Liga Budućih Šampiona</h1>
 <h2>takmičarska sezona 2018/19</h2>
 <h3>Bilten br. <?php echo $lastMday ?></h3>
-<br/>
+<br />
 <p>1. Registracija utakmica <?php echo $lastMday ?>. kola</p>
 <?php
-if ($isLeagueOver) {
-    
-} else {
+if ($isLeagueOver) { } else {
     echo "<p>2. Raspored utakmica $nextMday. kola</p>";
 }
 ?>
-<br/>
-<p>ad 1)</p>  
-<p style="font-size:18px;"><?php echo $notPlayingLastMday->team ?> pauzira</p>      
+<br />
+<p>ad 1)</p>
+<p style="font-size:18px;"><?php echo $notPlayingLastMday->team ?> pauzira</p>
+<div class="resultsNL">
+    <p>2010. godište</p>
+    <table>
+        <?php
+        foreach ($results10 as $r) {
+            echo <<<EOT
+            <tr>
+            <td>$r->home_team</td>
+            <td>$r->goals_home</td>
+            <td> - </td>
+            <td>$r->goals_away</td>
+            <td>$r->away_team</td>
+            </tr>
+EOT;
+        }
+        ?>
+    </table>
+</div>
+<div class="tableNL">
+    <table>
+        <tr>
+            <th>#</th>
+            <th>2010. godište</th>
+            <th>O</th>
+            <th>P</th>
+            <th>N</th>
+            <th>I</th>
+            <th>GOL</th>
+            <th>+/-</th>
+            <th>BOD</th>
+        </tr>
+        <?php
+        $i = 1;
+        foreach ($table10 as $row) {
+            echo <<<EOT
+             <tr>
+             <td>$i</td>
+             <td>$row->team</td>
+             <td>$row->games_played</td>
+             <td>$row->games_won</td>
+             <td>$row->games_drew</td>
+             <td>$row->games_lost</td>
+             <td>$row->goals</td>     
+             <td>$row->g_diff</td>
+             <td>$row->points</td>
+             </tr>
+EOT;
+            $i++;
+        }
+        ?>
+    </table>
+</div>
 <div class="resultsNL">
     <p>2009. godište</p>
     <table>
@@ -50,7 +100,7 @@ EOT;
             <th>N</th>
             <th>I</th>
             <th>GOL</th>
-            <th>+/-</th>               
+            <th>+/-</th>
             <th>BOD</th>
         </tr>
         <?php
@@ -64,7 +114,7 @@ EOT;
              <td>$row->games_won</td>
              <td>$row->games_drew</td>
              <td>$row->games_lost</td>
-             <td>$row->goals</td>     
+             <td>$row->goals</td>   
              <td>$row->g_diff</td>
              <td>$row->points</td>
              </tr>
@@ -116,7 +166,7 @@ EOT;
              <td>$row->games_won</td>
              <td>$row->games_drew</td>
              <td>$row->games_lost</td>
-             <td>$row->goals</td>   
+             <td>$row->goals</td>     
              <td>$row->g_diff</td>
              <td>$row->points</td>
              </tr>
@@ -168,7 +218,7 @@ EOT;
              <td>$row->games_won</td>
              <td>$row->games_drew</td>
              <td>$row->games_lost</td>
-             <td>$row->goals</td>     
+             <td>$row->goals</td>   
              <td>$row->g_diff</td>
              <td>$row->points</td>
              </tr>
@@ -220,58 +270,6 @@ EOT;
              <td>$row->games_won</td>
              <td>$row->games_drew</td>
              <td>$row->games_lost</td>
-             <td>$row->goals</td>   
-             <td>$row->g_diff</td>
-             <td>$row->points</td>
-             </tr>
-EOT;
-            $i++;
-        }
-        ?>
-    </table>
-</div>
-<div class="resultsNL">
-    <p>2005. godište</p>
-    <table>
-        <?php
-        foreach ($results5 as $r) {
-            echo <<<EOT
-            <tr>
-            <td>$r->home_team</td>
-            <td>$r->goals_home</td>
-            <td> - </td>
-            <td>$r->goals_away</td>
-            <td>$r->away_team</td>
-            </tr>
-EOT;
-        }
-        ?>
-    </table>
-</div>
-<div class="tableNL">
-    <table>
-        <tr>
-            <th>#</th>
-            <th>2005. godište</th>
-            <th>O</th>
-            <th>P</th>
-            <th>N</th>
-            <th>I</th>
-            <th>GOL</th>
-            <th>+/-</th>
-            <th>BOD</th>
-        </tr>
-        <?php
-        $i = 1;
-        foreach ($table5 as $row) {
-            echo <<<EOT
-             <tr>
-             <td>$i</td>
-             <td>$row->team</td>
-             <td>$row->games_played</td>
-             <td>$row->games_won</td>
-             <td>$row->games_drew</td>
-             <td>$row->games_lost</td>
              <td>$row->goals</td>     
              <td>$row->g_diff</td>
              <td>$row->points</td>
@@ -284,9 +282,7 @@ EOT;
 </div>
 <table class="nextGameNL">
     <?php
-    if ($isLeagueOver) {
-        
-    } else {
+    if ($isLeagueOver) { } else {
         echo "
         <tr>
         <td colspan='5' style='font-weight:bold;'>$nextMday. kolo ($nextGameDate->game_date)</td>

@@ -5,6 +5,25 @@
     <p>Nedjelja, 3. mart 2019. g. - Teslić (2006, 2008)</p>
     <h2>Polufinalne utakmice:</h2>
     <div class="semis">
+        <h3>2010. godište</h3>
+        <table>
+            <?php
+            echo <<<EOT
+            <tr>
+            <td><img src = '/images/logos/$t10p1->id.png' alt = 'grb'>$t10p1->team</td>            
+            <td> - </td>           
+            <td>$t10p4->team<img src = '/images/logos/$t10p4->id.png' alt = 'grb'></td>
+            </tr>
+            <tr>
+            <td><img src = '/images/logos/$t10p2->id.png' alt = 'grb'>$t10p2->team</td>
+            <td> - </td>
+            <td>$t10p3->team<img src = '/images/logos/$t10p3->id.png' alt = 'grb'></td>
+            </tr>
+EOT;
+            ?>
+        </table>
+    </div>
+    <div class="semis">
         <h3>2009. godište</h3>
         <table>
             <?php
@@ -75,25 +94,6 @@ EOT;
             <td><img src = '/images/logos/$t6p2->id.png' alt = 'grb'>$t6p2->team</td>
             <td> - </td>
             <td>$t6p3->team<img src = '/images/logos/$t6p3->id.png' alt = 'grb'></td>
-            </tr>
-EOT;
-            ?>
-        </table>
-    </div>
-    <div class="semis">
-        <h3>2005. godište</h3>
-        <table>
-            <?php
-            echo <<<EOT
-            <tr>
-            <td><img src = '/images/logos/$t5p1->id.png' alt = 'grb'>$t5p1->team</td>            
-            <td> - </td>           
-            <td>$t5p4->team<img src = '/images/logos/$t5p4->id.png' alt = 'grb'></td>
-            </tr>
-            <tr>
-            <td><img src = '/images/logos/$t5p2->id.png' alt = 'grb'>$t5p2->team</td>
-            <td> - </td>
-            <td>$t5p3->team<img src = '/images/logos/$t5p3->id.png' alt = 'grb'></td>
             </tr>
 EOT;
             ?>

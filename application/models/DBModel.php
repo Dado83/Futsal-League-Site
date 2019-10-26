@@ -87,7 +87,7 @@ EOT;
         WHERE NOT (matchpairs.home_team = 10 XOR matchpairs.away_team = 10)
 EOT;
         $query = $this->db->query($sql);
-        return ($query) ? $query->result() : array();      
+        return ($query) ? $query->result() : array();
     }
 
     public function getMatchPairsNotPlayed()
@@ -129,7 +129,7 @@ EOT;
 
     public function getNextFixture()
     {
-        $sql_last = "SELECT DISTINCT m_day FROM results5";
+        $sql_last = "SELECT DISTINCT m_day FROM results6";
         $query_num = $this->db->query($sql_last);
         $mday_num = sizeof($query_num->result());
         $next_game = ++$mday_num;
@@ -166,9 +166,9 @@ EOT;
         return ($query) ? $query->row() : array();
     }
 
-    public function getGame9($home_id, $away_id)
+    public function getGame10($home_id, $away_id)
     {
-        $sql = "SELECT * FROM results9 WHERE home_teamid = $home_id AND away_teamid = $away_id";
+        $sql = "SELECT * FROM results10 WHERE home_teamid = $home_id AND away_teamid = $away_id";
         $query = $this->db->query($sql);
         return ($query) ? $query->row() : array();
     }
@@ -287,9 +287,11 @@ EOT;
         $sql_get = "SELECT * FROM $results WHERE id = $id";
         $query = $this->db->query($sql_get);
         $res = $query->row();
-        $game = array('id' => $res->id, 'm_day' => $res->m_day, 'home' => $res->home_team,
+        $game = array(
+            'id' => $res->id, 'm_day' => $res->m_day, 'home' => $res->home_team,
             'home_id' => $res->home_teamid, 'away' => $res->away_team, 'away_id' => $res->away_teamid,
-            'goals_h' => $res->goals_home, 'goals_a' => $res->goals_away);
+            'goals_h' => $res->goals_home, 'goals_a' => $res->goals_away
+        );
 
         if ($game['goals_h'] > $game['goals_a']) {
             $this->homeWinDel($table, $game['home_id'], $game['away_id'], $game['goals_h'], $game['goals_a']);
@@ -414,41 +416,41 @@ EOT;
     {
         $sql = <<<EOT
         SELECT id, CONCAT(team_name,' ', team_city) AS team,
-        (SELECT games_played FROM table5 WHERE id=$id)
-        + (SELECT games_played FROM table6 WHERE id=$id)
+        (SELECT games_played FROM table6 WHERE id=$id)
         + (SELECT games_played FROM table7 WHERE id=$id)
         + (SELECT games_played FROM table8 WHERE id=$id)
-        + (SELECT games_played FROM table9 WHERE id=$id) AS gamesAll,
-        (SELECT games_won FROM table5 WHERE id=$id)
-        + (SELECT games_won FROM table6 WHERE id=$id)
+        + (SELECT games_played FROM table9 WHERE id=$id)
+        + (SELECT games_played FROM table10 WHERE id=$id) AS gamesAll,
+        (SELECT games_won FROM table6 WHERE id=$id)
         + (SELECT games_won FROM table7 WHERE id=$id)
         + (SELECT games_won FROM table8 WHERE id=$id)
-        + (SELECT games_won FROM table9 WHERE id=$id) AS gamesWon,
-        (SELECT games_drew FROM table5 WHERE id=$id)
-        + (SELECT games_drew FROM table6 WHERE id=$id)
+        + (SELECT games_won FROM table9 WHERE id=$id)
+        + (SELECT games_won FROM table10 WHERE id=$id) AS gamesWon,
+        (SELECT games_drew FROM table6 WHERE id=$id)
         + (SELECT games_drew FROM table7 WHERE id=$id)
         + (SELECT games_drew FROM table8 WHERE id=$id)
-        + (SELECT games_drew FROM table9 WHERE id=$id) AS gamesDrew,
-        (SELECT games_lost FROM table5 WHERE id=$id)
-        + (SELECT games_lost FROM table6 WHERE id=$id)
+        + (SELECT games_drew FROM table9 WHERE id=$id)
+        + (SELECT games_drew FROM table10 WHERE id=$id) AS gamesDrew,
+        (SELECT games_lost FROM table6 WHERE id=$id)
         + (SELECT games_lost FROM table7 WHERE id=$id)
         + (SELECT games_lost FROM table8 WHERE id=$id)
-        + (SELECT games_lost FROM table9 WHERE id=$id) AS gamesLost,
-        (SELECT goals_scored FROM table5 WHERE id=$id)
-        + (SELECT goals_scored FROM table6 WHERE id=$id)
+        + (SELECT games_lost FROM table9 WHERE id=$id)
+        + (SELECT games_lost FROM table10 WHERE id=$id) AS gamesLost,
+        (SELECT goals_scored FROM table6 WHERE id=$id)
         + (SELECT goals_scored FROM table7 WHERE id=$id)
         + (SELECT goals_scored FROM table8 WHERE id=$id)
-        + (SELECT goals_scored FROM table9 WHERE id=$id) AS goalsFor,
-        (SELECT goals_conceded FROM table5 WHERE id=$id)
-        + (SELECT goals_conceded FROM table6 WHERE id=$id)
+        + (SELECT goals_scored FROM table9 WHERE id=$id)
+        + (SELECT goals_scored FROM table10 WHERE id=$id) AS goalsFor,
+        (SELECT goals_conceded FROM table6 WHERE id=$id)
         + (SELECT goals_conceded FROM table7 WHERE id=$id)
         + (SELECT goals_conceded FROM table8 WHERE id=$id)
-        + (SELECT goals_conceded FROM table9 WHERE id=$id) AS goalsAgg,
-        (SELECT points FROM table5 WHERE id=$id)
-        + (SELECT points FROM table6 WHERE id=$id)
+        + (SELECT goals_conceded FROM table9 WHERE id=$id)
+        + (SELECT goals_conceded FROM table10 WHERE id=$id) AS goalsAgg,
+        (SELECT points FROM table6 WHERE id=$id)
         + (SELECT points FROM table7 WHERE id=$id)
         + (SELECT points FROM table8 WHERE id=$id)
-        + (SELECT points FROM table9 WHERE id=$id) AS pointsAll
+        + (SELECT points FROM table9 WHERE id=$id)
+        + (SELECT points FROM table10 WHERE id=$id) AS pointsAll
         FROM teams WHERE id=$id
 EOT;
         $query = $this->db->query($sql);
@@ -494,5 +496,4 @@ EOT;
         $query = $this->db->query($sql);
         return ($query) ? $query->row() : array();
     }
-
 }
