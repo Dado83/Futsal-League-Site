@@ -65,7 +65,17 @@ class Liga extends CI_Controller
         $data['matchPairs8'] = $this->DBModel->getMatchPairs(8);
         $data['matchPairs9'] = $this->DBModel->getMatchPairs(9);
         $data['teams'] = $this->DBModel->getTeams();
-        $data['notPlaying'] = $this->DBModel->getNotPlaying();
+        $data['notPlaying1'] = $this->DBModel->getNotPlaying(1);
+        $data['notPlaying2'] = $this->DBModel->getNotPlaying(2);
+        $data['notPlaying3'] = $this->DBModel->getNotPlaying(3);
+        $data['notPlaying4'] = $this->DBModel->getNotPlaying(4);
+        $data['notPlaying5'] = $this->DBModel->getNotPlaying(5);
+        $data['notPlaying6'] = $this->DBModel->getNotPlaying(6);
+        $data['notPlaying7'] = $this->DBModel->getNotPlaying(7);
+        $data['notPlaying8'] = $this->DBModel->getNotPlaying(8);
+        $data['notPlaying9'] = $this->DBModel->getNotPlaying(9);
+
+
 
         $this->load->view('header', $data);
         $this->load->view('pairs', $data);

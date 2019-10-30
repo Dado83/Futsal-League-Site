@@ -93,12 +93,12 @@ EOT;
     public function getMatchDates($mday)
     {
         $sql = <<<EOT
-        SELECT DISTINCT game_date
+        SELECT DISTINCT matchpairs.game_date
         FROM matchpairs
         WHERE m_day = $mday AND NOT (matchpairs.home_team = 10 XOR matchpairs.away_team = 10)
 EOT;
         $query = $this->db->query($sql);
-        return ($query) ? $query->result() : array();
+        return ($query) ? $query->row() : array();
     }
 
     public function getMatchPairsNotPlayed()
