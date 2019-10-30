@@ -46,7 +46,24 @@ class Liga extends CI_Controller
     public function raspored()
     {
         $data['title'] = 'Raspored';
-        $data['matchPairs'] = $this->DBModel->getMatchPairs();
+        $data['matchDates1'] = $this->DBModel->getMatchDates(1);
+        $data['matchDates2'] = $this->DBModel->getMatchDates(2);
+        $data['matchDates3'] = $this->DBModel->getMatchDates(3);
+        $data['matchDates4'] = $this->DBModel->getMatchDates(4);
+        $data['matchDates5'] = $this->DBModel->getMatchDates(5);
+        $data['matchDates6'] = $this->DBModel->getMatchDates(6);
+        $data['matchDates7'] = $this->DBModel->getMatchDates(7);
+        $data['matchDates8'] = $this->DBModel->getMatchDates(8);
+        $data['matchDates9'] = $this->DBModel->getMatchDates(9);
+        $data['matchPairs1'] = $this->DBModel->getMatchPairs(1);
+        $data['matchPairs2'] = $this->DBModel->getMatchPairs(2);
+        $data['matchPairs3'] = $this->DBModel->getMatchPairs(3);
+        $data['matchPairs4'] = $this->DBModel->getMatchPairs(4);
+        $data['matchPairs5'] = $this->DBModel->getMatchPairs(5);
+        $data['matchPairs6'] = $this->DBModel->getMatchPairs(6);
+        $data['matchPairs7'] = $this->DBModel->getMatchPairs(7);
+        $data['matchPairs8'] = $this->DBModel->getMatchPairs(8);
+        $data['matchPairs9'] = $this->DBModel->getMatchPairs(9);
         $data['teams'] = $this->DBModel->getTeams();
         $data['notPlaying'] = $this->DBModel->getNotPlaying();
 
@@ -165,7 +182,7 @@ class Liga extends CI_Controller
         }
         $this->DBModel->setPlayed($id, TRUE);
 
-        $data['results'] = $this->DBModel->getResults('results7');
+        $data['results'] = $this->DBModel->getResults('results6');
         $data['matchPairs'] = $this->DBModel->getMatchPairsNotPlayed();
 
         redirect('/liga/admin', 'refresh');
@@ -176,7 +193,7 @@ class Liga extends CI_Controller
         $data['title'] = 'Admin';
         $data['teams'] = $this->DBModel->getTeams();
         $data['matchPairs'] = $this->DBModel->getMatchPairsNotPlayed();
-        $data['results'] = $this->DBModel->getResults('results7');
+        $data['results'] = $this->DBModel->getResults('results6');
 
         $game = $this->DBModel->getGameFromResults($id);
         $game10 = $this->DBModel->getGame10($game->home_teamid, $game->away_teamid);

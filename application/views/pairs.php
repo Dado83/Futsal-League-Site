@@ -1,22 +1,21 @@
 <table class="pairs">
     <p>Raspored:</p>
-    <tr>
-        <th>kolo</th>
-        <th>domaćin</th>
-        <th>gost</th>
-        <th>termin</th>            
-    </tr>
     <?php
-    foreach ($matchPairs as $row) {
-        echo <<<EOT
+    foreach ($matchDates1 as $no => $date) {
+        $no++;
+        echo "$no. kolo: $date->game_date <br>";
+
+        foreach ($matchPairs1 as $row) {
+            echo <<<EOT
              <tr>
              <td>$row->m_day</td>
              <td>$row->home_team</td>
-             <td>$row->away_team</td>
-             <td>$row->game_date</td>             
+             <td>$row->away_team</td>                        
              </tr>
 EOT;
+        }
     }
+
     ?>
 </table>
 <table class="pairs">
@@ -36,4 +35,3 @@ EOT;
     }
     ?>
 </table>
-<p>NK Natron ne nastupa u 2009. godištu</p>

@@ -76,7 +76,7 @@ EOT;
         return ($query) ? $query->result() : array();
     }
 
-    public function getMatchPairs()
+    public function getMatchPairs($mday)
     {
         $sql = <<<EOT
         SELECT matchpairs.id, matchpairs.m_day, matchpairs.home_team, matchpairs.away_team, matchpairs.game_date,
@@ -84,7 +84,18 @@ EOT;
         FROM matchpairs
         JOIN teams AS home ON matchpairs.home_team = home.id
         JOIN teams AS away ON matchpairs.away_team = away.id
-        WHERE NOT (matchpairs.home_team = 10 XOR matchpairs.away_team = 10)
+        WHERE matchpairs.m_day = $mday AND NOT (matchpairs.home_team = 10 XOR matchpairs.away_team = 10)
+EOT;
+        $query = $this->db->query($sql);
+        return ($query) ? $query->result() : array();
+    }
+
+    public function getMatchDates($mday)
+    {
+        $sql = <<<EOT
+        SELECT DISTINCT game_date
+        FROM matchpairs
+        WHERE m_day = $mday AND NOT (matchpairs.home_team = 10 XOR matchpairs.away_team = 10)
 EOT;
         $query = $this->db->query($sql);
         return ($query) ? $query->result() : array();
