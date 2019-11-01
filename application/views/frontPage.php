@@ -1,39 +1,11 @@
-<div id="fixture">
-    <table class="nextGame">
-        <?php
-        if ($isLeagueOver) {
-            echo '<h2><a href="/liga/finalsResults">Liga</a></h2>';
-        } else {
-            echo <<<EOT
-        <tr>            
-        <td class='nextMday' colspan='5'>$nextMday. kolo ($nextGameDate->game_date)</td>
-        </tr>
-EOT;
-            foreach ($nextFixture as $nf) {
-                echo <<<EOT
-            <tr>
-            <td class = 'nextGameH'>$nf->home</td>
-            <td class = 'nextGameImg'><img src = '/images/logos/$nf->home_team.png' alt = 'grb'></td>
-            <td class = 'nextGameTime'>$nf->game_time</td>
-            <td class = 'nextGameImg'><img src = '/images/logos/$nf->away_team.png' alt = 'grb'></td>
-            <td class = 'nextGameA'>$nf->away</td>
-            </tr >
-EOT;
-            }
-            echo <<<EOT
-            <tr>
-            <td class="notPlaying" colspan='3'>$notPlaying->team pauzira</td>
-            <td colspan='2'>
-            <span class='links'><a href='/liga/rezultati'>Rezultati</a> <a href='/liga/raspored'>Raspored</a></span>
-            </td>
-            </tr>
-EOT;
-        }
-        ?>
-    </table>
-</div>
-<hr>
-<div class="content">
+<ul>
+    <li>2006</li>
+    <li>2007</li>
+    <li>2008</li>
+    <li>2009</li>
+    <li>2010</li>
+</ul>
+<div id="g2010">
     <div class="results">
         <p><?php echo $lastMday ?>. kolo (2010. godište)</p>
         <table>
@@ -86,6 +58,8 @@ EOT;
             ?>
         </table>
     </div>
+</div>
+<div id="g2009">
     <div class="results">
         <p><?php echo $lastMday ?>. kolo (2009. godište)</p>
         <table>
@@ -138,6 +112,8 @@ EOT;
             ?>
         </table>
     </div>
+</div>
+<div id="g2008">
     <div class="results">
         <p><?php echo $lastMday ?>. kolo (2008. godište)</p>
         <table>
@@ -190,6 +166,8 @@ EOT;
             ?>
         </table>
     </div>
+</div>
+<div id="g2007">
     <div class="results">
         <p><?php echo $lastMday ?>. kolo (2007. godište)</p>
         <table>
@@ -242,6 +220,8 @@ EOT;
             ?>
         </table>
     </div>
+</div>
+<div id="g2006">
     <div class="results">
         <p><?php echo $lastMday ?>. kolo (2006. godište)</p>
         <table>
@@ -294,4 +274,38 @@ EOT;
             ?>
         </table>
     </div>
+</div>
+<div id="fixture">
+    <table class="nextGame">
+        <?php
+        if ($isLeagueOver) {
+            echo '<h2><a href="/liga/finalsResults">Završni turnir</a></h2>';
+        } else {
+            echo <<<EOT
+        <tr>            
+        <td class='nextMday' colspan='5'>$nextMday. kolo ($nextGameDate->game_date)</td>
+        </tr>
+EOT;
+            foreach ($nextFixture as $nf) {
+                echo <<<EOT
+            <tr>
+            <td class = 'nextGameH'>$nf->home</td>
+            <td class = 'nextGameImg'><img src = '/images/logos/$nf->home_team.png' alt = 'grb'></td>
+            <td class = 'nextGameTime'>$nf->game_time</td>
+            <td class = 'nextGameImg'><img src = '/images/logos/$nf->away_team.png' alt = 'grb'></td>
+            <td class = 'nextGameA'>$nf->away</td>
+            </tr >
+EOT;
+            }
+            echo <<<EOT
+            <tr>
+            <td class="notPlaying" colspan='3'>$notPlaying->team pauzira</td>
+            <td colspan='2'>
+            <span class='links'><a href='/liga/rezultati'>Rezultati</a> <a href='/liga/raspored'>Raspored</a></span>
+            </td>
+            </tr>
+EOT;
+        }
+        ?>
+    </table>
 </div>
