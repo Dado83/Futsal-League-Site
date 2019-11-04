@@ -1,9 +1,10 @@
 :root {
 	--logoWidth: 50px;
-	--fontSize30: 28px;
-	--fontSize25: 22px;
-	--fontSize20: 18px;
-	--fontSize15: 12px;
+	--fontSize30: 30px;
+	--fontSize25: 25px;
+	--fontSize20: 20px;
+	--fontSize15: 15px;
+	--fontSize10: 10px;
 	--gridTemplateColumns: auto auto;
 	--color1: #1d1815;
 	--color2: #f0dc00;
@@ -11,11 +12,166 @@
 	--color4: #e6760e;
 	--display: table-cell;
 	--clubLogoWidth: 400px;
+	--logoDim: 30px;
+	--logoTbl: 20px;
 }
 
+body {
+	min-width: 500px;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+		'Lucida Sans', Arial, sans-serif;
+	font-size: var(--fontSize15);
+}
+.content {
+	margin-top: 100px;
+	display: grid;
+	grid-template-columns: auto;
+	justify-items: center;
+}
+
+#nav {
+	position: fixed;
+	top: 0;
+	padding-top: 3px;
+	background: white;
+	width: 100%;
+	z-index: 1;
+}
+
+.fpLogo {
+	display: flex;
+	min-width: 400px;
+	justify-content: space-between;
+}
+
+.fpLogo img {
+	width: var(--logoWidth);
+}
+
+.title1 {
+	padding-top: 2px;
+	font-size: 30px;
+}
+
+.login input {
+	size: 1px;
+	font-size: 10px;
+}
+.login input[type='submit'] {
+	font-size: 10px;
+}
 #g2010,
 #g2009,
 #g2008,
 #g2007 {
 	display: none;
+}
+
+#youthSel {
+	display: flex;
+	list-style: none;
+	justify-content: space-around;
+}
+
+#youthSel li {
+	cursor: pointer;
+}
+
+.results img {
+	width: var(--logoDim);
+	height: var(--logoDim);
+	padding: 0 15px;
+	position: relative;
+	bottom: -5px;
+}
+
+.results td:nth-of-type(1) {
+	text-align: right;
+}
+
+.results td {
+	vertical-align: middle;
+	padding: 2px 0;
+}
+
+.results {
+	margin-top: 20px;
+	margin-bottom: 40px;
+}
+
+.table img {
+	width: var(--logoTbl);
+	height: var(--logoTbl);
+	padding: 0 5px 0 0;
+	position: relative;
+	bottom: -5px;
+}
+
+.table table {
+	border-collapse: collapse;
+}
+
+.table td {
+	vertical-align: bottom;
+	text-align: center;
+	padding: 2px 8px;
+}
+
+.table td:nth-child(2) {
+	text-align: left;
+}
+
+.table tr:nth-of-type(5) td {
+	border-bottom: 1px solid black;
+}
+
+.table a {
+	text-decoration: none;
+}
+
+.table a:visited {
+	text-decoration: none;
+	color: inherit;
+}
+
+.table a:link {
+	text-decoration: none;
+}
+
+.table a:hover {
+	text-shadow: 0 0 1px black;
+}
+
+.table {
+	margin-bottom: 40px;
+}
+
+.nextGame img {
+	width: var(--logoDim);
+	height: var(--logoDim);
+}
+
+.nextGame td:nth-of-type(1) {
+	text-align: right;
+}
+
+.nextGame tr:nth-of-type(1) td {
+	text-align: left;
+}
+
+.nextGame tr:nth-of-type(6) td {
+	text-align: left;
+}
+
+.nextGame tr:nth-of-type(n + 2):nth-of-type(-n + 5) td:nth-of-type(3) {
+	text-align: center;
+	padding: 0 15px;
+	font-size: var(--fontSize10);
+}
+.nextGame td {
+	padding: 2px;
+}
+.footer {
+	font-size: 10px;
+	margin-top: 60px;
 }

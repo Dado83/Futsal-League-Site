@@ -14,27 +14,37 @@
 </head>
 
 <body>
-    <div class="fpLogo">
-        <a href="/"><img id="logo" src="/images/grb.png" /></a>
-        <span class="title1">Fair Play</span><span class="title2">Liga Budućih Šampiona</span>
-        <?php
-        if ($this->session->role == 'admin') {
-            echo <<<EOT
+    <div id="nav">
+        <div class="fpLogo">
+            <a href="/"><img id="logo" src="/images/grb.png" /></a>
+            <span class="title1">Fair Play LBŠ</span>
+            <?php
+            if ($this->session->role == 'admin') {
+                echo <<<EOT
                 <form class="login" action="/liga/logout" method="POST">
                 <span><a href='/liga/admin'>Admin</a></span>
                 <input type="submit" value="Logout">
                 </form>
 EOT;
-        } else {
-            echo <<<EOT
-                <form class = "login" action = "/liga/login" method = "POST">
-                <span style='color:white'>{$this->session->loginError}</span>
-                <input type = "text" name = "user" placeholder = "username" size = "10" maxlength = "20">
-                <input type = "password" name = "pass" placeholder = "password" size = "10" maxlength = "20">
-                <input type = "submit" value = "Login">
-                </form >
+            } else {
+                echo <<<EOT
+                <form class="login" action="/liga/login" method="POST">
+                <span>{$this->session->loginError}</span>
+                <input type="text" name="user" placeholder="user" size="1" maxlength="20">
+                <input type="password" name="pass" placeholder="pass" size="1" maxlength="20">
+                <input type="submit" value="Login">
+                </form>
 EOT;
-        }
-        ?>
-
+            }
+            ?>
+        </div>
+        <ul id="youthSel">
+            <li>2006</li>
+            <li>2007</li>
+            <li>2008</li>
+            <li>2009</li>
+            <li>2010</li>
+            <li><a href='/liga/rezultati'>Rezultati</a> </li>
+            <li><a href='/liga/raspored'>Raspored</a></li>
+        </ul>
     </div>
