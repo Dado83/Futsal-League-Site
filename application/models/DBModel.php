@@ -10,7 +10,7 @@ class DBModel extends CI_Model
         return ($query) ? $query->result() : array();
     }
 
-    public function getTable($table, $isShortName = FALSE, $id = 11)
+    public function getTable($table, $isShortName = FALSE, $id1 = 11, $id2 = 12)
     {
         if ($isShortName) {
             $sql = <<<EOT
@@ -21,7 +21,7 @@ class DBModel extends CI_Model
             $table.games_lost,
             CONCAT ($table.goals_scored, ':', $table.goals_conceded) AS goals,
             $table.goals_scored - $table.goals_conceded AS g_diff,
-            $table.points FROM $table JOIN teams ON $table.id = teams.id WHERE NOT teams.id IN (10, $id)
+            $table.points FROM $table JOIN teams ON $table.id = teams.id WHERE NOT teams.id IN (10, $id1, $id2)
             ORDER BY $table.points DESC, g_diff DESC, $table.goals_scored DESC, team
 EOT;
         } else {

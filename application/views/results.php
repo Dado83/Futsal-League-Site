@@ -1,7 +1,7 @@
 <div class="resultsPage">
     <table>
         <tr>
-            <td colspan="3">2010. godište</td>
+            <td colspan="4">2010. godište</td>
         </tr>
         <tr>
             <td>kolo</td>
@@ -26,7 +26,7 @@ EOT;
     </table>
     <table>
         <tr>
-            <td colspan="3">2009. godište</td>
+            <td colspan="4">2009. godište</td>
         </tr>
         <tr>
             <td>kolo</td>
@@ -51,7 +51,7 @@ EOT;
     </table>
     <table>
         <tr>
-            <td colspan="3">2008. godište</td>
+            <td colspan="4">2008. godište</td>
         </tr>
         <tr>
             <td>kolo</td>
@@ -76,7 +76,7 @@ EOT;
     </table>
     <table>
         <tr>
-            <td colspan="3">2007. godište</td>
+            <td colspan="4">2007. godište</td>
         </tr>
         <tr>
             <td>kolo</td>
@@ -101,7 +101,7 @@ EOT;
     </table>
     <table>
         <tr>
-            <td colspan="3">2006. godište</td>
+            <td colspan="4">2006. godište</td>
         </tr>
         <tr>
             <td>kolo</td>

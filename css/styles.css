@@ -106,7 +106,7 @@ body {
 }
 
 .results td:nth-of-type(1) {
-	text-align: right;
+	text-align: left;
 }
 
 .results td {
@@ -171,10 +171,6 @@ body {
 	height: var(--logoDim);
 }
 
-.nextGame td:nth-of-type(1) {
-	text-align: right;
-}
-
 .nextGame tr:nth-of-type(1) td {
 	text-align: left;
 }
@@ -200,8 +196,10 @@ body {
 	margin-top: 120px;
 }
 
-.pairs tr:nth-of-type(1) {
+.pairs tr:nth-of-type(1) td {
 	font-weight: bold;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
 }
 
 .pairs tr:nth-of-type(6) {
@@ -220,7 +218,6 @@ body {
 }
 
 .pairs {
-	border-bottom: 1px solid black;
 	width: 60%;
 	max-width: 300px;
 }
@@ -230,14 +227,15 @@ body {
 }
 
 .resultsPage table {
-	border-bottom: 1px solid black;
 	margin-bottom: 20px;
 	width: 70%;
 	max-width: 400px;
+	border-collapse: collapse;
 }
 
-.resultsPage tr:nth-of-type(n + 1):nth-of-type(-n + 2) {
+.resultsPage tr:nth-of-type(n + 1):nth-of-type(-n + 2) td {
 	font-weight: bold;
+	border-bottom: 1px solid black;
 }
 
 .info {
@@ -259,7 +257,14 @@ body {
 
 .teamInfo {
 	margin-bottom: 40px;
+}
+
+.teamInfo td:nth-of-type(1) {
 	font-style: italic;
+}
+
+.teamResults td {
+	padding-bottom: 2px;
 }
 
 .teamResults {
@@ -267,10 +272,13 @@ body {
 	margin-bottom: 20px;
 	width: 70%;
 	max-width: 400px;
+	border-collapse: collapse;
 }
 
-.teamResults tr:nth-of-type(1) {
+.teamResults tr:nth-of-type(1) th {
 	text-align: left;
+	border-bottom: 1px solid black;
+	padding: 0 0 2px 0;
 }
 
 .resultsNL td {

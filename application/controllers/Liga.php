@@ -20,10 +20,10 @@ class Liga extends CI_Controller
         $data['title'] = 'Fair Play LBŠ';
         $data['teams'] = $this->DBModel->getTeams();
         $data['table6'] = $this->DBModel->getTable('table6', TRUE);
-        $data['table7'] = $this->DBModel->getTable('table7', TRUE);
+        $data['table7'] = $this->DBModel->getTable('table7', TRUE, 8);
         $data['table8'] = $this->DBModel->getTable('table8', TRUE);
         $data['table9'] = $this->DBModel->getTable('table9', TRUE);
-        $data['table10'] = $this->DBModel->getTable('table10', TRUE, 7);
+        $data['table10'] = $this->DBModel->getTable('table10', TRUE, 7, 1);
         $data['results6'] = $this->DBModel->getLastResults('results6')['results'];
         $data['results7'] = $this->DBModel->getLastResults('results7')['results'];
         $data['results8'] = $this->DBModel->getLastResults('results8')['results'];
