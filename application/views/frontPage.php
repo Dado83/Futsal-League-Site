@@ -23,7 +23,7 @@ EOT;
                 <tr>
                     <th>#</th>
                     <th>2010. godište</th>
-                    <th>O</th>
+                    <th>Ut</th>
                     <th>P</th>
                     <th>N</th>
                     <th>I</th>
@@ -77,7 +77,7 @@ EOT;
                 <tr>
                     <th>#</th>
                     <th>2009. godište</th>
-                    <th>O</th>
+                    <th>Ut</th>
                     <th>P</th>
                     <th>N</th>
                     <th>I</th>
@@ -131,7 +131,7 @@ EOT;
                 <tr>
                     <th>#</th>
                     <th>2008. godište</th>
-                    <th>O</th>
+                    <th>Ut</th>
                     <th>P</th>
                     <th>N</th>
                     <th>I</th>
@@ -185,7 +185,7 @@ EOT;
                 <tr>
                     <th>#</th>
                     <th>2007. godište</th>
-                    <th>O</th>
+                    <th>Ut</th>
                     <th>P</th>
                     <th>N</th>
                     <th>I</th>
@@ -239,7 +239,7 @@ EOT;
                 <tr>
                     <th>#</th>
                     <th>2006. godište</th>
-                    <th>O</th>
+                    <th>Ut</th>
                     <th>P</th>
                     <th>N</th>
                     <th>I</th>

@@ -1,4 +1,4 @@
-<div class="resutsPage">
+<div class="resultsPage">
     <table>
         <tr>
             <td colspan="3">2010. godište</td>
@@ -7,7 +7,7 @@
             <td>kolo</td>
             <td>domaćin</td>
             <td>gost</td>
-            <td colspan="2">rezultat</td>
+            <td colspan="3">rezultat</td>
         </tr>
         <?php
         foreach ($results10 as $row) {
@@ -17,6 +17,7 @@
         <td>$row->home_team</td>
         <td>$row->away_team</td>
         <td>$row->goals_home</td>
+        <td>:</td>
         <td>$row->goals_away</td>
         </tr>
 EOT;
@@ -31,7 +32,7 @@ EOT;
             <td>kolo</td>
             <td>domaćin</td>
             <td>gost</td>
-            <td colspan="2">rezultat</td>
+            <td colspan="3">rezultat</td>
         </tr>
         <?php
         foreach ($results9 as $row) {
@@ -41,6 +42,7 @@ EOT;
         <td>$row->home_team</td>
         <td>$row->away_team</td>
         <td>$row->goals_home</td>
+        <td>:</td>
         <td>$row->goals_away</td>
         </tr>
 EOT;
@@ -55,7 +57,7 @@ EOT;
             <td>kolo</td>
             <td>domaćin</td>
             <td>gost</td>
-            <td colspan="2">rezultat</td>
+            <td colspan="3">rezultat</td>
         </tr>
         <?php
         foreach ($results8 as $row) {
@@ -65,6 +67,7 @@ EOT;
         <td>$row->home_team</td>
         <td>$row->away_team</td>
         <td>$row->goals_home</td>
+        <td>:</td>
         <td>$row->goals_away</td>
         </tr>
 EOT;
@@ -79,7 +82,7 @@ EOT;
             <td>kolo</td>
             <td>domaćin</td>
             <td>gost</td>
-            <td colspan="2">rezultat</td>
+            <td colspan="3">rezultat</td>
         </tr>
         <?php
         foreach ($results7 as $row) {
@@ -89,6 +92,7 @@ EOT;
         <td>$row->home_team</td>
         <td>$row->away_team</td>
         <td>$row->goals_home</td>
+        <td>:</td>
         <td>$row->goals_away</td>
         </tr>
 EOT;
@@ -103,7 +107,7 @@ EOT;
             <td>kolo</td>
             <td>domaćin</td>
             <td>gost</td>
-            <td colspan="2">rezultat</td>
+            <td colspan="3">rezultat</td>
         </tr>
         <?php
         foreach ($results6 as $row) {
@@ -113,6 +117,7 @@ EOT;
         <td>$row->home_team</td>
         <td>$row->away_team</td>
         <td>$row->goals_home</td>
+        <td>:</td>
         <td>$row->goals_away</td>
         </tr>
 EOT;

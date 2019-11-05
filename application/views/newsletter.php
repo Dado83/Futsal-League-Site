@@ -8,7 +8,7 @@
     </style>
 </head>
 <h1>FAIR PLAY Liga Budućih Šampiona</h1>
-<h2>takmičarska sezona 2018/19</h2>
+<h2>takmičarska sezona 2019/20</h2>
 <h3>Bilten br. <?php echo $lastMday ?></h3>
 <br />
 <p>1. Registracija utakmica <?php echo $lastMday ?>. kola</p>
@@ -19,7 +19,7 @@ if ($isLeagueOver) { } else {
 ?>
 <br />
 <p>ad 1)</p>
-<p style="font-size:18px;"><?php echo $notPlayingLastMday->team ?> pauzira</p>
+<p><?php echo $notPlayingLastMday->team ?> pauzira</p>
 <div class="resultsNL">
     <p>2010. godište</p>
     <table>
@@ -43,7 +43,7 @@ EOT;
         <tr>
             <th>#</th>
             <th>2010. godište</th>
-            <th>O</th>
+            <th>Ut</th>
             <th>P</th>
             <th>N</th>
             <th>I</th>
@@ -95,7 +95,7 @@ EOT;
         <tr>
             <th>#</th>
             <th>2009. godište</th>
-            <th>O</th>
+            <th>Ut</th>
             <th>P</th>
             <th>N</th>
             <th>I</th>
@@ -147,7 +147,7 @@ EOT;
         <tr>
             <th>#</th>
             <th>2008. godište</th>
-            <th>O</th>
+            <th>Ut</th>
             <th>P</th>
             <th>N</th>
             <th>I</th>
@@ -199,7 +199,7 @@ EOT;
         <tr>
             <th>#</th>
             <th>2007. godište</th>
-            <th>O</th>
+            <th>Ut</th>
             <th>P</th>
             <th>N</th>
             <th>I</th>
@@ -251,7 +251,7 @@ EOT;
         <tr>
             <th>#</th>
             <th>2006. godište</th>
-            <th>O</th>
+            <th>Ut</th>
             <th>P</th>
             <th>N</th>
             <th>I</th>

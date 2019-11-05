@@ -383,10 +383,4 @@ class Liga extends CI_Controller
         $sessionData['role'] = $role;
         $this->session->set_userdata($sessionData);
     }
-
-    public function test()
-    {
-        //$data['teams'] = $this->DBModel->getTeams();
-        $this->load->view('test', $data);
-    }
 }
