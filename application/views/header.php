@@ -39,11 +39,11 @@ EOT;
             ?>
         </div>
         <ul id="youthSel">
-            <li>2006</li>
-            <li>2007</li>
-            <li>2008</li>
-            <li>2009</li>
-            <li>2010</li>
+            <li><a href="/liga/index/2006">2006</a></li>
+            <li><a href="/liga/index/2007">2007</a></li>
+            <li><a href="/liga/index/2008">2008</a></li>
+            <li><a href="/liga/index/2009">2009</a></li>
+            <li><a href="/liga/index/2010">2010</a></li>
             <li><a href='/liga/rezultati'>Rezultati</a> </li>
             <li><a href='/liga/raspored'>Raspored</a></li>
         </ul>

@@ -15,7 +15,7 @@ class Liga extends CI_Controller
         }
     }
 
-    public function index()
+    public function index($ysel = 2006)
     {
         $data['title'] = 'Fair Play LBŠ';
         $data['teams'] = $this->DBModel->getTeams();
@@ -39,7 +39,23 @@ class Liga extends CI_Controller
         $data['isLeagueOver'] = $data['lastMday'] == $maxMday->mDay;
 
         $this->load->view('header', $data);
-        $this->load->view('frontPage', $data);
+        switch ($ysel) {
+            case 2006:
+                $this->load->view('y2006', $data);
+                break;
+            case 2007:
+                $this->load->view('y2007', $data);
+                break;
+            case 2008:
+                $this->load->view('y2008', $data);
+                break;
+            case 2009:
+                $this->load->view('y2009', $data);
+                break;
+            case 2010:
+                $this->load->view('y2010', $data);
+                break;
+        }
         $this->load->view('footer', $data);
     }
 

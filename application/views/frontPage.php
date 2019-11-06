@@ -1,5 +1,5 @@
 <div class="content">
-    <div id="g2010">
+    <div id="g2010" class="ys">
         <div class="results">
             <p><?php echo $lastMday ?>. kolo (2010. godište)</p>
             <table>
@@ -53,7 +53,7 @@ EOT;
             </table>
         </div>
     </div>
-    <div id="g2009">
+    <div id="g2009" class="ys">
         <div class="results">
             <p><?php echo $lastMday ?>. kolo (2009. godište)</p>
             <table>
@@ -107,7 +107,7 @@ EOT;
             </table>
         </div>
     </div>
-    <div id="g2008">
+    <div id="g2008" class="ys">
         <div class="results">
             <p><?php echo $lastMday ?>. kolo (2008. godište)</p>
             <table>
@@ -161,7 +161,7 @@ EOT;
             </table>
         </div>
     </div>
-    <div id="g2007">
+    <div id="g2007" class="ys">
         <div class="results">
             <p><?php echo $lastMday ?>. kolo (2007. godište)</p>
             <table>
@@ -215,7 +215,7 @@ EOT;
             </table>
         </div>
     </div>
-    <div id="g2006">
+    <div id="g2006" class="ys">
         <div class="results">
             <p><?php echo $lastMday ?>. kolo (2006. godište)</p>
             <table>

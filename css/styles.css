@@ -62,12 +62,6 @@ body {
 .login input[type='submit'] {
 	font-size: 10px;
 }
-#g2010,
-#g2009,
-#g2008,
-#g2007 {
-	display: none;
-}
 
 #youthSel a {
 	text-decoration: none;
