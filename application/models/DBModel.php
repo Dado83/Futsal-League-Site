@@ -172,14 +172,14 @@ EOT;
 
     public function getGameFromResults($id)
     {
-        $sql = "SELECT * FROM results7 WHERE id = $id";
+        $sql = "SELECT * FROM results6 WHERE id = $id";
         $query = $this->db->query($sql);
         return ($query) ? $query->row() : array();
     }
 
-    public function getGame10($home_id, $away_id)
+    public function getGameBySel($results, $home_id, $away_id)
     {
-        $sql = "SELECT * FROM results10 WHERE home_teamid = $home_id AND away_teamid = $away_id";
+        $sql = "SELECT * FROM $results WHERE home_teamid = $home_id AND away_teamid = $away_id";
         $query = $this->db->query($sql);
         return ($query) ? $query->row() : array();
     }
