@@ -1,7 +1,11 @@
 <div class="content">
     <div id="g2008" class="ys">
         <div class="results">
-            <p><?php echo $lastMday ?>. kolo (2008. godište)</p>
+            <p>
+                <?php
+                echo ($lastMday != 0) ? $lastMday . 'kolo (2008. godište)' : ''
+                ?>
+            </p>
             <table>
                 <?php
                 foreach ($results8 as $r) {

@@ -24,8 +24,8 @@
     </table>
     <table class="teamResults">
         <?php
-        if ($results10 == NULL) {
-            echo "<i><p>ne takmici se u 2010. godistu</p></i>";
+        if ($results10 < 0) {
+            echo "<i><p>ne takmiči se u 2010. godištu</p></i>";
         } else {
             echo <<<EOT
         <p style='font-weight:bold; font-style:italic;'>2010. godište</p>
@@ -99,24 +99,30 @@ EOT;
         ?>
     </table>
     <table class="teamResults">
-        <p style='font-weight:bold; font-style:italic;'>2007. godište</p>
-        <tr>
-            <th>kolo</th>
-            <th>domaćin</th>
-            <th>gost</th>
-            <th colspan="3">rezultat</th>
-        </tr>
         <?php
+        if ($results7 < 0) {
+            echo "<i><p>ne takmiči se u 2007. godištu</p></i>";
+        } else {
+            echo <<<EOT
+            <p style='font-weight:bold; font-style:italic;'>2007. godište</p>
+            <tr>
+                <th>kolo</th>
+                <th>domaćin</th>
+                <th>gost</th>
+                <th colspan="3">rezultat</th>
+            </tr>
+EOT;
+        }
         foreach ($results7 as $r) {
             echo <<<EOT
-        <tr>
-        <td>$r->m_day</td>
-        <td>$r->home_team</td>
-        <td>$r->away_team</td>
-        <td>$r->goals_home</td>
-        <td>:</td>
-        <td>$r->goals_away</td>
-        </tr>
+            <tr>
+                <td>$r->m_day</td>
+                <td>$r->home_team</td>
+                <td>$r->away_team</td>
+                <td>$r->goals_home</td>
+                <td>:</td>
+                <td>$r->goals_away</td>
+            </tr>
 EOT;
         }
         ?>
