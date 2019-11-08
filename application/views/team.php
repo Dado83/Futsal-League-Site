@@ -24,7 +24,7 @@
     </table>
     <table class="teamResults">
         <?php
-        if ($results10 < 0) {
+        if ($results10 == NULL) {
             echo "<i><p>ne takmiči se u 2010. godištu</p></i>";
         } else {
             echo <<<EOT
@@ -100,7 +100,7 @@ EOT;
     </table>
     <table class="teamResults">
         <?php
-        if ($results7 < 0) {
+        if ($results7 == NULL) {
             echo "<i><p>ne takmiči se u 2007. godištu</p></i>";
         } else {
             echo <<<EOT
