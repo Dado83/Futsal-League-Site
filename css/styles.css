@@ -3,7 +3,7 @@
 	--fontSize30: 30px;
 	--fontSize25: 25px;
 	--fontSize20: 20px;
-	--fontSize15: 15px;
+	--fontSize12: 12px;
 	--fontSize10: 10px;
 	--gridTemplateColumns: auto auto;
 	--color1: #1d1815;
@@ -17,10 +17,10 @@
 }
 
 body {
-	min-width: 480px;
+	min-width: 340px;
 	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
 		'Lucida Sans', Arial, sans-serif;
-	font-size: var(--fontSize15);
+	font-size: var(--fontSize12);
 }
 .content {
 	margin-top: 100px;
@@ -42,7 +42,7 @@ body {
 
 .fpLogo {
 	display: flex;
-	min-width: 400px;
+	min-width: 340px;
 	justify-content: space-between;
 }
 
