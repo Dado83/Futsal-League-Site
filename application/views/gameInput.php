@@ -31,6 +31,11 @@
                         <input type="hidden" name="away" value="<?php echo $game->away ?>">
                     </td>
                 </tr>
+                <?php
+                if (($game->home_team == 1 or $game->away_team == 1) or ($game->home_team == 7 or $game->away_team == 7)) {
+                    echo '';
+                } else {
+                    echo <<<EOT
                 <tr>
                     <td>
                         2010
@@ -42,6 +47,9 @@
                         <input type="number" name="away10" value="0" min="0" max="50">
                     </td>
                 </tr>
+EOT;
+                }
+                ?>
                 <tr>
                     <td>
                         2009
@@ -65,6 +73,11 @@
                     </td>
                 </tr>
                 <tr>
+                    <?php
+                    if ($game->home_team == 8 or $game->away_team == 8) {
+                        echo '';
+                    } else {
+                        echo <<<EOT
                     <td>
                         2007
                     </td>
@@ -75,6 +88,9 @@
                         <input type="number" name="away7" value="0" min="0" max="50">
                     </td>
                 </tr>
+EOT;
+                    }
+                    ?>
                 <tr>
                     <td>
                         2006

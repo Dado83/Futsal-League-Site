@@ -33,7 +33,7 @@ EOT;
             $table.games_lost,
             CONCAT ($table.goals_scored, ':', $table.goals_conceded) AS goals,
             $table.goals_scored - $table.goals_conceded AS g_diff,
-            $table.points FROM $table JOIN teams ON $table.id = teams.id WHERE NOT teams.id IN (10, $id)
+            $table.points FROM $table JOIN teams ON $table.id = teams.id WHERE NOT teams.id IN (10, $id1, $id2)
             ORDER BY $table.points DESC, g_diff DESC, $table.goals_scored DESC, team
 EOT;
         }
@@ -221,18 +221,20 @@ EOT;
 
     public function insertGame($results, $table, $mday, $home, $home_id, $away, $away_id, $goals_h, $goals_a)
     {
-        $sql = <<<EOT
+        if ($goals_h == NULL) { } else {
+            $sql = <<<EOT
         INSERT INTO $results (m_day, home_team, home_teamid, away_team, away_teamid, goals_home, goals_away)
         VALUES ($mday , '$home', $home_id, '$away', $away_id, $goals_h, $goals_a)
 EOT;
-        $this->db->query($sql);
+            $this->db->query($sql);
 
-        if ($goals_h > $goals_a) {
-            $this->homeWin($table, $home_id, $away_id, $goals_h, $goals_a);
-        } elseif ($goals_a > $goals_h) {
-            $this->awayWin($table, $home_id, $away_id, $goals_h, $goals_a);
-        } else {
-            $this->gameDraw($table, $home_id, $away_id, $goals_h, $goals_a);
+            if ($goals_h > $goals_a) {
+                $this->homeWin($table, $home_id, $away_id, $goals_h, $goals_a);
+            } elseif ($goals_a > $goals_h) {
+                $this->awayWin($table, $home_id, $away_id, $goals_h, $goals_a);
+            } else {
+                $this->gameDraw($table, $home_id, $away_id, $goals_h, $goals_a);
+            }
         }
     }
 

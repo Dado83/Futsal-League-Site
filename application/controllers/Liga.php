@@ -194,23 +194,12 @@ class Liga extends CI_Controller
         $home6 = $this->input->post('home6');
         $away6 = $this->input->post('away6');
 
-        if ($homeID == 8 or $awayID == 8) {
-            $this->DBModel->insertGame('results6', 'table6', $mDay, $home, $homeID, $away, $awayID, $home6, $away6);
-            $this->DBModel->insertGame('results8', 'table8', $mDay, $home, $homeID, $away, $awayID, $home8, $away8);
-            $this->DBModel->insertGame('results9', 'table9', $mDay, $home, $homeID, $away, $awayID, $home9, $away9);
-            $this->DBModel->insertGame('results10', 'table10', $mDay, $home, $homeID, $away, $awayID, $home10, $away10);
-        } else if (($homeID == 7 or $awayID == 7) or ($homeID == 1 or $awayID == 1)) {
-            $this->DBModel->insertGame('results6', 'table6', $mDay, $home, $homeID, $away, $awayID, $home6, $away6);
-            $this->DBModel->insertGame('results7', 'table7', $mDay, $home, $homeID, $away, $awayID, $home7, $away7);
-            $this->DBModel->insertGame('results8', 'table8', $mDay, $home, $homeID, $away, $awayID, $home8, $away8);
-            $this->DBModel->insertGame('results9', 'table9', $mDay, $home, $homeID, $away, $awayID, $home9, $away9);
-        } else {
-            $this->DBModel->insertGame('results6', 'table6', $mDay, $home, $homeID, $away, $awayID, $home6, $away6);
-            $this->DBModel->insertGame('results7', 'table7', $mDay, $home, $homeID, $away, $awayID, $home7, $away7);
-            $this->DBModel->insertGame('results8', 'table8', $mDay, $home, $homeID, $away, $awayID, $home8, $away8);
-            $this->DBModel->insertGame('results9', 'table9', $mDay, $home, $homeID, $away, $awayID, $home9, $away9);
-            $this->DBModel->insertGame('results10', 'table10', $mDay, $home, $homeID, $away, $awayID, $home10, $away10);
-        }
+        $this->DBModel->insertGame('results6', 'table6', $mDay, $home, $homeID, $away, $awayID, $home6, $away6);
+        $this->DBModel->insertGame('results7', 'table7', $mDay, $home, $homeID, $away, $awayID, $home7, $away7);
+        $this->DBModel->insertGame('results8', 'table8', $mDay, $home, $homeID, $away, $awayID, $home8, $away8);
+        $this->DBModel->insertGame('results9', 'table9', $mDay, $home, $homeID, $away, $awayID, $home9, $away9);
+        $this->DBModel->insertGame('results10', 'table10', $mDay, $home, $homeID, $away, $awayID, $home10, $away10);
+
         $this->DBModel->setPlayed($id, TRUE);
 
         $data['results'] = $this->DBModel->getResults('results6');
