@@ -3,7 +3,7 @@
         <div class="results">
             <p>
                 <?php
-                echo ($lastMday != 0) ? $lastMday . 'kolo (2008. godište)' : ''
+                echo ($lastMday != 0) ? $lastMday . '. kolo (2008. godište)' : ''
                 ?>
             </p>
             <table>
