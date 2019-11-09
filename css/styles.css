@@ -6,10 +6,9 @@
 	--fontSize12: 12px;
 	--fontSize10: 10px;
 	--gridTemplateColumns: auto auto;
-	--color1: #1d1815;
-	--color2: #f0dc00;
-	--color3: #db2519;
-	--color4: #e6760e;
+	--color1: #29487d;
+	--color2: #4267b2;
+	--color3: #fff;
 	--display: table-cell;
 	--clubLogoWidth: 400px;
 	--logoDim: 30px;
@@ -38,6 +37,8 @@ body {
 	width: 101%;
 	z-index: 1;
 	box-shadow: 0 0 5px black;
+	background: var(--color1);
+	color: var(--color3);
 }
 
 .fpLogo {
@@ -69,26 +70,32 @@ body {
 
 #youthSel a:visited {
 	text-decoration: none;
-	color: inherit;
+	color: var(--color3);
 }
 
 #youthSel a:link {
 	text-decoration: none;
+	color: var(--color3);
 }
 
 #youthSel a:hover,
 #youthSel li:hover {
-	text-shadow: 0 0 1px black;
+	background: var(--color2);
 }
 
 #youthSel {
 	display: flex;
 	list-style: none;
 	justify-content: space-around;
+	padding-inline-start: 0px;
+	padding: 8px 0;
+	margin: auto;
 }
 
 #youthSel li {
 	cursor: pointer;
+	padding: 5px 10px;
+	margin-bottom: -8px;
 }
 
 .results img {
@@ -141,19 +148,27 @@ body {
 
 .table a {
 	text-decoration: none;
+	color: black;
 }
 
 .table a:visited {
 	text-decoration: none;
-	color: inherit;
+	color: black;
 }
 
 .table a:link {
 	text-decoration: none;
+	color: black;
 }
 
 .table a:hover {
-	text-shadow: 0 0 1px black;
+	color: var(--color2);
+}
+
+.table th {
+	background: var(--color1);
+	color: var(--color3);
+	padding: 2px;
 }
 
 .table {
@@ -192,8 +207,9 @@ body {
 
 .pairs tr:nth-of-type(1) td {
 	font-weight: bold;
-	border-top: 1px solid black;
-	border-bottom: 1px solid black;
+	padding: 1px;
+	background: var(--color1);
+	color: var(--color3);
 }
 
 .pairs tr:nth-of-type(6) {
@@ -212,24 +228,27 @@ body {
 }
 
 .pairs {
-	width: 60%;
+	width: 80%;
 	max-width: 300px;
 }
 
 .resultsPage {
 	margin-top: 120px;
 }
-
+.resultsPage tr:nth-of-type(2) {
+	background: var(--color1);
+	color: var(--color3);
+}
 .resultsPage table {
 	margin-bottom: 20px;
-	width: 70%;
+	width: 80%;
 	max-width: 400px;
 	border-collapse: collapse;
 }
 
 .resultsPage tr:nth-of-type(n + 1):nth-of-type(-n + 2) td {
 	font-weight: bold;
-	border-bottom: 1px solid black;
+	padding: 1px;
 }
 
 .info {
@@ -261,10 +280,15 @@ body {
 	padding-bottom: 2px;
 }
 
+.teamResults th {
+	background: var(--color1);
+	color: var(--color3);
+}
+
 .teamResults {
 	border-bottom: 1px solid black;
 	margin-bottom: 20px;
-	width: 70%;
+	width: 80%;
 	max-width: 400px;
 	border-collapse: collapse;
 }
