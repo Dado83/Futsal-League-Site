@@ -11,11 +11,13 @@
                 foreach ($results10 as $r) {
                     echo <<<EOT
             <tr>
-            <td>$r->home_team</td><td><a href="/liga/ekipa/$r->home_teamid"><img src='/images/logos/$r->home_teamid.png' alt='grb'></a></td>
+            <td><a href="/liga/ekipa/$r->home_teamid">$r->home_team</a></td>
+            <td><a href="/liga/ekipa/$r->home_teamid"><img src='/images/logos/$r->home_teamid.png' alt='grb'></a></td>
             <td>$r->goals_home</td>
             <td> : </td>
             <td>$r->goals_away</td>
-            <td><a href="/liga/ekipa/$r->away_teamid"><img src='/images/logos/$r->away_teamid.png' alt='grb'></a></td><td>$r->away_team</td>
+            <td><a href="/liga/ekipa/$r->away_teamid"><img src='/images/logos/$r->away_teamid.png' alt='grb'></a></td>
+            <td><a href="/liga/ekipa/$r->away_teamid">$r->away_team</a></td>
             </tr>
 EOT;
                 }
@@ -71,12 +73,12 @@ EOT;
                 foreach ($nextFixture as $nf) {
                     echo <<<EOT
             <tr>
-            <td class='nextGameH'>$nf->home</td>
+            <td class='nextGameH'><a href="/liga/ekipa/$nf->home_team">$nf->home</a></td>
             <td class='nextGameImg'><a href="/liga/ekipa/$nf->home_team"><img src='/images/logos/$nf->home_team.png' alt='grb'></a></td>
             <td class='nextGameTime'>$nf->game_time</td>
             <td class='nextGameImg'><a href="/liga/ekipa/$nf->away_team"><img src='/images/logos/$nf->away_team.png' alt='grb'></a></td>
-            <td class='nextGameA'>$nf->away</td>
-            </tr >
+            <td class='nextGameA'><a href="/liga/ekipa/$nf->away_team">$nf->away</a></td>
+            </tr>
 EOT;
                 }
                 echo <<<EOT
