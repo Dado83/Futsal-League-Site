@@ -51,6 +51,11 @@ body {
 	width: var(--logoWidth);
 }
 
+.fpLogo a {
+	color: var(--color3);
+	text-decoration: none;
+}
+
 .title1 {
 	padding-top: 2px;
 	font-size: 30px;

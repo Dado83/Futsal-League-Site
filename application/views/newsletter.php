@@ -7,9 +7,9 @@
         }
     </style>
 </head>
-<h1>FAIR PLAY Liga Budućih Šampiona</h1>
-<h2>takmičarska sezona 2019/20</h2>
-<h3>Bilten br. <?php echo $lastMday ?></h3>
+<h1 style="text-align:center">FAIR PLAY Liga Budućih Šampiona</h1>
+<h2 style="text-align:center">takmičarska sezona 2019/20</h2>
+<h3 style="text-align:center">Bilten br. <?php echo $lastMday ?></h3>
 <br />
 <p>1. Registracija utakmica <?php echo $lastMday ?>. kola</p>
 <?php
