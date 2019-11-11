@@ -146,22 +146,30 @@ body {
 	border-bottom: 1px solid black;
 }
 
-.table a {
+.table a,
+.results a,
+.nextGame a {
 	text-decoration: none;
 	color: black;
 }
 
-.table a:visited {
+.table a:visited,
+.results a:visited,
+.nextGame a:visited {
 	text-decoration: none;
 	color: black;
 }
 
-.table a:link {
+.table a:link,
+.results a:link,
+.nextGame a:link {
 	text-decoration: none;
 	color: black;
 }
 
-.table a:hover {
+.table a:hover,
+.results a:hover,
+.nextGame a:hover {
 	color: var(--color2);
 }
 
