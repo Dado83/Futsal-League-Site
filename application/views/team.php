@@ -24,9 +24,7 @@
     </table>
     <?php
     if ($results6 == NULL) :
-
-    else :
-        ?>
+    else : ?>
         <table class="teamResults">
             <?php
                 if ($results10 == NULL) {
@@ -155,7 +153,5 @@ EOT;
                 }
                 ?>
         </table>
-    <?php
-    endif
-    ?>
+    <?php endif ?>
 </div>
