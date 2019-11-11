@@ -42,8 +42,8 @@ EOT;
             echo <<<EOT
         <tr>
         <td>$r->m_day</td>
-        <td>$r->home_team</td>
-        <td>$r->away_team</td>
+        <td><a href="/liga/ekipa/$r->home_teamid">$r->home_team</a></td>
+        <td><a href="/liga/ekipa/$r->away_teamid">$r->away_team</a></td>
         <td>$r->goals_home</td>
         <td>:</td>
         <td>$r->goals_away</td>
@@ -65,8 +65,8 @@ EOT;
             echo <<<EOT
         <tr>
         <td>$r->m_day</td>
-        <td>$r->home_team</td>
-        <td>$r->away_team</td>
+        <td><a href="/liga/ekipa/$r->home_teamid">$r->home_team</a></td>
+        <td><a href="/liga/ekipa/$r->away_teamid">$r->away_team</a></td>
         <td>$r->goals_home</td>
         <td>:</td>
         <td>$r->goals_away</td>
@@ -88,8 +88,8 @@ EOT;
             echo <<<EOT
         <tr>
         <td>$r->m_day</td>
-        <td>$r->home_team</td>
-        <td>$r->away_team</td>
+        <td><a href="/liga/ekipa/$r->home_teamid">$r->home_team</a></td>
+        <td><a href="/liga/ekipa/$r->away_teamid">$r->away_team</a></td>
         <td>$r->goals_home</td>
         <td>:</td>
         <td>$r->goals_away</td>
@@ -117,8 +117,8 @@ EOT;
             echo <<<EOT
             <tr>
                 <td>$r->m_day</td>
-                <td>$r->home_team</td>
-                <td>$r->away_team</td>
+                <td><a href="/liga/ekipa/$r->home_teamid">$r->home_team</a></td>
+                <td><a href="/liga/ekipa/$r->away_teamid">$r->away_team</a></td>
                 <td>$r->goals_home</td>
                 <td>:</td>
                 <td>$r->goals_away</td>
@@ -140,8 +140,8 @@ EOT;
             echo <<<EOT
         <tr>
         <td>$r->m_day</td>
-        <td>$r->home_team</td>
-        <td>$r->away_team</td>
+        <td><a href="/liga/ekipa/$r->home_teamid">$r->home_team</a></td>
+        <td><a href="/liga/ekipa/$r->away_teamid">$r->away_team</a></td>
         <td>$r->goals_home</td>
         <td>:</td>
         <td>$r->goals_away</td>

@@ -153,28 +153,32 @@ body {
 
 .table a,
 .results a,
-.nextGame a {
+.nextGame a,
+.teamResults a {
 	text-decoration: none;
 	color: black;
 }
 
 .table a:visited,
 .results a:visited,
-.nextGame a:visited {
+.nextGame a:visited,
+.teamResults a:visited {
 	text-decoration: none;
 	color: black;
 }
 
 .table a:link,
 .results a:link,
-.nextGame a:link {
+.nextGame a:link,
+.teamResults a:link {
 	text-decoration: none;
 	color: black;
 }
 
 .table a:hover,
 .results a:hover,
-.nextGame a:hover {
+.nextGame a:hover,
+.teamResults a:hover {
 	color: var(--color2);
 }
 
@@ -290,7 +294,7 @@ body {
 }
 
 .teamResults td {
-	padding-bottom: 2px;
+	padding-bottom: 4px;
 }
 
 .teamResults th {
