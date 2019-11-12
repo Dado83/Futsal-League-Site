@@ -19,6 +19,7 @@
         <div class="fpLogo">
             <a href="/"><img id="logo" src="/images/grb.png" /></a>
             <span class="title1">Fair Play LBŠ</span>
+            <span class="title2">Liga Budućih Šampiona</span>
             <?php
             if ($this->session->role == 'admin') {
                 echo <<<EOT

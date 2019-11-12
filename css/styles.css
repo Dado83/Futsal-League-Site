@@ -18,8 +18,8 @@
 
 body {
 	min-width: 340px;
-	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-		'Lucida Sans', Arial, sans-serif;
+	font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+		"Lucida Sans", Arial, sans-serif;
 	font-size: var(--fontSize12);
 }
 .content {
@@ -62,12 +62,18 @@ body {
 	font-size: 30px;
 }
 
+.title2 {
+	display: none;
+}
+
 .login input {
 	size: 1px;
 	font-size: 10px;
 }
-.login input[type='submit'] {
+.login input[type="submit"] {
 	font-size: 10px;
+	margin-right: 4px;
+	padding: 1px;
 }
 
 #youthSel a {
@@ -378,9 +384,18 @@ body {
 		--clubLogoWidth: 400px;
 		--contentMarginTop: 160px;
 	}
-
 	.title1 {
-		padding-top: 10px;
-		font-size: 50px;
+		display: none;
+	}
+	.title2 {
+		display: inline;
+		padding-top: 20px;
+		font-size: 40px;
+	}
+
+	.login input[type="submit"] {
+		font-size: 10px;
+		margin-right: 12px;
+		padding: 2px;
 	}
 }
