@@ -13,6 +13,7 @@
 	--clubLogoWidth: 400px;
 	--logoDim: 30px;
 	--logoTbl: 20px;
+	--contentMarginTop: 100px;
 }
 
 body {
@@ -22,7 +23,7 @@ body {
 	font-size: var(--fontSize12);
 }
 .content {
-	margin-top: 100px;
+	margin-top: var(--contentMarginTop);
 	display: grid;
 	grid-template-columns: auto;
 	justify-items: center;
@@ -219,7 +220,7 @@ body {
 }
 
 .pairsAll {
-	margin-top: 120px;
+	margin-top: var(--contentMarginTop);
 }
 
 .pairs tr:nth-of-type(1) td {
@@ -250,7 +251,7 @@ body {
 }
 
 .resultsPage {
-	margin-top: 120px;
+	margin-top: var(--contentMarginTop);
 }
 .resultsPage tr:nth-of-type(2) {
 	background: var(--color1);
@@ -269,11 +270,11 @@ body {
 }
 
 .info {
-	margin-top: 120px;
+	margin-top: var(--contentMarginTop);
 }
 
 .form {
-	margin-top: 120px;
+	margin-top: var(--contentMarginTop);
 }
 
 .teamLogo {
@@ -282,7 +283,7 @@ body {
 }
 
 .team {
-	margin-top: 120px;
+	margin-top: var(--contentMarginTop);
 }
 
 .teamInfo {
@@ -373,5 +374,13 @@ body {
 @media screen and (min-width: 640px) {
 	:root {
 		--fontSize12: 15px;
+		--logoWidth: 100px;
+		--clubLogoWidth: 400px;
+		--contentMarginTop: 160px;
+	}
+
+	.title1 {
+		padding-top: 10px;
+		font-size: 50px;
 	}
 }
