@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" defer></script>
     <script src="/js/scripts.js" defer></script>
 </head>
 

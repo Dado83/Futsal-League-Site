@@ -1,5 +1,16 @@
+<!doctype html>
+<html lang="en">
+
 <head>
+    <meta charset="utf-8">
+    <title>Napravi raspored...</title>
+    <meta name="description" content="Fair Play LBŠ website">
+    <meta name="keywords" content="Fair Play, Liga Budućih Šampiona, LBŠ, Liga">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/stylesFts.css">
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="/js/scripts.js" defer></script>
 </head>
 <div>
     <h2>Turnir mejker :)</h2>
@@ -7,22 +18,22 @@
 <div>
     <p>Pocetak turnira:</p>
     <label for="startHour">Sati</label>
-    <input type="number" id="startHour" placeholder="sati" min="0" max="23" />
+    <input type="number" id="startHour" min="0" max="23" value="12" />
     <label for="startMin">Minuta</label>
-    <input type="number" id="startMin" placeholder="minuta" min="0" max="59" />
+    <input type="number" id="startMin" min="0" max="59" value="00" />
 </div>
 <div>
     <p>Informacije o turniru:</p>
     <label for="numOfTeams">Broj ekipa:</label>
-    <input type="number" id="numOfTeams" placeholder="broj ekipa" min="2" value="8" /><br>
+    <input type="number" id="numOfTeams" min="2" value="8" /><br>
     <label for="numOfTeamsPerGroup">Broj ekipa po grupi:</label>
-    <input type="number" id="numOfTeamsPerGroup" placeholder="broj ekipa po grupi" min="3" max="6" value="4" /><br>
+    <input type="number" id="numOfTeamsPerGroup" min="3" max="6" value="4" /><br>
     <label for="gameDuration">Trajanje utakmice (min):</label>
-    <input type="number" id="gameDuration" placeholder="trajanje tekme" min="6" value="6" /><br>
+    <input type="number" id="gameDuration" min="6" value="10" /><br>
     <label for=" afterGamePause">Pauza poslje utakmice (min):</label>
-    <input type="number" id="afterGamePause" placeholder="pauza poslje tekme" min="1" value="1" /><br>
+    <input type="number" id="afterGamePause" min="1" value="2" /><br>
     <label for="numOfFields">Broj terena:</label>
-    <input type="number" id="numOfFields" placeholder="broj terena" value="1" min="1" /><br>
+    <input type="number" id="numOfFields" min="1" value="1" /><br>
 </div>
 <div>
     <button id="makeTables">Napravi tabele</button><button id="reset">reset</button>
@@ -244,6 +255,7 @@
             function reset() {
                 document.querySelector('#makeTables').disabled = false;
                 document.querySelector('#dynamic').innerHTML = '';
+                document.querySelector('#list').innerHTML = '';
             }
 
 
