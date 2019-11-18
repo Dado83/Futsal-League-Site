@@ -12,17 +12,17 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="/js/scripts.js" defer></script>
 </head>
-<div>
+<div id="title">
     <h2>Turnir mejker :)</h2>
 </div>
-<div>
+<div id="time">
     <p>Pocetak turnira:</p>
     <label for="startHour">Sati</label>
     <input type="number" id="startHour" min="0" max="23" value="12" />
     <label for="startMin">Minuta</label>
     <input type="number" id="startMin" min="0" max="59" value="00" />
 </div>
-<div>
+<div id="tourFormat">
     <p>Informacije o turniru:</p>
     <label for="numOfTeams">Broj ekipa:</label>
     <input type="number" id="numOfTeams" min="2" value="8" /><br>
@@ -35,7 +35,7 @@
     <label for="numOfFields">Broj terena:</label>
     <input type="number" id="numOfFields" min="1" value="1" /><br>
 </div>
-<div>
+<div id="buttons">
     <button id="makeTables">Napravi tabele</button><button id="reset">reset</button>
 </div>
 <div id="dynamic"></div>

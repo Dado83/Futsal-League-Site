@@ -18,26 +18,22 @@
 
 body {
 	min-width: 340px;
-	font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-		"Lucida Sans", Arial, sans-serif;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+		'Lucida Sans', Arial, sans-serif;
 	font-size: var(--fontSize12);
 }
 .content {
-	margin-top: var(--contentMarginTop);
 	display: grid;
 	grid-template-columns: auto;
 	justify-items: center;
 }
 
-#nav {
-	position: fixed;
-	top: 0;
+#nav,
+#youthSel {
+	margin: 0 0 0 -8px;
 	padding-top: 3px;
-	margin-left: -10px;
 	background: white;
-	width: 101%;
-	z-index: 1;
-	box-shadow: 0 0 5px black;
+	width: 104%;
 	background: var(--color1);
 	color: var(--color3);
 }
@@ -70,7 +66,7 @@ body {
 	size: 1px;
 	font-size: 10px;
 }
-.login input[type="submit"] {
+.login input[type='submit'] {
 	font-size: 10px;
 	margin-right: 4px;
 	padding: 1px;
@@ -99,9 +95,10 @@ body {
 	display: flex;
 	list-style: none;
 	justify-content: space-around;
-	padding-inline-start: 0px;
 	padding: 8px 0;
-	margin: auto;
+	z-index: 1;
+	position: sticky;
+	top: 0;
 }
 
 #youthSel li {
@@ -384,6 +381,11 @@ body {
 		--clubLogoWidth: 400px;
 		--contentMarginTop: 160px;
 	}
+
+	#nav {
+		width: 102%;
+	}
+
 	.title1 {
 		display: none;
 	}
@@ -393,7 +395,7 @@ body {
 		font-size: 40px;
 	}
 
-	.login input[type="submit"] {
+	.login input[type='submit'] {
 		font-size: 10px;
 		margin-right: 12px;
 		padding: 2px;

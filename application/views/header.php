@@ -40,13 +40,14 @@ EOT;
             }
             ?>
         </div>
-        <ul id="youthSel">
-            <li><a href="/liga/index/2006">2006</a></li>
-            <li><a href="/liga/index/2007">2007</a></li>
-            <li><a href="/liga/index/2008">2008</a></li>
-            <li><a href="/liga/index/2009">2009</a></li>
-            <li><a href="/liga/index/2010">2010</a></li>
-            <li><a href='/liga/rezultati'>Rezultati</a> </li>
-            <li><a href='/liga/raspored'>Raspored</a></li>
-        </ul>
+
     </div>
+    <ul id="youthSel">
+        <li><a href="/liga/index/2006">2006</a></li>
+        <li><a href="/liga/index/2007">2007</a></li>
+        <li><a href="/liga/index/2008">2008</a></li>
+        <li><a href="/liga/index/2009">2009</a></li>
+        <li><a href="/liga/index/2010">2010</a></li>
+        <li><a href='/liga/rezultati'>Rezultati</a> </li>
+        <li><a href='/liga/raspored'>Raspored</a></li>
+    </ul>
