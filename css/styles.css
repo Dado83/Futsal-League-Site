@@ -30,16 +30,13 @@ body {
 
 #nav {
 	margin-top: -8px;
-	margin-left: -8px;
 	padding-top: 3px;
-	width: 105%;
 	background: var(--color1);
 	color: var(--color3);
 }
 
 .fpLogo {
 	display: flex;
-	min-width: 340px;
 	justify-content: space-between;
 }
 
@@ -98,15 +95,14 @@ body {
 	list-style: none;
 	justify-content: space-around;
 	padding: 8px 0 8px 0;
-	margin: -8px 0 0 -8px;
-	width: 105%;
+	margin-top: 0;
 	background: var(--color1);
 	color: var(--color3);
 }
 
 #youthSel li {
 	cursor: pointer;
-	padding: 5px 10px;
+	padding: 4px 4px;
 	margin-bottom: -8px;
 }
 
@@ -390,8 +386,8 @@ body {
 		--clubLogoWidth: 400px;
 	}
 
-	#nav {
-		width: 102%;
+	#youthSel li {
+		padding: 6px 20px;
 	}
 
 	.title1 {
