@@ -13,7 +13,7 @@
 	--clubLogoWidth: 400px;
 	--logoDim: 30px;
 	--logoTbl: 20px;
-	--contentMarginTop: 100px;
+	--contentMarginTop: 20px;
 }
 
 body {
@@ -28,12 +28,11 @@ body {
 	justify-items: center;
 }
 
-#nav,
-#youthSel {
-	margin: 0 0 0 -8px;
+#nav {
+	margin-top: -8px;
+	margin-left: -8px;
 	padding-top: 3px;
-	background: white;
-	width: 104%;
+	width: 105%;
 	background: var(--color1);
 	color: var(--color3);
 }
@@ -92,13 +91,17 @@ body {
 }
 
 #youthSel {
+	position: sticky;
+	top: 0;
+	z-index: 1;
 	display: flex;
 	list-style: none;
 	justify-content: space-around;
-	padding: 8px 0;
-	z-index: 1;
-	position: sticky;
-	top: 0;
+	padding: 8px 0 8px 0;
+	margin: -8px 0 0 -8px;
+	width: 105%;
+	background: var(--color1);
+	color: var(--color3);
 }
 
 #youthSel li {
@@ -214,9 +217,11 @@ body {
 	padding: 0 15px;
 	font-size: var(--fontSize10);
 }
+
 .nextGame td {
 	padding: 2px;
 }
+
 .footer {
 	font-size: 10px;
 	margin-top: 60px;
@@ -240,6 +245,7 @@ body {
 .pairs tr:nth-of-type(n + 2):nth-of-type(-n + 5) td:nth-of-type(1) {
 	width: 40%;
 }
+
 .pairs tr:nth-of-type(n + 2):nth-of-type(-n + 5) td:nth-of-type(2) {
 	width: 10%;
 	text-align: center;
@@ -256,10 +262,12 @@ body {
 .resultsPage {
 	margin-top: var(--contentMarginTop);
 }
+
 .resultsPage tr:nth-of-type(2) {
 	background: var(--color1);
 	color: var(--color3);
 }
+
 .resultsPage table {
 	margin-bottom: 20px;
 	width: 80%;
@@ -327,6 +335,7 @@ body {
 .resultsNL {
 	margin-bottom: 20px;
 }
+
 .resultsNL p {
 	font-weight: bold;
 }
@@ -379,7 +388,6 @@ body {
 		--fontSize12: 15px;
 		--logoWidth: 100px;
 		--clubLogoWidth: 400px;
-		--contentMarginTop: 160px;
 	}
 
 	#nav {

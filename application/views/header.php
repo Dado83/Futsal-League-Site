@@ -40,7 +40,6 @@ EOT;
             }
             ?>
         </div>
-
     </div>
     <ul id="youthSel">
         <li><a href="/liga/index/2006">2006</a></li>
