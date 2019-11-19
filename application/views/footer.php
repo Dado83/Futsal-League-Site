@@ -13,8 +13,9 @@
         – djevojčice i dječaci u istim timovima, afirmacija ideje da se sport ne dijeli na muški i ženski.</p>
 </div>
 <div style="margin:auto;display:table;font-size:10px">
-    Autor: Dado Lukić<br>
-    &copy; 2014-<?php echo date("Y"); ?>
+    <p>Autor: <a href="https://www.linkedin.com/in/dado-lukic/">Dado Lukić</a></p>
+    <p>FB: <a href="https://www.facebook.com/www.fairplayliga.cf/">Fair Play LBŠ</a></p>
+    <p>&copy; 2014-<?php echo date("Y"); ?></p>
 </div>
 </body>
 
