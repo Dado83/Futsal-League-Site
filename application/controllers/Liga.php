@@ -256,10 +256,10 @@ class Liga extends CI_Controller
         $data['title'] = 'Bilten';
         $data['teams'] = $this->DBModel->getTeams();
         $data['table6'] = $this->DBModel->getTable('table6');
-        $data['table7'] = $this->DBModel->getTable('table7');
+        $data['table7'] = $this->DBModel->getTable('table7', FALSE, 8);
         $data['table8'] = $this->DBModel->getTable('table8');
         $data['table9'] = $this->DBModel->getTable('table9');
-        $data['table10'] = $this->DBModel->getTable('table10', FALSE, 7);
+        $data['table10'] = $this->DBModel->getTable('table10', FALSE, 7, 1);
         $data['results6'] = $this->DBModel->getLastResults('results6')['results'];
         $data['results7'] = $this->DBModel->getLastResults('results7')['results'];
         $data['results8'] = $this->DBModel->getLastResults('results8')['results'];

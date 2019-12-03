@@ -2,11 +2,12 @@
     <link rel="stylesheet" href="/css/styles.css">
     <style>
         body {
-            margin: 80px 0 100px 30px;
+            margin: 40px 0 100px 30px;
             background: white;
         }
     </style>
 </head>
+<img style="width:15%; position:absolute; top:10px" src="/images/grb.png" />
 <h1 style="text-align:center">FAIR PLAY Liga Budućih Šampiona</h1>
 <h2 style="text-align:center">takmičarska sezona 2019/20</h2>
 <h3 style="text-align:center">Bilten br. <?php echo $lastMday ?></h3>
