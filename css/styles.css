@@ -379,6 +379,57 @@ body {
 	border-collapse: collapse;
 }
 
+#newsLetter {
+	font-size: var(--fontSize20);
+	font-weight: bold;
+	border-radius: 3px;
+	display: inline-block;
+	padding: 5px 10px;
+	box-shadow: 0 0 2px black;
+}
+
+#newsLetter a {
+	text-decoration: none;
+}
+
+.admin a {
+	background: var(--color2);
+	color: var(--color3);
+	text-decoration: none;
+	padding: 1px 10px;
+	margin: 5px;
+	border-radius: 3px;
+	box-shadow: 0 0 2px black;
+}
+
+.admin a:hover {
+	background: var(--color1);
+}
+
+.admin
+	tr:nth-of-type(n + 2):nth-of-type(-n + 5)
+	td:nth-of-type(n + 1):nth-of-type(-n + 3) {
+	background: lightblue;
+}
+
+.admin
+	tr:nth-of-type(n + 10):nth-of-type(-n + 13)
+	td:nth-of-type(n + 1):nth-of-type(-n + 3) {
+	background: lightblue;
+}
+
+.admin
+	tr:nth-of-type(n + 18):nth-of-type(-n + 21)
+	td:nth-of-type(n + 1):nth-of-type(-n + 3) {
+	background: lightblue;
+}
+
+.admin
+	tr:nth-of-type(n + 26):nth-of-type(-n + 29)
+	td:nth-of-type(n + 1):nth-of-type(-n + 3) {
+	background: lightblue;
+}
+
 @media screen and (min-width: 640px) {
 	:root {
 		--fontSize12: 15px;
