@@ -31,7 +31,7 @@
                     echo "<i><p>ne takmiči se u 2010. godištu</p></i>";
                 } else {
                     echo <<<EOT
-        <p style='font-weight:bold; font-style:italic;'>2010. godište</p>
+        <p style='font-weight:bold; font-size:16px; text-decoration:underline'>2010. godište</p>
         <tr>
         <th>kolo</th>
         <th>domaćin</th>
@@ -56,7 +56,7 @@ EOT;
                 ?>
         </table>
         <table class="teamResults">
-            <p style='font-weight:bold; font-style:italic;'>2009. godište</p>
+            <p style='font-weight:bold; font-size:16px; text-decoration:underline'>2009. godište</p>
             <tr>
                 <th>kolo</th>
                 <th>domaćin</th>
@@ -79,7 +79,7 @@ EOT;
                 ?>
         </table>
         <table class="teamResults">
-            <p style='font-weight:bold; font-style:italic;'>2008. godište</p>
+            <p style='font-weight:bold; font-size:16px; text-decoration:underline'>2008. godište</p>
             <tr>
                 <th>kolo</th>
                 <th>domaćin</th>
@@ -107,7 +107,7 @@ EOT;
                     echo "<i><p>ne takmiči se u 2007. godištu</p></i>";
                 } else {
                     echo <<<EOT
-            <p style='font-weight:bold; font-style:italic;'>2007. godište</p>
+            <p style='font-weight:bold; font-size:16px; text-decoration:underline'>2007. godište</p>
             <tr>
                 <th>kolo</th>
                 <th>domaćin</th>
@@ -131,7 +131,7 @@ EOT;
                 ?>
         </table>
         <table class="teamResults">
-            <p style='font-weight:bold; font-style:italic;'>2006. godište</p>
+            <p style='font-weight:bold; font-size:16px; text-decoration:underline'>2006. godište</p>
             <tr>
                 <th>kolo</th>
                 <th>domaćin</th>
