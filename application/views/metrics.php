@@ -13,6 +13,6 @@
     </table>
     <?php
     foreach ($last5 as $l) {
-        echo "<p>$l->ip $l->platform " .  date('d M Y', $l->time) . "</p>";
+        echo "<p>$l->ip $l->platform " .  date('d M Y (H:i)', $l->time) . "</p>";
     }
     ?>

@@ -503,9 +503,13 @@ EOT;
         return ($query) ? $query->row() : array();
     }
 
-    public function visitors()
+    public function visitors($type)
     {
-        $sql = "SELECT * FROM visitors ORDER BY id DESC LIMIT 5";
+        switch ($type) {
+            case 'last5':
+                $sql = "SELECT * FROM visitors ORDER BY id DESC LIMIT 5";
+                break;
+        }
 
         $query = $this->db->query($sql);
         return ($query) ? $query->result() : array();
