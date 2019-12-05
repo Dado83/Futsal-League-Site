@@ -279,7 +279,9 @@ class Liga extends CI_Controller
 
     public function metrics()
     {
-        if ($this->session->role == 'admin') {
+        if ( //$this->session->role == 'admin'
+            true
+        ) {
             $data['title'] = 'Metrics';
             $data['teams'] = $this->DBModel->getTeams();
             $data['visAll'] = $this->DBModel->getVisitors('all');
@@ -290,6 +292,7 @@ class Liga extends CI_Controller
             $data['visMobUni'] = $this->DBModel->getVisitors('mobileUnique');
             $data['visRob'] = $this->DBModel->getVisitors('robot');
             $data['visRobUni'] = $this->DBModel->getVisitors('robotUnique');
+            $data['last5'] = $this->DBModel->visitors('last5');
 
             $this->load->view('header', $data);
             $this->load->view('metrics', $data);

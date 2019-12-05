@@ -11,3 +11,8 @@
         echo '<tr><td>Robot</td><td style="text-align:right">' . $visRob->vis . '</td></tr>';
         ?>
     </table>
+    <?php
+    foreach ($last5 as $l) {
+        echo "<p>$l->ip $l->platform " .  date('d M Y', $l->time) . "</p>";
+    }
+    ?>

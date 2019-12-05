@@ -472,41 +472,42 @@ EOT;
 
     public function getVisitors($type)
     {
-        if ($type == 'all') {
-            $sql = <<<EOT
-            SELECT COUNT(*) AS vis FROM visitors WHERE robot='NULL'
-EOT;
-        } elseif ($type == 'allUnique') {
-            $sql = <<<EOT
-            SELECT COUNT(DISTINCT ip) AS vis FROM visitors WHERE robot='NULL'
-EOT;
-        } elseif ($type == 'mobile') {
-            $sql = <<<EOT
-            SELECT COUNT(*) AS vis FROM visitors WHERE robot='NULL' AND NOT mobile='NULL'
-EOT;
-        } elseif ($type == 'mobileUnique') {
-            $sql = <<<EOT
-            SELECT COUNT(DISTINCT ip) AS vis FROM visitors WHERE robot='NULL' AND NOT mobile='NULL'
-EOT;
-        } elseif ($type == 'desktop') {
-            $sql = <<<EOT
-            SELECT COUNT(*) AS vis FROM visitors WHERE robot='NULL' AND mobile='NULL'
-EOT;
-        } elseif ($type == 'desktopUnique') {
-            $sql = <<<EOT
-            SELECT COUNT(DISTINCT ip) AS vis FROM visitors WHERE robot='NULL' AND mobile='NULL'
-EOT;
-        } elseif ($type == 'robot') {
-            $sql = <<<EOT
-            SELECT COUNT(*) AS vis FROM visitors WHERE NOT robot='NULL'
-EOT;
-        } elseif ($type == 'robotUnique') {
-            $sql = <<<EOT
-            SELECT COUNT(DISTINCT ip) AS vis FROM visitors WHERE NOT robot='NULL'
-EOT;
+        switch ($type) {
+            case 'all':
+                $sql = "SELECT COUNT(*) AS vis FROM visitors WHERE robot='NULL'";
+                break;
+            case 'allUnique':
+                $sql = "SELECT COUNT(DISTINCT ip) AS vis FROM visitors WHERE robot='NULL'";
+                break;
+            case 'mobile':
+                $sql = "SELECT COUNT(*) AS vis FROM visitors WHERE robot='NULL' AND NOT mobile='NULL'";
+                break;
+            case 'mobileUnique':
+                $sql = "SELECT COUNT(DISTINCT ip) AS vis FROM visitors WHERE robot='NULL' AND NOT mobile='NULL'";
+                break;
+            case 'desktop':
+                $sql = "SELECT COUNT(*) AS vis FROM visitors WHERE robot='NULL' AND mobile='NULL'";
+                break;
+            case 'desktopUnique':
+                $sql = "SELECT COUNT(DISTINCT ip) AS vis FROM visitors WHERE robot='NULL' AND mobile='NULL'";
+                break;
+            case 'robot':
+                $sql = "SELECT COUNT(*) AS vis FROM visitors WHERE NOT robot='NULL'";
+                break;
+            case 'robotUnique':
+                $sql = "SELECT COUNT(DISTINCT ip) AS vis FROM visitors WHERE NOT robot='NULL'";
+                break;
         }
 
         $query = $this->db->query($sql);
         return ($query) ? $query->row() : array();
+    }
+
+    public function visitors()
+    {
+        $sql = "SELECT * FROM visitors ORDER BY id DESC LIMIT 5";
+
+        $query = $this->db->query($sql);
+        return ($query) ? $query->result() : array();
     }
 }
