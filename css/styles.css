@@ -396,6 +396,24 @@ body {
 	text-decoration: none;
 }
 
+#metrics {
+	float: right;
+	font-size: var(--fontSize20);
+	font-weight: bold;
+	border-radius: 3px;
+	padding: 5px 10px;
+	box-shadow: 0 0 2px black;
+}
+
+#metrics a {
+	text-decoration: none;
+}
+
+#metrics a:hover,
+#newsLetter a:hover {
+	color: var(--color2);
+}
+
 .admin a {
 	background: var(--color2);
 	color: var(--color3);

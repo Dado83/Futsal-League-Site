@@ -1,4 +1,5 @@
 <p id="newsLetter"><a href="/liga/bilten">Bilten</a></p>
+<p id="metrics"><a href="/liga/metrics">Metrics</a></p>
 <table class="admin">
     <p>Odigrane utakmice:</p>
     <tr>
