@@ -503,15 +503,39 @@ EOT;
         return ($query) ? $query->row() : array();
     }
 
-    public function visitors($type)
+    public function visitors()
     {
-        switch ($type) {
-            case 'last5':
-                $sql = "SELECT * FROM visitors ORDER BY id DESC LIMIT 5";
-                break;
-        }
+        $sql = "SELECT * FROM visitors";
 
         $query = $this->db->query($sql);
-        return ($query) ? $query->result() : array();
+        $visitors = ($query) ? $query->result() : array();
+
+        $desktop = [];
+        $mobile = [];
+        $robot = [];
+        for ($i = 0; $i < count($visitors); $i++) {
+            if ($visitors[$i]->robot != 'NULL') {
+                $robot[] = $visitors[$i];
+            } elseif ($visitors[$i]->mobile == 'NULL') {
+                $desktop[] = $visitors[$i];
+            } elseif ($visitors[$i]->mobile != 'NULL') {
+                $mobile[] = $visitors[$i];
+            }
+        }
+
+        echo 'all ' . (count($desktop) + count($mobile));
+        echo '<br>';
+        echo 'desk ' . count($desktop);
+        echo '<br>';
+        echo 'mob ' . count($mobile);
+        echo '<br>';
+        echo 'rob ' . count($robot);
+        //var_dump($robot);
+        $data['all'] = $visitors;
+        $data['desk'] = $desktop;
+        $data['mob'] = $mobile;
+        $data['rob'] = $robot;
+
+        return $data;
     }
 }

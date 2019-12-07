@@ -12,7 +12,7 @@
         ?>
     </table>
     <?php
-    foreach ($last5 as $l) {
-        echo "<p>$l->ip $l->platform " .  date('d M Y (H:i)', $l->time) . "</p>";
+    foreach ($vis['all'] as $l) {
+        echo  "<p>$l->ip, mob: $l->mobile, rob: $l->robot, plat: $l->platform, $l->browser, " . date('d M Y', $l->time) . "</p>";
     }
     ?>

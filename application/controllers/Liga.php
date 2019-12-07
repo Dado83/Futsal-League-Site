@@ -292,9 +292,9 @@ class Liga extends CI_Controller
             $data['visMobUni'] = $this->DBModel->getVisitors('mobileUnique');
             $data['visRob'] = $this->DBModel->getVisitors('robot');
             $data['visRobUni'] = $this->DBModel->getVisitors('robotUnique');
-            $data['last5'] = $this->DBModel->visitors('last5');
+            $data['vis'] = $this->DBModel->visitors();
 
-            $this->load->view('header', $data);
+            //$this->load->view('header', $data);
             $this->load->view('metrics', $data);
         } else {
             $this->load->view('error');
