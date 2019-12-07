@@ -513,6 +513,7 @@ EOT;
         $desktop = [];
         $mobile = [];
         $robot = [];
+
         for ($i = 0; $i < count($visitors); $i++) {
             if ($visitors[$i]->robot != 'NULL') {
                 $robot[] = $visitors[$i];
@@ -523,6 +524,7 @@ EOT;
             }
         }
 
+
         echo 'all ' . (count($desktop) + count($mobile));
         echo '<br>';
         echo 'desk ' . count($desktop);
@@ -530,7 +532,8 @@ EOT;
         echo 'mob ' . count($mobile);
         echo '<br>';
         echo 'rob ' . count($robot);
-        //var_dump($robot);
+        echo '<br>';
+
         $data['all'] = $visitors;
         $data['desk'] = $desktop;
         $data['mob'] = $mobile;
