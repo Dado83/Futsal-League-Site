@@ -506,39 +506,76 @@ EOT;
     public function visitors()
     {
         $sql = "SELECT * FROM visitors";
-
         $query = $this->db->query($sql);
-        $visitors = ($query) ? $query->result() : array();
+        $result = ($query) ? $query->result() : array();
 
-        $desktop = [];
-        $mobile = [];
-        $robot = [];
+        $visitors = [];
 
-        for ($i = 0; $i < count($visitors); $i++) {
-            if ($visitors[$i]->robot != 'NULL') {
-                $robot[] = $visitors[$i];
-            } elseif ($visitors[$i]->mobile == 'NULL') {
-                $desktop[] = $visitors[$i];
-            } elseif ($visitors[$i]->mobile != 'NULL') {
-                $mobile[] = $visitors[$i];
+        foreach ($result as $v) {
+            $visitors[] = (object) [
+                'id' => $v->id,
+                'ip' => $v->ip,
+                'mobile' => $v->mobile,
+                'robot' => $v->robot,
+                'platform' => $v->platform,
+                'browser' => $v->browser,
+                'version' => $v->version,
+                'user_agent' => $v->user_agent,
+                'new_visitor' => $v->new_visitor,
+                'role' => $v->role,
+                'day' => date('d', $v->time),
+                'month' => date('M', $v->time),
+                'year' => date('Y', $v->time),
+                'time' => date('H:i', $v->time)
+            ];
+        }
+
+        $currentYear = date('Y', time());
+        $year = [];
+        $vis = array_reverse($visitors);
+        foreach ($vis as $v) {
+            if ($v->year == $currentYear) {
+                switch ($v->month) {
+                    case 'Jan':
+                        $year['Jan'][] = $v;
+                        break;
+                    case 'Feb':
+                        $year['Feb'][] = $v;
+                        break;
+                    case 'Mar':
+                        $year['Mar'][] = $v;
+                        break;
+                    case 'Apr':
+                        $year['Apr'][] = $v;
+                        break;
+                    case 'May':
+                        $year['May'][] = $v;
+                        break;
+                    case 'Jun':
+                        $year['Jun'][] = $v;
+                        break;
+                    case 'Jul':
+                        $year['Jul'][] = $v;
+                        break;
+                    case 'Aug':
+                        $year['Aug'][] = $v;
+                        break;
+                    case 'Sep':
+                        $year['Sep'][] = $v;
+                        break;
+                    case 'Oct':
+                        $year['Oct'][] = $v;
+                        break;
+                    case 'Nov':
+                        $year['Nov'][] = $v;
+                        break;
+                    case 'Dec':
+                        $year['Dec'][] = $v;
+                        break;
+                }
             }
         }
 
-
-        echo 'all ' . (count($desktop) + count($mobile));
-        echo '<br>';
-        echo 'desk ' . count($desktop);
-        echo '<br>';
-        echo 'mob ' . count($mobile);
-        echo '<br>';
-        echo 'rob ' . count($robot);
-        echo '<br>';
-
-        $data['all'] = $visitors;
-        $data['desk'] = $desktop;
-        $data['mob'] = $mobile;
-        $data['rob'] = $robot;
-
-        return $data;
+        return $year;
     }
 }

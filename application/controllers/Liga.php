@@ -8,7 +8,7 @@ class Liga extends CI_Controller
         parent::__construct();
         $this->load->database();
         $this->load->model('DBModel');
-        if (!$this->session->ip or !get_cookie('time')) {
+        if (!$this->session->ip || !get_cookie('time')) {
             setcookie('time', 'expiry', time() + 600);
             $this->setSession();
             $this->DBModel->setVisitor();

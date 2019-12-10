@@ -1,5 +1,5 @@
 <div class="info">
-    <p>Admin info:</p>
+    <p>Metrics:</p>
     <table>
         <?php
         echo '<tr><td>Ukupno posjeta</td><td style="text-align:right">' . $visAll->vis . '</td></tr>';
@@ -12,7 +12,11 @@
         ?>
     </table>
     <?php
-    foreach ($vis['all'] as $l) {
-        echo  "<p>$l->ip, mob: $l->mobile, rob: $l->robot, plat: $l->platform, $l->browser, " . date('d M Y', $l->time) . "</p>";
+
+
+    for ($i = 0; $i < 120; $i++) {
+        echo "{$vis['Feb'][$i]->ip}, {$vis['Feb'][$i]->day}, {$vis['Feb'][$i]->month}, {$vis['Feb'][$i]->year}, {$vis['Feb'][$i]->time} <br>";
     }
+
+
     ?>
