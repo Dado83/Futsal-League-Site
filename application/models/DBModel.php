@@ -537,19 +537,19 @@ EOT;
             if ($v->year == $currentYear) {
                 switch ($v->month) {
                     case 'Jan':
-                        $year['Jan'][] = $v;
+                        $year['Januar'][] = $v;
                         break;
                     case 'Feb':
-                        $year['Feb'][] = $v;
+                        $year['Februar'][] = $v;
                         break;
                     case 'Mar':
-                        $year['Mar'][] = $v;
+                        $year['Mart'][] = $v;
                         break;
                     case 'Apr':
-                        $year['Apr'][] = $v;
+                        $year['April'][] = $v;
                         break;
                     case 'May':
-                        $year['May'][] = $v;
+                        $year['Maj'][] = $v;
                         break;
                     case 'Jun':
                         $year['Jun'][] = $v;
@@ -558,19 +558,19 @@ EOT;
                         $year['Jul'][] = $v;
                         break;
                     case 'Aug':
-                        $year['Aug'][] = $v;
+                        $year['Avgust'][] = $v;
                         break;
                     case 'Sep':
-                        $year['Sep'][] = $v;
+                        $year['Septembar'][] = $v;
                         break;
                     case 'Oct':
-                        $year['Oct'][] = $v;
+                        $year['Oktobar'][] = $v;
                         break;
                     case 'Nov':
-                        $year['Nov'][] = $v;
+                        $year['Novembar'][] = $v;
                         break;
                     case 'Dec':
-                        $year['Dec'][] = $v;
+                        $year['Decembar'][] = $v;
                         break;
                 }
             }
