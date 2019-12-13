@@ -12,11 +12,43 @@
         ?>
     </table>
     <?php
+    $keys = array_keys($vis);
 
-
-    for ($i = 0; $i < 120; $i++) {
-        echo "{$vis['Feb'][$i]->ip}, {$vis['Feb'][$i]->day}, {$vis['Feb'][$i]->month}, {$vis['Feb'][$i]->year}, {$vis['Feb'][$i]->time} <br>";
+    foreach ($keys as $k) {
+        echo "<table class='visitorTable'><caption class='headToggle'>$k</caption>
+        <thead class='displayToggle'>
+        <tr>
+        <th>ip</th>
+        <th>mobile</th>
+        <th>robot</th>
+        <th>platform</th>
+        <th>browser</th>
+        <th>version</th>
+        <th>user_agent</th>
+        <th>n_v</th>
+        <th>role</th>
+        <th>day</th>
+        <th>month</th>
+        <th>time</th>
+        </tr>
+        </thead>
+        <tbody class='displayToggle'>";
+        for ($i = 0; $i < count($vis[$k]); $i++) {
+            echo "<tr>
+            <td>{$vis[$k][$i]->ip}</td>
+            <td>{$vis[$k][$i]->mobile}</td>
+            <td>{$vis[$k][$i]->robot}</td>
+            <td>{$vis[$k][$i]->platform}</td>
+            <td>{$vis[$k][$i]->browser}</td>
+            <td>{$vis[$k][$i]->version}</td>
+            <td>{$vis[$k][$i]->user_agent}</td>
+            <td>{$vis[$k][$i]->new_visitor}</td>
+            <td>{$vis[$k][$i]->role}</td>
+            <td>{$vis[$k][$i]->day}</td>
+            <td>{$vis[$k][$i]->month}</td>
+            <td>{$vis[$k][$i]->time}</td>
+            </tr>";
+        }
+        echo "</tbody></table>";
     }
-
-
     ?>
