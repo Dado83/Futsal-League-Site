@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
 	//
 
 	let banner = $('img[alt="www.000webhost.com"]').closest('div');
@@ -33,6 +33,11 @@ $(document).ready(function() {
 			$('#youthSel li:nth-of-type(7)').css('background', '#4267b2');
 			break;
 	}
+
+	let head = $('.headToggle');
+	head.on('click', function (e) {
+		$(this).siblings('.visitorTable').toggle(); //skini listener sa citavog diva!!
+	});
 
 	//
 });

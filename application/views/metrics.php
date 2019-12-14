@@ -15,8 +15,11 @@
     $keys = array_keys($vis);
 
     foreach ($keys as $k) {
-        echo "<table class='visitorTable'><caption class='headToggle'>$k</caption>
-        <thead class='displayToggle'>
+        $count = count($vis[$k]);
+        echo <<<EOT
+        <div><p class='headToggle'>znak?? $k ($count)</p>
+        <table class='visitorTable'>
+        <thead>
         <tr>
         <th>ip</th>
         <th>mobile</th>
@@ -32,9 +35,11 @@
         <th>time</th>
         </tr>
         </thead>
-        <tbody class='displayToggle'>";
+        <tbody>
+EOT;
         for ($i = 0; $i < count($vis[$k]); $i++) {
-            echo "<tr>
+            echo <<<EOT
+            <tr>
             <td>{$vis[$k][$i]->ip}</td>
             <td>{$vis[$k][$i]->mobile}</td>
             <td>{$vis[$k][$i]->robot}</td>
@@ -47,8 +52,9 @@
             <td>{$vis[$k][$i]->day}</td>
             <td>{$vis[$k][$i]->month}</td>
             <td>{$vis[$k][$i]->time}</td>
-            </tr>";
+            </tr>
+EOT;
         }
-        echo "</tbody></table>";
+        echo "</tbody></table></div>";
     }
     ?>

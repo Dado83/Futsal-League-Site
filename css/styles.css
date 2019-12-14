@@ -1,520 +1,513 @@
 :root {
-	--logoWidth: 50px;
-	--fontSize30: 30px;
-	--fontSize25: 25px;
-	--fontSize20: 20px;
-	--fontSize12: 12px;
-	--fontSize10: 10px;
-	--gridTemplateColumns: auto auto;
-	--color1: #29487d;
-	--color2: #4267b2;
-	--color3: #fff;
-	--display: table-cell;
-	--clubLogoWidth: 400px;
-	--logoDim: 30px;
-	--logoTbl: 20px;
-	--contentMarginTop: 20px;
+    --logoWidth: 50px;
+    --fontSize30: 30px;
+    --fontSize25: 25px;
+    --fontSize20: 20px;
+    --fontSize12: 12px;
+    --fontSize10: 10px;
+    --gridTemplateColumns: auto auto;
+    --color1: #29487d;
+    --color2: #4267b2;
+    --color3: #fff;
+    --display: table-cell;
+    --clubLogoWidth: 400px;
+    --logoDim: 30px;
+    --logoTbl: 20px;
+    --contentMarginTop: 20px;
 }
 
 body {
-	min-width: 340px;
-	max-width: 1080px;
-	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-		'Lucida Sans', Arial, sans-serif;
-	font-size: var(--fontSize12);
+    min-width: 340px;
+    max-width: 1080px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+        'Lucida Sans', Arial, sans-serif;
+    font-size: var(--fontSize12);
 }
 
 .content {
-	display: grid;
-	grid-template-columns: auto;
-	justify-items: center;
+    display: grid;
+    grid-template-columns: auto;
+    justify-items: center;
 }
 
 #nav {
-	margin-top: -8px;
-	padding-top: 3px;
-	background: var(--color1);
-	color: var(--color3);
+    margin-top: -8px;
+    padding-top: 3px;
+    background: var(--color1);
+    color: var(--color3);
 }
 
 .fpLogo {
-	display: flex;
-	justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
 
 .fpLogo img {
-	width: var(--logoWidth);
+    width: var(--logoWidth);
 }
 
 .fpLogo a {
-	color: var(--color3);
-	text-decoration: none;
+    color: var(--color3);
+    text-decoration: none;
 }
 
 .title1 {
-	padding-top: 2px;
-	font-size: 30px;
+    padding-top: 2px;
+    font-size: 30px;
 }
 
 .title2 {
-	display: none;
+    display: none;
 }
 
 .login input {
-	size: 1px;
-	font-size: 10px;
+    size: 1px;
+    font-size: 10px;
 }
+
 .login input[type='submit'] {
-	font-size: 10px;
-	margin-right: 4px;
-	padding: 1px;
+    font-size: 10px;
+    margin-right: 4px;
+    padding: 1px;
 }
 
 #youthSel a {
-	text-decoration: none;
+    text-decoration: none;
 }
 
 #youthSel a:visited {
-	text-decoration: none;
-	color: var(--color3);
+    text-decoration: none;
+    color: var(--color3);
 }
 
 #youthSel a:link {
-	text-decoration: none;
-	color: var(--color3);
+    text-decoration: none;
+    color: var(--color3);
 }
 
 #youthSel a:hover,
 #youthSel li:hover {
-	background: var(--color2);
+    background: var(--color2);
 }
 
 #youthSel {
-	position: sticky;
-	top: 0;
-	z-index: 1;
-	display: flex;
-	list-style: none;
-	justify-content: space-around;
-	padding: 8px 0 8px 0;
-	margin-top: 0;
-	background: var(--color1);
-	color: var(--color3);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    padding: 8px 0 8px 0;
+    margin-top: 0;
+    background: var(--color1);
+    color: var(--color3);
 }
 
 #youthSel li {
-	cursor: pointer;
-	padding: 4px 4px;
-	margin-bottom: -8px;
+    cursor: pointer;
+    padding: 4px 4px;
+    margin-bottom: -8px;
 }
 
 .results img {
-	width: var(--logoDim);
-	height: var(--logoDim);
-	padding: 0 15px;
-	position: relative;
-	bottom: -5px;
+    width: var(--logoDim);
+    height: var(--logoDim);
+    padding: 0 15px;
+    position: relative;
+    bottom: -5px;
 }
 
 .results td:nth-of-type(1) {
-	text-align: left;
+    text-align: left;
 }
 
 .results td {
-	vertical-align: middle;
-	padding: 2px 0;
+    vertical-align: middle;
+    padding: 2px 0;
 }
 
 .results {
-	padding: 3px;
-	border-radius: 6px;
+    padding: 3px;
+    border-radius: 6px;
 
-	margin-bottom: 40px;
+    margin-bottom: 40px;
 }
 
 .table img {
-	width: var(--logoTbl);
-	height: var(--logoTbl);
-	padding: 0 5px 0 0;
-	position: relative;
-	bottom: -5px;
+    width: var(--logoTbl);
+    height: var(--logoTbl);
+    padding: 0 5px 0 0;
+    position: relative;
+    bottom: -5px;
 }
 
 .table table {
-	border-collapse: collapse;
+    border-collapse: collapse;
 }
 
 .table td {
-	vertical-align: bottom;
-	text-align: center;
-	padding: 2px 8px;
+    vertical-align: bottom;
+    text-align: center;
+    padding: 2px 8px;
 }
 
 .table td:nth-child(2) {
-	text-align: left;
+    text-align: left;
 }
 
 .table tr:nth-of-type(5) td {
-	border-bottom: 1px solid black;
+    border-bottom: 1px solid black;
 }
 
 .table a,
 .results a,
 .nextGame a,
 .teamResults a {
-	text-decoration: none;
-	color: black;
+    text-decoration: none;
+    color: black;
 }
 
 .table a:visited,
 .results a:visited,
 .nextGame a:visited,
 .teamResults a:visited {
-	text-decoration: none;
-	color: black;
+    text-decoration: none;
+    color: black;
 }
 
 .table a:link,
 .results a:link,
 .nextGame a:link,
 .teamResults a:link {
-	text-decoration: none;
-	color: black;
+    text-decoration: none;
+    color: black;
 }
 
 .table a:hover,
 .results a:hover,
 .nextGame a:hover,
 .teamResults a:hover {
-	color: var(--color2);
+    color: var(--color2);
 }
 
 .table th {
-	background: var(--color1);
-	color: var(--color3);
-	padding: 2px;
+    background: var(--color1);
+    color: var(--color3);
+    padding: 2px;
 }
 
 .table {
-	border-radius: 6px;
-	margin-bottom: 40px;
+    border-radius: 6px;
+    margin-bottom: 40px;
 }
 
 .nextGame img {
-	width: var(--logoDim);
-	height: var(--logoDim);
+    width: var(--logoDim);
+    height: var(--logoDim);
 }
 
 .nextGame tr:nth-of-type(1) td {
-	text-align: left;
+    text-align: left;
 }
 
 .nextGame tr:nth-of-type(6) td {
-	text-align: left;
+    text-align: left;
 }
 
 .nextGame tr:nth-of-type(n + 2):nth-of-type(-n + 5) td:nth-of-type(3) {
-	text-align: center;
-	padding: 0 15px;
-	font-size: var(--fontSize10);
+    text-align: center;
+    padding: 0 15px;
+    font-size: var(--fontSize10);
 }
 
 .nextGame td {
-	padding: 2px;
+    padding: 2px;
 }
 
 .footer {
-	font-size: 10px;
-	margin-top: 60px;
+    font-size: 10px;
+    margin-top: 60px;
 }
 
 .pairsAll {
-	margin-top: var(--contentMarginTop);
+    margin-top: var(--contentMarginTop);
 }
 
 .pairs tr:nth-of-type(1) td {
-	font-weight: bold;
-	padding: 1px;
-	background: var(--color1);
-	color: var(--color3);
+    font-weight: bold;
+    padding: 1px;
+    background: var(--color1);
+    color: var(--color3);
 }
 
 .pairs tr:nth-of-type(6) {
-	font-style: italic;
+    font-style: italic;
 }
 
 .pairs tr:nth-of-type(n + 2):nth-of-type(-n + 5) td:nth-of-type(1) {
-	width: 40%;
+    width: 40%;
 }
 
 .pairs tr:nth-of-type(n + 2):nth-of-type(-n + 5) td:nth-of-type(2) {
-	width: 10%;
-	text-align: center;
+    width: 10%;
+    text-align: center;
 }
+
 .pairs tr:nth-of-type(n + 2):nth-of-type(-n + 5) td:nth-of-type(3) {
-	width: 40%;
+    width: 40%;
 }
 
 .pairs {
-	width: 80%;
-	max-width: 300px;
+    width: 80%;
+    max-width: 300px;
 }
 
 .resultsPage {
-	margin-top: var(--contentMarginTop);
+    margin-top: var(--contentMarginTop);
 }
 
 .resultsPage tr:nth-of-type(2) {
-	background: var(--color1);
-	color: var(--color3);
+    background: var(--color1);
+    color: var(--color3);
 }
 
 .resultsPage table {
-	margin-bottom: 20px;
-	width: 80%;
-	max-width: 400px;
-	border-collapse: collapse;
+    margin-bottom: 20px;
+    width: 80%;
+    max-width: 400px;
+    border-collapse: collapse;
 }
 
 .resultsPage tr:nth-of-type(n + 1):nth-of-type(-n + 2) td {
-	font-weight: bold;
-	padding: 1px;
+    font-weight: bold;
+    padding: 1px;
 }
 
 .info {
-	margin-top: var(--contentMarginTop);
+    margin-top: var(--contentMarginTop);
 }
 
 .form {
-	margin-top: var(--contentMarginTop);
+    margin-top: var(--contentMarginTop);
 }
 
 .teamLogo {
-	float: right;
-	width: 30%;
+    float: right;
+    width: 30%;
 }
 
 .team {
-	margin-top: var(--contentMarginTop);
+    margin-top: var(--contentMarginTop);
 }
 
 .teamInfo {
-	margin-bottom: 40px;
+    margin-bottom: 40px;
 }
 
 .teamInfo td:nth-of-type(1) {
-	font-style: italic;
+    font-style: italic;
 }
 
 .teamResults td {
-	padding-bottom: 4px;
+    padding-bottom: 4px;
 }
 
 .teamResults th {
-	background: var(--color1);
-	color: var(--color3);
+    background: var(--color1);
+    color: var(--color3);
 }
 
 .teamResults {
-	border-bottom: 1px solid black;
-	margin-bottom: 20px;
-	width: 80%;
-	max-width: 400px;
-	border-collapse: collapse;
+    border-bottom: 1px solid black;
+    margin-bottom: 20px;
+    width: 80%;
+    max-width: 400px;
+    border-collapse: collapse;
 }
 
 .teamResults tr:nth-of-type(1) th {
-	text-align: left;
-	border-bottom: 1px solid black;
-	padding: 0 0 2px 0;
+    text-align: left;
+    border-bottom: 1px solid black;
+    padding: 0 0 2px 0;
 }
 
 .resultsNL td {
-	padding: 0 4px;
+    padding: 0 4px;
 }
 
 .resultsNL {
-	margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .resultsNL p {
-	font-weight: bold;
+    font-weight: bold;
 }
+
 .tableNL td {
-	padding: 2px 6px;
-	border-bottom: 1px solid;
+    padding: 2px 6px;
+    border-bottom: 1px solid;
 }
 
 .tableNL td:nth-of-type(n + 3):nth-of-type(-n + 9) {
-	text-align: center;
-	padding: 0 8px;
+    text-align: center;
+    padding: 0 8px;
 }
 
 .tableNL td:first-of-type {
-	border-right: 1px solid;
+    border-right: 1px solid;
 }
 
 .tableNL th {
-	border-bottom: 1px solid;
-	padding: 2px 8px;
+    border-bottom: 1px solid;
+    padding: 2px 8px;
 }
 
 .tableNL th:nth-of-type(2) {
-	text-align: left;
+    text-align: left;
 }
 
 .tableNL {
-	margin-bottom: 40px;
+    margin-bottom: 40px;
 }
 
 .tableNL table {
-	border-collapse: collapse;
-	border: 1px solid;
+    border-collapse: collapse;
+    border: 1px solid;
 }
 
 .nextGameNL td {
-	padding: 2px 8px;
+    padding: 2px 8px;
 }
 
 .nextGameNL td:nth-of-type(3) {
-	border-right: 1px solid;
+    border-right: 1px solid;
 }
 
 .nextGameNL {
-	border-collapse: collapse;
+    border-collapse: collapse;
 }
 
 #newsLetter {
-	font-size: var(--fontSize20);
-	font-weight: bold;
-	border-radius: 3px;
-	display: inline-block;
-	padding: 5px 10px;
-	box-shadow: 0 0 2px black;
+    font-size: var(--fontSize20);
+    font-weight: bold;
+    border-radius: 3px;
+    display: inline-block;
+    padding: 5px 10px;
+    box-shadow: 0 0 2px black;
 }
 
 #newsLetter a {
-	text-decoration: none;
+    text-decoration: none;
 }
 
 #metrics {
-	float: right;
-	font-size: var(--fontSize20);
-	font-weight: bold;
-	border-radius: 3px;
-	padding: 5px 10px;
-	box-shadow: 0 0 2px black;
+    float: right;
+    font-size: var(--fontSize20);
+    font-weight: bold;
+    border-radius: 3px;
+    padding: 5px 10px;
+    box-shadow: 0 0 2px black;
 }
 
 #metrics a {
-	text-decoration: none;
+    text-decoration: none;
 }
 
 #metrics a:hover,
 #newsLetter a:hover {
-	color: var(--color2);
+    color: var(--color2);
 }
 
 .admin a {
-	background: var(--color2);
-	color: var(--color3);
-	text-decoration: none;
-	padding: 1px 10px;
-	margin: 5px;
-	border-radius: 3px;
-	box-shadow: 0 0 2px black;
+    background: var(--color2);
+    color: var(--color3);
+    text-decoration: none;
+    padding: 1px 10px;
+    margin: 5px;
+    border-radius: 3px;
+    box-shadow: 0 0 2px black;
 }
 
 .admin a:hover {
-	background: var(--color1);
+    background: var(--color1);
 }
 
-.admin
-	tr:nth-of-type(n + 2):nth-of-type(-n + 5)
-	td:nth-of-type(n + 1):nth-of-type(-n + 3) {
-	background: lightblue;
+.admin tr:nth-of-type(n + 2):nth-of-type(-n + 5) td:nth-of-type(n + 1):nth-of-type(-n + 3) {
+    background: lightblue;
 }
 
-.admin
-	tr:nth-of-type(n + 10):nth-of-type(-n + 13)
-	td:nth-of-type(n + 1):nth-of-type(-n + 3) {
-	background: lightblue;
+.admin tr:nth-of-type(n + 10):nth-of-type(-n + 13) td:nth-of-type(n + 1):nth-of-type(-n + 3) {
+    background: lightblue;
 }
 
-.admin
-	tr:nth-of-type(n + 18):nth-of-type(-n + 21)
-	td:nth-of-type(n + 1):nth-of-type(-n + 3) {
-	background: lightblue;
+.admin tr:nth-of-type(n + 18):nth-of-type(-n + 21) td:nth-of-type(n + 1):nth-of-type(-n + 3) {
+    background: lightblue;
 }
 
-.admin
-	tr:nth-of-type(n + 26):nth-of-type(-n + 29)
-	td:nth-of-type(n + 1):nth-of-type(-n + 3) {
-	background: lightblue;
+.admin tr:nth-of-type(n + 26):nth-of-type(-n + 29) td:nth-of-type(n + 1):nth-of-type(-n + 3) {
+    background: lightblue;
 }
 
 .headToggle {
-	cursor: pointer;
-	margin: 5px 0;
-	text-align: left;
-	padding-left: 10px;
-	font-weight: bold;
+    margin: 5px 0;
+    text-align: left;
+    cursor: pointer;
 }
 
 .visitorTable {
-	border: 1px solid black;
-	border-collapse: collapse;
-	font-size: var(--fontSize10);
+    border: 1px solid black;
+    border-collapse: collapse;
+    font-size: var(--fontSize10);
+    display: none;
 }
 
 .visitorTable td {
-	padding: 2px 4px;
-	text-align: center;
-	border-bottom: 1px solid black;
-	border-top: 1px solid black;
+    padding: 2px 4px;
+    text-align: center;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
 }
 
 .visitorTable td:nth-of-type(7),
 .visitorTable td:nth-of-type(1) {
-	border: 1px solid black;
+    border: 1px solid black;
 }
 
 .visitorTable td:nth-of-type(10) {
-	border-left: 1px solid black;
+    border-left: 1px solid black;
 }
 
 .visitorTable th {
-	background: var(--color2);
-	color: var(--color3);
+    background: var(--color2);
+    color: var(--color3);
 }
 
-.displayToggle {
-}
 
 @media screen and (min-width: 640px) {
-	:root {
-		--fontSize10: 14px;
-		--fontSize12: 15px;
-		--logoWidth: 100px;
-		--clubLogoWidth: 400px;
-	}
+    :root {
+        --fontSize10: 14px;
+        --fontSize12: 15px;
+        --logoWidth: 100px;
+        --clubLogoWidth: 400px;
+    }
 
-	#youthSel li {
-		padding: 6px 20px;
-	}
+    #youthSel li {
+        padding: 6px 20px;
+    }
 
-	.title1 {
-		display: none;
-	}
-	.title2 {
-		display: inline;
-		padding-top: 20px;
-		font-size: 40px;
-	}
+    .title1 {
+        display: none;
+    }
 
-	.login input[type='submit'] {
-		font-size: 10px;
-		margin-right: 12px;
-		padding: 2px;
-	}
+    .title2 {
+        display: inline;
+        padding-top: 20px;
+        font-size: 40px;
+    }
+
+    .login input[type='submit'] {
+        font-size: 10px;
+        margin-right: 12px;
+        padding: 2px;
+    }
 }
