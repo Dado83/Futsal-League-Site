@@ -36,7 +36,7 @@ $(document).ready(function () {
 
 	let head = $('.headToggle');
 	head.on('click', function (e) {
-		$(this).siblings('.visitorTable').toggle(); //skini listener sa citavog diva!!
+		$(this).siblings('.visitorTable').toggle();
 	});
 
 	//
