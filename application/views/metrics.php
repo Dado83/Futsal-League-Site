@@ -38,6 +38,8 @@
         <tbody>
 EOT;
         for ($i = 0; $i < count($vis[$k]); $i++) {
+            $t = explode(':', $vis[$k][$i]->time);
+            $time = $t[0] + 1 . ':' . $t[1];
             echo <<<EOT
             <tr>
             <td>{$vis[$k][$i]->ip}</td>
@@ -51,7 +53,7 @@ EOT;
             <td>{$vis[$k][$i]->role}</td>
             <td>{$vis[$k][$i]->day}</td>
             <td>{$vis[$k][$i]->month}</td>
-            <td>{$vis[$k][$i]->time}</td>
+            <td>$time</td>
             </tr>
 EOT;
         }
