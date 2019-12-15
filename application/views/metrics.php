@@ -12,11 +12,11 @@
         ?>
     </table>
     <?php
-    $keys = array_keys($vis);
+        $keys = array_keys($vis);
 
-    foreach ($keys as $k) {
-        $count = count($vis[$k]);
-        echo <<<EOT
+        foreach ($keys as $k) {
+            $count = count($vis[$k]);
+            echo <<<EOT
         <div><p class='headToggle'>≡ $k ($count)</p>
         <table class='visitorTable'>
         <thead>
@@ -37,10 +37,14 @@
         </thead>
         <tbody>
 EOT;
-        for ($i = 0; $i < count($vis[$k]); $i++) {
-            $t = explode(':', $vis[$k][$i]->time);
-            $time = $t[0] + 1 . ':' . $t[1];
-            echo <<<EOT
+            for ($i = 0; $i < count($vis[$k]); $i++) {
+                $t = explode(':', $vis[$k][$i]->time);
+                if ($t[0] == '23') {
+                    $time = '00:' . $t[1];
+                } else {
+                    $time = $t[0] + 1 . ':' . $t[1];
+                }
+                echo <<<EOT
             <tr>
             <td>{$vis[$k][$i]->ip}</td>
             <td>{$vis[$k][$i]->mobile}</td>
@@ -56,7 +60,7 @@ EOT;
             <td>$time</td>
             </tr>
 EOT;
+            }
+            echo "</tbody></table></div>";
         }
-        echo "</tbody></table></div>";
-    }
     ?>
