@@ -17,7 +17,7 @@
     foreach ($keys as $k) {
         $count = count($vis[$k]);
         echo <<<EOT
-        <div><p class='headToggle'>znak?? $k ($count)</p>
+        <div><p class='headToggle'>≡ $k ($count)</p>
         <table class='visitorTable'>
         <thead>
         <tr>
