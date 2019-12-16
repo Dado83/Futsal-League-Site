@@ -482,6 +482,17 @@ body {
     color: var(--color3);
 }
 
+.cardContainer {
+    display: flex;
+}
+
+.card {
+    width: 25%;
+    border: 1px solid black;
+    padding: 0 5px;
+    margin: 0 1px;
+    text-align: right;
+}
 
 @media screen and (min-width: 640px) {
     :root {

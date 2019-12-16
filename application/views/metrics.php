@@ -1,22 +1,37 @@
-<div class="info">
-    <p>Metrics:</p>
-    <table>
-        <?php
-        echo '<tr><td>Ukupno posjeta</td><td style="text-align:right">' . $visAll->vis . '</td></tr>';
-        echo '<tr><td>Jedinstvene posjete</td><td style="text-align:right">' . $visUni->vis . '</td></tr>';
-        echo '<tr><td>Sa računara</td><td style="text-align:right">' . $visDesk->vis . '</td></tr>';
-        echo '<tr><td>Sa računara (jed.)</td><td style="text-align:right">' . $visDeskUni->vis . '</td></tr>';
-        echo '<tr><td>Sa telefona</td><td style="text-align:right">' . $visMob->vis . '</td></tr>';
-        echo '<tr><td>Sa telefona (jed.)</td><td style="text-align:right">' . $visMobUni->vis . '</td></tr>';
-        echo '<tr><td>Robot</td><td style="text-align:right">' . $visRob->vis . '</td></tr>';
-        ?>
-    </table>
-    <?php
-        $keys = array_keys($vis);
-        echo '<p>Posjete:</p';
-        foreach ($keys as $k) {
-            $count = count($vis[$k]);
-            echo <<<EOT
+<p>Dashboard:</p>
+<?php
+echo <<<EOT
+<div class='cardContainer'>
+<div class='card'>
+<p>Ukupno posjeta: $visAll->vis</p>
+<p>Jedinstvene posjete: $visUni->vis</p>
+</div>
+<div class='card'>
+<p>Sa racunara: $visDesk->vis</p>
+<p>Sa racunara (jed.): $visDeskUni->vis</p>
+</div>
+<div class='card'>
+<p>Sa telefona: $visMob->vis</p>
+<p>Sa telefona (jed.): $visMobUni->vis</p>
+</div>
+<div class='card'>
+<p>Robot: $visRob->vis</p>
+</div>
+</div>
+EOT;
+
+echo <<<EOT
+<div class='graphContainer'>
+<div class='graph'></div>
+<div class='graph'></div>
+</div>
+EOT;
+
+$keys = array_keys($vis);
+echo '<p>Posjete:</p';
+foreach ($keys as $k) {
+    $count = count($vis[$k]);
+    echo <<<EOT
         <div><p class='headToggle'>≡ $k ($count)</p>
         <table class='visitorTable'>
         <thead>
@@ -37,14 +52,14 @@
         </thead>
         <tbody>
 EOT;
-            for ($i = 0; $i < count($vis[$k]); $i++) {
-                $t = explode(':', $vis[$k][$i]->time);
-                if ($t[0] == '23') {
-                    $time = '00:' . $t[1];
-                } else {
-                    $time = $t[0] + 1 . ':' . $t[1];
-                }
-                echo <<<EOT
+    for ($i = 0; $i < count($vis[$k]); $i++) {
+        $t = explode(':', $vis[$k][$i]->time);
+        if ($t[0] == '23') {
+            $time = '00:' . $t[1];
+        } else {
+            $time = $t[0] + 1 . ':' . $t[1];
+        }
+        echo <<<EOT
             <tr>
             <td>{$vis[$k][$i]->ip}</td>
             <td>{$vis[$k][$i]->mobile}</td>
@@ -60,7 +75,7 @@ EOT;
             <td>$time</td>
             </tr>
 EOT;
-            }
-            echo "</tbody></table></div>";
-        }
-    ?>
+    }
+    echo "</tbody></table></div>";
+}
+?>
