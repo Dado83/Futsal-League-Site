@@ -13,7 +13,7 @@
     </table>
     <?php
         $keys = array_keys($vis);
-
+        echo '<p>Posjete:</p';
         foreach ($keys as $k) {
             $count = count($vis[$k]);
             echo <<<EOT
