@@ -13,7 +13,7 @@
         echo <<<EOT
              <tr>
              <td>$row->m_day</td>
-             <td>$row->home_team</td>
+             <td>$row->home_team</td> 
              <td>$row->away_team</td>
              <td><a class='button' href='/liga/brisanjeKola/$row->id' onclick="return confirm('Brišem zadnje kolo?')">Brisi</a></td>
              </tr>

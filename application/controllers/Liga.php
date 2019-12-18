@@ -19,11 +19,11 @@ class Liga extends CI_Controller
     {
         $data['title'] = 'Fair Play LBŠ';
         $data['teams'] = $this->DBModel->getTeams();
-        $data['table6'] = $this->DBModel->getTable('table6', TRUE);
-        $data['table7'] = $this->DBModel->getTable('table7', TRUE, 8);
-        $data['table8'] = $this->DBModel->getTable('table8', TRUE);
-        $data['table9'] = $this->DBModel->getTable('table9', TRUE);
-        $data['table10'] = $this->DBModel->getTable('table10', TRUE, 7, 1);
+        $data['table6'] = $this->DBModel->getTable('table6', true);
+        $data['table7'] = $this->DBModel->getTable('table7', true, 8);
+        $data['table8'] = $this->DBModel->getTable('table8', true);
+        $data['table9'] = $this->DBModel->getTable('table9', true);
+        $data['table10'] = $this->DBModel->getTable('table10', true, 7, 1);
         $data['results6'] = $this->DBModel->getLastResults('results6')['results'];
         $data['results7'] = $this->DBModel->getLastResults('results7')['results'];
         $data['results8'] = $this->DBModel->getLastResults('results8')['results'];
@@ -91,8 +91,6 @@ class Liga extends CI_Controller
         $data['notPlaying8'] = $this->DBModel->getNotPlaying(8);
         $data['notPlaying9'] = $this->DBModel->getNotPlaying(9);
 
-
-
         $this->load->view('header', $data);
         $this->load->view('pairs', $data);
         $this->load->view('footer', $data);
@@ -119,7 +117,7 @@ class Liga extends CI_Controller
         $user = $this->input->post('user');
         $pass = $this->input->post('pass');
         $query = $this->DBModel->getUser($user);
-        $password = ($query != NULL) ? $query->password : '';
+        $password = ($query != null) ? $query->password : '';
         if (!password_verify($pass, $password)) {
             $this->session->set_flashdata('loginError', 'invalid authentication');
             redirect('/', 'refresh');
@@ -200,7 +198,7 @@ class Liga extends CI_Controller
         $this->DBModel->insertGame('results9', 'table9', $mDay, $home, $homeID, $away, $awayID, $home9, $away9);
         $this->DBModel->insertGame('results10', 'table10', $mDay, $home, $homeID, $away, $awayID, $home10, $away10);
 
-        $this->DBModel->setPlayed($id, TRUE);
+        $this->DBModel->setPlayed($id, true);
 
         $data['results'] = $this->DBModel->getResults('results6');
         $data['matchPairs'] = $this->DBModel->getMatchPairsNotPlayed();
@@ -256,10 +254,10 @@ class Liga extends CI_Controller
         $data['title'] = 'Bilten';
         $data['teams'] = $this->DBModel->getTeams();
         $data['table6'] = $this->DBModel->getTable('table6');
-        $data['table7'] = $this->DBModel->getTable('table7', FALSE, 8);
+        $data['table7'] = $this->DBModel->getTable('table7', false, 8);
         $data['table8'] = $this->DBModel->getTable('table8');
         $data['table9'] = $this->DBModel->getTable('table9');
-        $data['table10'] = $this->DBModel->getTable('table10', FALSE, 7, 1);
+        $data['table10'] = $this->DBModel->getTable('table10', false, 7, 1);
         $data['results6'] = $this->DBModel->getLastResults('results6')['results'];
         $data['results7'] = $this->DBModel->getLastResults('results7')['results'];
         $data['results8'] = $this->DBModel->getLastResults('results8')['results'];
@@ -403,7 +401,7 @@ class Liga extends CI_Controller
             'platform' => $this->agent->platform(),
             'browser' => $this->agent->browser(),
             'version' => $this->agent->version(),
-            'userAgent' => $this->agent->agent_string()
+            'userAgent' => $this->agent->agent_string(),
         );
 
         $sessionStartTime = time();
