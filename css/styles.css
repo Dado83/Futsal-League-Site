@@ -482,9 +482,10 @@ body {
     color: var(--color3);
 }
 
-.chartContainer {}
+.chartContainer div {
+    max-width: 80%;
+}
 
-.chartContainer div {}
 
 @media screen and (min-width: 640px) {
     :root {
