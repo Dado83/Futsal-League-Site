@@ -10,7 +10,7 @@ class DBModel extends CI_Model
         return ($query) ? $query->result() : array();
     }
 
-    public function getTable($table, $isShortName = FALSE, $id1 = 11, $id2 = 12)
+    public function getTable($table, $isShortName = false, $id1 = 11, $id2 = 12)
     {
         if ($isShortName) {
             $sql = <<<EOT
@@ -128,7 +128,7 @@ EOT;
         $q = $this->db->query($s);
         $max = $q->row();
         $max_mday = $max->mDay;
-        if ($max_mday == NULL) {
+        if ($max_mday == null) {
             $max_mday = 0;
         }
         $sql = "SELECT * FROM $results WHERE m_day = $max_mday";
@@ -221,7 +221,7 @@ EOT;
 
     public function insertGame($results, $table, $mday, $home, $home_id, $away, $away_id, $goals_h, $goals_a)
     {
-        if ($goals_h == NULL) { } else {
+        if ($goals_h == null) {} else {
             $sql = <<<EOT
         INSERT INTO $results (m_day, home_team, home_teamid, away_team, away_teamid, goals_home, goals_away)
         VALUES ($mday , '$home', $home_id, '$away', $away_id, $goals_h, $goals_a)
@@ -303,7 +303,7 @@ EOT;
         $game = array(
             'id' => $res->id, 'm_day' => $res->m_day, 'home' => $res->home_team,
             'home_id' => $res->home_teamid, 'away' => $res->away_team, 'away_id' => $res->away_teamid,
-            'goals_h' => $res->goals_home, 'goals_a' => $res->goals_away
+            'goals_h' => $res->goals_home, 'goals_a' => $res->goals_away,
         );
 
         if ($game['goals_h'] > $game['goals_a']) {
@@ -398,7 +398,7 @@ EOT;
         $this->checkIfNULL($startTime);
 
         $sql = <<<EOT
-        INSERT INTO visitors (ip, mobile, robot, platform, browser, version, user_agent, new_visitor, role, time) 
+        INSERT INTO visitors (ip, mobile, robot, platform, browser, version, user_agent, new_visitor, role, time)
         VALUES ('$ip', '$mobile', '$robot', '$platform', '$browser', '$version', '$userAgent', $newVisitor, '$role', $startTime)
 EOT;
         $this->db->query($sql);
@@ -503,7 +503,7 @@ EOT;
         return ($query) ? $query->row() : array();
     }
 
-    public function visitors()
+    public function visitorList()
     {
         $sql = "SELECT * FROM visitors";
         $query = $this->db->query($sql);
@@ -526,7 +526,7 @@ EOT;
                 'day' => date('d', $v->time),
                 'month' => date('M', $v->time),
                 'year' => date('Y', $v->time),
-                'time' => date('H:i', $v->time)
+                'time' => date('H:i', $v->time),
             ];
         }
 

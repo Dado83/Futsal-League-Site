@@ -12,6 +12,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" defer></script>
     <script src="/js/scripts.js" defer></script>
+    <script src="/js/Chart.bundle.min.js" defer></script>
 </head>
 
 <body>
@@ -21,15 +22,15 @@
             <span class="title1">Fair Play LBŠ</span>
             <span class="title2">Liga Budućih Šampiona</span>
             <?php
-            if ($this->session->role == 'admin') {
-                echo <<<EOT
+if ($this->session->role == "admin") {
+    echo <<<EOT
                 <form class="login" action="/liga/logout" method="POST">
                 <span><a href='/liga/admin'>Admin</a></span>
                 <input type="submit" value="Logout">
                 </form>
 EOT;
-            } else {
-                echo <<<EOT
+} else {
+    echo <<<EOT
                 <form class="login" action="/liga/login" method="POST">
                 <span>{$this->session->loginError}</span>
                 <input type="text" name="user" placeholder="user" size="1" maxlength="20">
@@ -37,8 +38,8 @@ EOT;
                 <input type="submit" value="Login">
                 </form>
 EOT;
-            }
-            ?>
+}
+?>
         </div>
     </div>
     <ul id="youthSel">
