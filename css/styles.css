@@ -97,11 +97,12 @@ body {
     list-style: none;
     justify-content: space-around;
     padding: 8px 0 8px 0;
-    margin-top: 0;
+    margin-top: -2px;
     background: var(--color1);
     color: var(--color3);
     margin-left: -8px;
     margin-right: -8px;
+    box-shadow: 0px 2px 4px grey;
 }
 
 #youthSel li {
