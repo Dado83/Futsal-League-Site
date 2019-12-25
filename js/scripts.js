@@ -57,18 +57,24 @@ $(document).ready(function () {
 		let visitorPercentage = $("#visitorPercentage");
 		let visTimeline = $("#visitorTimeline");
 
+		let color1 = "#4267b2";
+		let color2 = "#29487d";
+		let deskColor1 = "#FACA04";
+		let mobColor1 = "#3DDC84";
+		let botColor1 = "lightgrey";
+
 		let chartAll = new Chart(visitorPercentage, {
 			type: "bar",
 			data: {
-				labels: ["all", "desktop", "mobile", "crawler"],
+				labels: ["all", "desktop", "mobile", "bot"],
 				datasets: [
 					{
 						label: "all",
-						backgroundColor: "#29487d",
+						backgroundColor: color1,
 						data: [visAll, visDesk, visMob, visRob]
 					}, {
 						label: "new",
-						backgroundColor: "#4267b2",
+						backgroundColor: color2,
 						data: [visAllUni, visDeskUni, visMobUni, visRobUni]
 					}
 				]
@@ -127,6 +133,7 @@ $(document).ready(function () {
 			robotArray[i] = Object.values(robot)[i].length;
 		}
 
+
 		let chartTimeline = new Chart(visTimeline, {
 			type: "line",
 			data: {
@@ -134,22 +141,22 @@ $(document).ready(function () {
 				datasets: [{
 					fill: false,
 					label: "all",
-					borderColor: "orange",
+					borderColor: color1,
 					data: visitorArray.reverse()
 				}, {
 					fill: false,
 					label: "desktop",
-					borderColor: "blue",
+					borderColor: deskColor1,
 					data: desktopArray.reverse()
 				}, {
 					fill: false,
 					label: "mobile",
-					borderColor: "yellow",
+					borderColor: mobColor1,
 					data: mobileArray.reverse()
 				}, {
 					fill: false,
-					label: "crawler",
-					borderColor: "olive",
+					label: "bot",
+					borderColor: botColor1,
 					data: robotArray.reverse()
 				}
 				]
