@@ -30,16 +30,15 @@ body {
     justify-items: center;
 }
 
-#nav {
+.fpLogo {
+    display: flex;
+    justify-content: space-between;
     margin-top: -8px;
     padding-top: 3px;
     background: var(--color1);
     color: var(--color3);
-}
-
-.fpLogo {
-    display: flex;
-    justify-content: space-between;
+    margin-left: -8px;
+    margin-right: -8px;
 }
 
 .fpLogo img {
@@ -101,6 +100,8 @@ body {
     margin-top: 0;
     background: var(--color1);
     color: var(--color3);
+    margin-left: -8px;
+    margin-right: -8px;
 }
 
 #youthSel li {
