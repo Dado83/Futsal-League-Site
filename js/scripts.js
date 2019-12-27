@@ -9,28 +9,28 @@ $(document).ready(function () {
 
 	switch (url) {
 		case "/":
-			$("#youthSel li:nth-of-type(1)").css("background", "#4267b2");
+			$("#youthSel li:nth-of-type(1)").css("background", "#9A9997");
 			break;
 		case "/liga/index/2006":
-			$("#youthSel li:nth-of-type(1)").css("background", "#4267b2");
+			$("#youthSel li:nth-of-type(1)").css("background", "#9A9997");
 			break;
 		case "/liga/index/2007":
-			$("#youthSel li:nth-of-type(2)").css("background", "#4267b2");
+			$("#youthSel li:nth-of-type(2)").css("background", "#9A9997");
 			break;
 		case "/liga/index/2008":
-			$("#youthSel li:nth-of-type(3)").css("background", "#4267b2");
+			$("#youthSel li:nth-of-type(3)").css("background", "#9A9997");
 			break;
 		case "/liga/index/2009":
-			$("#youthSel li:nth-of-type(4)").css("background", "#4267b2");
+			$("#youthSel li:nth-of-type(4)").css("background", "#9A9997");
 			break;
 		case "/liga/index/2010":
-			$("#youthSel li:nth-of-type(5)").css("background", "#4267b2");
+			$("#youthSel li:nth-of-type(5)").css("background", "#9A9997");
 			break;
 		case "/liga/rezultati":
-			$("#youthSel li:nth-of-type(6)").css("background", "#4267b2");
+			$("#youthSel li:nth-of-type(6)").css("background", "#9A9997");
 			break;
 		case "/liga/raspored":
-			$("#youthSel li:nth-of-type(7)").css("background", "#4267b2");
+			$("#youthSel li:nth-of-type(7)").css("background", "#9A9997");
 			break;
 	}
 
