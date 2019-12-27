@@ -56,6 +56,7 @@ $(document).ready(function () {
 
 		let visitorPercentage = $("#visitorPercentage");
 		let visTimeline = $("#visitorTimeline");
+		let visPie = $("#visitorPie");
 
 		let color1 = "#4267b2";
 		let color2 = "#29487d";
@@ -82,7 +83,7 @@ $(document).ready(function () {
 			options: {
 				title: {
 					display: true,
-					text: "Posjete po kategorijama"
+					text: "Kompletne posjete po kategorijama"
 				}
 			}
 		});
@@ -165,6 +166,30 @@ $(document).ready(function () {
 				title: {
 					display: true,
 					text: "Posjete za " + new Date().getFullYear() + ". godinu"
+				}
+			}
+		})
+
+
+		let monthColors = ["#047ABB", "#0398D2", "#059A4F", "#76AE38", "#ACC91E", "#E9AE11",
+			"#E9AE11", "#E53C15", "#E52B4B", "#AE3985", "#733BA1", "#52509A"];
+
+		let chartPie = new Chart(visPie, {
+			type: "pie",
+			data: {
+				labels: Object.keys(label).reverse(),
+				datasets: [{
+					data: visitorArray,
+					backgroundColor: monthColors
+				}]
+			},
+			options: {
+				title: {
+					display: true,
+					text: "Posjete za " + new Date().getFullYear() + ". god: " + visAll
+				},
+				legend: {
+					display: false
 				}
 			}
 		})
