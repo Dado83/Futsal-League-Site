@@ -1,8 +1,8 @@
 <p>Dashboard:</p>
 <div class="chartContainer">
     <div><canvas id="visitorPercentage"></canvas></div>
-    <div><canvas id="visitorTimeline"></canvas></div>
     <div><canvas id="visitorPie"></canvas></div>
+    <div><canvas id="visitorTimeline"></canvas></div>
 </div>
 <p>Posjete: <?=$visAll->vis + $visRob->vis?></p>
 <?php

@@ -484,8 +484,16 @@ body {
     color: var(--color3);
 }
 
-.chartContainer div {
-    max-width: 80%;
+.chartContainer {
+    display: grid;
+    grid-template-areas:
+        "a b"
+        "c c";
+}
+
+.chartContainer div:last-of-type {
+    grid-area: c;
+    max-width: 90%;
 }
 
 
