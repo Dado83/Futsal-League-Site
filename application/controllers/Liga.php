@@ -290,7 +290,7 @@ class Liga extends CI_Controller
             $data['visMobUni'] = $this->DBModel->getVisitors('mobileUnique');
             $data['visRob'] = $this->DBModel->getVisitors('robot');
             $data['visRobUni'] = $this->DBModel->getVisitors('robotUnique');
-            $data['vis'] = $this->DBModel->visitorList();
+            $data['vis'] = $this->DBModel->visitorListForCurrentYear();
 
             $this->load->view('header', $data);
             $this->load->view('metrics', $data);
@@ -309,7 +309,7 @@ class Liga extends CI_Controller
         $data['visMobUni'] = $this->DBModel->getVisitors('mobileUnique');
         $data['visRob'] = $this->DBModel->getVisitors('robot');
         $data['visRobUni'] = $this->DBModel->getVisitors('robotUnique');
-        $data['visitorList'] = $this->DBModel->visitorList();
+        $data['visitorList'] = $this->DBModel->visitorListForCurrentYear();
 
         echo json_encode($data);
     }

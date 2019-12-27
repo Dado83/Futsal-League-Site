@@ -503,7 +503,7 @@ EOT;
         return ($query) ? $query->row() : array();
     }
 
-    public function visitorList()
+    public function visitorListForCurrentYear()
     {
         $sql = "SELECT * FROM visitors";
         $query = $this->db->query($sql);
