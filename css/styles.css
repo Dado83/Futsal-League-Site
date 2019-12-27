@@ -3,7 +3,6 @@
     --fire: #C22B1F;
     --black: #24211B;
     --white: #FBFBFB;
-    --gray: #9A9997;
     --logoWidth: 50px;
     --fontSize30: 30px;
     --fontSize25: 25px;
@@ -27,7 +26,6 @@ body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
         'Lucida Sans', Arial, sans-serif;
     font-size: var(--fontSize12);
-    background: var(--gray);
 }
 
 .content {
@@ -82,17 +80,17 @@ body {
 
 #youthSel a:visited {
     text-decoration: none;
-    color: var(--white);
+    color: var(--gold);
 }
 
 #youthSel a:link {
     text-decoration: none;
-    color: var(--white);
+    color: var(--gold);
 }
 
 #youthSel a:hover,
 #youthSel li:hover {
-    background: var(--gray);
+    background: var(--white);
 }
 
 #youthSel {
@@ -105,7 +103,7 @@ body {
     padding: 8px 0 8px 0;
     margin-top: -2px;
     background: var(--fire);
-    color: var(--white);
+    color: var(--gold);
     margin-left: -8px;
     margin-right: -8px;
     box-shadow: 0px 2px 4px grey;
@@ -115,6 +113,7 @@ body {
     cursor: pointer;
     padding: 4px 4px;
     margin-bottom: -8px;
+    border-radius: 45% 45% 0 0;
 }
 
 .results img {
@@ -136,8 +135,7 @@ body {
 
 .results {
     padding: 3px;
-    border-radius: 6px;
-
+    box-shadow: 0px 2px 5px var(--black);
     margin-bottom: 40px;
 }
 
@@ -205,8 +203,8 @@ body {
 }
 
 .table {
-    border-radius: 6px;
     margin-bottom: 40px;
+    box-shadow: 0px 2px 5px var(--black);
 }
 
 .nextGame img {
@@ -230,6 +228,10 @@ body {
 
 .nextGame td {
     padding: 2px;
+}
+
+.nextGame {
+    box-shadow: 0px 2px 5px var(--black);
 }
 
 .footer {
