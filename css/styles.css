@@ -10,6 +10,10 @@
     --fontSize12: 12px;
     --fontSize10: 10px;
     --gridTemplateColumns: auto auto;
+    --gridTemplateAreas:
+        'a'
+        'b'
+        'c';
     --color1: #29487d;
     --color2: #4267b2;
     --color3: #fff;
@@ -494,9 +498,7 @@ body {
 
 .chartContainer {
     display: grid;
-    grid-template-areas:
-        "a b"
-        "c c";
+    grid-template-areas: var(--gridTemplateAreas)
 }
 
 .chartContainer div:last-of-type {
@@ -511,6 +513,9 @@ body {
         --fontSize12: 15px;
         --logoWidth: 100px;
         --clubLogoWidth: 400px;
+        --gridTemplateAreas:
+            'a b'
+            'c c';
     }
 
     #youthSel li {
