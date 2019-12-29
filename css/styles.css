@@ -1,8 +1,9 @@
 :root {
-    --gold: #EDD608;
-    --fire: #C22B1F;
-    --black: #24211B;
-    --white: #FBFBFB;
+    --color1: #F2CB05;
+    --color2: #BFA211;
+    --color3: #D91A1A;
+    --colorT: #261F1C;
+    --colorB: #F2F2F2;
     --logoWidth: 50px;
     --fontSize30: 30px;
     --fontSize25: 25px;
@@ -10,19 +11,16 @@
     --fontSize12: 12px;
     --fontSize10: 10px;
     --gridTemplateColumns: auto auto;
-    --gridTemplateAreas:
-        'a'
+    --gridTemplateAreas: 'a'
         'b'
         'c';
-    --color1: #29487d;
-    --color2: #4267b2;
-    --color3: #fff;
     --display: table-cell;
     --clubLogoWidth: 400px;
     --logoDim: 30px;
     --logoTbl: 20px;
     --contentMarginTop: 20px;
 }
+
 
 body {
     min-width: 340px;
