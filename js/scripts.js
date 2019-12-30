@@ -5,7 +5,7 @@ $(document).ready(function () {
 	banner.remove();
 
 	let url = window.location.pathname;
-	let backColor = "#FBFBFB";
+	let backColor = "#2284b9";
 	console.log(url);
 
 	switch (url) {

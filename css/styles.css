@@ -1,9 +1,9 @@
 :root {
-    --color1: #F2CB05;
-    --color2: #BFA211;
-    --color3: #D91A1A;
-    --colorT: #261F1C;
-    --colorB: #F2F2F2;
+    --color1: #fcc914;
+    --color2: #136a9b;
+    --color3: #2284b9;
+    --color4: #36a0ce;
+    --color5: #3d3d3d;
     --logoWidth: 50px;
     --fontSize30: 30px;
     --fontSize25: 25px;
@@ -41,8 +41,8 @@ body {
     justify-content: space-between;
     margin-top: -8px;
     padding-top: 3px;
-    background: var(--fire);
-    color: var(--gold);
+    background: var(--color3);
+    color: var(--color1);
     margin-left: -8px;
     margin-right: -8px;
 }
@@ -52,7 +52,7 @@ body {
 }
 
 .fpLogo a {
-    color: var(--white);
+    color: black;
     text-decoration: none;
 }
 
@@ -80,19 +80,15 @@ body {
     text-decoration: none;
 }
 
-#youthSel a:visited {
-    text-decoration: none;
-    color: var(--gold);
-}
-
+#youthSel a:visited,
 #youthSel a:link {
     text-decoration: none;
-    color: var(--gold);
+    color: black;
 }
 
 #youthSel a:hover,
 #youthSel li:hover {
-    background: var(--white);
+    background: var(--color3);
 }
 
 #youthSel {
@@ -104,8 +100,8 @@ body {
     justify-content: space-around;
     padding: 8px 0 8px 0;
     margin-top: -2px;
-    background: var(--fire);
-    color: var(--gold);
+    background: var(--color1);
+    color: black;
     margin-left: -8px;
     margin-right: -8px;
     box-shadow: 0px 2px 4px grey;
@@ -115,7 +111,13 @@ body {
     cursor: pointer;
     padding: 4px 4px;
     margin-bottom: -8px;
-    border-radius: 45% 45% 0 0;
+    border-radius: 2px;
+}
+
+.ys {
+    box-shadow: 0px 0px 5px black;
+    background: white;
+    border-radius: 2px;
 }
 
 .results img {
@@ -137,8 +139,7 @@ body {
 
 .results {
     padding: 3px;
-    box-shadow: 0px 2px 5px var(--black);
-    margin-bottom: 40px;
+    margin-bottom: 5px;
 }
 
 .table img {
@@ -200,13 +201,14 @@ body {
 
 .table th {
     background: var(--color1);
-    color: var(--color3);
+    color: black;
     padding: 2px;
 }
 
 .table {
-    margin-bottom: 40px;
-    box-shadow: 0px 2px 5px var(--black);
+    margin-bottom: 10px;
+    border: 1px solid black;
+    ????
 }
 
 .nextGame img {
@@ -232,10 +234,6 @@ body {
     padding: 2px;
 }
 
-.nextGame {
-    box-shadow: 0px 2px 5px var(--black);
-}
-
 .footer {
     font-size: 10px;
     margin-top: 60px;
@@ -249,7 +247,7 @@ body {
     font-weight: bold;
     padding: 1px;
     background: var(--color1);
-    color: var(--color3);
+    color: black;
 }
 
 .pairs tr:nth-of-type(6) {
@@ -280,7 +278,7 @@ body {
 
 .resultsPage tr:nth-of-type(2) {
     background: var(--color1);
-    color: var(--color3);
+    color: black;
 }
 
 .resultsPage table {
@@ -326,7 +324,7 @@ body {
 
 .teamResults th {
     background: var(--color1);
-    color: var(--color3);
+    color: black;
 }
 
 .teamResults {
@@ -402,7 +400,7 @@ body {
 #newsLetter {
     font-size: var(--fontSize20);
     font-weight: bold;
-    border-radius: 3px;
+    border-radius: 2px;
     display: inline-block;
     padding: 5px 10px;
     box-shadow: 0 0 2px black;
@@ -416,7 +414,7 @@ body {
     float: right;
     font-size: var(--fontSize20);
     font-weight: bold;
-    border-radius: 3px;
+    border-radius: 2px;
     padding: 5px 10px;
     box-shadow: 0 0 2px black;
 }
@@ -431,17 +429,17 @@ body {
 }
 
 .admin a {
-    background: var(--color2);
-    color: var(--color3);
+    background: var(--color1);
+    color: black;
     text-decoration: none;
     padding: 1px 10px;
     margin: 5px;
-    border-radius: 3px;
+    border-radius: 2px;
     box-shadow: 0 0 2px black;
 }
 
 .admin a:hover {
-    background: var(--color1);
+    background: var(--color2);
 }
 
 .admin tr:nth-of-type(n + 2):nth-of-type(-n + 5) td:nth-of-type(n + 1):nth-of-type(-n + 3) {
@@ -490,8 +488,8 @@ body {
 }
 
 .visitorTable th {
-    background: var(--color2);
-    color: var(--color3);
+    background: var(--color1);
+    color: black;
 }
 
 .chartContainer {
