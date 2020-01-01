@@ -74,6 +74,7 @@ body {
     font-size: 10px;
     margin-right: 4px;
     padding: 1px;
+    border-radius: 3px;
 }
 
 #youthSel a {
@@ -117,7 +118,6 @@ body {
 .ys {
     box-shadow: 0px 0px 5px black;
     background: white;
-    border-radius: 2px;
 }
 
 .results img {
@@ -129,7 +129,7 @@ body {
 }
 
 .results td:nth-of-type(1) {
-    text-align: left;
+    text-align: right;
 }
 
 .results td {
@@ -137,9 +137,17 @@ body {
     padding: 2px 0;
 }
 
+.results p {
+    text-align: center;
+}
+
+.results table {
+    margin: auto;
+}
+
 .results {
     padding: 3px;
-    margin-bottom: 5px;
+    background: var(--color1);
 }
 
 .table img {
@@ -152,6 +160,7 @@ body {
 
 .table table {
     border-collapse: collapse;
+    width: 100%;
 }
 
 .table td {
@@ -176,7 +185,11 @@ body {
     color: black;
 }
 
-.table a:visited,
+.table a:visited {
+    text-decoration: none;
+    color: black;
+}
+
 .results a:visited,
 .nextGame a:visited,
 .teamResults a:visited {
@@ -200,15 +213,19 @@ body {
 }
 
 .table th {
-    background: var(--color1);
+    background: var(--color3);
     color: black;
     padding: 2px;
 }
 
 .table {
-    margin-bottom: 10px;
-    border: 1px solid black;
-    ????
+    background: var(--color4);
+    color: black;
+}
+
+.nextGame {
+    background: var(--color1);
+    margin: auto;
 }
 
 .nextGame img {
@@ -217,11 +234,15 @@ body {
 }
 
 .nextGame tr:nth-of-type(1) td {
-    text-align: left;
+    text-align: center;
 }
 
 .nextGame tr:nth-of-type(6) td {
     text-align: left;
+}
+
+.nextGame td:first-of-type {
+    text-align: right;
 }
 
 .nextGame tr:nth-of-type(n + 2):nth-of-type(-n + 5) td:nth-of-type(3) {
@@ -500,6 +521,27 @@ body {
 .chartContainer div:last-of-type {
     grid-area: c;
     max-width: 90%;
+}
+
+.infb {
+    margin: 40px 0 10px 0;
+    text-align: left;
+}
+
+.infb img {
+    width: 15px;
+    padding-right: 1px;
+    margin: 5px 0 0 0;
+    position: relative;
+    top: 2px;
+}
+
+.infb span {
+    margin-right: 10px;
+}
+
+.infb a {
+    text-decoration: none;
 }
 
 

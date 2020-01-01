@@ -9,13 +9,16 @@
         zavisno od njihovog uzrasta:<br>
         – ravnopravne takmičarske grupe, svako dijete se može radovati po nekoj pobjedi čak i početnici,
         pa se ne gubi motiv za bavljenjem sportom,<br>
-        – 3. poluvrijeme svih utakmica, da bi djeca koja su manje igrala u regularnom toku dobila šansu da pokažu svoje umijeće,<br>
+        – 3. poluvrijeme svih utakmica, da bi djeca koja su manje igrala u regularnom toku dobila šansu da pokažu svoje
+        umijeće,<br>
         – djevojčice i dječaci u istim timovima, afirmacija ideje da se sport ne dijeli na muški i ženski.</p>
 </div>
-<div style="margin:auto;display:table;font-size:10px">
-    <p>Autor: <a href="https://www.linkedin.com/in/dado-lukic/">Dado Lukić</a></p>
-    <p>FB: <a href="https://www.facebook.com/www.fairplayliga.cf/">Fair Play LBŠ</a></p>
-    <p>&copy; 2014-<?php echo date("Y"); ?></p>
+<div class="infb">
+    <span><a href="https://www.linkedin.com/in/dado-lukic/"><img src="/images/li.png" alt="linkedin">Dado
+            Lukić</a></span>
+    <span><a href="https://www.facebook.com/www.fairplayliga.cf/"><img src="/images/fb.png" alt="fb">Fair Play
+            LBŠ</a></span>
+    <span>&copy; 2014-<?php echo date("Y"); ?></span>
 </div>
 </body>
 
