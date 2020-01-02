@@ -4,7 +4,7 @@
     <div><canvas id="visitorPie"></canvas></div>
     <div><canvas id="visitorTimeline"></canvas></div>
 </div>
-<p>Posjete: <?=$visAll->vis + $visRob->vis?></p>
+<p>Posjete za <?=date('Y', time())?>. godinu</p>
 <?php
 $keys = array_keys($vis);
 foreach ($keys as $k):

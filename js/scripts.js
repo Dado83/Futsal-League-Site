@@ -175,8 +175,8 @@ $(document).ready(function () {
 		let monthColors = ["#047ABB", "#0398D2", "#059A4F", "#76AE38", "#ACC91E", "#E9AE11",
 			"#E9AE11", "#E53C15", "#E52B4B", "#AE3985", "#733BA1", "#52509A"];
 
-		let chartPie = new Chart(visPie, {
-			type: "pie",
+		let chartDoughnut = new Chart(visPie, {
+			type: "doughnut",
 			data: {
 				labels: Object.keys(label).reverse(),
 				datasets: [{
@@ -187,7 +187,7 @@ $(document).ready(function () {
 			options: {
 				title: {
 					display: true,
-					text: "Posjete za " + new Date().getFullYear() + ". god: " + visAll
+					text: "Posjete za " + new Date().getFullYear() + ". god."
 				},
 				legend: {
 					display: false
