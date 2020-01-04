@@ -144,6 +144,45 @@ body {
     background: var(--color4);
 }
 
+.finalsContent {
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.finals {
+    margin: 10px 3%;
+    padding: 5px 0;
+}
+
+.finals table {
+    margin: auto;
+}
+
+.finals h3 {
+    text-align: center;
+}
+
+.finals td {
+    padding: 5px;
+    vertical-align: baseline;
+}
+
+.finals td:first-of-type {
+    text-align: left;
+}
+
+.finals td:last-of-type {
+    text-align: right;
+}
+
+.finals img {
+    width: var(--logoDim);
+    height: var(--logoDim);
+    padding: 0 15px;
+    position: relative;
+    bottom: -5px;
+}
+
 .table img {
     width: var(--logoTbl);
     height: var(--logoTbl);
@@ -332,15 +371,29 @@ body {
 
 .teamInfo {
     margin-bottom: 40px;
+    background: var(--color1);
+    padding-right: 20px;
+    font-weight: bold;
 }
 
 .teamInfo td:nth-of-type(1) {
     font-style: italic;
+    font-weight: normal;
+    padding-right: 10px;
 }
 
 .teamResults td {
     padding: 1px 2px 4px 4px;
     background: var(--color1);
+}
+
+.teamResults td:first-of-type {
+    border-right: 1px solid black;
+    text-align: center;
+}
+
+.teamResults th:first-of-type {
+    text-align: center;
 }
 
 .teamResults th {
@@ -357,6 +410,11 @@ body {
     width: 80%;
     max-width: 400px;
     border-collapse: collapse;
+}
+
+.teamStats {
+    background: var(--color4);
+    display: inline-block;
 }
 
 .resultsNL td {
@@ -570,5 +628,10 @@ body {
         font-size: 10px;
         margin-right: 12px;
         padding: 2px;
+    }
+
+    .finals {
+        margin: 10px 20%;
+        padding: 5px 0;
     }
 }

@@ -23,14 +23,14 @@
         </tr>
     </table>
     <?php
-    if ($results6 == NULL) :
-    else : ?>
-        <table class="teamResults">
-            <?php
-                if ($team->id == 7 or $team->id == 1) {
-                    echo "<i><p>ne takmiči se u 2010. godištu</p></i>";
-                } else {
-                    echo <<<EOT
+if ($results6 == null):
+else: ?>
+    <table class="teamResults">
+        <?php
+if ($team->id == 7 or $team->id == 1) {
+    echo "<i><p>ne takmiči se u 2010. godištu</p></i>";
+} else {
+    echo <<<EOT
         <p style='font-weight:bold; font-size:16px; text-decoration:underline'>2010. godište</p>
         <tr>
         <th>kolo</th>
@@ -39,10 +39,10 @@
         <th colspan="3">rezultat</th>
         </tr>
 EOT;
-                }
+}
 
-                foreach ($results10 as $r) {
-                    echo <<<EOT
+foreach ($results10 as $r) {
+    echo <<<EOT
         <tr>
         <td>$r->m_day</td>
         <td><a href="/liga/ekipa/$r->home_teamid">$r->home_team</a></td>
@@ -52,20 +52,20 @@ EOT;
         <td>$r->goals_away</td>
         </tr>
 EOT;
-                }
-                ?>
-        </table>
-        <table class="teamResults">
-            <p style='font-weight:bold; font-size:16px; text-decoration:underline'>2009. godište</p>
-            <tr>
-                <th>kolo</th>
-                <th>domaćin</th>
-                <th>gost</th>
-                <th colspan="3">rezultat</th>
-            </tr>
-            <?php
-                foreach ($results9 as $r) {
-                    echo <<<EOT
+}
+?>
+    </table>
+    <table class="teamResults">
+        <p style='font-weight:bold; font-size:16px; text-decoration:underline'>2009. godište</p>
+        <tr>
+            <th>kolo</th>
+            <th>domaćin</th>
+            <th>gost</th>
+            <th colspan="3">rezultat</th>
+        </tr>
+        <?php
+foreach ($results9 as $r) {
+    echo <<<EOT
         <tr>
         <td>$r->m_day</td>
         <td><a href="/liga/ekipa/$r->home_teamid">$r->home_team</a></td>
@@ -75,20 +75,20 @@ EOT;
         <td>$r->goals_away</td>
         </tr>
 EOT;
-                }
-                ?>
-        </table>
-        <table class="teamResults">
-            <p style='font-weight:bold; font-size:16px; text-decoration:underline'>2008. godište</p>
-            <tr>
-                <th>kolo</th>
-                <th>domaćin</th>
-                <th>gost</th>
-                <th colspan="3">rezultat</th>
-            </tr>
-            <?php
-                foreach ($results8 as $r) {
-                    echo <<<EOT
+}
+?>
+    </table>
+    <table class="teamResults">
+        <p style='font-weight:bold; font-size:16px; text-decoration:underline'>2008. godište</p>
+        <tr>
+            <th>kolo</th>
+            <th>domaćin</th>
+            <th>gost</th>
+            <th colspan="3">rezultat</th>
+        </tr>
+        <?php
+foreach ($results8 as $r) {
+    echo <<<EOT
         <tr>
         <td>$r->m_day</td>
         <td><a href="/liga/ekipa/$r->home_teamid">$r->home_team</a></td>
@@ -98,15 +98,15 @@ EOT;
         <td>$r->goals_away</td>
         </tr>
 EOT;
-                }
-                ?>
-        </table>
-        <table class="teamResults">
-            <?php
-                if ($team->id == 8) {
-                    echo "<i><p>ne takmiči se u 2007. godištu</p></i>";
-                } else {
-                    echo <<<EOT
+}
+?>
+    </table>
+    <table class="teamResults">
+        <?php
+if ($team->id == 8) {
+    echo "<i><p>ne takmiči se u 2007. godištu</p></i>";
+} else {
+    echo <<<EOT
             <p style='font-weight:bold; font-size:16px; text-decoration:underline'>2007. godište</p>
             <tr>
                 <th>kolo</th>
@@ -115,9 +115,9 @@ EOT;
                 <th colspan="3">rezultat</th>
             </tr>
 EOT;
-                }
-                foreach ($results7 as $r) {
-                    echo <<<EOT
+}
+foreach ($results7 as $r) {
+    echo <<<EOT
             <tr>
                 <td>$r->m_day</td>
                 <td><a href="/liga/ekipa/$r->home_teamid">$r->home_team</a></td>
@@ -127,20 +127,20 @@ EOT;
                 <td>$r->goals_away</td>
             </tr>
 EOT;
-                }
-                ?>
-        </table>
-        <table class="teamResults">
-            <p style='font-weight:bold; font-size:16px; text-decoration:underline'>2006. godište</p>
-            <tr>
-                <th>kolo</th>
-                <th>domaćin</th>
-                <th>gost</th>
-                <th colspan="3">rezultat</th>
-            </tr>
-            <?php
-                foreach ($results6 as $r) {
-                    echo <<<EOT
+}
+?>
+    </table>
+    <table class="teamResults">
+        <p style='font-weight:bold; font-size:16px; text-decoration:underline'>2006. godište</p>
+        <tr>
+            <th>kolo</th>
+            <th>domaćin</th>
+            <th>gost</th>
+            <th colspan="3">rezultat</th>
+        </tr>
+        <?php
+foreach ($results6 as $r) {
+    echo <<<EOT
         <tr>
         <td>$r->m_day</td>
         <td><a href="/liga/ekipa/$r->home_teamid">$r->home_team</a></td>
@@ -150,8 +150,8 @@ EOT;
         <td>$r->goals_away</td>
         </tr>
 EOT;
-                }
-                ?>
-        </table>
-    <?php endif ?>
+}
+?>
+    </table>
+    <?php endif?>
 </div>

@@ -244,6 +244,7 @@ class Liga extends CI_Controller
         $data['results7'] = $this->DBModel->getResultsByID('results7', $id);
         $data['results6'] = $this->DBModel->getResultsByID('results6', $id);
         $data['title'] = $data['team']->team_name;
+        $data['stats'] = $this->DBModel->getCombinedTable($id);
 
         $this->load->view('header', $data);
         $this->load->view('team', $data);
