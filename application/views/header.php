@@ -7,7 +7,7 @@
     <meta name="description" content="Fair Play LBŠ website">
     <meta name="keywords" content="Fair Play, Liga Budućih Šampiona, LBŠ, Liga">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#2284b9">
+    <meta name="theme-color" content="#fcc914">
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
 

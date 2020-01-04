@@ -277,9 +277,7 @@ class Liga extends CI_Controller
 
     public function metrics()
     {
-        if ( //$this->session->role == 'admin'
-            true
-        ) {
+        if ($this->session->role == 'admin') {
             $data['title'] = 'Metrics';
             $data['teams'] = $this->DBModel->getTeams();
             $data['visAll'] = $this->DBModel->getVisitors('all');
