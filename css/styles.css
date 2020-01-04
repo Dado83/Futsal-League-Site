@@ -141,7 +141,7 @@ body {
 
 .results {
     padding: 3px;
-    background: var(--color1);
+    background: var(--color4);
 }
 
 .table img {
@@ -168,7 +168,7 @@ body {
 }
 
 .table tr:nth-of-type(5) td {
-    border-bottom: 1px solid black;
+    border-bottom: 1px dotted var(--color5);
 }
 
 .table a,
@@ -208,18 +208,20 @@ body {
 }
 
 .table th {
-    background: var(--color3);
+    background: var(--color1);
     color: black;
     padding: 2px;
+    border-bottom: 1px solid var(--color5);
 }
 
 .table {
-    background: var(--color4);
+    background: var(--color1);
     color: black;
+    padding: 5px 0;
 }
 
 .nextGame {
-    background: var(--color1);
+    background: var(--color4);
     margin: auto;
 }
 
@@ -262,7 +264,7 @@ body {
 .pairs tr:nth-of-type(1) td {
     font-weight: bold;
     padding: 1px;
-    background: var(--color1);
+    background: var(--color4);
     color: black;
 }
 
@@ -286,14 +288,15 @@ body {
 .pairs {
     width: 80%;
     max-width: 300px;
+    background: var(--color1);
 }
 
 .resultsPage {
     margin-top: var(--contentMarginTop);
 }
 
-.resultsPage tr:nth-of-type(2) {
-    background: var(--color1);
+.resultsPage tr:nth-of-type(n + 1):nth-of-type(-n + 2) {
+    background: var(--color4);
     color: black;
 }
 
@@ -302,6 +305,7 @@ body {
     width: 80%;
     max-width: 400px;
     border-collapse: collapse;
+    background: var(--color1);
 }
 
 .resultsPage tr:nth-of-type(n + 1):nth-of-type(-n + 2) td {
@@ -335,12 +339,16 @@ body {
 }
 
 .teamResults td {
-    padding-bottom: 4px;
+    padding: 1px 2px 4px 4px;
+    background: var(--color1);
 }
 
 .teamResults th {
-    background: var(--color1);
+    background: var(--color4);
     color: black;
+    text-align: left;
+    border-bottom: 1px solid black;
+    padding: 0 0 2px 4px;
 }
 
 .teamResults {
@@ -349,12 +357,6 @@ body {
     width: 80%;
     max-width: 400px;
     border-collapse: collapse;
-}
-
-.teamResults tr:nth-of-type(1) th {
-    text-align: left;
-    border-bottom: 1px solid black;
-    padding: 0 0 2px 0;
 }
 
 .resultsNL td {
@@ -546,8 +548,7 @@ body {
         --fontSize12: 15px;
         --logoWidth: 100px;
         --clubLogoWidth: 400px;
-        --gridTemplateAreas:
-            'a b'
+        --gridTemplateAreas: 'a b'
             'c c';
     }
 
