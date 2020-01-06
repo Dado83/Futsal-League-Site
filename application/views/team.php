@@ -39,7 +39,6 @@ if ($team->id == 7 or $team->id == 1) {
     echo "<i><p>ne takmiči se u 2010. godištu</p></i>";
 } else {
     echo <<<EOT
-        <p style='font-weight:bold; font-size:16px; text-decoration:underline'>2010. godište</p>
         <tr>
         <th>kolo</th>
         <th>domaćin</th>
@@ -66,7 +65,6 @@ EOT;
     </div>
     <div class="rSelector" id="ys2009">
         <table class="teamResults">
-            <p style='font-weight:bold; font-size:16px; text-decoration:underline'>2009. godište</p>
             <tr>
                 <th>kolo</th>
                 <th>domaćin</th>
@@ -91,7 +89,6 @@ EOT;
     </div>
     <div class="rSelector" id="ys2008">
         <table class="teamResults">
-            <p style='font-weight:bold; font-size:16px; text-decoration:underline'>2008. godište</p>
             <tr>
                 <th>kolo</th>
                 <th>domaćin</th>
@@ -121,7 +118,6 @@ if ($team->id == 8) {
     echo "<i><p>ne takmiči se u 2007. godištu</p></i>";
 } else {
     echo <<<EOT
-            <p style='font-weight:bold; font-size:16px; text-decoration:underline'>2007. godište</p>
             <tr>
                 <th>kolo</th>
                 <th>domaćin</th>
@@ -147,7 +143,6 @@ EOT;
     </div>
     <div class="rSelector" id="ys2006">
         <table class="teamResults">
-            <p style='font-weight:bold; font-size:16px; text-decoration:underline'>2006. godište</p>
             <tr>
                 <th>kolo</th>
                 <th>domaćin</th>

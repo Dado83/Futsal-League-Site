@@ -197,9 +197,9 @@ $(document).ready(function () {
 
 	});
 
+
 	let teamResults = $('.teamResultsList li');
 	teamResults.on('click', ySelection);
-
 
 	function ySelection() {
 		let li = $(this).html();
@@ -223,8 +223,10 @@ $(document).ready(function () {
 		}
 		function sh() {
 			let el = $('.rSelector');
-			let src = window.event.srcElement.id;
+			let src = event.target.id;
 			el.hide();
+			teamResults.css('background', 'var(--color4)');
+			$('#' + src).css('background', 'var(--color1)');
 			$('#y' + src).show();
 		}
 	}
