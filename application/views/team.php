@@ -22,11 +22,19 @@
             <td><?php echo $team->kit_color ?></td>
         </tr>
     </table>
+    <ul class="teamResultsList">
+        <li id="s2010">2010 god.</li>
+        <li id="s2009">2009 god.</li>
+        <li id="s2008">2008 god.</li>
+        <li id="s2007">2007 god.</li>
+        <li id="s2006">2006 god.</li>
+    </ul>
     <?php
 if ($results6 == null):
 else: ?>
-    <table class="teamResults">
-        <?php
+    <div class="rSelector" id="ys2010">
+        <table class="teamResults">
+            <?php
 if ($team->id == 7 or $team->id == 1) {
     echo "<i><p>ne takmiči se u 2010. godištu</p></i>";
 } else {
@@ -54,16 +62,18 @@ foreach ($results10 as $r) {
 EOT;
 }
 ?>
-    </table>
-    <table class="teamResults">
-        <p style='font-weight:bold; font-size:16px; text-decoration:underline'>2009. godište</p>
-        <tr>
-            <th>kolo</th>
-            <th>domaćin</th>
-            <th>gost</th>
-            <th colspan="3">rezultat</th>
-        </tr>
-        <?php
+        </table>
+    </div>
+    <div class="rSelector" id="ys2009">
+        <table class="teamResults">
+            <p style='font-weight:bold; font-size:16px; text-decoration:underline'>2009. godište</p>
+            <tr>
+                <th>kolo</th>
+                <th>domaćin</th>
+                <th>gost</th>
+                <th colspan="3">rezultat</th>
+            </tr>
+            <?php
 foreach ($results9 as $r) {
     echo <<<EOT
         <tr>
@@ -77,16 +87,18 @@ foreach ($results9 as $r) {
 EOT;
 }
 ?>
-    </table>
-    <table class="teamResults">
-        <p style='font-weight:bold; font-size:16px; text-decoration:underline'>2008. godište</p>
-        <tr>
-            <th>kolo</th>
-            <th>domaćin</th>
-            <th>gost</th>
-            <th colspan="3">rezultat</th>
-        </tr>
-        <?php
+        </table>
+    </div>
+    <div class="rSelector" id="ys2008">
+        <table class="teamResults">
+            <p style='font-weight:bold; font-size:16px; text-decoration:underline'>2008. godište</p>
+            <tr>
+                <th>kolo</th>
+                <th>domaćin</th>
+                <th>gost</th>
+                <th colspan="3">rezultat</th>
+            </tr>
+            <?php
 foreach ($results8 as $r) {
     echo <<<EOT
         <tr>
@@ -100,9 +112,11 @@ foreach ($results8 as $r) {
 EOT;
 }
 ?>
-    </table>
-    <table class="teamResults">
-        <?php
+        </table>
+    </div>
+    <div class="rSelector" id="ys2007">
+        <table class="teamResults">
+            <?php
 if ($team->id == 8) {
     echo "<i><p>ne takmiči se u 2007. godištu</p></i>";
 } else {
@@ -129,16 +143,18 @@ foreach ($results7 as $r) {
 EOT;
 }
 ?>
-    </table>
-    <table class="teamResults">
-        <p style='font-weight:bold; font-size:16px; text-decoration:underline'>2006. godište</p>
-        <tr>
-            <th>kolo</th>
-            <th>domaćin</th>
-            <th>gost</th>
-            <th colspan="3">rezultat</th>
-        </tr>
-        <?php
+        </table>
+    </div>
+    <div class="rSelector" id="ys2006">
+        <table class="teamResults">
+            <p style='font-weight:bold; font-size:16px; text-decoration:underline'>2006. godište</p>
+            <tr>
+                <th>kolo</th>
+                <th>domaćin</th>
+                <th>gost</th>
+                <th colspan="3">rezultat</th>
+            </tr>
+            <?php
 foreach ($results6 as $r) {
     echo <<<EOT
         <tr>
@@ -152,6 +168,7 @@ foreach ($results6 as $r) {
 EOT;
 }
 ?>
-    </table>
+        </table>
+    </div>
     <?php endif?>
 </div>

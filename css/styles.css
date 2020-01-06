@@ -412,6 +412,31 @@ body {
     border-collapse: collapse;
 }
 
+.teamResultsList {
+    list-style: none;
+    display: flex;
+    padding: 0;
+}
+
+.teamResultsList li {
+    margin: 1px;
+    padding: 2px;
+    border: 1px solid black;
+    background: var(--color4);
+    cursor: pointer;
+}
+
+.teamResultsList li:hover {
+    background: var(--color1);
+}
+
+#ys2009,
+#ys2008,
+#ys2007,
+#ys2006 {
+    display: none;
+}
+
 .teamStats {
     background: var(--color4);
     display: inline-block;

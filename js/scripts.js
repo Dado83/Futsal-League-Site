@@ -197,6 +197,37 @@ $(document).ready(function () {
 
 	});
 
+	let teamResults = $('.teamResultsList li');
+	teamResults.on('click', ySelection);
 
-	//
-});
+
+	function ySelection() {
+		let li = $(this).html();
+
+		switch (li) {
+			case '2010 god.':
+				sh();
+				break;
+			case '2009 god.':
+				sh();
+				break;
+			case '2008 god.':
+				sh();
+				break;
+			case '2007 god.':
+				sh();
+				break;
+			case '2006 god.':
+				sh();
+				break;
+		}
+		function sh() {
+			let el = $('.rSelector');
+			let src = window.event.srcElement.id;
+			el.hide();
+			$('#y' + src).show();
+		}
+	}
+
+
+});//end of document.ready fn
