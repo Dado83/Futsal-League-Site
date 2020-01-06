@@ -23,11 +23,11 @@
         </tr>
     </table>
     <ul class="teamResultsList">
-        <li id="s2010">2010 god.</li>
-        <li id="s2009">2009 god.</li>
-        <li id="s2008">2008 god.</li>
-        <li id="s2007">2007 god.</li>
         <li id="s2006">2006 god.</li>
+        <li id="s2007">2007 god.</li>
+        <li id="s2008">2008 god.</li>
+        <li id="s2009">2009 god.</li>
+        <li id="s2010">2010 god.</li>
     </ul>
     <?php
 if ($results6 == null):

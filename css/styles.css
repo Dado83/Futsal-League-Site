@@ -430,10 +430,14 @@ body {
     background: var(--color1);
 }
 
+#s2006 {
+    background: var(--color1);
+}
+
 #ys2009,
 #ys2008,
 #ys2007,
-#ys2006 {
+#ys2010 {
     display: none;
 }
 

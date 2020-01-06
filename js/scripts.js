@@ -221,6 +221,7 @@ $(document).ready(function () {
 				sh();
 				break;
 		}
+
 		function sh() {
 			let el = $('.rSelector');
 			let src = event.target.id;
