@@ -58,8 +58,9 @@ EOT;
 ?>
             </table>
         </div>
-        <table class="nextGame">
-            <?php
+        <div class="nextG">
+            <table class="nextGame">
+                <?php
 if ($isLeagueOver) {
     echo '<h2><a href="/liga/finalsResults">Završni turnir</a></h2>';
 } else {
@@ -89,5 +90,6 @@ EOT;
 EOT;
 }
 ?>
-        </table>
+            </table>
+        </div>
     </div>

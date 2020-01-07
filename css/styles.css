@@ -10,8 +10,12 @@
     --fontSize20: 20px;
     --fontSize12: 12px;
     --fontSize10: 10px;
-    --gridTemplateColumns: auto auto;
-    --gridTemplateAreas: 'a'
+    --gridTemplateAreasContent:
+        'a'
+        'b'
+        'c';
+    --gridTemplateAreas:
+        'a'
         'b'
         'c';
     --display: table-cell;
@@ -32,7 +36,6 @@ body {
 
 .content {
     display: grid;
-    grid-template-columns: auto;
     justify-items: center;
 }
 
@@ -114,6 +117,11 @@ body {
     border-radius: 2px;
 }
 
+.ys {
+    display: grid;
+    grid-template-areas: var(--gridTemplateAreasContent);
+}
+
 .results img {
     width: var(--logoDim);
     height: var(--logoDim);
@@ -140,8 +148,9 @@ body {
 }
 
 .results {
-    padding: 3px;
+    padding: 3px 0 10px 0;
     background: var(--color4);
+    grid-area: a;
 }
 
 .finalsContent {
@@ -194,12 +203,21 @@ body {
 .table table {
     border-collapse: collapse;
     width: 100%;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    background: var(--color1);
 }
 
 .table td {
     vertical-align: bottom;
     text-align: center;
     padding: 2px 8px;
+}
+
+.table td:nth-child(4),
+.table td:nth-child(7),
+.table td:nth-child(9) {
+    border-left: 1px solid black;
 }
 
 .table td:nth-child(2) {
@@ -254,14 +272,18 @@ body {
 }
 
 .table {
-    background: var(--color1);
     color: black;
-    padding: 5px 0;
+    grid-area: b;
+}
+
+.nextG {
+    grid-area: c;
 }
 
 .nextGame {
     background: var(--color4);
     margin: auto;
+    padding: 10px 0 3px 0;
 }
 
 .nextGame img {
@@ -631,12 +653,14 @@ body {
 
 @media screen and (min-width: 640px) {
     :root {
-        --fontSize10: 14px;
-        --fontSize12: 15px;
         --logoWidth: 100px;
         --clubLogoWidth: 400px;
-        --gridTemplateAreas: 'a b'
+        --gridTemplateAreas:
+            'a b'
             'c c';
+        --gridTemplateAreasContent:
+            'a b'
+            'c b';
     }
 
     #youthSel li {
@@ -662,5 +686,9 @@ body {
     .finals {
         margin: 10px 20%;
         padding: 5px 0;
+    }
+
+    .results {
+        border-bottom: 1px solid var(--color1);
     }
 }
