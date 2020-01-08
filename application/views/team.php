@@ -1,27 +1,29 @@
-<div class="team">
-    <img class="teamLogo" src="/images/logos_big/<?php echo $team->id ?>.png" alt="team logo" />
-    <table class="teamInfo">
-        <tr>
-            <td>Ime</td>
-            <td><?php echo $team->team_name ?></td>
-        </tr>
-        <tr>
-            <td>Grad</td>
-            <td><?php echo $team->team_city ?></td>
-        </tr>
-        <tr>
-            <td>Dvorana</td>
-            <td><?php echo $team->venue ?></td>
-        </tr>
-        <tr>
-            <td>Termin</td>
-            <td><?php echo $team->game_time ?></td>
-        </tr>
-        <tr>
-            <td>Klupske boje</td>
-            <td><?php echo $team->kit_color ?></td>
-        </tr>
-    </table>
+<div class="teamContent">
+    <div class="team">
+        <table class="teamInfo">
+            <tr>
+                <td>Ime</td>
+                <td><?php echo $team->team_name ?></td>
+            </tr>
+            <tr>
+                <td>Grad</td>
+                <td><?php echo $team->team_city ?></td>
+            </tr>
+            <tr>
+                <td>Dvorana</td>
+                <td><?php echo $team->venue ?></td>
+            </tr>
+            <tr>
+                <td>Termin</td>
+                <td><?php echo $team->game_time ?></td>
+            </tr>
+            <tr>
+                <td>Klupske boje</td>
+                <td><?php echo $team->kit_color ?></td>
+            </tr>
+        </table>
+        <img class="teamLogo" src="/images/logos_big/<?php echo $team->id ?>.png" alt="team logo" />
+    </div>
     <ul class="teamResultsList">
         <li id="s2006">2006 god.</li>
         <li id="s2007">2007 god.</li>
