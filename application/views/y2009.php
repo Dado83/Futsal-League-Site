@@ -65,9 +65,7 @@ if ($isLeagueOver) {
     echo '<h2><a href="/liga/finalsResults">Završni turnir</a></h2>';
 } else {
     echo <<<EOT
-        <tr>
-        <td class='nextMday' colspan='5'>$nextMday. kolo ($nextGameDate->game_date)</td>
-        </tr>
+        <p>$nextMday. kolo ($nextGameDate->game_date)</p>
 EOT;
     foreach ($nextFixture as $nf) {
         echo <<<EOT
@@ -84,7 +82,6 @@ EOT;
             <tr>
             <td class="notPlaying" colspan='3'>$notPlaying->team pauzira</td>
             <td colspan='2'>
-
             </td>
             </tr>
 EOT;

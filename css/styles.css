@@ -108,6 +108,7 @@ body {
     color: black;
     margin-left: -8px;
     margin-right: -8px;
+    box-shadow: 0 0 5px var(--color5);
 }
 
 #youthSel li {
@@ -120,6 +121,7 @@ body {
 .ys {
     display: grid;
     grid-template-areas: var(--gridTemplateAreasContent);
+    box-shadow: 0 0 5px var(--color5);
 }
 
 .results img {
@@ -141,6 +143,11 @@ body {
 
 .results p {
     text-align: center;
+    background: var(--color1);
+    padding: 10px 0 5px 0;
+    position: relative;
+    top: -18px;
+    margin-bottom: auto;
 }
 
 .results table {
@@ -149,7 +156,7 @@ body {
 
 .results {
     padding: 3px 0 10px 0;
-    background: var(--color4);
+    background: white;
     grid-area: a;
 }
 
@@ -203,7 +210,8 @@ body {
 .table table {
     border-collapse: collapse;
     width: 100%;
-    background: var(--color1);
+    background: white;
+    margin-bottom: 1px;
 }
 
 .table td {
@@ -214,7 +222,7 @@ body {
 
 .table td:nth-child(9) {
     font-weight: bold;
-    font-style: italic;
+    font-family: cursive;
 }
 
 .table td:nth-child(2) {
@@ -222,11 +230,11 @@ body {
 }
 
 .table tr:nth-of-type(n+1):nth-of-type(-n+5) td:first-of-type {
-    background: var(--color3);
+    background: var(--color4);
 }
 
 .table tr {
-    border: 1px solid black;
+    border-bottom: 1px solid var(--color5);
 }
 
 .table a,
@@ -269,7 +277,6 @@ body {
     background: var(--color1);
     color: black;
     padding: 2px;
-    border-bottom: 2px solid var(--color5);
 }
 
 .table {
@@ -286,7 +293,7 @@ body {
 }
 
 .nextGame {
-    background: var(--color4);
+    background: white;
     margin: auto;
     padding: 10px 0 3px 0;
 }
@@ -296,11 +303,16 @@ body {
     height: var(--logoDim);
 }
 
-.nextGame tr:nth-of-type(1) td {
+.nextG p {
     text-align: center;
+    background: var(--color1);
+    padding: 10px 0 5px 0;
+    position: relative;
+    top: -14px;
+    margin-bottom: auto;
 }
 
-.nextGame tr:nth-of-type(6) td {
+.nextGame tr:nth-of-type(5) td {
     text-align: left;
 }
 
@@ -329,9 +341,11 @@ body {
 
 .pairs tr:nth-of-type(1) td {
     font-weight: bold;
-    padding: 1px;
-    background: var(--color4);
+    padding: 5px 0;
+    background: var(--color1);
     color: black;
+    position: relative;
+    top: -2px;
 }
 
 .pairs tr:nth-of-type(6) {
@@ -354,15 +368,19 @@ body {
 .pairs {
     width: 80%;
     max-width: 300px;
-    background: var(--color1);
+    box-shadow: 0 0 5px var(--color5);
 }
 
 .resultsPage {
     margin-top: var(--contentMarginTop);
 }
 
+.resultsPage tr {
+    border-bottom: 1px solid var(--color5);
+}
+
 .resultsPage tr:nth-of-type(n + 1):nth-of-type(-n + 2) {
-    background: var(--color4);
+    background: var(--color1);
     color: black;
 }
 
@@ -371,7 +389,7 @@ body {
     width: 80%;
     max-width: 400px;
     border-collapse: collapse;
-    background: var(--color1);
+    box-shadow: 0 0 5px var(--color5);
 }
 
 .resultsPage tr:nth-of-type(n + 1):nth-of-type(-n + 2) td {
@@ -387,11 +405,13 @@ body {
     margin-top: var(--contentMarginTop);
 }
 
-.teamContent {}
+.teamContent {
+    display: inline-block;
+    box-shadow: 0 0 5px var(--color5);
+}
 
 .team {
     display: inline-flex;
-    background: var(--color1);
     padding: 5px;
 }
 
@@ -411,13 +431,16 @@ body {
     padding-right: 10px;
 }
 
+.teamResults tr {
+    border: 1px solid var(--color5);
+}
+
 .teamResults td {
     padding: 1px 2px 4px 4px;
-    background: var(--color1);
 }
 
 .teamResults td:first-of-type {
-    border-right: 1px solid black;
+    border-right: 1px solid var(--color5);
     text-align: center;
 }
 
@@ -426,15 +449,15 @@ body {
 }
 
 .teamResults th {
-    background: var(--color4);
+    background: var(--color1);
     color: black;
     text-align: left;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--color5);
     padding: 0 0 2px 4px;
 }
 
 .teamResults {
-    border-bottom: 1px solid black;
+    border: 1px solid var(--color5);
     margin-bottom: 20px;
     min-width: 333px;
     max-width: 400px;
@@ -541,7 +564,7 @@ body {
     border-radius: 2px;
     display: inline-block;
     padding: 5px 10px;
-    box-shadow: 0 0 2px black;
+    box-shadow: 0 0 2px var(--color5);
 }
 
 #newsLetter a {
@@ -554,7 +577,7 @@ body {
     font-weight: bold;
     border-radius: 2px;
     padding: 5px 10px;
-    box-shadow: 0 0 2px black;
+    box-shadow: 0 0 2px var(--color5);
 }
 
 #metrics a {
@@ -573,7 +596,7 @@ body {
     padding: 1px 10px;
     margin: 5px;
     border-radius: 2px;
-    box-shadow: 0 0 2px black;
+    box-shadow: 0 0 2px var(--color5);
 }
 
 .admin a:hover {
@@ -603,7 +626,7 @@ body {
 }
 
 .visitorTable {
-    border: 1px solid black;
+    border: 1px solid var(--color5);
     border-collapse: collapse;
     font-size: var(--fontSize10);
     display: none;
@@ -612,17 +635,17 @@ body {
 .visitorTable td {
     padding: 2px 4px;
     text-align: center;
-    border-bottom: 1px solid black;
-    border-top: 1px solid black;
+    border-bottom: 1px solid var(--color5);
+    border-top: 1px solid var(--color5);
 }
 
 .visitorTable td:nth-of-type(7),
 .visitorTable td:nth-of-type(1) {
-    border: 1px solid black;
+    border: 1px solid var(--color5);
 }
 
 .visitorTable td:nth-of-type(10) {
-    border-left: 1px solid black;
+    border-left: 1px solid var(--color5);
 }
 
 .visitorTable th {
@@ -710,11 +733,21 @@ body {
             'c b';
     }
 
-    .table {
+    .ys {
+        box-shadow: 0 0;
+    }
+
+    .table table {
         margin-left: 10px;
+        box-shadow: 0 0 5px var(--color5);
     }
 
     .results {
         margin-bottom: 5px;
+        box-shadow: 0 0 5px var(--color5);
+    }
+
+    .nextG {
+        box-shadow: 0 0 5px var(--color5);
     }
 }
