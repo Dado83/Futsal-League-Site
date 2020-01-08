@@ -227,7 +227,9 @@ $(document).ready(function () {
 			let src = event.target.id;
 			el.hide();
 			teamResults.css('background', 'var(--color4)');
+			teamResults.css('box-shadow', '0 0 5px var(--color5)');
 			$('#' + src).css('background', 'var(--color1)');
+			$('#' + src).css('box-shadow', '0 0');
 			$('#y' + src).show();
 		}
 	}

@@ -34,7 +34,7 @@ EOT;
                     <th>N</th>
                     <th>I</th>
                     <th>GOL</th>
-                    <th>+/-</th>
+                    <th class="columnVisibility">+/-</th>
                     <th>BOD</th>
                 </tr>
                 <?php
@@ -49,7 +49,7 @@ foreach ($table9 as $row) {
              <td>$row->games_drew</td>
              <td>$row->games_lost</td>
              <td>$row->goals</td>
-             <td>$row->g_diff</td>
+             <td class="columnVisibility">$row->g_diff</td>
              <td>$row->points</td>
              </tr>
 EOT;
