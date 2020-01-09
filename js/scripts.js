@@ -5,7 +5,8 @@ $(document).ready(function () {
 	banner.remove();
 
 	let url = window.location.pathname;
-	let backColor = "#2284b9";
+	let backColor = "#fcc914";
+	let fontCol = '#3d3d3d';
 	console.log(url);
 
 	switch (url) {
@@ -226,8 +227,8 @@ $(document).ready(function () {
 			let el = $('.rSelector');
 			let src = event.target.id;
 			el.hide();
-			teamResults.css('background', 'var(--color4)');
-			teamResults.css('box-shadow', '0 0 5px var(--color5)');
+			teamResults.css('background', 'var(--color5)');
+			teamResults.css('box-shadow', '0 1px 3px var(--color5)');
 			$('#' + src).css('background', 'var(--color1)');
 			$('#' + src).css('box-shadow', '0 0');
 			$('#y' + src).show();
