@@ -36,11 +36,6 @@ $(document).ready(function () {
 			break;
 	}
 
-	let head = $(".headToggle");
-	head.on("click", function (e) {
-		$(this).siblings(".visitorTable").toggle();
-	});
-
 
 	let graphs = $.getJSON("getVisitorData");
 	graphs.done(function (r) {
