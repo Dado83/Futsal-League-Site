@@ -15,6 +15,33 @@ class Liga extends CI_Controller
         }
     }
 
+    private function setSession($role = '')
+    {
+        $sessionData = array(
+            'ip' => $this->input->ip_address(),
+            'mobile' => $this->agent->mobile(),
+            'robot' => $this->agent->robot(),
+            'platform' => $this->agent->platform(),
+            'browser' => $this->agent->browser(),
+            'version' => $this->agent->version(),
+            'userAgent' => $this->agent->agent_string(),
+        );
+
+        $sessionStartTime = time();
+        $sessionData['startTime'] = $sessionStartTime;
+
+        $cookie = get_cookie('visited');
+        if ($cookie) {
+            $sessionData['newVisitor'] = 0;
+        } else {
+            setcookie('visited', '1');
+            $sessionData['newVisitor'] = 1;
+        }
+
+        $sessionData['role'] = $role;
+        $this->session->set_userdata($sessionData);
+    }
+
     public function index($ysel = 2006)
     {
         $data['title'] = 'Fair Play LBŠ';
@@ -406,30 +433,4 @@ class Liga extends CI_Controller
         $this->load->view('footer', $data);
     }
 
-    private function setSession($role = '')
-    {
-        $sessionData = array(
-            'ip' => $this->input->ip_address(),
-            'mobile' => $this->agent->mobile(),
-            'robot' => $this->agent->robot(),
-            'platform' => $this->agent->platform(),
-            'browser' => $this->agent->browser(),
-            'version' => $this->agent->version(),
-            'userAgent' => $this->agent->agent_string(),
-        );
-
-        $sessionStartTime = time();
-        $sessionData['startTime'] = $sessionStartTime;
-
-        $cookie = get_cookie('visited');
-        if ($cookie) {
-            $sessionData['newVisitor'] = 0;
-        } else {
-            setcookie('visited', '1');
-            $sessionData['newVisitor'] = 1;
-        }
-
-        $sessionData['role'] = $role;
-        $this->session->set_userdata($sessionData);
-    }
 }

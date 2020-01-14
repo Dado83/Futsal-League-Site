@@ -1,8 +1,6 @@
 :root {
     --color1: #fcc914;
-    --color2: #136a9b;
-    --color3: #2284b9;
-    --color4: #36a0ce;
+    --color2: #feeaa3;
     --color5: #3d3d3d;
     --logoWidth: 50px;
     --fontSize30: 30px;
@@ -231,7 +229,7 @@ body {
 }
 
 .table tr:nth-of-type(n+1):nth-of-type(-n+5) td:first-of-type {
-    background: var(--color4);
+    background: var(--color2);
 }
 
 .table tr:nth-of-type(n+2):nth-of-type(-n+9) {
@@ -275,7 +273,7 @@ body {
 .results a:hover,
 .nextGame a:hover,
 .teamResults a:hover {
-    color: var(--color2);
+    color: var(--color1);
 }
 
 .table th {
@@ -585,7 +583,7 @@ body {
 
 #metrics a:hover,
 #newsLetter a:hover {
-    color: var(--color2);
+    color: var(--color1);
 }
 
 .admin a {
@@ -599,7 +597,7 @@ body {
 }
 
 .admin a:hover {
-    background: var(--color2);
+    background: var(--color1);
 }
 
 .admin tr:nth-of-type(n + 2):nth-of-type(-n + 5) td:nth-of-type(n + 1):nth-of-type(-n + 3) {
