@@ -10,10 +10,11 @@ class Liga extends CI_Controller
         $this->load->model('DBModel');
         if (get_cookie('admin') == '1') {
             $this->setSession('admin');
+            $this->DBModel->setVisitor('admin');
         } else {
             $this->setSession();
+            $this->DBModel->setVisitor();
         }
-        $this->DBModel->setVisitor();
     }
 
     private function setSession($role = '')
