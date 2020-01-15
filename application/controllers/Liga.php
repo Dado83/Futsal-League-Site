@@ -8,16 +8,17 @@ class Liga extends CI_Controller
         parent::__construct();
         $this->load->database();
         $this->load->model('DBModel');
-        if (!$this->session->ip || !get_cookie('time')) {
-            setcookie('time', 'expiry', time() + 600);
+        if (get_cookie('admin') == '1') {
+            $this->setSession('admin');
+        } else {
             $this->setSession();
-            $this->DBModel->setVisitor();
         }
+        $this->DBModel->setVisitor();
     }
 
     private function setSession($role = '')
     {
-        $sessionData = array(
+        $sessionData = [
             'ip' => $this->input->ip_address(),
             'mobile' => $this->agent->mobile(),
             'robot' => $this->agent->robot(),
@@ -25,7 +26,7 @@ class Liga extends CI_Controller
             'browser' => $this->agent->browser(),
             'version' => $this->agent->version(),
             'userAgent' => $this->agent->agent_string(),
-        );
+        ];
 
         $sessionStartTime = time();
         $sessionData['startTime'] = $sessionStartTime;
@@ -34,7 +35,7 @@ class Liga extends CI_Controller
         if ($cookie) {
             $sessionData['newVisitor'] = 0;
         } else {
-            setcookie('visited', '1');
+            set_cookie('visited', '1', 60 * 60 * 24 * 30 * 4);
             $sessionData['newVisitor'] = 1;
         }
 
@@ -151,6 +152,7 @@ class Liga extends CI_Controller
         } else {
             $this->setSession('admin');
             $this->DBModel->setVisitor('admin');
+            set_cookie('admin', '1', 60 * 60 * 24 * 30 * 4);
             redirect('/', 'refresh');
         }
     }
@@ -158,6 +160,7 @@ class Liga extends CI_Controller
     public function logout()
     {
         $this->session->set_userdata('role', '');
+        delete_cookie('admin');
         redirect('/', 'refresh');
     }
 
@@ -431,6 +434,23 @@ class Liga extends CI_Controller
         $this->load->view('header', $data);
         $this->load->view('finalFourResults', $data);
         $this->load->view('footer', $data);
+    }
+
+    public function test()
+    {
+        echo $this->session->ip . '<br>';
+        echo $this->session->robot . '<br>';
+        echo $this->session->mobile . '<br>';
+        echo $this->session->platform . '<br>';
+        echo $this->session->browser . '<br>';
+        echo $this->session->version . '<br>';
+        echo $this->session->startTime . '<br>';
+        echo $this->session->session_id . '<br>';
+
+        //$sessionData['bb'] = 'xxxxxxxxx';
+        //$this->session->set_userdata($sessionData);
+
+        echo $this->session->bb;
     }
 
 }
