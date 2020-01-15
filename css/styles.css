@@ -120,7 +120,7 @@ body {
 .ys {
     display: grid;
     grid-template-areas: var(--gridTemplateAreasContent);
-    box-shadow: 0 0 5px var(--color5);
+    box-shadow: 0 0 2px var(--color5);
 }
 
 .results img {
@@ -740,15 +740,15 @@ summary {
 
     .table table {
         margin-left: 10px;
-        box-shadow: 0 0 5px var(--color5);
+        box-shadow: 0 0 2px var(--color5);
     }
 
     .results {
         margin-bottom: 5px;
-        box-shadow: 0 0 5px var(--color5);
+        box-shadow: 0 0 2px var(--color5);
     }
 
     .nextG {
-        box-shadow: 0 0 5px var(--color5);
+        box-shadow: 0 0 2px var(--color5);
     }
 }
