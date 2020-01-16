@@ -1,15 +1,16 @@
-<div class="resultsPage">
-    <table>
-        <tr>
-            <td colspan="6">2010. godište</td>
-        </tr>
-        <tr>
-            <td>kolo</td>
-            <td>domaćin</td>
-            <td>gost</td>
-            <td colspan="3">rezultat</td>
-        </tr>
-        <?php
+<div class="resultsPageContainer">
+    <div class="resultsPage">
+        <table>
+            <tr>
+                <td colspan="6">2010. godište</td>
+            </tr>
+            <tr>
+                <td>kolo</td>
+                <td>domaćin</td>
+                <td>gost</td>
+                <td colspan="3">rezultat</td>
+            </tr>
+            <?php
 foreach ($results10 as $row) {
     echo <<<EOT
         <tr>
@@ -23,18 +24,18 @@ foreach ($results10 as $row) {
 EOT;
 }
 ?>
-    </table>
-    <table>
-        <tr>
-            <td colspan="6">2009. godište</td>
-        </tr>
-        <tr>
-            <td>kolo</td>
-            <td>domaćin</td>
-            <td>gost</td>
-            <td colspan="3">rezultat</td>
-        </tr>
-        <?php
+        </table>
+        <table>
+            <tr>
+                <td colspan="6">2009. godište</td>
+            </tr>
+            <tr>
+                <td>kolo</td>
+                <td>domaćin</td>
+                <td>gost</td>
+                <td colspan="3">rezultat</td>
+            </tr>
+            <?php
 foreach ($results9 as $row) {
     echo <<<EOT
         <tr>
@@ -48,18 +49,18 @@ foreach ($results9 as $row) {
 EOT;
 }
 ?>
-    </table>
-    <table>
-        <tr>
-            <td colspan="6">2008. godište</td>
-        </tr>
-        <tr>
-            <td>kolo</td>
-            <td>domaćin</td>
-            <td>gost</td>
-            <td colspan="3">rezultat</td>
-        </tr>
-        <?php
+        </table>
+        <table>
+            <tr>
+                <td colspan="6">2008. godište</td>
+            </tr>
+            <tr>
+                <td>kolo</td>
+                <td>domaćin</td>
+                <td>gost</td>
+                <td colspan="3">rezultat</td>
+            </tr>
+            <?php
 foreach ($results8 as $row) {
     echo <<<EOT
         <tr>
@@ -73,18 +74,18 @@ foreach ($results8 as $row) {
 EOT;
 }
 ?>
-    </table>
-    <table>
-        <tr>
-            <td colspan="6">2007. godište</td>
-        </tr>
-        <tr>
-            <td>kolo</td>
-            <td>domaćin</td>
-            <td>gost</td>
-            <td colspan="3">rezultat</td>
-        </tr>
-        <?php
+        </table>
+        <table>
+            <tr>
+                <td colspan="6">2007. godište</td>
+            </tr>
+            <tr>
+                <td>kolo</td>
+                <td>domaćin</td>
+                <td>gost</td>
+                <td colspan="3">rezultat</td>
+            </tr>
+            <?php
 foreach ($results7 as $row) {
     echo <<<EOT
         <tr>
@@ -98,18 +99,18 @@ foreach ($results7 as $row) {
 EOT;
 }
 ?>
-    </table>
-    <table>
-        <tr>
-            <td colspan="6">2006. godište</td>
-        </tr>
-        <tr>
-            <td>kolo</td>
-            <td>domaćin</td>
-            <td>gost</td>
-            <td colspan="3">rezultat</td>
-        </tr>
-        <?php
+        </table>
+        <table>
+            <tr>
+                <td colspan="6">2006. godište</td>
+            </tr>
+            <tr>
+                <td>kolo</td>
+                <td>domaćin</td>
+                <td>gost</td>
+                <td colspan="3">rezultat</td>
+            </tr>
+            <?php
 foreach ($results6 as $row) {
     echo <<<EOT
         <tr>
@@ -123,5 +124,37 @@ foreach ($results6 as $row) {
 EOT;
 }
 ?>
-    </table>
+        </table>
+    </div>
+    <div id="combinedTable" class="table">
+        <table>
+            <tr>
+                <th>#</th>
+                <th>zbirna tabela svih selekcija</th>
+                <th>Ut</th>
+                <th>P</th>
+                <th>N</th>
+                <th>I</th>
+                <th>GOL</th>
+                <th>+/-</th>
+                <th>BOD</th>
+            </tr>
+            <?php
+$i = 1;
+foreach ($combinedTable as $tt) {
+    $gDiff = $tt->goalsFor - $tt->goalsAgg;
+    echo "<tr><td>$i</td>";
+    echo "<td><img src='/images/logos/$tt->id.png' alt='grb'>$tt->team</td>";
+    echo "<td>$tt->gamesAll</td>";
+    echo "<td>$tt->gamesWon</td>";
+    echo "<td>$tt->gamesDrew</td>";
+    echo "<td>$tt->gamesLost</td>";
+    echo "<td>$tt->goalsFor:$tt->goalsAgg</td>";
+    echo "<td>$gDiff</td>";
+    echo "<td>$tt->pointsAll</td></tr>";
+    $i++;
+}
+?>
+        </table>
+    </div>
 </div>

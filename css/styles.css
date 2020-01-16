@@ -16,11 +16,13 @@
         'a'
         'b'
         'c';
+    --resultsPageGridAreas:
+        'b'
+        'a';
     --display: table-cell;
     --clubLogoWidth: 400px;
     --logoDim: 30px;
     --logoTbl: 20px;
-    --contentMarginTop: 20px;
     --tableLastTrPadding: 7px;
 }
 
@@ -338,10 +340,6 @@ body {
     margin-top: 60px;
 }
 
-.pairsAll {
-    margin-top: var(--contentMarginTop);
-}
-
 .pairs tr:nth-of-type(1) td {
     font-weight: bold;
     padding: 5px 0;
@@ -371,11 +369,21 @@ body {
 .pairs {
     width: 80%;
     max-width: 300px;
-    box-shadow: 0 0 5px var(--color5);
+    box-shadow: 0 0 2px var(--color5);
+}
+
+#combinedTable table {
+    grid-area: b;
+    box-shadow: 0 0 2px var(--color5);
+    margin-bottom: 20px;
+}
+
+#combinedTable tr:nth-of-type(n+1):nth-of-type(-n+5) td:first-of-type {
+    background: unset;
 }
 
 .resultsPage {
-    margin-top: var(--contentMarginTop);
+    grid-area: a;
 }
 
 .resultsPage tr {
@@ -389,10 +397,10 @@ body {
 
 .resultsPage table {
     margin-bottom: 20px;
-    width: 80%;
+    width: 100%;
     max-width: 400px;
     border-collapse: collapse;
-    box-shadow: 0 0 5px var(--color5);
+    box-shadow: 0 0 2px var(--color5);
 }
 
 .resultsPage tr:nth-of-type(n + 1):nth-of-type(-n + 2) td {
@@ -400,17 +408,14 @@ body {
     padding: 1px;
 }
 
-.info {
-    margin-top: var(--contentMarginTop);
-}
-
-.form {
-    margin-top: var(--contentMarginTop);
+.resultsPageContainer {
+    display: grid;
+    grid-template-areas: var(--resultsPageGridAreas);
 }
 
 .teamContent {
     display: inline-block;
-    box-shadow: 0 0 5px var(--color5);
+    box-shadow: 0 0 2px var(--color5);
 }
 
 .team {
@@ -478,7 +483,7 @@ body {
     padding: 2px;
     background: var(--color5);
     cursor: pointer;
-    box-shadow: 0 1px 3px var(--color5);
+    box-shadow: 0 0 2px var(--color5);
     color: white;
 }
 
@@ -732,6 +737,8 @@ summary {
             'a b'
             'c b';
         --tableLastTrPadding: 5px;
+        --resultsPageGridAreas:
+            'a b c';
     }
 
     .ys {
