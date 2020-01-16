@@ -348,7 +348,15 @@ class Liga extends CI_Controller
     {
         $data['title'] = 'LBŠ završnica';
         $data['teams'] = $this->DBModel->getTeams();
+        $cmbTable = $this->getCombinedTable();
 
+        $this->load->view('header', $data);
+        $this->load->view('finalFour', $cmbTable);
+        $this->load->view('footer', $data);
+    }
+
+    private function getCombinedTable()
+    {
         $t1 = $this->DBModel->getCombinedTable(1);
         $t2 = $this->DBModel->getCombinedTable(2);
         $t3 = $this->DBModel->getCombinedTable(3);
@@ -397,9 +405,7 @@ class Liga extends CI_Controller
         $data['t10p3'] = $this->DBModel->getTeamByTablePos('table10', 3);
         $data['t10p4'] = $this->DBModel->getTeamByTablePos('table10', 4);
 
-        $this->load->view('header', $data);
-        $this->load->view('finalFour', $data);
-        $this->load->view('footer', $data);
+        return $data;
     }
 
     public function finalsResults()
