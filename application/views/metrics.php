@@ -36,7 +36,7 @@ foreach ($keys as $k):
         if ($t[0] == "23") {
             $time = "00:" . $t[1];
         } else {
-            $time = $t[0] + 1 . ":" . $t[1];
+            $time = $t[0] + 6 . ":" . $t[1];
         }
         ?>
                 <tr>
