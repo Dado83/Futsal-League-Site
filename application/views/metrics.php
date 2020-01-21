@@ -32,13 +32,7 @@ foreach ($keys as $k):
             <tbody>
                 <?php
     for ($i = 0; $i < count($vis[$k]); $i++):
-        $t = explode(":", $vis[$k][$i]->time);
-        if ($t[0] == "23") {
-            $time = "00:" . $t[1];
-        } else {
-            $time = $t[0] + 6 . ":" . $t[1];
-        }
-        ?>
+    ?>
                 <tr>
                     <td><?=$vis[$k][$i]->ip?></td>
                     <td><?=$vis[$k][$i]->mobile?></td>
@@ -51,7 +45,7 @@ foreach ($keys as $k):
                     <td><?=$vis[$k][$i]->role?></td>
                     <td><?=$vis[$k][$i]->day?></td>
                     <td><?=$vis[$k][$i]->month?></td>
-                    <td><?=$time?></td>
+                    <td><?=$vis[$k][$i]->time?></td>
                 </tr>
                 <?php endfor?>
             </tbody>
