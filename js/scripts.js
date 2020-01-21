@@ -64,14 +64,14 @@ $(document).ready(function () {
 		let chartAll = new Chart(visitorPercentage, {
 			type: "bar",
 			data: {
-				labels: ["all", "desktop", "mobile", "bot"],
+				labels: ["views", "desktop", "mobile", "bot"],
 				datasets: [
 					{
-						label: "all",
+						label: "clicks",
 						backgroundColor: color1,
 						data: [visAll, visDesk, visMob, visRob]
 					}, {
-						label: "new",
+						label: "visitors",
 						backgroundColor: color2,
 						data: [visAllUni, visDeskUni, visMobUni, visRobUni]
 					}
@@ -80,7 +80,7 @@ $(document).ready(function () {
 			options: {
 				title: {
 					display: true,
-					text: "Kompletne posjete po kategorijama"
+					text: "Pregledi: " + visAll
 				}
 			}
 		});
@@ -131,7 +131,6 @@ $(document).ready(function () {
 			robotArray[i] = Object.values(robot)[i].length;
 		}
 
-
 		let chartTimeline = new Chart(visTimeline, {
 			type: "line",
 			data: {
@@ -162,7 +161,7 @@ $(document).ready(function () {
 			options: {
 				title: {
 					display: true,
-					text: "Posjete za " + new Date().getFullYear() + ". godinu"
+					text: "Pregledi za " + new Date().getFullYear() + ". godinu: " + visitorArray.reduce((t, e) => t + e)
 				}
 			}
 		})
@@ -183,7 +182,7 @@ $(document).ready(function () {
 			options: {
 				title: {
 					display: true,
-					text: "Posjete za " + new Date().getFullYear() + ". god."
+					text: "Pregledi za " + new Date().getFullYear() + ". god."
 				},
 				legend: {
 					display: false
