@@ -325,7 +325,7 @@ body {
     text-align: right;
 }
 
-.nextGame tr:nth-of-type(n + 2):nth-of-type(-n + 5) td:nth-of-type(3) {
+.nextGame tr:nth-of-type(n + 1):nth-of-type(-n + 5) td:nth-of-type(3) {
     text-align: center;
     padding: 0 15px;
     font-size: var(--fontSize10);
@@ -561,12 +561,14 @@ body {
 }
 
 #newsLetter {
-    font-size: var(--fontSize20);
-    font-weight: bold;
-    border-radius: 2px;
     display: inline-block;
+    width: 50px;
+    max-width: 200px;
+    font-size: var(--fontSize12);
+    font-weight: bold;
     padding: 5px 10px;
     box-shadow: 0 0 2px var(--color5);
+    margin: 5px;
 }
 
 #newsLetter a {
@@ -574,12 +576,14 @@ body {
 }
 
 #metrics {
-    float: right;
-    font-size: var(--fontSize20);
+    display: inline-block;
+    width: 50px;
+    max-width: 200px;
+    font-size: var(--fontSize12);
     font-weight: bold;
-    border-radius: 2px;
     padding: 5px 10px;
     box-shadow: 0 0 2px var(--color5);
+    margin: 5px;
 }
 
 #metrics a {
@@ -599,6 +603,11 @@ body {
     margin: 5px;
     border-radius: 2px;
     box-shadow: 0 0 2px var(--color5);
+    font-size: 15px;
+}
+
+.admin {
+    font-size: 15px;
 }
 
 .admin a:hover {
@@ -728,6 +737,10 @@ summary {
 
     .columnVisibility {
         display: table-cell;
+    }
+
+    #adminCards {
+        float: right;
     }
 }
 
