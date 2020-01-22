@@ -4,7 +4,7 @@
     <div><canvas id="visitorPie"></canvas></div>
     <div><canvas id="visitorTimeline"></canvas></div>
 </div>
-<p>Posjete za <?=date('Y', time())?>. godinu</p>
+<p>Requests za <?=date('Y', time())?>. godinu</p>
 <div>
     <?php
 $keys = array_keys($vis);
