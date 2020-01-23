@@ -71,7 +71,7 @@ $(document).ready(function () {
 						backgroundColor: color1,
 						data: [visAll, visDesk, visMob, visRob]
 					}, {
-						label: "visitors",
+						label: "IPs",
 						backgroundColor: color2,
 						data: [visAllUni, visDeskUni, visMobUni, visRobUni]
 					}
