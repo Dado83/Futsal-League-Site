@@ -1,5 +1,5 @@
 $(document).ready(function () {
-	//
+	//start of document.ready fn
 
 	let banner = $("img[alt='www.000webhost.com']").closest("div");
 	banner.remove();
@@ -201,23 +201,23 @@ $(document).ready(function () {
 
 		switch (li) {
 			case '2010 god.':
-				sh();
+				yearSelector();
 				break;
 			case '2009 god.':
-				sh();
+				yearSelector();
 				break;
 			case '2008 god.':
-				sh();
+				yearSelector();
 				break;
 			case '2007 god.':
-				sh();
+				yearSelector();
 				break;
 			case '2006 god.':
-				sh();
+				yearSelector();
 				break;
 		}
 
-		function sh() {
+		function yearSelector() {
 			let el = $('.rSelector');
 			let src = event.target.id;
 			el.hide();
@@ -226,6 +226,20 @@ $(document).ready(function () {
 			$('#' + src).css('background', 'var(--color1)');
 			$('#' + src).css('box-shadow', '0 0');
 			$('#y' + src).show();
+		}
+	}
+
+	$('#passwordChange').on('click', passwordChange);
+
+	let modalForm = $('#mForm');
+
+	function passwordChange() {
+		modalForm.show();
+	}
+
+	window.onclick = function (e) {
+		if (e.target.id == modalForm.attr('id')) {
+			modalForm.hide();
 		}
 	}
 

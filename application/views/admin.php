@@ -1,6 +1,6 @@
 <p><?=$this->session->passwordChanged?></p>
 <p><?=$this->session->passwordNotChanged?></p>
-<div class="modalForm">
+<div id="mForm" class="modalForm">
     <form action="/liga/passwordChange" method="post">
         <fieldset>
             <label for="user">Korisnik</label>
@@ -18,7 +18,7 @@
     </div>
     <div class="adminCards"><a href="/liga/metrics"><img src="/images/icons/charts.svg" style="width: 100%" />Metrics</a>
     </div>
-    <div class="adminCards"><a href="/liga/metrics"><img src="/images/icons/pass.svg" style="width: 100%" />Password</a>
+    <div id="passwordChange" class="adminCards"><img src="/images/icons/pass.svg" style="width: 100%" />Password
     </div>
 </div>
 <table class="admin">
