@@ -418,6 +418,12 @@ EOT;
         return $query->row();
     }
 
+    public function updatePassword($userID, $newPass)
+    {
+        $sql = "UPDATE users SET password = '$newPass' WHERE id = $userID";
+        $this->db->query($sql);
+    }
+
     public function getMaxMday()
     {
         $sql = "SELECT MAX(m_day) as mDay FROM matchpairs";

@@ -147,6 +147,7 @@ class Liga extends CI_Controller
         $pass = $this->input->post('pass');
         $query = $this->DBModel->getUser($user);
         $password = ($query != null) ? $query->password : '';
+
         if (!password_verify($pass, $password)) {
             $this->session->set_flashdata('loginError', 'invalid authentication');
             redirect('/', 'refresh');
@@ -171,10 +172,16 @@ class Liga extends CI_Controller
         $pass = $this->input->post('password');
         $newPass = $this->input->post('newPassword');
         $query = $this->DBModel->getUser($user);
-        $password = ($query != null);
+        $password = ($query != null) ? $query->password : '';
+        $userID = ($query != null) ? $query->id : '';
 
-        $this->session->set_flashdata('passwordChanged', 'lozinka je promjenjena');
-        $this->session->set_flashdata('passwordNotChanged', 'nevažeća lozinka, pokušaj ponovo');
+        if (!password_verify($pass, $password)) {
+            $this->session->set_flashdata('passwordNotChanged', 'nevažeća lozinka, pokušaj ponovo');
+        } else {
+            $passHash = password_hash($newPass, PASSWORD_DEFAULT);
+            $this->DBModel->updatePassword($userID, $passHash);
+            $this->session->set_flashdata('passwordChanged', 'lozinka je promjenjena');
+        }
 
         redirect('/liga/admin', 'refresh');
     }
@@ -450,19 +457,11 @@ class Liga extends CI_Controller
 
     public function test()
     {
-        echo $this->session->ip . '<br>';
-        echo $this->session->robot . '<br>';
-        echo $this->session->mobile . '<br>';
-        echo $this->session->platform . '<br>';
-        echo $this->session->browser . '<br>';
-        echo $this->session->version . '<br>';
-        echo $this->session->startTime . '<br>';
-        echo $this->session->session_id . '<br>';
-
-        //$sessionData['bb'] = 'xxxxxxxxx';
-        //$this->session->set_userdata($sessionData);
-
-        echo $this->session->bb;
+        $pass = '';
+        $passHash = password_hash($pass, PASSWORD_DEFAULT);
+        $pa = 'admin2014';
+        $paHash = password_hash($pa, PASSWORD_DEFAULT);
+        echo $passHash . '<br>' . $paHash;
     }
 
 }
