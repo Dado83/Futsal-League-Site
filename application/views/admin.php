@@ -1,10 +1,12 @@
+<p><?=$this->session->passwordChanged?></p>
+<p><?=$this->session->passwordNotChanged?></p>
 <div class="modalForm">
     <form action="/liga/passwordChange" method="post">
         <fieldset>
             <label for="user">Korisnik</label>
             <input type="text" name="user"><br>
             <label for="oldPassword">Šifra</label>
-            <input type="password" name="oldPassword"><br>
+            <input type="password" name="password"><br>
             <label for="newPassword">Nova šifra</label>
             <input type="password" name="newPassword"><br>
             <input type="submit" value="Promijeni šifru">

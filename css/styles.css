@@ -575,24 +575,24 @@ body {
     text-decoration: none;
 }
 
-#metrics {
+.adminCards a:hover {
+    color: var(--color1);
+}
+
+.adminCards a {
+    text-decoration: none;
+}
+
+.adminCards {
     display: inline-block;
     width: 50px;
     max-width: 200px;
     font-size: var(--fontSize12);
     font-weight: bold;
-    padding: 5px 10px;
+    padding: 5px 15px;
     box-shadow: 0 0 2px var(--color5);
     margin: 5px;
-}
-
-#metrics a {
-    text-decoration: none;
-}
-
-#metrics a:hover,
-#newsLetter a:hover {
-    color: var(--color1);
+    text-align: center;
 }
 
 .admin a {
@@ -696,6 +696,12 @@ body {
 
 summary {
     cursor: pointer;
+}
+
+.modalForm {
+    text-align: right;
+    width: 30%;
+    min-width: 300px;
 }
 
 @media screen and (min-width: 640px) {

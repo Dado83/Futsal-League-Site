@@ -6,8 +6,7 @@ class Liga extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->database();
-        $this->load->model('DBModel');
+        $this->load->model('DBModel', '', true);
         if (get_cookie('admin') == '1') {
             $this->setSession('admin');
             $this->DBModel->setVisitor('admin');
@@ -164,6 +163,20 @@ class Liga extends CI_Controller
         $this->session->set_userdata('role', '');
         delete_cookie('admin');
         redirect('/', 'refresh');
+    }
+
+    public function passwordChange()
+    {
+        $user = $this->input->post('user');
+        $pass = $this->input->post('password');
+        $newPass = $this->input->post('newPassword');
+        $query = $this->DBModel->getUser($user);
+        $password = ($query != null);
+
+        $this->session->set_flashdata('passwordChanged', 'lozinka je promjenjena');
+        $this->session->set_flashdata('passwordNotChanged', 'nevažeća lozinka, pokušaj ponovo');
+
+        redirect('/liga/admin', 'refresh');
     }
 
     public function admin()
