@@ -168,6 +168,10 @@ class Liga extends CI_Controller
 
     public function passwordChange()
     {
+        if ($this->session->role != 'admin') {
+            redirect('/', 'refresh');
+        }
+
         $user = $this->input->post('user');
         $pass = $this->input->post('password');
         $newPass = $this->input->post('newPassword');
@@ -188,30 +192,32 @@ class Liga extends CI_Controller
 
     public function admin()
     {
-        if ($this->session->role == 'admin') {
-            $data['title'] = 'Admin';
-            $data['teams'] = $this->DBModel->getTeams();
-            $data['results'] = $this->DBModel->getResults('results6');
-            $data['matchPairs'] = $this->DBModel->getMatchPairsNotPlayed();
-            $data['visAll'] = $this->DBModel->getVisitors('all');
-            $data['visUni'] = $this->DBModel->getVisitors('allUnique');
-            $data['visDesk'] = $this->DBModel->getVisitors('desktop');
-            $data['visDeskUni'] = $this->DBModel->getVisitors('desktopUnique');
-            $data['visMob'] = $this->DBModel->getVisitors('mobile');
-            $data['visMobUni'] = $this->DBModel->getVisitors('mobileUnique');
-            $data['visRob'] = $this->DBModel->getVisitors('robot');
-            $data['visRobUni'] = $this->DBModel->getVisitors('robotUnique');
-
-            $this->load->view('header', $data);
-            $this->load->view('admin', $data);
-        } else {
-            $this->load->view('error');
+        if ($this->session->role != 'admin') {
+            redirect('/', 'refresh');
         }
+        $data['title'] = 'Admin';
+        $data['teams'] = $this->DBModel->getTeams();
+        $data['results'] = $this->DBModel->getResults('results6');
+        $data['matchPairs'] = $this->DBModel->getMatchPairsNotPlayed();
+        $data['visAll'] = $this->DBModel->getVisitors('all');
+        $data['visUni'] = $this->DBModel->getVisitors('allUnique');
+        $data['visDesk'] = $this->DBModel->getVisitors('desktop');
+        $data['visDeskUni'] = $this->DBModel->getVisitors('desktopUnique');
+        $data['visMob'] = $this->DBModel->getVisitors('mobile');
+        $data['visMobUni'] = $this->DBModel->getVisitors('mobileUnique');
+        $data['visRob'] = $this->DBModel->getVisitors('robot');
+        $data['visRobUni'] = $this->DBModel->getVisitors('robotUnique');
+
+        $this->load->view('header', $data);
+        $this->load->view('admin', $data);
     }
 
     public function formIn($id)
     {
-        $this->load->helper('form');
+        if ($this->session->role != 'admin') {
+            redirect('/', 'refresh');
+        }
+
         $data['title'] = 'Unos kola';
         $data['teams'] = $this->DBModel->getTeams();
         $data['game'] = $this->DBModel->getGameByID($id);
@@ -222,6 +228,10 @@ class Liga extends CI_Controller
 
     public function unosKola()
     {
+        if ($this->session->role != 'admin') {
+            redirect('/', 'refresh');
+        }
+
         $data['title'] = 'Admin';
         $data['teams'] = $this->DBModel->getTeams();
 
@@ -260,6 +270,10 @@ class Liga extends CI_Controller
 
     public function brisanjeKola($id)
     {
+        if ($this->session->role != 'admin') {
+            redirect('/', 'refresh');
+        }
+
         $data['title'] = 'Admin';
         $data['teams'] = $this->DBModel->getTeams();
         $data['matchPairs'] = $this->DBModel->getMatchPairsNotPlayed();
@@ -304,6 +318,10 @@ class Liga extends CI_Controller
 
     public function bilten()
     {
+        if ($this->session->role != 'admin') {
+            redirect('/', 'refresh');
+        }
+
         $data['title'] = 'Bilten';
         $data['teams'] = $this->DBModel->getTeams();
         $data['table6'] = $this->DBModel->getTable('table6');
@@ -330,19 +348,23 @@ class Liga extends CI_Controller
 
     public function metrics()
     {
-        if ($this->session->role == 'admin') {
-            $data['title'] = 'Metrics';
-            $data['vis'] = $this->DBModel->visitorListForCurrentYear();
-
-            $this->load->view('header', $data);
-            $this->load->view('metrics', $data);
-        } else {
-            $this->load->view('error');
+        if ($this->session->role != 'admin') {
+            redirect('/', 'refresh');
         }
+
+        $data['title'] = 'Metrics';
+        $data['vis'] = $this->DBModel->visitorListForCurrentYear();
+
+        $this->load->view('header', $data);
+        $this->load->view('metrics', $data);
     }
 
     public function getVisitorData()
     {
+        if ($this->session->role != 'admin') {
+            redirect('/', 'refresh');
+        }
+
         $data['visAll'] = $this->DBModel->getVisitors('all');
         $data['visUni'] = $this->DBModel->getVisitors('allUnique');
         $data['visDesk'] = $this->DBModel->getVisitors('desktop');

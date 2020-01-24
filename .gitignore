@@ -22,3 +22,5 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 .idea/*
 .vscode/*
 
+_certificate/cert.txt
+_certificate/key.txt
