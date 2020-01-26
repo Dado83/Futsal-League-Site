@@ -478,6 +478,7 @@ EOT;
 
     public function getVisitors($type)
     {
+        $lastHour = time() - (60 * 60);
         switch ($type) {
             case 'all':
                 $sql = "SELECT COUNT(*) AS vis FROM visitors WHERE robot='NULL'";
@@ -502,6 +503,12 @@ EOT;
                 break;
             case 'robotUnique':
                 $sql = "SELECT COUNT(DISTINCT ip) AS vis FROM visitors WHERE NOT robot='NULL'";
+                break;
+            case 'lastHourViews':
+                $sql = "SELECT COUNT(*) AS vis FROM visitors WHERE robot='NULL' AND time>$lastHour";
+                break;
+            case 'lastHourVisitors':
+                $sql = "SELECT COUNT(DISTINCT ip) AS vis FROM visitors WHERE robot='NULL' AND time>$lastHour";
                 break;
         }
 

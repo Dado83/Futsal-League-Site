@@ -65,6 +65,8 @@ class Liga extends CI_Controller
         $data['nextGameDate'] = $this->DBModel->getNextGameDate($data['nextMday']);
         $maxMday = $this->DBModel->getMaxMday();
         $data['isLeagueOver'] = $data['lastMday'] == $maxMday->mDay;
+        $data['lastHourViews'] = $this->DBModel->getVisitors('lastHourViews');
+        $data['lastHourVisitors'] = $this->DBModel->getVisitors('lastHourVisitors');
 
         $this->load->view('header', $data);
         switch ($ysel) {
@@ -479,11 +481,7 @@ class Liga extends CI_Controller
 
     public function test()
     {
-        $pass = '';
-        $passHash = password_hash($pass, PASSWORD_DEFAULT);
-        $pa = 'admin2014';
-        $paHash = password_hash($pa, PASSWORD_DEFAULT);
-        echo $passHash . '<br>' . $paHash;
+        echo $this->DBModel->getVisitors('lastHourVisitors')->vis;
     }
 
 }
