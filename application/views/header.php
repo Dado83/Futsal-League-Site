@@ -26,7 +26,7 @@ if ($this->session->role == "admin") {
     echo <<<EOT
                 <form class="login" action="/liga/logout" method="POST">
                 <input type="submit" value="Logout">
-                <p>Views/Visitors: $lastHourViews->vis/$lastHourVisitors->vis</p>
+                <p>Views/Visitors: {$this->session->lastHourViews->vis}/{$this->session->lastHourVisitors->vis}</p>
                 <p></p>
                 </form>
 EOT;

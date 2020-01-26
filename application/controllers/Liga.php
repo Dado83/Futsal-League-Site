@@ -10,6 +10,10 @@ class Liga extends CI_Controller
         if (get_cookie('admin') == '1') {
             $this->setSession('admin');
             $this->DBModel->setVisitor('admin');
+            $visits = [
+                'lastHourViews' => $this->DBModel->getVisitors('lastHourViews'),
+                'lastHourVisitors' => $this->DBModel->getVisitors('lastHourVisitors')];
+            $this->session->set_userdata($visits);
         } else {
             $this->setSession();
             $this->DBModel->setVisitor();
@@ -65,8 +69,6 @@ class Liga extends CI_Controller
         $data['nextGameDate'] = $this->DBModel->getNextGameDate($data['nextMday']);
         $maxMday = $this->DBModel->getMaxMday();
         $data['isLeagueOver'] = $data['lastMday'] == $maxMday->mDay;
-        $data['lastHourViews'] = $this->DBModel->getVisitors('lastHourViews');
-        $data['lastHourVisitors'] = $this->DBModel->getVisitors('lastHourVisitors');
 
         $this->load->view('header', $data);
         switch ($ysel) {
