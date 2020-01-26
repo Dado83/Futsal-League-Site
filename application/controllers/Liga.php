@@ -9,13 +9,20 @@ class Liga extends CI_Controller
         $this->load->model('DBModel', '', true);
         if (get_cookie('admin') == '1') {
             $this->setSession('admin');
-            $this->DBModel->setVisitor('admin');
             $visits = [
                 'lastHourViews' => $this->DBModel->getVisitors('lastHourViews'),
                 'lastHourVisitors' => $this->DBModel->getVisitors('lastHourVisitors')];
             $this->session->set_userdata($visits);
         } else {
             $this->setSession();
+        }
+    }
+
+    private function setVisitor()
+    {
+        if ($this->session->role == 'admin') {
+            $this->DBModel->setVisitor('admin');
+        } else {
             $this->DBModel->setVisitor();
         }
     }
@@ -74,18 +81,23 @@ class Liga extends CI_Controller
         switch ($ysel) {
             case 2006:
                 $this->load->view('y2006', $data);
+                $this->setVisitor();
                 break;
             case 2007:
                 $this->load->view('y2007', $data);
+                $this->setVisitor();
                 break;
             case 2008:
                 $this->load->view('y2008', $data);
+                $this->setVisitor();
                 break;
             case 2009:
                 $this->load->view('y2009', $data);
+                $this->setVisitor();
                 break;
             case 2010:
                 $this->load->view('y2010', $data);
+                $this->setVisitor();
                 break;
         }
         $this->load->view('footer', $data);
@@ -126,6 +138,7 @@ class Liga extends CI_Controller
         $this->load->view('header', $data);
         $this->load->view('pairs', $data);
         $this->load->view('footer', $data);
+        $this->setVisitor();
     }
 
     public function rezultati()
@@ -143,6 +156,7 @@ class Liga extends CI_Controller
         $this->load->view('header', $data);
         $this->load->view('results', $data);
         $this->load->view('footer', $data);
+        $this->setVisitor();
     }
 
     public function login()
@@ -199,6 +213,7 @@ class Liga extends CI_Controller
         if ($this->session->role != 'admin') {
             redirect('/', 'refresh');
         }
+
         $data['title'] = 'Admin';
         $data['teams'] = $this->DBModel->getTeams();
         $data['results'] = $this->DBModel->getResults('results6');
@@ -214,6 +229,7 @@ class Liga extends CI_Controller
 
         $this->load->view('header', $data);
         $this->load->view('admin', $data);
+        $this->setVisitor();
     }
 
     public function formIn($id)
@@ -318,14 +334,11 @@ class Liga extends CI_Controller
 
         $this->load->view('header', $data);
         $this->load->view('team', $data);
+        $this->setVisitor();
     }
 
     public function bilten()
     {
-        if ($this->session->role != 'admin') {
-            redirect('/', 'refresh');
-        }
-
         $data['title'] = 'Bilten';
         $data['teams'] = $this->DBModel->getTeams();
         $data['table6'] = $this->DBModel->getTable('table6');
@@ -361,6 +374,7 @@ class Liga extends CI_Controller
 
         $this->load->view('header', $data);
         $this->load->view('metrics', $data);
+        $this->setVisitor();
     }
 
     public function getVisitorData()
@@ -391,6 +405,7 @@ class Liga extends CI_Controller
         $this->load->view('header', $data);
         $this->load->view('finalFour', $cmbTable);
         $this->load->view('footer', $data);
+        $this->setVisitor();
     }
 
     private function getCombinedTable()
@@ -479,6 +494,7 @@ class Liga extends CI_Controller
         $this->load->view('header', $data);
         $this->load->view('finalFourResults', $data);
         $this->load->view('footer', $data);
+        $this->setVisitor();
     }
 
     public function test()
