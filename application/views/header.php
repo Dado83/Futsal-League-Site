@@ -25,7 +25,6 @@
 if ($this->session->role == "admin") {
     echo <<<EOT
                 <form class="login" action="/liga/logout" method="POST">
-                <span><a href='/liga/admin'>Admin</a></span>
                 <input type="submit" value="Logout">
                 </form>
 EOT;
@@ -49,4 +48,7 @@ EOT;
         <li><a href="/liga/index/2010">2010</a></li>
         <li><a href='/liga/rezultati'>Rezultati</a> </li>
         <li><a href='/liga/raspored'>Raspored</a></li>
+        <?php if ($this->session->role == 'admin'): ?>
+        <li><a href='/liga/admin'>Admin</a></li>
+        <?php endif?>
     </ul>
