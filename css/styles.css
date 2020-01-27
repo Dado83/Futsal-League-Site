@@ -1,6 +1,5 @@
 :root {
     --color1: #fcc914;
-    --color2: #feeaa3;
     --color5: #3d3d3d;
     --logoWidth: 50px;
     --fontSize30: 30px;
@@ -232,7 +231,7 @@ body {
 }
 
 .table tr:nth-of-type(n+1):nth-of-type(-n+5) td:first-of-type {
-    background: var(--color2);
+    background: var(--color1);
 }
 
 .table tr:nth-of-type(n+2):nth-of-type(-n+9) {
@@ -283,6 +282,7 @@ body {
     background: var(--color1);
     color: black;
     padding: 2px;
+    border-bottom: 1px solid var(--color5);
 }
 
 .table {
@@ -737,7 +737,7 @@ summary {
 
 .modalForm input[type='submit']:hover {
     cursor: pointer;
-    color: var(--color2);
+    color: var(--color1);
 }
 
 @media screen and (min-width: 640px) {
