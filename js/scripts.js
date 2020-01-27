@@ -34,6 +34,9 @@ $(document).ready(function () {
 		case "/liga/raspored":
 			$("#youthSel li:nth-of-type(7)").css("background", backColor);
 			break;
+		case "/liga/admin":
+			$("#youthSel li:nth-of-type(8)").css("background", backColor);
+			break;
 	}
 
 
