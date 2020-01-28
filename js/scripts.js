@@ -37,6 +37,9 @@ $(document).ready(function () {
 		case "/liga/admin":
 			$("#youthSel li:nth-of-type(8)").css("background", backColor);
 			break;
+		case "/liga/metrics":
+			$("#youthSel li:nth-of-type(8)").css("background", backColor);
+			break;
 	}
 
 
