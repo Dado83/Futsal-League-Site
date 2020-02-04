@@ -14,7 +14,7 @@
 foreach ($results10 as $row) {
     echo <<<EOT
         <tr>
-        <td>$row->m_day</td>
+        <td class='oddResRow'>$row->m_day</td>
         <td>$row->home_team</td>
         <td>$row->away_team</td>
         <td>$row->goals_home</td>
@@ -39,7 +39,7 @@ EOT;
 foreach ($results9 as $row) {
     echo <<<EOT
         <tr>
-        <td>$row->m_day</td>
+        <td class='oddResRow'>$row->m_day</td>
         <td>$row->home_team</td>
         <td>$row->away_team</td>
         <td>$row->goals_home</td>
@@ -64,7 +64,7 @@ EOT;
 foreach ($results8 as $row) {
     echo <<<EOT
         <tr>
-        <td>$row->m_day</td>
+        <td class='oddResRow'>$row->m_day</td>
         <td>$row->home_team</td>
         <td>$row->away_team</td>
         <td>$row->goals_home</td>
@@ -89,7 +89,7 @@ EOT;
 foreach ($results7 as $row) {
     echo <<<EOT
         <tr>
-        <td>$row->m_day</td>
+        <td class='oddResRow'>$row->m_day</td>
         <td>$row->home_team</td>
         <td>$row->away_team</td>
         <td>$row->goals_home</td>
@@ -114,7 +114,7 @@ EOT;
 foreach ($results6 as $row) {
     echo <<<EOT
         <tr>
-        <td>$row->m_day</td>
+        <td class='oddResRow'>$row->m_day</td>
         <td>$row->home_team</td>
         <td>$row->away_team</td>
         <td>$row->goals_home</td>

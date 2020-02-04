@@ -499,7 +499,7 @@ class Liga extends CI_Controller
 
     public function test()
     {
-        echo $this->DBModel->getVisitors('lastHourVisitors')->vis;
+       
     }
 
 }

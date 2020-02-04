@@ -1,8 +1,6 @@
 $(document).ready(function () {
 	//start of document.ready fn
 
-	let banner = $("img[alt='www.000webhost.com']").closest("div");
-	banner.remove();
 
 	let url = window.location.pathname;
 	let backColor = "#fcc914";
@@ -235,6 +233,7 @@ $(document).ready(function () {
 		}
 	}
 
+
 	$('#passwordChange').on('click', passwordChange);
 
 	let modalForm = $('#mForm');
@@ -247,6 +246,16 @@ $(document).ready(function () {
 		if (e.target.id == modalForm.attr('id')) {
 			modalForm.hide();
 		}
+	}
+
+
+	let oddResultsRow = $('.oddResRow');
+
+	for (odd of oddResultsRow) {
+		if (odd.innerText % 2 == 0) {
+			odd.parentNode.style.background = '#fcc914';
+		}
+		console.log(odd.innerText);
 	}
 
 
