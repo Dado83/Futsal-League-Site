@@ -253,10 +253,13 @@ $(document).ready(function () {
 
 	for (odd of oddResultsRow) {
 		if (odd.innerText % 2 == 0) {
-			odd.parentNode.style.background = '#fcc914';
+			odd.parentNode.style.background = 'rgba(0, 0, 0, 0.2)';
 		}
 		console.log(odd.innerText);
 	}
 
+	$('.resultsPage summary').width($('.resultsPage table').width());
 
-});//end of document.ready fn
+
+	//end of document.ready fn	
+});

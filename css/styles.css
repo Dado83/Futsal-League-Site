@@ -387,11 +387,16 @@ body {
     grid-area: a;
 }
 
+.resultsPage summary {
+    background: var(--color1);
+    margin-bottom: 5px;
+}
+
 .resultsPage tr {
     border-bottom: 1px solid var(--color5);
 }
 
-.resultsPage tr:nth-of-type(n + 1):nth-of-type(-n + 2) {
+.resultsPage tr:first-of-type {
     background: var(--color1);
     color: black;
 }
