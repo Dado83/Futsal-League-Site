@@ -13,8 +13,7 @@ class DBModel extends CI_Model
     public function getTable($table, $isShortName = false, $id1 = 11, $id2 = 12)
     {
         if ($isShortName) {
-            $sql = <<<EOT
-            SELECT $table.id, teams.team_name AS team,
+            $sql = "SELECT $table.id, teams.team_name AS team,
             $table.games_played,
             $table.games_won,
             $table.games_drew,
@@ -22,11 +21,9 @@ class DBModel extends CI_Model
             CONCAT ($table.goals_scored, ':', $table.goals_conceded) AS goals,
             $table.goals_scored - $table.goals_conceded AS g_diff,
             $table.points FROM $table JOIN teams ON $table.id = teams.id WHERE NOT teams.id IN (10, $id1, $id2)
-            ORDER BY $table.points DESC, g_diff DESC, $table.goals_scored DESC, team
-EOT;
+            ORDER BY $table.points DESC, g_diff DESC, $table.goals_scored DESC, team";
         } else {
-            $sql = <<<EOT
-            SELECT CONCAT(teams.team_name, ' ', teams.team_city) AS team,
+            $sql = "SELECT CONCAT(teams.team_name, ' ', teams.team_city) AS team,
             $table.games_played,
             $table.games_won,
             $table.games_drew,
@@ -34,8 +31,7 @@ EOT;
             CONCAT ($table.goals_scored, ':', $table.goals_conceded) AS goals,
             $table.goals_scored - $table.goals_conceded AS g_diff,
             $table.points FROM $table JOIN teams ON $table.id = teams.id WHERE NOT teams.id IN (10, $id1, $id2)
-            ORDER BY $table.points DESC, g_diff DESC, $table.goals_scored DESC, team
-EOT;
+            ORDER BY $table.points DESC, g_diff DESC, $table.goals_scored DESC, team";
         }
         $query = $this->db->query($sql);
         return ($query) ? $query->result() : array();
@@ -44,8 +40,7 @@ EOT;
     public function getTeamByTablePos($table, $pos)
     {
         $pos--;
-        $sql = <<<EOT
-            SELECT teams.team_name AS team,
+        $sql = "SELECT teams.team_name AS team,
             $table.id,
             $table.games_played,
             $table.games_won,
@@ -55,8 +50,7 @@ EOT;
             $table.goals_scored - $table.goals_conceded AS g_diff,
             $table.points FROM $table JOIN teams ON $table.id = teams.id WHERE NOT teams.id=10
             ORDER BY $table.points DESC, g_diff DESC, $table.goals_scored DESC, team
-            LIMIT 1 OFFSET $pos
-EOT;
+            LIMIT 1 OFFSET $pos";
 
         $query = $this->db->query($sql);
         return ($query) ? $query->row() : array();
@@ -78,39 +72,36 @@ EOT;
 
     public function getMatchPairs($mday)
     {
-        $sql = <<<EOT
-        SELECT matchpairs.id, matchpairs.m_day, matchpairs.home_team, matchpairs.away_team, matchpairs.game_date,
+        $sql = "SELECT matchpairs.id, matchpairs.m_day, matchpairs.home_team, matchpairs.away_team, matchpairs.game_date,
         home.team_name AS home_team, away.team_name AS away_team
         FROM matchpairs
         JOIN teams AS home ON matchpairs.home_team = home.id
         JOIN teams AS away ON matchpairs.away_team = away.id
-        WHERE matchpairs.m_day = $mday AND NOT (matchpairs.home_team = 10 XOR matchpairs.away_team = 10)
-EOT;
+        WHERE matchpairs.m_day = $mday AND NOT (matchpairs.home_team = 10 XOR matchpairs.away_team = 10)";
+
         $query = $this->db->query($sql);
         return ($query) ? $query->result() : array();
     }
 
     public function getMatchDates($mday)
     {
-        $sql = <<<EOT
-        SELECT DISTINCT matchpairs.game_date
+        $sql = "SELECT DISTINCT matchpairs.game_date
         FROM matchpairs
-        WHERE m_day = $mday AND NOT (matchpairs.home_team = 10 XOR matchpairs.away_team = 10)
-EOT;
+        WHERE m_day = $mday AND NOT (matchpairs.home_team = 10 XOR matchpairs.away_team = 10)";
+
         $query = $this->db->query($sql);
         return ($query) ? $query->row() : array();
     }
 
     public function getMatchPairsNotPlayed()
     {
-        $sql = <<<EOT
-        SELECT matchpairs.id, matchpairs.m_day, matchpairs.home_team, matchpairs.away_team, matchpairs.game_date,
+        $sql = "SELECT matchpairs.id, matchpairs.m_day, matchpairs.home_team, matchpairs.away_team, matchpairs.game_date,
         home.team_name AS home_team, away.team_name AS away_team
         FROM matchpairs
         JOIN teams AS home ON matchpairs.home_team = home.id
         JOIN teams AS away ON matchpairs.away_team = away.id
-        WHERE matchpairs.is_played = FALSE AND NOT (matchpairs.home_team = 10 XOR matchpairs.away_team = 10)
-EOT;
+        WHERE matchpairs.is_played = FALSE AND NOT (matchpairs.home_team = 10 XOR matchpairs.away_team = 10)";
+
         $query = $this->db->query($sql);
         return ($query) ? $query->result() : array();
     }
@@ -135,6 +126,7 @@ EOT;
         $query = $this->db->query($sql);
         $data['lastMday'] = $max_mday;
         $data['results'] = ($query) ? $query->result() : array();
+
         return $data;
     }
 
@@ -144,28 +136,26 @@ EOT;
         $query_num = $this->db->query($sql_last);
         $mday_num = sizeof($query_num->result());
         $next_game = ++$mday_num;
-        $sql = <<<EOT
-        SELECT matchpairs.m_day, matchpairs.home_team, matchpairs.away_team, matchpairs.game_date,
+        $sql = "SELECT matchpairs.m_day, matchpairs.home_team, matchpairs.away_team, matchpairs.game_date,
         home.team_name AS home, away.team_name AS away, home.game_time, home.venue
         FROM matchpairs
         JOIN teams AS home ON matchpairs.home_team = home.id
         JOIN teams AS away ON matchpairs.away_team = away.id
-        WHERE matchpairs.m_day = $next_game AND NOT (matchpairs.home_team = 10 XOR matchpairs.away_team = 10)
-EOT;
+        WHERE matchpairs.m_day = $next_game AND NOT (matchpairs.home_team = 10 XOR matchpairs.away_team = 10)";
+
         $query = $this->db->query($sql);
         return ($query) ? $query->result() : array();
     }
 
     public function getGameByID($id)
     {
-        $sql = <<<EOT
-        SELECT matchpairs.id, matchpairs.m_day, matchpairs.home_team, matchpairs.away_team, matchpairs.game_date,
+        $sql = "SELECT matchpairs.id, matchpairs.m_day, matchpairs.home_team, matchpairs.away_team, matchpairs.game_date,
         home.team_name AS home, away.team_name AS away, home.game_time, home.venue
         FROM matchpairs
         JOIN teams AS home ON matchpairs.home_team = home.id
         JOIN teams AS away ON matchpairs.away_team = away.id
-        WHERE matchpairs.id = $id
-EOT;
+        WHERE matchpairs.id = $id";
+
         $query = $this->db->query($sql);
         return ($query) ? $query->row() : array();
     }
@@ -213,19 +203,15 @@ EOT;
 
     public function setPlayed($id, $isPlayed)
     {
-        $sqlPlayed = <<<EOT
-        UPDATE matchpairs SET is_played = $isPlayed WHERE id = $id
-EOT;
+        $sqlPlayed = "UPDATE matchpairs SET is_played = $isPlayed WHERE id = $id";
         $this->db->query($sqlPlayed);
     }
 
     public function insertGame($results, $table, $mday, $home, $home_id, $away, $away_id, $goals_h, $goals_a)
     {
         if ($goals_h == null) {} else {
-            $sql = <<<EOT
-        INSERT INTO $results (m_day, home_team, home_teamid, away_team, away_teamid, goals_home, goals_away)
-        VALUES ($mday , '$home', $home_id, '$away', $away_id, $goals_h, $goals_a)
-EOT;
+            $sql = "INSERT INTO $results (m_day, home_team, home_teamid, away_team, away_teamid, goals_home, goals_away)
+        VALUES ($mday , '$home', $home_id, '$away', $away_id, $goals_h, $goals_a)";
             $this->db->query($sql);
 
             if ($goals_h > $goals_a) {
@@ -240,58 +226,46 @@ EOT;
 
     private function awayWin($table, $home_id, $away_id, $goals_h, $goals_a)
     {
-        $sql_h1 = <<<EOT
-        UPDATE $table
+        $sql_h1 = "UPDATE $table
         SET games_played = games_played + 1, games_lost = games_lost + 1,
         goals_scored = goals_scored + $goals_h, goals_conceded = goals_conceded + $goals_a
-        WHERE id = $home_id
-EOT;
+        WHERE id = $home_id";
         $this->db->query($sql_h1);
 
-        $sql_a1 = <<<EOT
-        UPDATE $table
+        $sql_a1 = "UPDATE $table
         SET games_played = games_played + 1, games_won = games_won + 1,
         goals_scored = goals_scored + $goals_a, goals_conceded = goals_conceded + $goals_h, points = points + 3
-        WHERE id = $away_id
-EOT;
+        WHERE id = $away_id";
         $this->db->query($sql_a1);
     }
 
     private function homeWin($table, $home_id, $away_id, $goals_h, $goals_a)
     {
-        $sql_h = <<<EOT
-        UPDATE $table
+        $sql_h = "UPDATE $table
         SET games_played = games_played + 1, games_won = games_won + 1,
         goals_scored = goals_scored + $goals_h, goals_conceded = goals_conceded + $goals_a, points = points + 3
-        WHERE id = $home_id
-EOT;
+        WHERE id = $home_id";
         $this->db->query($sql_h);
 
-        $sql_a = <<<EOT
-        UPDATE $table
+        $sql_a = "UPDATE $table
         SET games_played = games_played + 1, games_lost = games_lost + 1,
         goals_scored = goals_scored + $goals_a, goals_conceded = goals_conceded + $goals_h
-        WHERE id = $away_id
-EOT;
+        WHERE id = $away_id";
         $this->db->query($sql_a);
     }
 
     private function gameDraw($table, $home_id, $away_id, $goals_h, $goals_a)
     {
-        $sql_h2 = <<<EOT
-        UPDATE $table
+        $sql_h2 = "UPDATE $table
         SET games_played = games_played + 1, games_drew = games_drew + 1,
         goals_scored = goals_scored + $goals_h, goals_conceded = goals_conceded + $goals_a, points = points + 1
-        WHERE id = $home_id
-EOT;
+        WHERE id = $home_id";
         $this->db->query($sql_h2);
 
-        $sql_a2 = <<<EOT
-        UPDATE $table
+        $sql_a2 = "UPDATE $table
         SET games_played = games_played + 1, games_drew = games_drew + 1,
         goals_scored = goals_scored + $goals_a, goals_conceded = goals_conceded + $goals_h, points = points + 1
-        WHERE id = $away_id
-EOT;
+        WHERE id = $away_id";
         $this->db->query($sql_a2);
     }
 
@@ -320,58 +294,46 @@ EOT;
 
     private function homeWinDel($table, $home_id, $away_id, $goals_h, $goals_a)
     {
-        $sql_h = <<<EOT
-        UPDATE $table
+        $sql_h = "UPDATE $table
         SET games_played = games_played - 1, games_won = games_won - 1,
         goals_scored = goals_scored - $goals_h, goals_conceded = goals_conceded - $goals_a, points = points - 3
-        WHERE id = $home_id
-EOT;
+        WHERE id = $home_id";
         $this->db->query($sql_h);
 
-        $sql_a = <<<EOT
-        UPDATE $table
+        $sql_a = "UPDATE $table
         SET games_played = games_played - 1, games_lost = games_lost - 1,
         goals_scored = goals_scored - $goals_a, goals_conceded = goals_conceded - $goals_h
-        WHERE id = $away_id
-EOT;
+        WHERE id = $away_id";
         $this->db->query($sql_a);
     }
 
     private function awayWinDel($table, $home_id, $away_id, $goals_h, $goals_a)
     {
-        $sql_h1 = <<<EOT
-        UPDATE $table
+        $sql_h1 = "UPDATE $table
         SET games_played = games_played - 1, games_lost = games_lost - 1,
         goals_scored = goals_scored - $goals_h, goals_conceded = goals_conceded - $goals_a
-        WHERE id = $home_id
-EOT;
+        WHERE id = $home_id";
         $this->db->query($sql_h1);
 
-        $sql_a1 = <<<EOT
-        UPDATE $table
+        $sql_a1 = "UPDATE $table
         SET games_played = games_played - 1, games_won = games_won - 1,
         goals_scored = goals_scored - $goals_a, goals_conceded = goals_conceded - $goals_h, points = points - 3
-        WHERE id = $away_id
-EOT;
+        WHERE id = $away_id";
         $this->db->query($sql_a1);
     }
 
     private function drawDel($table, $home_id, $away_id, $goals_h, $goals_a)
     {
-        $sql_h2 = <<<EOT
-        UPDATE $table
+        $sql_h2 = "UPDATE $table
         SET games_played = games_played - 1, games_drew = games_drew - 1,
         goals_scored = goals_scored - $goals_h, goals_conceded = goals_conceded - $goals_a, points = points - 1
-        WHERE id = $home_id
-EOT;
+        WHERE id = $home_id";
         $this->db->query($sql_h2);
 
-        $sql_a2 = <<<EOT
-        UPDATE $table
+        $sql_a2 = "UPDATE $table
         SET games_played = games_played - 1, games_drew = games_drew - 1,
         goals_scored = goals_scored - $goals_a, goals_conceded = goals_conceded - $goals_h, points = points - 1
-        WHERE id = $away_id
-EOT;
+        WHERE id = $away_id";
         $this->db->query($sql_a2);
     }
 
@@ -397,10 +359,8 @@ EOT;
         $this->checkIfNULL($newVisitor);
         $this->checkIfNULL($startTime);
 
-        $sql = <<<EOT
-        INSERT INTO visitors (ip, mobile, robot, platform, browser, version, user_agent, new_visitor, role, time)
-        VALUES ('$ip', '$mobile', '$robot', '$platform', '$browser', '$version', '$userAgent', $newVisitor, '$role', $startTime)
-EOT;
+        $sql = "INSERT INTO visitors (ip, mobile, robot, platform, browser, version, user_agent, new_visitor, role, time)
+        VALUES ('$ip', '$mobile', '$robot', '$platform', '$browser', '$version', '$userAgent', $newVisitor, '$role', $startTime)";
         $this->db->query($sql);
     }
 
@@ -433,8 +393,7 @@ EOT;
 
     public function getCombinedTable($id)
     {
-        $sql = <<<EOT
-        SELECT id, CONCAT(team_name,' ', team_city) AS team,
+        $sql = "SELECT id, CONCAT(team_name,' ', team_city) AS team,
         (SELECT games_played FROM table6 WHERE id=$id)
         + (SELECT games_played FROM table7 WHERE id=$id)
         + (SELECT games_played FROM table8 WHERE id=$id)
@@ -470,8 +429,8 @@ EOT;
         + (SELECT points FROM table8 WHERE id=$id)
         + (SELECT points FROM table9 WHERE id=$id)
         + (SELECT points FROM table10 WHERE id=$id) AS pointsAll
-        FROM teams WHERE id=$id
-EOT;
+        FROM teams WHERE id=$id";
+
         $query = $this->db->query($sql);
         return ($query) ? $query->row() : array();
     }
