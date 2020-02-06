@@ -3,45 +3,45 @@ $(document).ready(function () {
 
 
 	let url = window.location.pathname;
-	let backColor = "#fcc914";
+	let backColor = '#fcc914';
 	let fontCol = '#3d3d3d';
 	console.log(url);
 
 	switch (url) {
-		case "/":
-			$("#youthSel li:nth-of-type(1)").css("background", backColor);
+		case '/':
+			$('#youthSel li:nth-of-type(1)').css('background', backColor);
 			break;
-		case "/liga/index/2006":
-			$("#youthSel li:nth-of-type(1)").css("background", backColor);
+		case '/liga/index/2006':
+			$('#youthSel li:nth-of-type(1)').css('background', backColor);
 			break;
-		case "/liga/index/2007":
-			$("#youthSel li:nth-of-type(2)").css("background", backColor);
+		case '/liga/index/2007':
+			$('#youthSel li:nth-of-type(2)').css('background', backColor);
 			break;
-		case "/liga/index/2008":
-			$("#youthSel li:nth-of-type(3)").css("background", backColor);
+		case '/liga/index/2008':
+			$('#youthSel li:nth-of-type(3)').css('background', backColor);
 			break;
-		case "/liga/index/2009":
-			$("#youthSel li:nth-of-type(4)").css("background", backColor);
+		case '/liga/index/2009':
+			$('#youthSel li:nth-of-type(4)').css('background', backColor);
 			break;
-		case "/liga/index/2010":
-			$("#youthSel li:nth-of-type(5)").css("background", backColor);
+		case '/liga/index/2010':
+			$('#youthSel li:nth-of-type(5)').css('background', backColor);
 			break;
-		case "/liga/rezultati":
-			$("#youthSel li:nth-of-type(6)").css("background", backColor);
+		case '/liga/rezultati':
+			$('#youthSel li:nth-of-type(6)').css('background', backColor);
 			break;
-		case "/liga/raspored":
-			$("#youthSel li:nth-of-type(7)").css("background", backColor);
+		case '/liga/raspored':
+			$('#youthSel li:nth-of-type(7)').css('background', backColor);
 			break;
-		case "/liga/admin":
-			$("#youthSel li:nth-of-type(8)").css("background", backColor);
+		case '/liga/admin':
+			$('#youthSel li:nth-of-type(8)').css('background', backColor);
 			break;
-		case "/liga/metrics":
-			$("#youthSel li:nth-of-type(8)").css("background", backColor);
+		case '/liga/metrics':
+			$('#youthSel li:nth-of-type(8)').css('background', backColor);
 			break;
 	}
 
 
-	let graphs = $.getJSON("getVisitorData");
+	let graphs = $.getJSON('getVisitorData');
 	graphs.done(function (r) {
 		let vis = r.visAll.vis;
 		let visUni = r.visUni.vis;
@@ -55,27 +55,27 @@ $(document).ready(function () {
 		let visAll = parseInt(vis) + parseInt(visRob);
 		let visAllUni = parseInt(visUni) + parseInt(visRobUni);
 
-		let visitorPercentage = $("#visitorPercentage");
-		let visTimeline = $("#visitorTimeline");
-		let visPie = $("#visitorPie");
+		let visitorPercentage = $('#visitorPercentage');
+		let visTimeline = $('#visitorTimeline');
+		let visPie = $('#visitorPie');
 
-		let color1 = "#4267b2";
-		let color2 = "#29487d";
-		let deskColor1 = "#FACA04";
-		let mobColor1 = "#3DDC84";
-		let botColor1 = "lightgrey";
+		let color1 = '#4267b2';
+		let color2 = '#29487d';
+		let deskColor1 = '#FACA04';
+		let mobColor1 = '#3DDC84';
+		let botColor1 = 'lightgrey';
 
 		let chartAll = new Chart(visitorPercentage, {
-			type: "bar",
+			type: 'bar',
 			data: {
-				labels: ["all", "desktop", "mobile", "bot"],
+				labels: ['all', 'desktop', 'mobile', 'bot'],
 				datasets: [
 					{
-						label: "requests",
+						label: 'requests',
 						backgroundColor: color1,
 						data: [visAll, visDesk, visMob, visRob]
 					}, {
-						label: "IPs",
+						label: 'IPs',
 						backgroundColor: color2,
 						data: [visAllUni, visDeskUni, visMobUni, visRobUni]
 					}
@@ -84,7 +84,7 @@ $(document).ready(function () {
 			options: {
 				title: {
 					display: true,
-					text: "Requests: " + visAll
+					text: 'Requests: ' + visAll
 				}
 			}
 		});
@@ -96,15 +96,15 @@ $(document).ready(function () {
 		let robot = [];
 
 		function desk(v) {
-			return v.mobile == "NULL" && v.robot == "NULL";
+			return v.mobile == 'NULL' && v.robot == 'NULL';
 		}
 
 		function mob(v) {
-			return v.mobile != "NULL" && v.robot == "NULL";
+			return v.mobile != 'NULL' && v.robot == 'NULL';
 		}
 
 		function rob(v) {
-			return v.robot != "NULL";
+			return v.robot != 'NULL';
 		}
 
 		for (v in visitorList) {
@@ -136,27 +136,27 @@ $(document).ready(function () {
 		}
 
 		let chartTimeline = new Chart(visTimeline, {
-			type: "line",
+			type: 'line',
 			data: {
 				labels: Object.keys(label).reverse(),
 				datasets: [{
 					fill: false,
-					label: "all",
+					label: 'all',
 					borderColor: color1,
 					data: visitorArray.reverse()
 				}, {
 					fill: false,
-					label: "desktop",
+					label: 'desktop',
 					borderColor: deskColor1,
 					data: desktopArray.reverse()
 				}, {
 					fill: false,
-					label: "mobile",
+					label: 'mobile',
 					borderColor: mobColor1,
 					data: mobileArray.reverse()
 				}, {
 					fill: false,
-					label: "bot",
+					label: 'bot',
 					borderColor: botColor1,
 					data: robotArray.reverse()
 				}
@@ -165,17 +165,17 @@ $(document).ready(function () {
 			options: {
 				title: {
 					display: true,
-					text: "Requests za " + new Date().getFullYear() + ". godinu: " + visitorArray.reduce((t, e) => t + e)
+					text: 'Requests za ' + new Date().getFullYear() + '. godinu: ' + visitorArray.reduce((t, e) => t + e)
 				}
 			}
 		})
 
 
-		let monthColors = ["#047ABB", "#0398D2", "#059A4F", "#76AE38", "#ACC91E", "#E9AE11",
-			"#E9AE11", "#E53C15", "#E52B4B", "#AE3985", "#733BA1", "#52509A"];
+		let monthColors = ['#047ABB', '#0398D2', '#059A4F', '#76AE38', '#ACC91E', '#E9AE11',
+			'#E9AE11', '#E53C15', '#E52B4B', '#AE3985', '#733BA1', '#52509A'];
 
 		let chartDoughnut = new Chart(visPie, {
-			type: "doughnut",
+			type: 'doughnut',
 			data: {
 				labels: Object.keys(label).reverse(),
 				datasets: [{
@@ -186,7 +186,7 @@ $(document).ready(function () {
 			options: {
 				title: {
 					display: true,
-					text: "Requests za " + new Date().getFullYear() + ". god."
+					text: 'Requests za ' + new Date().getFullYear() + '. god.'
 				},
 				legend: {
 					display: false
