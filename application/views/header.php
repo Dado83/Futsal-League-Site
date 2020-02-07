@@ -42,9 +42,9 @@
         <li><a href="/liga/index/2008">2008</a></li>
         <li><a href="/liga/index/2009">2009</a></li>
         <li><a href="/liga/index/2010">2010</a></li>
-        <li><a href='/liga/rezultati'>Rezultati</a> </li>
-        <li><a href='/liga/raspored'>Raspored</a></li>
+        <li><a href="/liga/rezultati">Rezultati</a> </li>
+        <li><a href="/liga/raspored">Raspored</a></li>
         <?php if ($this->session->role == 'admin'): ?>
-        <li><a href='/liga/admin'>Admin</a></li>
+        <li><a href="/liga/admin">Admin</a></li>
         <?php endif?>
     </ul>
