@@ -2,26 +2,20 @@
     <div id="g2007" class="ys">
         <div class="results">
             <p>
-                <?php
-echo ($lastMday != 0) ? $lastMday . '. kolo (2007. godište)' : ''
-?>
+                <?=($lastMday != 0) ? $lastMday . '. kolo (2007. godište)' : ''?>
             </p>
             <table>
-                <?php
-foreach ($results7 as $r) {
-    echo <<<EOT
-            <tr>
-            <td><a href="/liga/ekipa/$r->home_teamid">$r->home_team</a></td>
-            <td><a href="/liga/ekipa/$r->home_teamid"><img src='/images/logos/$r->home_teamid.png' alt='grb'></a></td>
-            <td>$r->goals_home</td>
-            <td> : </td>
-            <td>$r->goals_away</td>
-            <td><a href="/liga/ekipa/$r->away_teamid"><img src='/images/logos/$r->away_teamid.png' alt='grb'></a></td>
-            <td><a href="/liga/ekipa/$r->away_teamid">$r->away_team</a></td>
-            </tr>
-EOT;
-}
-?>
+                <?php foreach ($results7 as $r): ?>
+                <tr>
+                    <td><a href="/liga/ekipa/<?=$r->home_teamid?>"><?=$r->home_team?></a></td>
+                    <td><a href="/liga/ekipa/<?=$r->home_teamid?>"><img src="/images/logos/<?=$r->home_teamid?>.png" alt="grb"></a></td>
+                    <td><?=$r->goals_home?></td>
+                    <td> : </td>
+                    <td><?=$r->goals_away?></td>
+                    <td><a href="/liga/ekipa/<?=$r->away_teamid?>"><img src="/images/logos/<?=$r->away_teamid?>.png" alt="grb"></a></td>
+                    <td><a href="/liga/ekipa/<?=$r->away_teamid?>"><?=$r->away_team?></a></td>
+                </tr>
+                <?php endforeach?>
             </table>
         </div>
         <div class="table">
@@ -39,54 +33,44 @@ EOT;
                 </tr>
                 <?php
 $i = 1;
-foreach ($table7 as $row) {
-    echo <<<EOT
-             <tr>
-             <td>$i</td>
-             <td><a href="/liga/ekipa/$row->id"><img src='/images/logos/$row->id.png' alt='grb'>$row->team</a></td>
-             <td>$row->games_played</td>
-             <td>$row->games_won</td>
-             <td>$row->games_drew</td>
-             <td>$row->games_lost</td>
-             <td>$row->goals</td>
-             <td class="columnVisibility">$row->g_diff</td>
-             <td>$row->points</td>
-             </tr>
-EOT;
-    $i++;
-}
-?>
+foreach ($table7 as $row): ?>
+                <tr>
+                    <td><?=$i?></td>
+                    <td><a href="/liga/ekipa/<?=$row->id?>"><img src="/images/logos/<?=$row->id?>.png" alt="grb"><?=$row->team?></a></td>
+                    <td><?=$row->games_played?></td>
+                    <td><?=$row->games_won?></td>
+                    <td><?=$row->games_drew?></td>
+                    <td><?=$row->games_lost?></td>
+                    <td><?=$row->goals?></td>
+                    <td class="columnVisibility"><?=$row->g_diff?></td>
+                    <td><?=$row->points?></td>
+                </tr>
+                <?php
+$i++;
+endforeach?>
             </table>
         </div>
         <div class="nextG">
             <table class="nextGame">
-                <?php
-if ($isLeagueOver) {
-    echo '<h2><a href="/liga/finalsResults">Završni turnir</a></h2>';
-} else {
-    echo <<<EOT
-        <p>$nextMday. kolo ($nextGameDate->game_date)</p>
-EOT;
-    foreach ($nextFixture as $nf) {
-        echo <<<EOT
-            <tr>
-            <td class='nextGameH'><a href="/liga/ekipa/$nf->home_team">$nf->home</a></td>
-            <td class='nextGameImg'><a href="/liga/ekipa/$nf->home_team"><img src='/images/logos/$nf->home_team.png' alt='grb'></a></td>
-            <td class='nextGameTime'>$nf->game_time</td>
-            <td class='nextGameImg'><a href="/liga/ekipa/$nf->away_team"><img src='/images/logos/$nf->away_team.png' alt='grb'></a></td>
-            <td class='nextGameA'><a href="/liga/ekipa/$nf->away_team">$nf->away</a></td>
-            </tr>
-EOT;
-    }
-    echo <<<EOT
-            <tr>
-            <td class="notPlaying" colspan='3'>$notPlaying->team pauzira</td>
-            <td colspan='2'>
-            </td>
-            </tr>
-EOT;
-}
-?>
+                <?php if ($isLeagueOver): ?>
+                <h2><a href="/liga/finalsResults">Završni turnir</a></h2>
+                <?php else: ?>
+                <p><?=$nextMday?>. kolo (<?=$nextGameDate->game_date?>)</p>
+                <?php foreach ($nextFixture as $nf): ?>
+                <tr>
+                    <td class="nextGameH"><a href="/liga/ekipa/<?=$nf->home_team?>"><?=$nf->home?></a></td>
+                    <td class="nextGameImg"><a href="/liga/ekipa/<?=$nf->home_team?>"><img src="/images/logos/<?=$nf->home_team?>.png" alt="grb"></a></td>
+                    <td class="nextGameTime"><?=$nf->game_time?></td>
+                    <td class="nextGameImg"><a href="/liga/ekipa/<?=$nf->away_team?>"><img src="/images/logos/<?=$nf->away_team?>.png" alt="grb"></a></td>
+                    <td class="nextGameA"><a href="/liga/ekipa/<?=$nf->away_team?>"><?=$nf->away?></a></td>
+                </tr>
+                <?php endforeach?>
+                <tr>
+                    <td class="notPlaying" colspan='3'><?=$notPlaying->team?> pauzira</td>
+                    <td colspan="2">
+                    </td>
+                </tr>
+                <?php endif?>
             </table>
         </div>
     </div>
