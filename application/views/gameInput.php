@@ -1,16 +1,16 @@
 <div class="form">
     <form action="/liga/unosKola" method="POST">
         <fieldset>
-            <legend>Unos rezultata <?php echo $game->m_day ?>. kola</legend>
+            <legend>Unos rezultata <?=$game->m_day?>. kola</legend>
             <table>
                 <tr>
                     <th>
-                        godiste
-                        <input type="hidden" name="mday" value="<?php echo $game->m_day ?>">
-                        <input type="hidden" name="id" value="<?php echo $game->id ?>">
+                        godište
+                        <input type="hidden" name="mday" value="<?=$game->m_day?>">
+                        <input type="hidden" name="id" value="<?=$game->id?>">
                     </th>
                     <th>
-                        domacin
+                        domaćin
                     </th>
                     <th>
                         gost
@@ -21,21 +21,19 @@
 
                     </td>
                     <td>
-                        <?php echo $game->home ?>
-                        <input type="hidden" name="homeID" value="<?php echo $game->home_team ?>">
-                        <input type="hidden" name="home" value="<?php echo $game->home ?>">
+                        <?=$game->home?>
+                        <input type="hidden" name="homeID" value="<?=$game->home_team?>">
+                        <input type="hidden" name="home" value="<?=$game->home?>">
                     </td>
                     <td>
-                        <?php echo $game->away ?>
-                        <input type="hidden" name="awayID" value="<?php echo $game->away_team ?>">
-                        <input type="hidden" name="away" value="<?php echo $game->away ?>">
+                        <?=$game->away?>
+                        <input type="hidden" name="awayID" value="<?=$game->away_team?>">
+                        <input type="hidden" name="away" value="<?=$game->away?>">
                     </td>
                 </tr>
-                <?php
-                if (($game->home_team == 1 or $game->away_team == 1) or ($game->home_team == 7 or $game->away_team == 7)) {
-                    echo '';
-                } else {
-                    echo <<<EOT
+                <?php if (($game->home_team == 1 or $game->away_team == 1) or ($game->home_team == 7 or $game->away_team == 7)): ?>
+                <?=''?>
+                <?php else: ?>
                 <tr>
                     <td>
                         2010
@@ -47,9 +45,7 @@
                         <input type="number" name="away10" value="0" min="0" max="50">
                     </td>
                 </tr>
-EOT;
-                }
-                ?>
+                <?php endif?>
                 <tr>
                     <td>
                         2009
@@ -73,11 +69,9 @@ EOT;
                     </td>
                 </tr>
                 <tr>
-                    <?php
-                    if ($game->home_team == 8 or $game->away_team == 8) {
-                        echo '';
-                    } else {
-                        echo <<<EOT
+                    <?php if ($game->home_team == 8 or $game->away_team == 8): ?>
+                    <?=''?>
+                    <?php else: ?>
                     <td>
                         2007
                     </td>
@@ -88,9 +82,7 @@ EOT;
                         <input type="number" name="away7" value="0" min="0" max="50">
                     </td>
                 </tr>
-EOT;
-                    }
-                    ?>
+                <?php endif?>
                 <tr>
                     <td>
                         2006
@@ -108,7 +100,6 @@ EOT;
                     </td>
                 </tr>
             </table>
-
         </fieldset>
     </form>
 </div>

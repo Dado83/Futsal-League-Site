@@ -9,20 +9,16 @@
                     <td>gost</td>
                     <td colspan="3">rezultat</td>
                 </tr>
-                <?php
-foreach ($results10 as $row) {
-    echo <<<EOT
-        <tr>
-        <td class='oddResRow'>$row->m_day</td>
-        <td>$row->home_team</td>
-        <td>$row->away_team</td>
-        <td>$row->goals_home</td>
-        <td>:</td>
-        <td>$row->goals_away</td>
-        </tr>
-EOT;
-}
-?>
+                <?php foreach ($results10 as $row): ?>
+                <tr>
+                    <td class='oddResRow'><?=$row->m_day?></td>
+                    <td><?=$row->home_team?></td>
+                    <td><?=$row->away_team?></td>
+                    <td><?=$row->goals_home?></td>
+                    <td>:</td>
+                    <td><?=$row->goals_away?></td>
+                </tr>
+                <?php endforeach?>
             </table>
         </details>
         <details>
@@ -34,20 +30,16 @@ EOT;
                     <td>gost</td>
                     <td colspan="3">rezultat</td>
                 </tr>
-                <?php
-foreach ($results9 as $row) {
-    echo <<<EOT
-        <tr>
-        <td class='oddResRow'>$row->m_day</td>
-        <td>$row->home_team</td>
-        <td>$row->away_team</td>
-        <td>$row->goals_home</td>
-        <td>:</td>
-        <td>$row->goals_away</td>
-        </tr>
-EOT;
-}
-?>
+                <?php foreach ($results9 as $row): ?>
+                <tr>
+                    <td class='oddResRow'><?=$row->m_day?></td>
+                    <td><?=$row->home_team?></td>
+                    <td><?=$row->away_team?></td>
+                    <td><?=$row->goals_home?></td>
+                    <td>:</td>
+                    <td><?=$row->goals_away?></td>
+                </tr>
+                <?php endforeach?>
             </table>
         </details>
         <details>
@@ -59,20 +51,16 @@ EOT;
                     <td>gost</td>
                     <td colspan="3">rezultat</td>
                 </tr>
-                <?php
-foreach ($results8 as $row) {
-    echo <<<EOT
-        <tr>
-        <td class='oddResRow'>$row->m_day</td>
-        <td>$row->home_team</td>
-        <td>$row->away_team</td>
-        <td>$row->goals_home</td>
-        <td>:</td>
-        <td>$row->goals_away</td>
-        </tr>
-EOT;
-}
-?>
+                <?php foreach ($results8 as $row): ?>
+                <tr>
+                    <td class='oddResRow'><?=$row->m_day?></td>
+                    <td><?=$row->home_team?></td>
+                    <td><?=$row->away_team?></td>
+                    <td><?=$row->goals_home?></td>
+                    <td>:</td>
+                    <td><?=$row->goals_away?></td>
+                </tr>
+                <?php endforeach?>
             </table>
         </details>
         <details>
@@ -84,20 +72,16 @@ EOT;
                     <td>gost</td>
                     <td colspan="3">rezultat</td>
                 </tr>
-                <?php
-foreach ($results7 as $row) {
-    echo <<<EOT
-        <tr>
-        <td class='oddResRow'>$row->m_day</td>
-        <td>$row->home_team</td>
-        <td>$row->away_team</td>
-        <td>$row->goals_home</td>
-        <td>:</td>
-        <td>$row->goals_away</td>
-        </tr>
-EOT;
-}
-?>
+                <?php foreach ($results7 as $row): ?>
+                <tr>
+                    <td class='oddResRow'><?=$row->m_day?></td>
+                    <td><?=$row->home_team?></td>
+                    <td><?=$row->away_team?></td>
+                    <td><?=$row->goals_home?></td>
+                    <td>:</td>
+                    <td><?=$row->goals_away?></td>
+                </tr>
+                <?php endforeach?>
             </table>
         </details>
         <details>
@@ -109,20 +93,16 @@ EOT;
                     <td>gost</td>
                     <td colspan="3">rezultat</td>
                 </tr>
-                <?php
-foreach ($results6 as $row) {
-    echo <<<EOT
-        <tr>
-        <td class='oddResRow'>$row->m_day</td>
-        <td>$row->home_team</td>
-        <td>$row->away_team</td>
-        <td>$row->goals_home</td>
-        <td>:</td>
-        <td>$row->goals_away</td>
-        </tr>
-EOT;
-}
-?>
+                <?php foreach ($results6 as $row): ?>
+                <tr>
+                    <td class='oddResRow'><?=$row->m_day?></td>
+                    <td><?=$row->home_team?></td>
+                    <td><?=$row->away_team?></td>
+                    <td><?=$row->goals_home?></td>
+                    <td>:</td>
+                    <td><?=$row->goals_away?></td>
+                </tr>
+                <?php endforeach?>
             </table>
         </details>
     </div>
@@ -141,20 +121,21 @@ EOT;
             </tr>
             <?php
 $i = 1;
-foreach ($combinedTable as $tt) {
-    $gDiff = $tt->goalsFor - $tt->goalsAgg;
-    echo "<tr><td>$i</td>";
-    echo "<td><img src='/images/logos/$tt->id.png' alt='grb'>$tt->team</td>";
-    echo "<td>$tt->gamesAll</td>";
-    echo "<td>$tt->gamesWon</td>";
-    echo "<td>$tt->gamesDrew</td>";
-    echo "<td>$tt->gamesLost</td>";
-    echo "<td>$tt->goalsFor:$tt->goalsAgg</td>";
-    echo "<td>$gDiff</td>";
-    echo "<td>$tt->pointsAll</td></tr>";
-    $i++;
-}
-?>
+foreach ($combinedTable as $tt):
+    $gDiff = $tt->goalsFor - $tt->goalsAgg;?>
+            <tr>
+                <td><?=$i?></td>
+                <td><img src='/images/logos/<?=$tt->id?>.png' alt='grb'><?=$tt->team?></td>
+                <td><?=$tt->gamesAll?></td>
+                <td><?=$tt->gamesWon?></td>
+                <td><?=$tt->gamesDrew?></td>
+                <td><?=$tt->gamesLost?></td>
+                <td><?=$tt->goalsFor?>:<?=$tt->goalsAgg?></td>
+                <td><?=$gDiff?></td>
+                <td><?=$tt->pointsAll?></td>
+            </tr>
+            <?php $i++?>
+            <?php endforeach?>
         </table>
     </div>
 </div>

@@ -31,38 +31,29 @@
         <li id="s2009">2009 god.</li>
         <li id="s2010">2010 god.</li>
     </ul>
-    <?php
-if ($results6 == null):
-else: ?>
+    <?php if ($results6 == null): else: ?>
     <div class="rSelector" id="ys2010">
         <table class="teamResults">
-            <?php
-if ($team->id == 7 or $team->id == 1) {
-    echo "<i><p>ne takmiči se u 2010. godištu</p></i>";
-} else {
-    echo <<<EOT
-        <tr>
-        <th>kolo</th>
-        <th>domaćin</th>
-        <th>gost</th>
-        <th colspan="3">rezultat</th>
-        </tr>
-EOT;
-}
-
-foreach ($results10 as $r) {
-    echo <<<EOT
-        <tr>
-        <td>$r->m_day</td>
-        <td><a href="/liga/ekipa/$r->home_teamid">$r->home_team</a></td>
-        <td><a href="/liga/ekipa/$r->away_teamid">$r->away_team</a></td>
-        <td>$r->goals_home</td>
-        <td>:</td>
-        <td>$r->goals_away</td>
-        </tr>
-EOT;
-}
-?>
+            <?php if ($team->id == 7 or $team->id == 1): ?>
+            <?='<i><p>ne takmiči se u 2010. godištu</p></i>'?>
+            <?php else: ?>
+            <tr>
+                <th>kolo</th>
+                <th>domaćin</th>
+                <th>gost</th>
+                <th colspan="3">rezultat</th>
+            </tr>
+            <?php endif?>
+            <?php foreach ($results10 as $r): ?>
+            <tr>
+                <td><?=$r->m_day?></td>
+                <td><a href="/liga/ekipa/<?=$r->home_teamid?>"><?=$r->home_team?></a></td>
+                <td><a href="/liga/ekipa/<?=$r->away_teamid?>"><?=$r->away_team?></a></td>
+                <td><?=$r->goals_home?></td>
+                <td>:</td>
+                <td><?=$r->goals_away?></td>
+            </tr>
+            <?php endforeach?>
         </table>
     </div>
     <div class="rSelector" id="ys2009">
@@ -73,20 +64,16 @@ EOT;
                 <th>gost</th>
                 <th colspan="3">rezultat</th>
             </tr>
-            <?php
-foreach ($results9 as $r) {
-    echo <<<EOT
-        <tr>
-        <td>$r->m_day</td>
-        <td><a href="/liga/ekipa/$r->home_teamid">$r->home_team</a></td>
-        <td><a href="/liga/ekipa/$r->away_teamid">$r->away_team</a></td>
-        <td>$r->goals_home</td>
-        <td>:</td>
-        <td>$r->goals_away</td>
-        </tr>
-EOT;
-}
-?>
+            <?php foreach ($results9 as $r): ?>
+            <tr>
+                <td><?=$r->m_day?></td>
+                <td><a href="/liga/ekipa/<?=$r->home_teamid?>"><?=$r->home_team?></a></td>
+                <td><a href="/liga/ekipa/<?=$r->away_teamid?>"><?=$r->away_team?></a></td>
+                <td><?=$r->goals_home?></td>
+                <td>:</td>
+                <td><?=$r->goals_away?></td>
+            </tr>
+            <?php endforeach?>
         </table>
     </div>
     <div class="rSelector" id="ys2008">
@@ -97,50 +84,40 @@ EOT;
                 <th>gost</th>
                 <th colspan="3">rezultat</th>
             </tr>
-            <?php
-foreach ($results8 as $r) {
-    echo <<<EOT
-        <tr>
-        <td>$r->m_day</td>
-        <td><a href="/liga/ekipa/$r->home_teamid">$r->home_team</a></td>
-        <td><a href="/liga/ekipa/$r->away_teamid">$r->away_team</a></td>
-        <td>$r->goals_home</td>
-        <td>:</td>
-        <td>$r->goals_away</td>
-        </tr>
-EOT;
-}
-?>
+            <?php foreach ($results8 as $r): ?>
+            <tr>
+                <td><?=$r->m_day?></td>
+                <td><a href="/liga/ekipa/<?=$r->home_teamid?>"><?=$r->home_team?></a></td>
+                <td><a href="/liga/ekipa/<?=$r->away_teamid?>"><?=$r->away_team?></a></td>
+                <td><?=$r->goals_home?></td>
+                <td>:</td>
+                <td><?=$r->goals_away?></td>
+            </tr>
+            <?php endforeach?>
         </table>
     </div>
     <div class="rSelector" id="ys2007">
         <table class="teamResults">
-            <?php
-if ($team->id == 8) {
-    echo "<i><p>ne takmiči se u 2007. godištu</p></i>";
-} else {
-    echo <<<EOT
+            <?php if ($team->id == 8): ?>
+            <?='<i><p>ne takmiči se u 2007. godištu</p></i>'?>
+            <?php else: ?>
             <tr>
                 <th>kolo</th>
                 <th>domaćin</th>
                 <th>gost</th>
                 <th colspan="3">rezultat</th>
             </tr>
-EOT;
-}
-foreach ($results7 as $r) {
-    echo <<<EOT
+            <?php foreach ($results7 as $r): ?>
             <tr>
-                <td>$r->m_day</td>
-                <td><a href="/liga/ekipa/$r->home_teamid">$r->home_team</a></td>
-                <td><a href="/liga/ekipa/$r->away_teamid">$r->away_team</a></td>
-                <td>$r->goals_home</td>
+                <td><?=$r->m_day?></td>
+                <td><a href="/liga/ekipa/<?=$r->home_teamid?>"><?=$r->home_team?></a></td>
+                <td><a href="/liga/ekipa/<?=$r->away_teamid?>"><?=$r->away_team?></a></td>
+                <td><?=$r->goals_home?></td>
                 <td>:</td>
-                <td>$r->goals_away</td>
+                <td><?=$r->goals_away?></td>
             </tr>
-EOT;
-}
-?>
+            <?php endforeach?>
+            <?php endif?>
         </table>
     </div>
     <div class="rSelector" id="ys2006">
@@ -151,20 +128,16 @@ EOT;
                 <th>gost</th>
                 <th colspan="3">rezultat</th>
             </tr>
-            <?php
-foreach ($results6 as $r) {
-    echo <<<EOT
-        <tr>
-        <td>$r->m_day</td>
-        <td><a href="/liga/ekipa/$r->home_teamid">$r->home_team</a></td>
-        <td><a href="/liga/ekipa/$r->away_teamid">$r->away_team</a></td>
-        <td>$r->goals_home</td>
-        <td>:</td>
-        <td>$r->goals_away</td>
-        </tr>
-EOT;
-}
-?>
+            <?php foreach ($results6 as $r): ?>
+            <tr>
+                <td><?=$r->m_day?></td>
+                <td><a href="/liga/ekipa/<?=$r->home_teamid?>"><?=$r->home_team?></a></td>
+                <td><a href="/liga/ekipa/<?=$r->away_teamid?>"><?=$r->away_team?></a></td>
+                <td><?=$r->goals_home?></td>
+                <td>:</td>
+                <td><?=$r->goals_away?></td>
+            </tr>
+            <?php endforeach?>
         </table>
     </div>
     <?php endif?>

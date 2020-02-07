@@ -5,7 +5,6 @@ $(document).ready(function () {
 	let url = window.location.pathname;
 	let backColor = '#fcc914';
 	let fontCol = '#3d3d3d';
-	console.log(url);
 
 	switch (url) {
 		case '/':
@@ -255,7 +254,6 @@ $(document).ready(function () {
 		if (odd.innerText % 2 == 0) {
 			odd.parentNode.style.background = 'rgba(0, 0, 0, 0.2)';
 		}
-		console.log(odd.innerText);
 	}
 
 	$('.resultsPage summary').width($('.resultsPage table').width());

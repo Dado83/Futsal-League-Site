@@ -29,18 +29,14 @@
         <th>gost</th>
         <th>termin</th>
     </tr>
-    <?php
-foreach ($results as $row) {
-    echo <<<EOT
-             <tr>
-             <td>$row->m_day</td>
-             <td>$row->home_team</td>
-             <td>$row->away_team</td>
-             <td><a class='button' href='/liga/brisanjeKola/$row->id' onclick="return confirm('Brišem zadnje kolo?')">Briši</a></td>
-             </tr>
-EOT;
-}
-?>
+    <?php foreach ($results as $row): ?>
+    <tr>
+        <td><?=$row->m_day?></td>
+        <td><?=$row->home_team?></td>
+        <td><?=$row->away_team?></td>
+        <td><a class='button' href='/liga/brisanjeKola/<?=$row->id?>' onclick="return confirm('Brišem zadnje kolo?')">Briši</a></td>
+    </tr>
+    <?php endforeach?>
 </table>
 <table class="admin">
     <p>Raspored:</p>
@@ -50,16 +46,12 @@ EOT;
         <th>gost</th>
         <th>termin</th>
     </tr>
-    <?php
-foreach ($matchPairs as $row) {
-    echo <<<EOT
-             <tr>
-             <td>$row->m_day</td>
-             <td>$row->home_team</td>
-             <td>$row->away_team</td>
-             <td><a class='button' href='/liga/formIn/$row->id'>Unos</a></td>
-             </tr>
-EOT;
-}
-?>
+    <?php foreach ($matchPairs as $row): ?>
+    <tr>
+        <td><?=$row->m_day?></td>
+        <td><?=$row->home_team?></td>
+        <td><?=$row->away_team?></td>
+        <td><a class='button' href='/liga/formIn/<?=$row->id?>'>Unos</a></td>
+    </tr>
+    <?php endforeach?>
 </table>

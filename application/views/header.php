@@ -21,26 +21,20 @@
         <a href="/"><img id="logo" src="/images/grb.png" /></a>
         <span class="title1">Fair Play LBŠ</span>
         <span class="title2">Liga Budućih Šampiona</span>
-        <?php
-if ($this->session->role == "admin") {
-    echo <<<EOT
-                <form class="login" action="/liga/logout" method="POST">
-                <input type="submit" value="Logout">
-                <p>Views/Visitors: {$this->session->lastHourViews->vis}/{$this->session->lastHourVisitors->vis}</p>
-                <p></p>
-                </form>
-EOT;
-} else {
-    echo <<<EOT
-                <form class="login" action="/liga/login" method="POST">
-                <span>{$this->session->loginError}</span>
-                <input type="text" name="user" placeholder="user" size="1" maxlength="20">
-                <input type="password" name="pass" placeholder="pass" size="1" maxlength="20">
-                <input type="submit" value="Login">
-                </form>
-EOT;
-}
-?>
+        <?php if ($this->session->role == "admin"): ?>
+        <form class="login" action="/liga/logout" method="POST">
+            <input type="submit" value="Logout">
+            <p>Views/Visitors: <?=$this->session->lastHourViews->vis?>/<?=$this->session->lastHourVisitors->vis?></p>
+            <p></p>
+        </form>
+        <?php else: ?>
+        <form class="login" action="/liga/login" method="POST">
+            <span><?=$this->session->loginError?></span>
+            <input type="text" name="user" placeholder="user" size="1" maxlength="20">
+            <input type="password" name="pass" placeholder="pass" size="1" maxlength="20">
+            <input type="submit" value="Login">
+        </form>
+        <?php endif?>
     </div>
     <ul id="youthSel">
         <li><a href="/liga/index/2006">2006</a></li>
