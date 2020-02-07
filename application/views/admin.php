@@ -31,7 +31,7 @@
     </tr>
     <?php foreach ($results as $row): ?>
     <tr>
-        <td><?=$row->m_day?></td>
+        <td class="oddResRow"><?=$row->m_day?></td>
         <td><?=$row->home_team?></td>
         <td><?=$row->away_team?></td>
         <td><a class='button' href='/liga/brisanjeKola/<?=$row->id?>' onclick="return confirm('Brišem zadnje kolo?')">Briši</a></td>
@@ -48,7 +48,7 @@
     </tr>
     <?php foreach ($matchPairs as $row): ?>
     <tr>
-        <td><?=$row->m_day?></td>
+        <td class="oddResRow"><?=$row->m_day?></td>
         <td><?=$row->home_team?></td>
         <td><?=$row->away_team?></td>
         <td><a class='button' href='/liga/formIn/<?=$row->id?>'>Unos</a></td>

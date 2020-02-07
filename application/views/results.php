@@ -11,7 +11,7 @@
                 </tr>
                 <?php foreach ($results10 as $row): ?>
                 <tr>
-                    <td class='oddResRow'><?=$row->m_day?></td>
+                    <td class="oddResRow"><?=$row->m_day?></td>
                     <td><?=$row->home_team?></td>
                     <td><?=$row->away_team?></td>
                     <td><?=$row->goals_home?></td>
@@ -32,7 +32,7 @@
                 </tr>
                 <?php foreach ($results9 as $row): ?>
                 <tr>
-                    <td class='oddResRow'><?=$row->m_day?></td>
+                    <td class="oddResRow"><?=$row->m_day?></td>
                     <td><?=$row->home_team?></td>
                     <td><?=$row->away_team?></td>
                     <td><?=$row->goals_home?></td>
@@ -53,7 +53,7 @@
                 </tr>
                 <?php foreach ($results8 as $row): ?>
                 <tr>
-                    <td class='oddResRow'><?=$row->m_day?></td>
+                    <td class="oddResRow"><?=$row->m_day?></td>
                     <td><?=$row->home_team?></td>
                     <td><?=$row->away_team?></td>
                     <td><?=$row->goals_home?></td>
@@ -74,7 +74,7 @@
                 </tr>
                 <?php foreach ($results7 as $row): ?>
                 <tr>
-                    <td class='oddResRow'><?=$row->m_day?></td>
+                    <td class="oddResRow"><?=$row->m_day?></td>
                     <td><?=$row->home_team?></td>
                     <td><?=$row->away_team?></td>
                     <td><?=$row->goals_home?></td>
@@ -95,7 +95,7 @@
                 </tr>
                 <?php foreach ($results6 as $row): ?>
                 <tr>
-                    <td class='oddResRow'><?=$row->m_day?></td>
+                    <td class="oddResRow"><?=$row->m_day?></td>
                     <td><?=$row->home_team?></td>
                     <td><?=$row->away_team?></td>
                     <td><?=$row->goals_home?></td>
@@ -125,7 +125,7 @@ foreach ($combinedTable as $tt):
     $gDiff = $tt->goalsFor - $tt->goalsAgg;?>
             <tr>
                 <td><?=$i?></td>
-                <td><img src='/images/logos/<?=$tt->id?>.png' alt='grb'><?=$tt->team?></td>
+                <td><img src="/images/logos/<?=$tt->id?>.png" alt="grb"><?=$tt->team?></td>
                 <td><?=$tt->gamesAll?></td>
                 <td><?=$tt->gamesWon?></td>
                 <td><?=$tt->gamesDrew?></td>

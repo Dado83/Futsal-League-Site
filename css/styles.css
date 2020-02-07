@@ -627,22 +627,6 @@ body {
     background: var(--color1);
 }
 
-.admin tr:nth-of-type(n + 2):nth-of-type(-n + 5) td:nth-of-type(n + 1):nth-of-type(-n + 3) {
-    background: lightblue;
-}
-
-.admin tr:nth-of-type(n + 10):nth-of-type(-n + 13) td:nth-of-type(n + 1):nth-of-type(-n + 3) {
-    background: lightblue;
-}
-
-.admin tr:nth-of-type(n + 18):nth-of-type(-n + 21) td:nth-of-type(n + 1):nth-of-type(-n + 3) {
-    background: lightblue;
-}
-
-.admin tr:nth-of-type(n + 26):nth-of-type(-n + 29) td:nth-of-type(n + 1):nth-of-type(-n + 3) {
-    background: lightblue;
-}
-
 .headToggle {
     margin: 5px 0;
     text-align: left;
