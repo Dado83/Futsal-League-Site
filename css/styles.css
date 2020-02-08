@@ -164,6 +164,15 @@ a:hover {
     grid-area: a;
 }
 
+.finalFour {
+    padding: 20px 0 20px 20px;
+    background: var(--color1);
+}
+
+.finalFour a:hover {
+    color: white;
+}
+
 .finalsContent {
     text-align: center;
     margin-bottom: 100px;
