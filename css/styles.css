@@ -54,11 +54,6 @@ body {
     width: var(--logoWidth);
 }
 
-.fpLogo a {
-    color: black;
-    text-decoration: none;
-}
-
 .title1 {
     padding-top: 2px;
     font-size: 30px;
@@ -81,19 +76,18 @@ body {
     float: right;
 }
 
-#youthSel a {
+a {
     text-decoration: none;
 }
 
-#youthSel a:visited,
-#youthSel a:link {
+a:link,
+a:visited {
     text-decoration: none;
-    color: white;
+    color: black;
 }
 
-#youthSel a:hover,
-#youthSel li:hover {
-    background: var(--color1);
+a:hover {
+    color: var(--color1);
 }
 
 #youthSel {
@@ -117,6 +111,14 @@ body {
     padding: 4px 4px;
     margin-bottom: -8px;
     border-radius: 2px;
+}
+
+#youthSel li:hover {
+    background: var(--color1);
+}
+
+#youthSel a {
+    color: white;
 }
 
 .ys {
@@ -151,7 +153,8 @@ body {
     margin-bottom: auto;
 }
 
-.results table {
+.results table,
+.finals table {
     margin: auto;
 }
 
@@ -169,10 +172,6 @@ body {
 .finals {
     margin: 10px 3%;
     padding: 5px 0;
-}
-
-.finals table {
-    margin: auto;
 }
 
 .finals h3 {
@@ -240,42 +239,6 @@ body {
 
 .table tr:last-of-type td {
     padding-bottom: var(--tableLastTrPadding);
-}
-
-.table a,
-.results a,
-.nextGame a,
-.teamResults a {
-    text-decoration: none;
-    color: black;
-}
-
-.table a:visited,
-.table a {
-    text-decoration: none;
-    color: black;
-}
-
-.results a:visited,
-.nextGame a:visited,
-.teamResults a:visited {
-    text-decoration: none;
-    color: black;
-}
-
-.table a:link,
-.results a:link,
-.nextGame a:link,
-.teamResults a:link {
-    text-decoration: none;
-    color: black;
-}
-
-.table a:hover,
-.results a:hover,
-.nextGame a:hover,
-.teamResults a:hover {
-    color: var(--color1);
 }
 
 .table th {
@@ -577,22 +540,8 @@ body {
     margin: 5px;
 }
 
-#newsLetter a {
-    text-decoration: none;
-}
-
-.adminCards a:link,
-.adminCards a:visited {
-    color: black;
-}
-
-.adminCards a:hover,
 .adminCards:hover {
     color: var(--color1);
-}
-
-.adminCards a {
-    text-decoration: none;
 }
 
 .adminCards {
@@ -624,7 +573,8 @@ body {
 }
 
 .admin a:hover {
-    background: var(--color1);
+    background: var(--color5);
+    color: white;
 }
 
 .headToggle {
@@ -685,10 +635,6 @@ body {
 
 .infb span {
     margin-right: 10px;
-}
-
-.infb a {
-    text-decoration: none;
 }
 
 summary {
