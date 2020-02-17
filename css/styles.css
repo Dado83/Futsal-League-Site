@@ -32,6 +32,7 @@ body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
         'Lucida Sans', Arial, sans-serif;
     font-size: var(--fontSize12);
+    background: rgba(0, 0, 0, 0.05);
 }
 
 .content {
@@ -343,6 +344,7 @@ a:hover {
     width: 80%;
     max-width: 300px;
     box-shadow: 0 0 2px var(--color5);
+    background: white;
 }
 
 #combinedTable table {
