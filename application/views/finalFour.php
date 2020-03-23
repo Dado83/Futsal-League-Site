@@ -1,7 +1,7 @@
 <div class="finalsContent">
     <h1>Završni turnir</h1>
-    <p>Subota, 2. mart 2019. g. - Žepče (2005, 2007, 2009)</p>
-    <p>Nedjelja, 3. mart 2019. g. - Teslić (2006, 2008)</p>
+    <p>Subota, 7. mart 2020. g. - Žepče (2007, 2008, 2010)</p>
+    <p>Nedjelja, 8. mart 2020. g. - Maglaj (2006, 2009)</p>
     <h2>Polufinalne utakmice:</h2>
     <div class="finals">
         <h3>2010. godište</h3>

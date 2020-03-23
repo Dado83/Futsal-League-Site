@@ -53,7 +53,7 @@ endforeach?>
         <div class="nextG">
             <table class="nextGame">
                 <?php if ($isLeagueOver): ?>
-                <!--<h2 class="finalFour"><a href="/liga/finals">Završni turnir</a></h2>-->
+                <h2 class="finalFour"><a href="/liga/finals">Završni turnir</a></h2>
                 <?php else: ?>
                 <p><?=$nextMday?>. kolo (<?=$nextGameDate->game_date?>)</p>
                 <?php foreach ($nextFixture as $nf): ?>
