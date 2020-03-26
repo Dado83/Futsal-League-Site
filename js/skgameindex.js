@@ -11,10 +11,17 @@ form.addEventListener('submit', (event) => {
     let platform = document.querySelector('input[name=platform]:checked') ?
         document.querySelector('input[name=platform]:checked').id : ''
 
-    let result = gameList.filter((game) => game['score'] >= score)
+    let result = gameList
+        .filter(game => game['title'].toLowerCase().includes(title.toLowerCase()))
+        .filter(game => game['author'].toLowerCase().includes(author.toLowerCase()))
+        .filter(game => game['score'] >= score)
+    let ss = 'test'
+    console.log(ss.includes('Te'.toLowerCase()))
+
     tbody.innerHTML = ''
     createTable(result)
 })
+
 
 form.addEventListener('reset', (event) => {
     tbody.innerHTML = ''
