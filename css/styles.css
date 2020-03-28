@@ -195,10 +195,11 @@ a:hover {
 
 .finals td:first-of-type {
     text-align: left;
+    font-weight: bold;
 }
 
 .finals td:last-of-type {
-    text-align: right;
+    text-align: left;
 }
 
 .finals img {
@@ -206,7 +207,7 @@ a:hover {
     height: var(--logoDim);
     padding: 0 15px;
     position: relative;
-    bottom: -5px;
+    bottom: -10px;
 }
 
 .table img {
