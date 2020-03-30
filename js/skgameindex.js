@@ -36,7 +36,7 @@ jsonFile.then((response) => response.json().then((data) => {
 
 
 function createTable(list) {
-    document.querySelector('span').innerHTML = list.length
+    document.getElementById('links').innerHTML = list.length
     for (let i = 0; i < list.length; i++) {
         let tr = document.createElement('tr')
         let td = document.createElement('td')

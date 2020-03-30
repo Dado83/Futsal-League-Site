@@ -16,9 +16,10 @@
 
 <body>
     <form action="#" method="GET">
-        <p>TEST PLAY pretraga recenzija (<span></span>)</p>
+        <p><a href="https://www.sk.rs/arhiva/rubrika/test-play">
+                <span id="sk">Svet Kompjutera</span></a> TEST PLAY(<span id="links"></span>)</p>
         <fieldset>
-            <label for="title">Naziv</label>
+            <label for="title">Naslov</label>
             <input type="text" id="title" placeholder="The Witcher 3: Wild Hunt">
             <label for="author">Autor</label>
             <input type="text" id="author" placeholder="Miodrag KUZMANOVIĆ">

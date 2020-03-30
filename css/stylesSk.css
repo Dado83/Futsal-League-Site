@@ -3,6 +3,10 @@
     --color2: #FF0000;
 }
 
+#sk {
+    font-size: xx-large;
+    font-style: italic;
+}
 
 a:link,
 a:visited {
