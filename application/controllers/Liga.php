@@ -497,9 +497,9 @@ class Liga extends CI_Controller
         $this->setVisitor();
     }
 
-    public function test()
+    public function skTestPlay()
     {
-       
+        $this->load->view('sktestplay');
     }
 
 }
