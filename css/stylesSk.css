@@ -1,10 +1,22 @@
 :root {
     --color1: #006BAD;
     --color2: #FF0000;
+    --fontSize12: 12px;
+    --fontSize22: 22px;
+}
+
+body {
+    min-width: 340px;
+    max-width: 100%;
+    font-size: var(--fontSize12);
+}
+
+.hidden {
+    display: none;
 }
 
 #sk {
-    font-size: xx-large;
+    font-size: var(--fontSize22);
     font-style: italic;
 }
 
@@ -33,4 +45,28 @@ td:nth-of-type(4) {
     color: var(--color2);
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
+    text-align: center;
+}
+
+
+@media screen and (min-width: 640px) {
+    :root {
+        --fontSize12: 14px;
+        --fontSize22: 32px;
+    }
+
+    .hidden {
+        display: unset;
+    }
+
+    th:nth-of-type(5) {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    :root {
+        --fontSize12: 16px;
+        --fontSize22: 42px;
+    }
 }

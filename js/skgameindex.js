@@ -44,6 +44,7 @@ function createTable(list) {
         let td2 = document.createElement('td')
         let td3 = document.createElement('td')
         let td4 = document.createElement('td')
+        td4.className = 'hidden'
         td.textContent = `${list[i]['date']}`
         td1.innerHTML = `<a href=${list[i]['link']}>${list[i]['title']}</a>`
         td2.textContent = `${list[i]['author']}`
@@ -57,4 +58,3 @@ function createTable(list) {
         tbody.appendChild(tr)
     }
 }
-

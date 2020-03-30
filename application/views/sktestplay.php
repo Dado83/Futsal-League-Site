@@ -19,13 +19,13 @@
         <p><a href="https://www.sk.rs/arhiva/rubrika/test-play">
                 <span id="sk">Svet Kompjutera</span></a> TEST PLAY(<span id="links"></span>)</p>
         <fieldset>
-            <label for="title">Naslov</label>
+            <label for="title" class="hidden">Naslov</label>
             <input type="text" id="title" placeholder="The Witcher 3: Wild Hunt">
-            <label for="author">Autor</label>
+            <label for="author" class="hidden">Autor</label>
             <input type="text" id="author" placeholder="Miodrag KUZMANOVIĆ">
-            <label for="score">Ocjena</label>
+            <label for="score" class="hidden">Ocjena</label>
             <input type="number" id="score" min="1" max="99" placeholder="90">
-            <label for="platform">Platforma</label>
+            <label for="platform" class="hidden">Platforma</label>
             <input type="text" id="platform" placeholder="PC, PlayStation 4, Xbox One">
             <input type="submit" id="search" value="Pretraga">
             <input type="reset" id="reset" value="Reset">
@@ -38,7 +38,7 @@
                 <th>Naslov</th>
                 <th>Autor</th>
                 <th>Ocjena</th>
-                <th>Platforma</th>
+                <th class="hidden">Platforma</th>
             </tr>
         </thead>
         <tbody>
