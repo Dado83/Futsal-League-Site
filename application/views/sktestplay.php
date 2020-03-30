@@ -19,13 +19,13 @@
         <p>TEST PLAY pretraga recenzija (<span></span>)</p>
         <fieldset>
             <label for="title">Naziv</label>
-            <input type="text" id="title">
+            <input type="text" id="title" placeholder="The Witcher 3: Wild Hunt">
             <label for="author">Autor</label>
-            <input type="text" id="author">
+            <input type="text" id="author" placeholder="Miodrag KUZMANOVIĆ">
             <label for="score">Ocjena</label>
-            <input type="number" id="score" min="1" max="99">
+            <input type="number" id="score" min="1" max="99" placeholder="90">
             <label for="platform">Platforma</label>
-            <input type="text" id="platform">
+            <input type="text" id="platform" placeholder="PC, PlayStation 4, Xbox One">
             <input type="submit" id="search" value="Pretraga">
             <input type="reset" id="reset" value="Reset">
         </fieldset>
