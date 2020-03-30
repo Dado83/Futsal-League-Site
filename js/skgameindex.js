@@ -1,4 +1,3 @@
-let jsonFile = fetch('/resources/sk.json')
 let tbody = document.querySelector('tbody')
 
 let form = document.querySelector('form')
@@ -26,8 +25,20 @@ form.addEventListener('reset', (event) => {
 })
 
 
-gameList = [];
+let jsonFileInitial = fetch('/resources/skTemp.json')
+jsonFileInitial.then((response) => response.json().then((data) => {
+    tempList = []
+    for (let i = 0; i < data.length; i++) {
+        tempList[i] = data[i]
+    }
+    createTable(tempList)
+}))
+
+
+let gameList = [];
+let jsonFile = fetch('/resources/sk.json')
 jsonFile.then((response) => response.json().then((data) => {
+    tempList = []
     for (let i = 0; i < data.length; i++) {
         gameList[i] = data[i]
     }
@@ -37,6 +48,7 @@ jsonFile.then((response) => response.json().then((data) => {
 
 function createTable(list) {
     document.getElementById('links').innerHTML = list.length
+    tbody.innerHTML = ''
     for (let i = 0; i < list.length; i++) {
         let tr = document.createElement('tr')
         let td = document.createElement('td')
