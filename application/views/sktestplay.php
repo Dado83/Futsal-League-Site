@@ -24,12 +24,8 @@
             <input type="text" id="author">
             <label for="score">Ocjena</label>
             <input type="number" id="score" min="1" max="99">
-            <input type="radio" id="desktop" name="platform">
-            <label for="desktop">Desktop</label>
-            <input type="radio" id="console" name="platform">
-            <label for="console">Konzola</label>
-            <input type="radio" id="mobile" name="platform">
-            <label for="mobile">Mobilni</label>
+            <label for="platform">Platforma</label>
+            <input type="text" id="platform">
             <input type="submit" id="search" value="Pretraga">
             <input type="reset" id="reset" value="Reset">
         </fieldset>

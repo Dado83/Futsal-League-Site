@@ -8,23 +8,13 @@ form.addEventListener('submit', (event) => {
     let title = form.elements['title'].value ? form.elements['title'].value : ''
     let author = form.elements['author'].value ? form.elements['author'].value : ''
     let score = form.elements['score'].value ? form.elements['score'].value : 0
-    let platform = document.querySelector('input[name=platform]:checked') ?
-        document.querySelector('input[name=platform]:checked').id : ''
-    if (platform === 'desktop') {
-        platform = ['pc', 'mac', 'windows', 'ram', 'os', 'linux']
-    } else if (platform === 'console') {
-        platform = ['xbox', 'playstation', '360', 'one', 'ps3', 'wii', 'switch', 'ps4',
-            'ps', 'xone', 'nds', 'nintendo', 'GCN', 'GBA', 'ds', '3ds', 'psvita',
-            'gameboy', 'sega', 'atari', 'gamecube', 'dreamcast', 'gage', 'nes']
-    } else if (platform === 'mobile') {
-        platform = ['android', 'iso', 'steam']
-    }
+    let platform = form.elements['platform'].value ? form.elements['platform'].value : ''
 
     let result = gameList
         .filter(game => game['title'].toLowerCase().includes(title.toLowerCase()))
         .filter(game => game['author'].toLowerCase().includes(author.toLowerCase()))
         .filter(game => game['score'] >= score)
-        .filter(game => platform.some(s => game['platform'].toLowerCase().includes(s)))
+        .filter(game => game['platform'].toLowerCase().includes(platform.toLowerCase()))
     tbody.innerHTML = ''
     createTable(result)
 })
