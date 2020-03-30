@@ -58,3 +58,7 @@ function createTable(list) {
         tbody.appendChild(tr)
     }
 }
+
+window.addEventListener('orientationchange', (event) => {
+    location.reload()
+})
