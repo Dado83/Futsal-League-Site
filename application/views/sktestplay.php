@@ -17,23 +17,24 @@
 <body>
     <form action="#" method="GET">
         <p><a href="https://www.sk.rs/arhiva/rubrika/test-play">
-                <span id="sk">Svet Kompjutera</span></a> TEST PLAY(<span id="links"></span>)</p>
+                <span id="sk">Svet Kompjutera</span></a></p>
         <fieldset>
-            <label for="title" class="hidden">Naslov</label>
-            <input type="text" id="title" placeholder="The Witcher 3: Wild Hunt">
-            <label for="author" class="hidden">Autor</label>
-            <input type="text" id="author" placeholder="Miodrag KUZMANOVIĆ">
-            <label for="score" class="hidden">Ocjena</label>
-            <input type="number" id="score" min="1" max="99" placeholder="90">
-            <label for="platform" class="hidden">Platforma</label>
+            <legend>TEST PLAY(<span id="links"></span>)</legend>
+            <label for="title">Naslov</label><br>
+            <input type="text" id="title" placeholder="The Witcher 3: Wild Hunt"><br>
+            <label for="author">Autor</label><br>
+            <input type="text" id="author" placeholder="Miodrag KUZMANOVIĆ"><br>
+            <label for="score">Ocjena</label><br>
+            <input type="number" id="score" min="1" max="99" placeholder="90"><br>
+            <label for="platform">Platforma</label><br>
             <input type="text" id="platform" placeholder="PC, PlayStation 4, Xbox One">
-            <input type="submit" id="search" value="Pretraga">
-            <input type="reset" id="reset" value="Reset">
+            <input type="reset" class="button" id="reset" value="Reset">
+            <input type="submit" class="button" id="search" value="Pretraga">
         </fieldset>
     </form>
     <table>
         <thead>
-            <tr>
+            <tr class="row">
                 <th>Datum</th>
                 <th>Naslov</th>
                 <th>Autor</th>
