@@ -5,6 +5,7 @@ class Sk extends CI_Controller
 
     public function index()
     {
-        echo 'bbbbbaaaaaak';
+        $this->load->view('sktestplay');
     }
+
 }
