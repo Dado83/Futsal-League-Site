@@ -348,6 +348,7 @@ class DBModel extends CI_Model
         $userAgent = $this->session->userAgent;
         $newVisitor = $this->session->newVisitor;
         $startTime = $this->session->startTime;
+        $site = $this->session->site;
 
         $this->checkIfNULL($ip);
         $this->checkIfNULL($mobile);
@@ -359,8 +360,8 @@ class DBModel extends CI_Model
         $this->checkIfNULL($newVisitor);
         $this->checkIfNULL($startTime);
 
-        $sql = "INSERT INTO visitors (ip, mobile, robot, platform, browser, version, user_agent, new_visitor, role, time)
-        VALUES ('$ip', '$mobile', '$robot', '$platform', '$browser', '$version', '$userAgent', $newVisitor, '$role', $startTime)";
+        $sql = "INSERT INTO visitors (ip, mobile, robot, platform, browser, version, user_agent, new_visitor, role, time, site)
+        VALUES ('$ip', '$mobile', '$robot', '$platform', '$browser', '$version', '$userAgent', $newVisitor, '$role', $startTime, '$site')";
         $this->db->query($sql);
     }
 

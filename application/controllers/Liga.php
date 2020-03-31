@@ -37,6 +37,7 @@ class Liga extends CI_Controller
             'browser' => $this->agent->browser(),
             'version' => $this->agent->version(),
             'userAgent' => $this->agent->agent_string(),
+            'site' => 'liga',
         ];
 
         $sessionStartTime = time();
