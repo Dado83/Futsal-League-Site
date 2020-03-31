@@ -25,20 +25,18 @@ form.addEventListener('reset', (event) => {
 })
 
 
+let tempList = []
 let jsonFileInitial = fetch('/resources/skTemp.json')
 jsonFileInitial.then((response) => response.json().then((data) => {
-    tempList = []
     for (let i = 0; i < data.length; i++) {
         tempList[i] = data[i]
     }
     createTable(tempList)
 }))
 
-
 let gameList = [];
 let jsonFile = fetch('/resources/sk.json')
 jsonFile.then((response) => response.json().then((data) => {
-    tempList = []
     for (let i = 0; i < data.length; i++) {
         gameList[i] = data[i]
     }
@@ -70,6 +68,7 @@ function createTable(list) {
         tbody.appendChild(tr)
     }
 }
+
 
 window.addEventListener('orientationchange', (event) => {
     location.reload()
