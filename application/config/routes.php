@@ -49,11 +49,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
 | Examples:    my-controller/index    -> my_controller/index
 |        my-controller/my-method    -> my_controller/my_method
  */
-//$route['default_controller'] = 'liga';
-$route['404_override'] = '';
-$route['translate_uri_dashes'] = false;
-if ($_SERVER['HTTP_HOST'] == 'http://sktestplay.ml/') {
+if (strpos($_SERVER['HTTP_HOST'], 'sktestplay') !== false) {
     $route['default_controller'] = 'sk';
 } else {
     $route['default_controller'] = 'liga';
 }
+$route['404_override'] = '';
+$route['translate_uri_dashes'] = false;
