@@ -500,6 +500,7 @@ class DBModel extends CI_Model
                 'month' => date('M', $v->time),
                 'year' => date('Y', $v->time),
                 'time' => date('H:i', $v->time),
+                'site' => $v->site,
             ];
         }
 

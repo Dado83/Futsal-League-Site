@@ -27,6 +27,7 @@ foreach ($keys as $k):
                     <th>day</th>
                     <th>month</th>
                     <th>time</th>
+                    <th>site</th>
                 </tr>
             </thead>
             <tbody>
@@ -46,6 +47,7 @@ foreach ($keys as $k):
                     <td><?=$vis[$k][$i]->day?></td>
                     <td><?=$vis[$k][$i]->month?></td>
                     <td><?=$vis[$k][$i]->time?></td>
+                    <td><?=$vis[$k][$i]->site?></td>
                 </tr>
                 <?php endfor?>
             </tbody>
