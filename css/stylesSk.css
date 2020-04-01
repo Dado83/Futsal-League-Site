@@ -61,16 +61,16 @@ td:nth-of-type(4) {
 }
 
 #search {
-    margin-right: 5px;
+    margin-right: 1px;
     background: url('/images/search.png') no-repeat;
     background-size: contain;
-    padding-left: 20px;
+    padding-left: 16px;
 }
 
 #reset {
     background: url('/images/reset.png') no-repeat;
     background-size: contain;
-    padding-left: 20px;
+    padding-left: 16px;
 }
 
 .button:hover {

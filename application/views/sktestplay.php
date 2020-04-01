@@ -28,7 +28,7 @@
             <input type="number" id="score" min="1" max="99" placeholder="90"><br>
             <label for="platform">Platforma</label><br>
             <input type="text" id="platform" placeholder="PC, PlayStation 4, Xbox One">
-            <input type="reset" class="button" id="reset" value="Reset">
+            <input type="reset" class="button" id="reset" value="">
             <input type="submit" class="button" id="search" value="Pretraga">
         </fieldset>
     </form>
