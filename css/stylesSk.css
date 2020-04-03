@@ -44,6 +44,10 @@ table {
     border-bottom: 1px solid black;
 }
 
+tr:hover {
+    box-shadow: 0 0 1px black;
+}
+
 td:nth-of-type(3) {
     font-family: 'Roboto', sans-serif;
     font-style: italic;
