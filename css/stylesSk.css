@@ -78,14 +78,15 @@ td:nth-of-type(4) {
 }
 
 .loader {
-    border: 8px solid #f3f3f3;
-    border-top: 8px solid #3498db;
+    border: 8px solid var(--color1);
+    border-top: 8px solid var(--color2);
     border-radius: 50%;
     width: 30px;
     height: 30px;
     animation: spin 1s linear infinite;
     position: fixed;
     display: none;
+
 }
 
 @keyframes spin {
