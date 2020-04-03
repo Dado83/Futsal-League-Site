@@ -15,6 +15,7 @@
 </head>
 
 <body>
+    <div class="loader"></div>
     <form action="#" method="GET">
         <p><a href="https://www.sk.rs/arhiva/rubrika/test-play">
                 <span id="sk">Svet Kompjutera</span></a></p>

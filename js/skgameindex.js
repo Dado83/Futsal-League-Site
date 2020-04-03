@@ -1,6 +1,14 @@
-let tbody = document.querySelector('tbody')
+window.addEventListener('orientationchange', (event) => {
+    location.reload()
+})
 
+
+let tbody = document.querySelector('tbody')
 let form = document.querySelector('form')
+
+let search = document.querySelector('#search')
+search.addEventListener('mousedown', () => loader('block'))
+search.addEventListener('touchstart', () => loader('block'))
 form.addEventListener('submit', (event) => {
     event.preventDefault()
 
@@ -16,12 +24,17 @@ form.addEventListener('submit', (event) => {
         .filter(game => game['platform'].toLowerCase().includes(platform.toLowerCase()))
     tbody.innerHTML = ''
     createTable(result)
+    loader('none')
 })
 
 
+let reset = document.querySelector('#reset')
+reset.addEventListener('mousedown', () => loader('block'))
+reset.addEventListener('touchstart', () => loader('block'))
 form.addEventListener('reset', (event) => {
     tbody.innerHTML = ''
     createTable(gameList)
+    loader('none')
 })
 
 
@@ -70,6 +83,12 @@ function createTable(list) {
 }
 
 
-window.addEventListener('orientationchange', (event) => {
-    location.reload()
-})
+function loader(display) {
+    let loader = document.querySelector('.loader')
+    loader.style.display = display
+    let width = window.innerWidth
+    let height = window.innerHeight
+    let r = loader.offsetHeight
+    loader.style.left = (width - r) / 2 + 'px'
+    loader.style.top = (height - r) / 2 + 'px'
+}
