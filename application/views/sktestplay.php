@@ -4,10 +4,10 @@
 <head>
     <meta charset="utf-8">
     <title>TEST PLAY pretraga</title>
-    <meta name="description" content="Sve">
-    <meta name="keywords" content="Fair Play, Liga Budućih Šampiona, LBŠ, Liga">
+    <meta name="description" content="Svet Kompjutera TEST PLAY (pretraga recenzija)">
+    <meta name="keywords" content="Svet Kompjutera, SK, sk, TEST PLAY, igre">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#fcc914">
+    <meta name="theme-color" content="#006BAD">
     <link rel="stylesheet" href="/css/stylesSk.css?v=0.1">
     <link rel="shortcut icon" href="/images/sk.ico" type="image/x-icon">
     <script src="/js/skgameindex.js" defer></script>
