@@ -8,9 +8,8 @@
     <meta name="keywords" content="Fair Play, Liga Budućih Šampiona, LBŠ, Liga">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#fcc914">
-    <link rel="stylesheet" href="/css/stylesSk.css">
+    <link rel="stylesheet" href="/css/stylesSk.css?v=0.1">
     <link rel="shortcut icon" href="/images/sk.ico" type="image/x-icon">
-
     <script src="/js/skgameindex.js" defer></script>
 </head>
 
