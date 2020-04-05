@@ -45,6 +45,7 @@ jsonFileInitial.then((response) => response.json().then((data) => {
         tempList[i] = data[i]
     }
     createTable(tempList)
+    document.querySelector('#links').innerHTML += ' ...učitavam ostale linkove'
 }))
 
 let gameList = [];
