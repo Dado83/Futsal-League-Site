@@ -68,13 +68,15 @@ td:nth-of-type(4) {
     margin-right: 1px;
     background: url('/images/search.png') no-repeat;
     background-size: contain;
-    padding-left: 16px;
+    padding-left: 22px;
+    height: 30px;
 }
 
 #reset {
     background: url('/images/reset.png') no-repeat;
     background-size: contain;
-    padding-left: 16px;
+    padding-left: 22px;
+    height: 30px;
 }
 
 .button:hover {
