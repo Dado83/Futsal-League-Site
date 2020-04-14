@@ -10,7 +10,7 @@
     <meta name="theme-color" content="#006BAD">
     <link rel="stylesheet" href="/css/stylesSk.css?v=0.2">
     <link rel="shortcut icon" href="/images/sk.ico" type="image/x-icon">
-    <script src="/js/skgameindex.js" defer></script>
+    <script src="/js/skgameindex.js?v=0.1" defer></script>
 </head>
 
 <body>
